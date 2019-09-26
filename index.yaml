@@ -3,9 +3,9 @@ entries:
   a-back-end-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-09-26T14:27:50.3827649+02:00"
+    created: "2019-09-26T14:50:31.2082727+02:00"
     description: Template service for a backend service
-    digest: ec84f8b1f8e8e3b2f5932df35e7b3e4c5f4d5bc546a03b22d2e8263086d79f2a
+    digest: 2b659695706c87a13ec08a2cc789df00ecdecc9e9593f03e4fcb115842a87f8f
     home: https://github.com/Informasjonsforvaltning/a-backend-service
     name: a-back-end-service
     urls:
@@ -14,11 +14,11 @@ entries:
   helm-chart-test:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-09-26T14:27:50.3827649+02:00"
+    created: "2019-09-26T14:50:31.2092864+02:00"
     description: A Helm chart for Kubernetes
     digest: bf7da50e0c1ab6bff747aff88a80f0cf6dac982fa969568c4a029f087119206e
     name: helm-chart-test
     urls:
     - https://informasjonsforvaltning.github.io/helm-chart/helm-chart-test-0.1.0.tgz
     version: 0.1.0
-generated: "2019-09-26T14:27:50.375753+02:00"
+generated: "2019-09-26T14:50:31.2082727+02:00"
