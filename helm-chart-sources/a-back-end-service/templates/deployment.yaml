@@ -17,12 +17,12 @@ spec:
     spec:
       containers:
       - env:
-        - name: TEMPLATE_MONGO_USERNAME
-          value: {{ required "Missing value TEMPLATE_MONGO_USERNAME" .Values.TEMPLATE_MONGO_USERNAME }}
-        - name: TEMPLATE_MONGO_PASSWORD
-          value: {{ required "Missing value TEMPLATE_MONGO_PASSWORD" .Values.TEMPLATE_MONGO_PASSWORD }}
-        - name: TEMPLATE_MONGO_HOST
-          value: {{ required "Missing value TEMPLATE_MONGO_HOST" .Values.TEMPLATE_MONGO_HOST }}
+        - name: MONGO_USERNAME
+          value: {{ required "Missing value MONGO_USERNAME" .Values.MONGO_USERNAME }}
+        - name: MONGO_PASSWORD
+          value: {{ required "Missing value MONGO_PASSWORD" .Values.MONGO_PASSWORD }}
+        - name: MONGO_HOST
+          value: {{ required "Missing value MONGO_HOST" .Values.MONGO_HOST }}
         name: a-back-end-service
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
