@@ -22,9 +22,15 @@ spec:
         - name: RABBIT_PORT
           value: {{ required "Missing value FDK_HARVEST_SCHEDULER_RABBIT_PORT" .Values.FDK_HARVEST_SCHEDULER_RABBIT_PORT | quote }}
         - name: RABBIT_PASS
-          value: {{ required "Missing value FDK_HARVEST_SCHEDULER_RABBIT_PASS" .Values.FDK_HARVEST_SCHEDULER_RABBIT_PASS }}
+          valueFrom:
+            secretKeyRef:
+              name: fdk-harvest-scheduler-ut1-rabbitmq
+              key: RABBIT_PASS
         - name: RABBIT_USER
-          value: {{ required "Missing value FDK_HARVEST_SCHEDULER_RABBIT_USER" .Values.FDK_HARVEST_SCHEDULER_RABBIT_USER }}
+          valueFrom:
+            secretKeyRef:
+              name: fdk-harvest-scheduler-ut1-rabbitmq
+              key: RABBIT_USER
         name: fdk-harvest-scheduler
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
