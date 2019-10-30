@@ -24,12 +24,12 @@ spec:
         - name: RABBIT_PASS
           valueFrom:
             secretKeyRef:
-              name: fdk-harvest-scheduler-ut1-rabbitmq
+              name: fdk-harvest-scheduler-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}-rabbitmq
               key: RABBIT_PASS
         - name: RABBIT_USER
           valueFrom:
             secretKeyRef:
-              name: fdk-harvest-scheduler-ut1-rabbitmq
+              name: fdk-harvest-scheduler-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}-rabbitmq
               key: RABBIT_USER
         name: fdk-harvest-scheduler
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
