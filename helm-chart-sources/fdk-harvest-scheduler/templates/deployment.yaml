@@ -20,7 +20,7 @@ spec:
         - name: RABBIT_HOST
           value: {{ required "Missing value FDK_HARVEST_SCHEDULER_RABBIT_HOST" .Values.FDK_HARVEST_SCHEDULER_RABBIT_HOST}}
         - name: RABBIT_PORT
-          value: {{ required "Missing value FDK_HARVEST_SCHEDULER_RABBIT_PORT" .Values.FDK_HARVEST_SCHEDULER_RABBIT_PORT }}
+          value: {{ required "Missing value FDK_HARVEST_SCHEDULER_RABBIT_PORT" .Values.FDK_HARVEST_SCHEDULER_RABBIT_PORT | quote }}
         - name: RABBIT_PASS
           value: {{ required "Missing value FDK_HARVEST_SCHEDULER_RABBIT_PASS" .Values.FDK_HARVEST_SCHEDULER_RABBIT_PASS }}
         - name: RABBIT_USER
