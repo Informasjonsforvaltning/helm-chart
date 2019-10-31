@@ -1,5 +1,5 @@
-#DValues for prod environment
-NAMESPACE: prod
+#DValues for demo environment
+NAMESPACE: demo
 
 FDK_HARVEST_SCHEDULER_RABBIT_HOST: rabbitmq
 FDK_HARVEST_SCHEDULER_RABBIT_PORT: 5672
