@@ -17,16 +17,16 @@ spec:
     spec:
       containers:
       - env:
-          - name: MONGO_HOST
-            valueFrom:
-              secretKeyRef:
-                name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: MONGO_HOST
-          - name: MONGO_AUTH
-            valueFrom:
-              secretKeyRef:
-                name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: MONGO_AUTH
+        - name: MONGO_HOST
+          valueFrom:
+            secretKeyRef:
+              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGO_HOST
+        - name: MONGO_AUTH
+          valueFrom:
+            secretKeyRef:
+              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGO_AUTH
         - name: MONGO_USERNAME
           valueFrom:
             secretKeyRef:
