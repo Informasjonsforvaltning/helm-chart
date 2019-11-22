@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##a-template-service (api)
-TEMPLATE_SERVICE_MEMORY: "1000Mi"
+FDK_SERVICE_MEMORY: "1000Mi"
