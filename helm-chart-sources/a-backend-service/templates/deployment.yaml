@@ -17,12 +17,18 @@ spec:
     spec:
       containers:
       - env:
-        - name: MONGO_USERNAME
-          value: {{ required "Missing value FDK_MONGO_USERNAME" .Values.FDK_MONGO_USERNAME }}
-        - name: MONGO_PASSWORD
-          value: {{ required "Missing value FDK_MONGO_PASSWORD" .Values.FDK_MONGO_PASSWORD }}
         - name: MONGO_HOST
           value: {{ required "Missing value FDK_MONGO_HOST" .Values.FDK_MONGO_HOST }}
+        - name: MONGO_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGO_USERNAME
+        - name: MONGO_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGO_PASSWORD
         name: a-backend-service
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
