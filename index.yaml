@@ -3,7 +3,7 @@ entries:
   a-back-end-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-11-22T09:41:50.486393154+01:00"
+    created: "2019-11-22T12:35:08.852790245+01:00"
     description: Template service for a backend service
     digest: 2b659695706c87a13ec08a2cc789df00ecdecc9e9593f03e4fcb115842a87f8f
     home: https://github.com/Informasjonsforvaltning/a-backend-service
@@ -14,9 +14,9 @@ entries:
   a-backend-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-11-22T09:41:50.486666207+01:00"
+    created: "2019-11-22T12:35:08.852960533+01:00"
     description: Template service for a backend service
-    digest: 8d1c908f4bef055a61c1b132ccb13007a62ddc34d234a70fcdb87dd7cb02e622
+    digest: b566377b1987aa70027427aea4d61b08dc98b6b82f372af99951e6d93c9cdd33
     home: https://github.com/Informasjonsforvaltning/a-backend-service
     name: a-backend-service
     urls:
@@ -25,7 +25,7 @@ entries:
   fdk-harvest-scheduler:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-11-22T09:41:50.487457772+01:00"
+    created: "2019-11-22T12:35:08.853112446+01:00"
     description: Service that triggers harvests on a fixed schedule
     digest: 380d35c704562742139574d962cab02ee30ffbba56759905f6684ee3d2fc4965
     home: https://github.com/Informasjonsforvaltning/fdk-harvest-scheduler
@@ -36,11 +36,11 @@ entries:
   helm-chart-test:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-11-22T09:41:50.488266823+01:00"
+    created: "2019-11-22T12:35:08.853379239+01:00"
     description: A Helm chart for Kubernetes
     digest: bf7da50e0c1ab6bff747aff88a80f0cf6dac982fa969568c4a029f087119206e
     name: helm-chart-test
     urls:
     - https://informasjonsforvaltning.github.io/helm-chart/helm-chart-test-0.1.0.tgz
     version: 0.1.0
-generated: "2019-11-22T09:41:50.48507962+01:00"
+generated: "2019-11-22T12:35:08.852428506+01:00"
