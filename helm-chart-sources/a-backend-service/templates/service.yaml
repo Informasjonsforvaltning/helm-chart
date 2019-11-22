@@ -3,8 +3,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    fdk.service: a-back-end-service
-  name: a-back-end-service
+    fdk.service: a-backend-service
+  name: a-backend-service
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   type: NodePort
@@ -13,6 +13,6 @@ spec:
     port: 8080
     targetPort: 8080
   selector:
-    fdk.service: a-back-end-service
+    fdk.service: a-backend-service
 status:
   loadBalancer: {}
