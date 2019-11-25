@@ -3,7 +3,7 @@ entries:
   a-back-end-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-11-25T15:47:43.063650312+01:00"
+    created: "2019-11-25T15:35:29.640158243+01:00"
     description: Template service for a backend service
     digest: 2b659695706c87a13ec08a2cc789df00ecdecc9e9593f03e4fcb115842a87f8f
     home: https://github.com/Informasjonsforvaltning/a-backend-service
@@ -14,7 +14,7 @@ entries:
   a-backend-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-11-25T15:47:43.06380866+01:00"
+    created: "2019-11-25T15:35:29.640343058+01:00"
     description: Template service for a backend service
     digest: f63bb75a66cc70b66c4fb0548b98269c4e22db992fc3e1836f1587913f696ae9
     home: https://github.com/Informasjonsforvaltning/a-backend-service
@@ -25,9 +25,9 @@ entries:
   api-catalogue:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-11-25T15:47:43.064055786+01:00"
+    created: "2019-11-25T15:35:29.640537151+01:00"
     description: Api catalogue
-    digest: 2a693bb9863177372cd8c2d87fd9fb7fbbf69abd125131b9a87393f6bcd4c2ba
+    digest: 02441b7da3b3377f1df7aa885fb6bfbc29b2fb1a060ed8f4a7516c041ef855a1
     home: https://github.com/Informasjonsforvaltning/api-catalogue
     name: api-catalogue
     urls:
@@ -36,7 +36,7 @@ entries:
   fdk-harvest-scheduler:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-11-25T15:47:43.065578134+01:00"
+    created: "2019-11-25T15:35:29.640716215+01:00"
     description: Service that triggers harvests on a fixed schedule
     digest: 380d35c704562742139574d962cab02ee30ffbba56759905f6684ee3d2fc4965
     home: https://github.com/Informasjonsforvaltning/fdk-harvest-scheduler
@@ -47,7 +47,7 @@ entries:
   helm-chart-test:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-11-25T15:47:43.066225891+01:00"
+    created: "2019-11-25T15:35:29.641150273+01:00"
     description: A Helm chart for Kubernetes
     digest: bf7da50e0c1ab6bff747aff88a80f0cf6dac982fa969568c4a029f087119206e
     name: helm-chart-test
@@ -57,12 +57,12 @@ entries:
   organization-catalogue:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-11-25T15:47:43.066473011+01:00"
+    created: "2019-11-25T15:35:29.641365001+01:00"
     description: Template service for a backend service
-    digest: e890165df59f04a5c8303c760ea0bd58872ee8ef7c50185657da23edaa2640ec
+    digest: 5fae196e8a7cb52301c82114fee14251bfe84b185648cf4366eaf9ebebf84bfd
     home: https://github.com/Informasjonsforvaltning/organization-catalogue
     name: organization-catalogue
     urls:
     - https://informasjonsforvaltning.github.io/helm-chart/organization-catalogue-0.1.0.tgz
     version: 0.1.0
-generated: "2019-11-25T15:47:43.063352756+01:00"
+generated: "2019-11-25T15:35:29.63968715+01:00"
