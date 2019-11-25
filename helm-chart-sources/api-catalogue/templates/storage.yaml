@@ -4,8 +4,8 @@ apiVersion: v1
 metadata:
   creationTimestamp: null
   labels:
-    fdk.service: registration-api-claim0
-  name: registration-api-claim0
+    fdk.service: api-catalogue-claim0
+  name: api-catalogue-claim0
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec: {{ if (.Values.FDK_TEMPDISK) and .Values.FDK_TEMPDISK "true" }}{{ else }}
         storageClassName: ""
