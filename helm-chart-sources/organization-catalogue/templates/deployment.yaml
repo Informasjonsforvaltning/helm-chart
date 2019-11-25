@@ -56,15 +56,15 @@ spec:
             port: 8080
           initialDelaySeconds: 20
           periodSeconds: 30
-          successTreshold: 1
-          failureTreshold: 5
+          successThreshold: 1
+          failureThreshold: 5
         readinessProbe:
           httpGet:
             path: /ready
             port: 8080
           initialDelaySeconds: 20
           periodSeconds: 30
-          successTreshold: 1
-          failureTreshold: 5
+          successThreshold: 1
+          failureThreshold: 5
       restartPolicy: Always
 status: {}
