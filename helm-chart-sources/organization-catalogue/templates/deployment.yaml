@@ -45,5 +45,21 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value OGRANIZATION_CATALOGUE_MEMORY" .Values.ORGANIZATION_CATALOGUE_MEMORY | quote }}
+        livenessProbe:
+          httpGet:
+            path: /ping
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 30
+          successTreshold: 1
+          failureTreshold: 5
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 30
+          successTreshold: 1
+          failureTreshold: 5
       restartPolicy: Always
 status: {}
