@@ -5,8 +5,8 @@ metadata:
   annotations:
   creationTimestamp: null
   labels:
-    fdk.service: registration-api
-  name: registration-api
+    fdk.service: api-catalogue
+  name: api-catalogue
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   type: NodePort
@@ -15,7 +15,7 @@ spec:
       port: 8080
       targetPort: 8080
   selector:
-    fdk.service: registration-api
+    fdk.service: api-catalogue
 status:
   loadBalancer: {}
 {{ else }} {{ end }}
