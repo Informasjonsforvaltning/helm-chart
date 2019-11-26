@@ -17,6 +17,31 @@ spec:
     spec:
       containers:
       - env:
+        - name: SPRING_PROFILES_ACTIVE
+          valueFrom:
+            secretKeyRef:
+              name: fdk-registration-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_REGISTRATION_API_SPRING_PROFILES_ACTIVE
+        - name: registrationApi_harvesterPassword
+          valueFrom:
+            secretKeyRef:
+              name: fdk-registration-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_REGISTRATION_API_HARVESTERPASSWORD
+        - name: registrationApi_harvesterUsername
+          valueFrom:
+            secretKeyRef:
+              name: fdk-registration-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_REGISTRATION_API_HARVESTERUSERNAME
+        - name: FDK_ES_CLUSTERNODES
+          valueFrom:
+            secretKeyRef:
+              name: fdk-registration-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_ES_CLUSTERNODES
+        - name: FDK_ES_CLUSTERNAME
+          valueFrom:
+            secretKeyRef:
+              name: fdk-registration-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_ES_CLUSTERNAME
         - name: FDK_ENHETSREGISTERET_PROXY_URL
           valueFrom:
             secretKeyRef:
