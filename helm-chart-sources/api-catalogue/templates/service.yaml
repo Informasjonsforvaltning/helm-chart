@@ -1,4 +1,3 @@
-{{ if (.Values.REGISTRATION_API_IMAGE) and .Values.REGISTRATION_API_IMAGE "true" }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -18,4 +17,3 @@ spec:
     fdk.service: api-catalogue
 status:
   loadBalancer: {}
-{{ else }} {{ end }}

@@ -1,4 +1,3 @@
-{{ if (.Values.REGISTRATION_API_IMAGE) and .Values.REGISTRATION_API_IMAGE "true" }}
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
@@ -16,7 +15,6 @@ spec: {{ if (.Values.FDK_TEMPDISK) and .Values.FDK_TEMPDISK "true" }}{{ else }}
           requests:
             storage: {{ required "Missing value FDK_REGISTRATION_API_STORAGESIZE" .Values.FDK_REGISTRATION_API_STORAGESIZE }}
 status: {}
-{{ if (.Values.FDK_TEMPDISK) and .Values.FDK_TEMPDISK "true" }} {{ else }}
 ---
 kind: PersistentVolume
 apiVersion: v1
@@ -32,5 +30,3 @@ spec:
   gcePersistentDisk:
     pdName: {{ required "Missing value FDK_REGISTRATION_API_VOLUMENAME" .Values.FDK_REGISTRATION_API_VOLUMENAME }}
     fsType: ext4
-{{ end }}
-{{ else }} {{ end }}
