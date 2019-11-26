@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##api-catalogue (api)
-FDK_REGISTRATION_API_MEMORY: "1500Mi"
+FDK_SERVICE_MEMORY: "1000Mi"
