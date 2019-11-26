@@ -1,0 +1,6 @@
+# Default values for dataset-catalogue.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+##dataset-catalogue (api)
+FDK_SERVICE_MEMORY: '1000Mi'
