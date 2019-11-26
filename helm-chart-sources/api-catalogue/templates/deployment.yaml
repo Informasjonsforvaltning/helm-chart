@@ -60,7 +60,7 @@ spec:
               value: {{ .Values.FDK_REGISTRATION_API_ENHETSREGISTERET_PROXY_URL }}
             - name: ORGANIZATION_CATALOGUE_URL
               value: {{ required "Missing value FDK_REGISTRATION_API_ORGANIZATION_CATALOGUE_URL" .Values.FDK_REGISTRATION_API_ORGANIZATION_CATALOGUE_URL }}
-          image: {{ required "Missing value REGISTRATION_API_IMAGE" .Values.REGISTRATION_API_IMAGE }}
+          image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
           imagePullPolicy: Always
           name: api-catalogue
           ports:
