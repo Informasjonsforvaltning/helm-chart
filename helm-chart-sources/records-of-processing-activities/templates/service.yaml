@@ -3,16 +3,16 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    fdk.service: dataset-catalogue
-  name: dataset-catalogue
+    fdk.service: records-of-processing-activities
+  name: records-of-processing-activities
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   type: NodePort
   ports:
-    - name: '8080'
-      port: 8080
-      targetPort: 8080
+  - name: "8080"
+    port: 8080
+    targetPort: 8080
   selector:
-    fdk.service: dataset-catalogue
+    fdk.service: records-of-processing-activities
 status:
   loadBalancer: {}
