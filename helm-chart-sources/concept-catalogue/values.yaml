@@ -1,0 +1,6 @@
+# Default values for concept-catalogue.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+##concept-catalogue (api)
+CONCEPT_CATALOGUE_MEMORY: "1000Mi"
