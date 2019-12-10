@@ -1,22 +1,11 @@
 apiVersion: v1
 entries:
-  a-back-end-service:
-  - apiVersion: v1
-    appVersion: "1.0"
-    created: "2019-12-06T09:46:33.60437946+01:00"
-    description: Template service for a backend service
-    digest: 2b659695706c87a13ec08a2cc789df00ecdecc9e9593f03e4fcb115842a87f8f
-    home: https://github.com/Informasjonsforvaltning/a-backend-service
-    name: a-back-end-service
-    urls:
-    - https://informasjonsforvaltning.github.io/helm-chart/a-back-end-service-0.1.0.tgz
-    version: 0.1.0
   a-backend-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-06T09:46:33.604961092+01:00"
+    created: "2019-12-10T14:49:13.037882036+01:00"
     description: Template service for a backend service
-    digest: f63bb75a66cc70b66c4fb0548b98269c4e22db992fc3e1836f1587913f696ae9
+    digest: 49db95530018cf1e453609b3b9eab738a3738ddc4bdcf043f3df54f00777ac37
     home: https://github.com/Informasjonsforvaltning/a-backend-service
     name: a-backend-service
     urls:
@@ -25,9 +14,9 @@ entries:
   api-catalogue:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-06T09:46:33.606015531+01:00"
+    created: "2019-12-10T14:49:13.038138301+01:00"
     description: Api catalogue
-    digest: 85c8038ea5d8e6fbbb50d79b5df8973a12ac0afe3ba8cea27de786698184f0e0
+    digest: 51a81279a0872802c50d7c013202e082fd2d13e63fbfec6338c7a27233cbcf51
     home: https://github.com/Informasjonsforvaltning/api-catalogue
     name: api-catalogue
     urls:
@@ -36,9 +25,9 @@ entries:
   dataset-catalogue:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-06T09:46:33.606181435+01:00"
+    created: "2019-12-10T14:49:13.038341002+01:00"
     description: Api catalogue
-    digest: fbdbe7936f6bd53dd0f444e890872e3c29d210c120c1285760cc1e7d9f74f992
+    digest: 1d69940d9ca963eed4e8abee09ed1e1d5ba88bef0e109e51f69d7419129d22cd
     home: https://github.com/Informasjonsforvaltning/dataset-catalogue
     name: dataset-catalogue
     urls:
@@ -47,9 +36,9 @@ entries:
   fdk-harvest-scheduler:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-06T09:46:33.607264745+01:00"
+    created: "2019-12-10T14:49:13.03854117+01:00"
     description: Service that triggers harvests on a fixed schedule
-    digest: 380d35c704562742139574d962cab02ee30ffbba56759905f6684ee3d2fc4965
+    digest: 814e0dcc44817ce81bc9a767c8c7ab1b811bc301bbf6a63c85531c3c66f2ff45
     home: https://github.com/Informasjonsforvaltning/fdk-harvest-scheduler
     name: fdk-harvest-scheduler
     urls:
@@ -58,7 +47,7 @@ entries:
   helm-chart-test:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-06T09:46:33.608204292+01:00"
+    created: "2019-12-10T14:49:13.039450543+01:00"
     description: A Helm chart for Kubernetes
     digest: bf7da50e0c1ab6bff747aff88a80f0cf6dac982fa969568c4a029f087119206e
     name: helm-chart-test
@@ -68,9 +57,9 @@ entries:
   organization-catalogue:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-06T09:46:33.608790512+01:00"
-    description: Template service for a backend service
-    digest: e890165df59f04a5c8303c760ea0bd58872ee8ef7c50185657da23edaa2640ec
+    created: "2019-12-10T14:49:13.039638924+01:00"
+    description: Organization catalogue
+    digest: a51d268ba289ea93421d0753c7bd60d6dfb0ff02e85b69d0214dd8e2e3aced70
     home: https://github.com/Informasjonsforvaltning/organization-catalogue
     name: organization-catalogue
     urls:
@@ -79,23 +68,34 @@ entries:
   records-of-processing-activities:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-06T09:46:33.60933772+01:00"
+    created: "2019-12-10T14:49:13.039799949+01:00"
     description: Template service for a backend service
-    digest: c1dcfb5288a5321ba720f7a1d97773dd43c625ce94ef25b7f9db31a043dc168e
+    digest: f4b712d55b7900784c632c84f4357a5c578f3de9e3e86287fc832a03497be541
     home: https://github.com/Informasjonsforvaltning/records-of-processing-activities
     name: records-of-processing-activities
     urls:
     - https://informasjonsforvaltning.github.io/helm-chart/records-of-processing-activities-0.1.0.tgz
     version: 0.1.0
+  records-of-processing-activities-gui:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-12-10T14:49:13.039969707+01:00"
+    description: Template service for records of processing activities gui.
+    digest: aaa76b32562bdbe67fd39057af909d6e869ca902961b3f37223a6309b52acb94
+    home: https://github.com/Informasjonsforvaltning/records-of-processing-activities-gui
+    name: records-of-processing-activities-gui
+    urls:
+    - https://informasjonsforvaltning.github.io/helm-chart/records-of-processing-activities-gui-0.1.0.tgz
+    version: 0.1.0
   reference-data:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-06T09:46:33.609537583+01:00"
+    created: "2019-12-10T14:49:13.040135472+01:00"
     description: FDK Reference Data
-    digest: d2d6ec71bb9b6998a4cb3740a0028b394bffbdff4936b374ba3e069168697c54
+    digest: 6ad6b3da95481ee8199bf6c80f46e11138965deb92927987fd91aedba4b4c278
     home: https://github.com/Informasjonsforvaltning/fdk-reference-data
     name: reference-data
     urls:
     - https://informasjonsforvaltning.github.io/helm-chart/reference-data-0.1.0.tgz
     version: 0.1.0
-generated: "2019-12-06T09:46:33.603239282+01:00"
+generated: "2019-12-10T14:49:13.034252153+01:00"

@@ -1,3 +1,2 @@
 #DValues for staging environment
-#todo: namespace bør ikke være hardkodet. Vil ha det inn i Jenkinsfile (kan settes med --set)
-NAMESPACE: ut1
+NAMESPACE: it1

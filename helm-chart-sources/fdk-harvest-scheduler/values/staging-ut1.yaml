@@ -1,5 +1,5 @@
-#DValues for it1 environment
-NAMESPACE: it1
+#DValues for ut1 environment
+NAMESPACE: ut1
 
 FDK_HARVEST_SCHEDULER_RABBIT_HOST: rabbitmq
 FDK_HARVEST_SCHEDULER_RABBIT_PORT: 5672
