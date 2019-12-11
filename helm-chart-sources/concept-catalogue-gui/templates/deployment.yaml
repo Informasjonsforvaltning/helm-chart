@@ -1,0 +1,60 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    fdk.service: concept-catalogue-gui
+  name: concept-catalogue-gui
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        fdk.service: concept-catalogue-gui
+    spec:
+      containers:
+      - env:
+        - name: NODE_ENV
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: NODE_ENV
+        - name: CONCEPT_REGISTRATION_API
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: CONCEPT_CATALOGUE_COLLECTION_BASE_URI
+        - name: REGISTRATION_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_REGISTRATION_BASE_URI
+        - name: PUBLISHER_API
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_BASE_URI
+        - name: PUBLISHER_DATA_AUTHORIZATION
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_API_AUTHORIZATION_KEY
+              optional: true
+        - name: SSO_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: KEYCLOAK_AUTH_URL
+        name: concept-catalogue-gui
+        image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: {{ required "Missing value FDK_SERVICE_MEMORY" .Values.FDK_SERVICE_MEMORY | quote }}
+      restartPolicy: Always
+status: {}

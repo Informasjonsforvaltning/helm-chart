@@ -1,0 +1,6 @@
+# Default values for concept-catalogue-gui.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+##concept-catalogue-gui
+FDK_SERVICE_MEMORY: "1000Mi"
