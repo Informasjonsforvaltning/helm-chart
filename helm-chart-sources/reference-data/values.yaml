@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##reference-data (api)
-FDK_SERVICE_MEMORY: "1000Mi"
+FDK_REFERENCE_DATA_STORAGESIZE: "1000Mi"

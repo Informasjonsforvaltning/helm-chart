@@ -1,2 +1,4 @@
 #DValues for staging environment
 NAMESPACE: it1
+FDK_REFERENCE_DATA_VOLUMENAME: fdk-dev-it1-reference-data
+FDK_REFERENCE_DATA_STORAGESIZE: 9G

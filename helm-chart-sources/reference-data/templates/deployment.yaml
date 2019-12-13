@@ -40,5 +40,12 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value FDK_SERVICE_MEMORY" .Values.FDK_SERVICE_MEMORY | quote }}
+        volumeMounts:
+        - mountPath: /tdb
+          name: reference-data-claim0
       restartPolicy: Always
+      volumes:
+      - name: reference-data-claim0
+        persistentVolumeClaim:
+          claimName: reference-data-claim0
 status: {}
