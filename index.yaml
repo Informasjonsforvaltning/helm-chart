@@ -3,7 +3,7 @@ entries:
   a-backend-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-12T14:38:06.470702137+01:00"
+    created: "2019-12-13T14:13:49.611449+01:00"
     description: Template service for a backend service
     digest: 49db95530018cf1e453609b3b9eab738a3738ddc4bdcf043f3df54f00777ac37
     home: https://github.com/Informasjonsforvaltning/a-backend-service
@@ -14,7 +14,7 @@ entries:
   api-catalogue:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-12T14:38:06.472241345+01:00"
+    created: "2019-12-13T14:13:49.612798+01:00"
     description: Api catalogue
     digest: 51a81279a0872802c50d7c013202e082fd2d13e63fbfec6338c7a27233cbcf51
     home: https://github.com/Informasjonsforvaltning/api-catalogue
@@ -25,7 +25,7 @@ entries:
   concept-catalogue:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-12T14:38:06.473222998+01:00"
+    created: "2019-12-13T14:13:49.613891+01:00"
     description: Concept catalogue
     digest: d2174b1878bbea6f10cecfd9c893d07b168d185a7b14b677e70c3f0898677aa7
     home: https://github.com/Informasjonsforvaltning/concept-catalogue
@@ -36,7 +36,7 @@ entries:
   concept-catalogue-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-12T14:38:06.473403455+01:00"
+    created: "2019-12-13T14:13:49.61469+01:00"
     description: Concept Catalogue GUI
     digest: 6c0ec84d46d8e581d9d5226914b2315381770f44d928d1e09c605bc81aa70de0
     home: https://github.com/Informasjonsforvaltning/concept-catalogue-gui
@@ -47,7 +47,7 @@ entries:
   dataset-catalogue:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-12T14:38:06.47474921+01:00"
+    created: "2019-12-13T14:13:49.614945+01:00"
     description: Api catalogue
     digest: 1d69940d9ca963eed4e8abee09ed1e1d5ba88bef0e109e51f69d7419129d22cd
     home: https://github.com/Informasjonsforvaltning/dataset-catalogue
@@ -58,7 +58,7 @@ entries:
   fdk-harvest-scheduler:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-12T14:38:06.475380864+01:00"
+    created: "2019-12-13T14:13:49.615182+01:00"
     description: Service that triggers harvests on a fixed schedule
     digest: 814e0dcc44817ce81bc9a767c8c7ab1b811bc301bbf6a63c85531c3c66f2ff45
     home: https://github.com/Informasjonsforvaltning/fdk-harvest-scheduler
@@ -69,7 +69,7 @@ entries:
   helm-chart-test:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-12T14:38:06.476353942+01:00"
+    created: "2019-12-13T14:13:49.615861+01:00"
     description: A Helm chart for Kubernetes
     digest: bf7da50e0c1ab6bff747aff88a80f0cf6dac982fa969568c4a029f087119206e
     name: helm-chart-test
@@ -79,7 +79,7 @@ entries:
   organization-catalogue:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-12T14:38:06.477174384+01:00"
+    created: "2019-12-13T14:13:49.616101+01:00"
     description: Organization catalogue
     digest: a51d268ba289ea93421d0753c7bd60d6dfb0ff02e85b69d0214dd8e2e3aced70
     home: https://github.com/Informasjonsforvaltning/organization-catalogue
@@ -90,9 +90,9 @@ entries:
   records-of-processing-activities:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-12T14:38:06.477458429+01:00"
+    created: "2019-12-13T14:13:49.616348+01:00"
     description: Template service for a backend service
-    digest: db94fccc7265541586ccab09ee19b6522c8f759400dbcdcad8c65426e7d3ecf9
+    digest: 92c4024c632ba055e178632cdb8121e721ff171b45077083f32de24733df122f
     home: https://github.com/Informasjonsforvaltning/records-of-processing-activities
     name: records-of-processing-activities
     urls:
@@ -101,7 +101,7 @@ entries:
   records-of-processing-activities-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-12T14:38:06.477733379+01:00"
+    created: "2019-12-13T14:13:49.616594+01:00"
     description: Template service for records of processing activities gui.
     digest: dc52c574420c5ebf300c2fa9eeb136a97569ce5f212448e31ade9e33311133e5
     home: https://github.com/Informasjonsforvaltning/records-of-processing-activities-gui
@@ -112,7 +112,7 @@ entries:
   reference-data:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-12-12T14:38:06.47854032+01:00"
+    created: "2019-12-13T14:13:49.616826+01:00"
     description: FDK Reference Data
     digest: 6ad6b3da95481ee8199bf6c80f46e11138965deb92927987fd91aedba4b4c278
     home: https://github.com/Informasjonsforvaltning/fdk-reference-data
@@ -120,4 +120,4 @@ entries:
     urls:
     - https://informasjonsforvaltning.github.io/helm-chart/reference-data-0.1.0.tgz
     version: 0.1.0
-generated: "2019-12-12T14:38:06.468297349+01:00"
+generated: "2019-12-13T14:13:49.6082+01:00"
