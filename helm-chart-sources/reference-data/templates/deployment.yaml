@@ -39,7 +39,7 @@ spec:
         - containerPort: 8080
         resources:
           requests:
-            memory: {{ required "Missing value FDK_REFERENCE_DATA_STORAGESIZE" .Values.FDK_REFERENCE_DATA_STORAGESIZE | quote }}
+            memory: {{ required "Missing value FDK_REFERENCE_DATA_MEMORY" .Values.FDK_REFERENCE_DATA_MEMORY | quote }}
         volumeMounts:
         - mountPath: /tdb
           name: reference-data-claim0
