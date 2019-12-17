@@ -17,21 +17,16 @@ spec:
     spec:
       containers:
       - env:
-        - name: KEYCLOAK_AUTH_URL
+        - name: OIDC_ISSUER
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: SSO_AUTH_URI
-        - name: MONGO_USERNAME
+              key: OIDC_ISSUER
+        - name: RECORDS_OF_PROCESSING_ACTIVITIES_URL
           valueFrom:
             secretKeyRef:
-              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: MONGO_USERNAME
-        - name: MONGO_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: MONGO_PASSWORD
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RECORDS_OF_PROCESSING_ACTIVITIES_API_BASE_URI
         name: records-of-processing-activities-gui
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
