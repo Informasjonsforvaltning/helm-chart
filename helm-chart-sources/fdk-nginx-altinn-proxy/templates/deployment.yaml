@@ -22,6 +22,10 @@ spec:
               secretKeyRef:
                 name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
                 key: ALTINN_URI
+                optional: true
+            envFrom:
+              - secretRef:
+                  name: fdk-altinnproxy-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}-brreg-altinn-key
           image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
           imagePullPolicy: Always
           name: fdk-nginx-altinn-proxy
