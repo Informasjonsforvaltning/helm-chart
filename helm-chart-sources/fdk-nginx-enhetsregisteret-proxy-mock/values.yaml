@@ -1,0 +1,5 @@
+# Default values for fdk-nginx-enhetsregisteret-proxy-mock.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+FDK_NGINX_ENHETSREGISTERET_PROXY_MOCK_MEMORY: "1000Mi"
