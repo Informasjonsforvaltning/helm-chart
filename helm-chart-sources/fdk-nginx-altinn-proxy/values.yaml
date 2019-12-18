@@ -1,0 +1,5 @@
+# Default values for fdk-nginx-altinn-proxy.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+FDK_NGINX_ALTINN_PROXY_MEMORY: "1000Mi"
