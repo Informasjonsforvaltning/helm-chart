@@ -20,7 +20,7 @@ spec:
         - name: OIDC_ISSUER
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: OIDC_ISSUER
         - name: FDK_HARVEST_ADMIN_HOST
           valueFrom:
