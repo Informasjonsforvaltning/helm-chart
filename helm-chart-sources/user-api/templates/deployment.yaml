@@ -1,0 +1,49 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    fdk.service: user-api
+  name: user-api
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        fdk.service: user-api
+    spec:
+      containers:
+      - env:
+        - name: ALTINN_PROXY_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ALTINN_PROXY_URL
+        - name: ORGNR_WHITELIST
+          valueFrom:
+            secretKeyRef:
+              name: user-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ORGNR_WHITELIST
+        - name: ORGFORM_WHITELIST
+          valueFrom:
+            secretKeyRef:
+              name: user-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ORGFORM_WHITELIST
+        - name: ADMIN_LIST
+          valueFrom:
+            secretKeyRef:
+              name: user-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ADMIN_LIST
+        name: user-api
+        image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: {{ required "Missing value USER_API_MEMORY" .Values.USER_API_MEMORY | quote }}
+      restartPolicy: Always
+status: {}
