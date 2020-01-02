@@ -27,6 +27,11 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: RECORDS_OF_PROCESSING_ACTIVITIES_API_BASE_URI
+        - name: ORGANIZATION_API
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ORGANIZATION_CATALOGUE_HOST
         name: records-of-processing-activities-gui
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
