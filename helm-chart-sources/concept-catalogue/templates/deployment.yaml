@@ -20,8 +20,8 @@ spec:
         - name: SPRING_PROFILES_ACTIVE
           valueFrom:
             secretKeyRef:
-              name: fdk-registration-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_REGISTRATION_API_SPRING_PROFILES_ACTIVE
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: SPRING_PROFILES_ACTIVE
         - name: MONGO_HOST
           valueFrom:
             secretKeyRef:
