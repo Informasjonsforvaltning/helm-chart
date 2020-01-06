@@ -3,7 +3,7 @@ entries:
   a-backend-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.11797942+01:00"
+    created: "2020-01-06T14:06:04.271872428+01:00"
     description: Template service for a backend service
     digest: 34e5b06379580c04bbd7a3f75b903c2457a03a50d6bd397f8ce46ea806edd2c5
     home: https://github.com/Informasjonsforvaltning/a-backend-service
@@ -14,7 +14,7 @@ entries:
   api-catalogue:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.11819817+01:00"
+    created: "2020-01-06T14:06:04.27254985+01:00"
     description: Api catalogue
     digest: 3832b916335692321993a7f342a349fac033ed8a1c90ffca0363ba308f425a5a
     home: https://github.com/Informasjonsforvaltning/api-catalogue
@@ -25,7 +25,7 @@ entries:
   concept-catalogue:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.118406237+01:00"
+    created: "2020-01-06T14:06:04.273165196+01:00"
     description: Concept catalogue
     digest: 78dfc025acaf1eb1de9f1d177fd6ab89cdd797fa0ef1374d77880a33479ffaee
     home: https://github.com/Informasjonsforvaltning/concept-catalogue
@@ -36,7 +36,7 @@ entries:
   concept-catalogue-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.11859505+01:00"
+    created: "2020-01-06T14:06:04.273688587+01:00"
     description: Concept Catalogue GUI
     digest: e9eb8cc1f96b99fc0b1c88747a71bb3f9abc0605d1972981c70ae48e0f8c5452
     home: https://github.com/Informasjonsforvaltning/concept-catalogue-gui
@@ -47,7 +47,7 @@ entries:
   dataset-catalogue:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.118786422+01:00"
+    created: "2020-01-06T14:06:04.274354729+01:00"
     description: Api catalogue
     digest: 318c8d0ff96a0c52a6b8eade27672e167c307d82a2a0fbd5b61cb2b29b572693
     home: https://github.com/Informasjonsforvaltning/dataset-catalogue
@@ -58,7 +58,7 @@ entries:
   dataset-catalogue-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.119031939+01:00"
+    created: "2020-01-06T14:06:04.274562774+01:00"
     description: Dataset Catalogue GUI
     digest: 7adfc3bb9f902aaefbf97f2dbda39926445a5866f0be355568cc1d845f6adab6
     home: https://github.com/Informasjonsforvaltning/dataset-catalogue-gui
@@ -69,7 +69,7 @@ entries:
   fdk-admin-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.119222009+01:00"
+    created: "2020-01-06T14:06:04.275374679+01:00"
     description: FDK Admin GUI
     digest: 378e002ba92bb300504b2fb21eb2d2d18eadeae51415957ae881a66bf32b04ee
     home: https://github.com/Informasjonsforvaltning/fdk-admin-gui
@@ -80,7 +80,7 @@ entries:
   fdk-dataset-api:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.119411971+01:00"
+    created: "2020-01-06T14:06:04.275953741+01:00"
     description: FDK Dataset API
     digest: 39aec3f36f2494a5a3c821f31569c1f55b4adf4d915d353bcabb073404695fbc
     home: https://github.com/Informasjonsforvaltning/fdk-dataset-api
@@ -91,7 +91,7 @@ entries:
   fdk-harvest-scheduler:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.119611282+01:00"
+    created: "2020-01-06T14:06:04.279822312+01:00"
     description: Service that triggers harvests on a fixed schedule
     digest: 23fd3f950d3f1e84e9054d62d2513213701176e0704b0835d456c752cf876470
     home: https://github.com/Informasjonsforvaltning/fdk-harvest-scheduler
@@ -102,7 +102,7 @@ entries:
   fdk-nginx-altinn-proxy:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.119808029+01:00"
+    created: "2020-01-06T14:06:04.280634105+01:00"
     description: FDK nginx altinn proxy
     digest: 76879c3ea50d16f12edb98daa7a0af90923bc5d65ee19289386f6845a45171e3
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-altinn-proxy
@@ -113,7 +113,7 @@ entries:
   fdk-nginx-altinn-proxy-mock:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.119995845+01:00"
+    created: "2020-01-06T14:06:04.281263905+01:00"
     description: FDK nginx altinn proxy mock
     digest: accd6a1be47751906456aa6cae7e630bf399a50e993cdb4ae4d8c99ec0888c95
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-altinn-proxy-mock
@@ -124,7 +124,7 @@ entries:
   fdk-nginx-enhetsregisteret-proxy:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.120173703+01:00"
+    created: "2020-01-06T14:06:04.281970407+01:00"
     description: FDK nginx enhetsregisteret proxy
     digest: 19ab62c1c7132dca790a8469f7295199ea7893e5f125c14c47c0c2fc8fce1478
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-enhetsregisteret-proxy
@@ -135,7 +135,7 @@ entries:
   fdk-nginx-enhetsregisteret-proxy-mock:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.120354998+01:00"
+    created: "2020-01-06T14:06:04.28256746+01:00"
     description: FDK nginx enhetsregisteret proxy mock
     digest: e3a73762695d84f6082d1a8f418ea45c8936ec3d8ef9374af4010a53004db0b6
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-enhetsregisteret-proxy-mock
@@ -146,7 +146,7 @@ entries:
   fdk-nginx-registration:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.120547003+01:00"
+    created: "2020-01-06T14:06:04.283198699+01:00"
     description: FDK nginx registration
     digest: 158dc43d6a720ca07cb73ee53f5e853a998c340c7ca1c4e75d90522c88e7175e
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-registration
@@ -157,7 +157,7 @@ entries:
   fdk-nginx-search:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.120751007+01:00"
+    created: "2020-01-06T14:06:04.28461548+01:00"
     description: FDK nginx search
     digest: 261af813bef8b6a35d6c9261c90fe6604ea8044e0b23825ca1e776a8e097c69d
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-search
@@ -168,7 +168,7 @@ entries:
   helm-chart-test:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.121085771+01:00"
+    created: "2020-01-06T14:06:04.286184564+01:00"
     description: A Helm chart for Kubernetes
     digest: bf7da50e0c1ab6bff747aff88a80f0cf6dac982fa969568c4a029f087119206e
     name: helm-chart-test
@@ -178,7 +178,7 @@ entries:
   organization-catalogue:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.121308728+01:00"
+    created: "2020-01-06T14:06:04.287477755+01:00"
     description: Organization catalogue
     digest: c1b9abe0e05ed8e4487ff42dbe6101142234e159093d24f286501f87b30040c3
     home: https://github.com/Informasjonsforvaltning/organization-catalogue
@@ -189,7 +189,7 @@ entries:
   records-of-processing-activities:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.121978908+01:00"
+    created: "2020-01-06T14:06:04.288544521+01:00"
     description: Template service for a backend service
     digest: 4433a9481c82429a905f8893df4d8ef6259994d8733185045eb55ce4d0c1704f
     home: https://github.com/Informasjonsforvaltning/records-of-processing-activities
@@ -200,7 +200,7 @@ entries:
   records-of-processing-activities-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.122412665+01:00"
+    created: "2020-01-06T14:06:04.289261975+01:00"
     description: Template service for records of processing activities gui.
     digest: 98ce135fc1142216af9dcf7c17252515db0018d8de8a18ee6e1c382f7bb20754
     home: https://github.com/Informasjonsforvaltning/records-of-processing-activities-gui
@@ -211,7 +211,7 @@ entries:
   reference-data:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.122880765+01:00"
+    created: "2020-01-06T14:06:04.291345838+01:00"
     description: FDK Reference Data
     digest: b035a2b9b37bb09b1020bb3dc00cd0124d9da04de4655e2729a9f9c884b913b4
     home: https://github.com/Informasjonsforvaltning/fdk-reference-data
@@ -222,9 +222,9 @@ entries:
   sso:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.123091005+01:00"
+    created: "2020-01-06T14:06:04.292480377+01:00"
     description: A single sign on solution powered by keycloak
-    digest: 0222b8bde4ba79924d731f21471a508292c60505f9ff208223a611f9167f340e
+    digest: 2b610345792cf9e9e5c5530e1ba260f4df359d8cbb19b9b3be08acc082660f87
     home: https://github.com/Informasjonsforvaltning/sso
     name: sso
     urls:
@@ -233,7 +233,7 @@ entries:
   user-api:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-06T13:31:13.123278952+01:00"
+    created: "2020-01-06T14:06:04.293576193+01:00"
     description: User API
     digest: 952a752909d775a87408e32c5fe54c6b45a17c0482e136dd8aa50120198f7d17
     home: https://github.com/Informasjonsforvaltning/user-api
@@ -241,4 +241,4 @@ entries:
     urls:
     - https://informasjonsforvaltning.github.io/helm-chart/user-api-0.1.0.tgz
     version: 0.1.0
-generated: "2020-01-06T13:31:13.117621912+01:00"
+generated: "2020-01-06T14:06:04.27092482+01:00"

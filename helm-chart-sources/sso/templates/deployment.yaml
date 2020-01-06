@@ -77,7 +77,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DEV_CONCEPT_CATALOGUE_GUI_HOST
+              key: DEV_CONCEPT_CATALOGUE_HOST
               optional: true
         - name: FDK_ADMIN_GUI_HOST
           valueFrom:
