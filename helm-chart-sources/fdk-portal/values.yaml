@@ -1,0 +1,6 @@
+# Default values for fdk-portal.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+##fdk-portal
+FDK_PORTAL_MEMORY: "1000Mi"
