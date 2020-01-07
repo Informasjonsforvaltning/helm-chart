@@ -37,6 +37,11 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_BASE_URI
+        - name: ORGANIZATION_API
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ORGANIZATION_CATALOGUE_HOST
         - name: PUBLISHER_DATA_AUTHORIZATION
           valueFrom:
             secretKeyRef:
