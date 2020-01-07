@@ -1,0 +1,4 @@
+#DValues for staging environment
+NAMESPACE: it1
+FDK_FUSEKI_VOLUMENAME: fdk-dev-it1-fuseki
+FDK_FUSEKI_STORAGESIZE: 9G
