@@ -7,7 +7,7 @@ metadata:
   name: fuseki-claim0
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec: {{ if (.Values.FDK_TEMPDISK) and .Values.FDK_TEMPDISK "true" }}{{ else }}
-        storageClassName: ""
+        storageClassName: "standard"
         volumeName: {{ required "Missing value FDK_FUSEKI_VOLUMENAME" .Values.FDK_FUSEKI_VOLUMENAME }}{{ end }}
         accessModes:
           - ReadWriteOnce
