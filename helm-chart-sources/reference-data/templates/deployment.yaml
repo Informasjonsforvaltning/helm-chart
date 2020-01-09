@@ -25,13 +25,13 @@ spec:
         - name: themesHttpUsername
           valueFrom:
             secretKeyRef:
-              name: fdk-reference-data-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_REFERENCE_DATA_THEMESHTTPUSERNAME
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: THEMES_HTTP_USERNAME
         - name: themesHttpPassword
           valueFrom:
             secretKeyRef:
-              name: fdk-reference-data-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_REFERENCE_DATA_THEMESHTTPPASSWORD
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: THEMES_HTTP_PASSWORD
         name: reference-data
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
