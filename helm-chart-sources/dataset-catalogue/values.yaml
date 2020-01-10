@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##dataset-catalogue (api)
-FDK_SERVICE_MEMORY: '1000Mi'
+DATASET_CATALOGUE_MEMORY: '1000Mi'
