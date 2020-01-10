@@ -27,10 +27,10 @@ spec:
             memory: {{ required "Missing value FDK_FUSEKI_SERVICE_MEMORY" .Values.FDK_FUSEKI_SERVICE_MEMORY | quote }}
         volumeMounts:
         - mountPath: /etc/fuseki/databases/
-          name: fuseki-claim1
+          name: fuseki-claim0
       restartPolicy: Always
       volumes:
-      - name: fuseki-claim1
+      - name: fuseki-claim0
         persistentVolumeClaim:
           claimName: fuseki-claim0
 status: {}
