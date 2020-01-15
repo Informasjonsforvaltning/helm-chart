@@ -77,6 +77,6 @@ spec:
         - containerPort: 8080
         resources:
           requests:
-          memory: {{ required "Missing value DATASET_CATALOGUE_GUI_MEMORY" .Values.DATASET_CATALOGUE_GUI_MEMORY | quote }}
+            memory: {{ required "Missing value DATASET_CATALOGUE_GUI_MEMORY" .Values.DATASET_CATALOGUE_GUI_MEMORY | quote }}
       restartPolicy: Always
 status: {}
