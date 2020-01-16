@@ -1,0 +1,6 @@
+# Default values for fdk-dataset-harvester-gui.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+##fdk-dataset-harvester-gui (api)
+FDK_DATASET_HARVESTER_GUI_MEMORY: "1000Mi"
