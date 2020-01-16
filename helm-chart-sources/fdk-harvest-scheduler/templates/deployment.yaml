@@ -18,18 +18,24 @@ spec:
       containers:
       - env:
         - name: RABBIT_HOST
-          value: {{ required "Missing value FDK_HARVEST_SCHEDULER_RABBIT_HOST" .Values.FDK_HARVEST_SCHEDULER_RABBIT_HOST}}
+          valueFrom:
+            secretKeyRef:
+              name: fdk-harvest-scheduler-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_HOST
         - name: RABBIT_PORT
-          value: {{ required "Missing value FDK_HARVEST_SCHEDULER_RABBIT_PORT" .Values.FDK_HARVEST_SCHEDULER_RABBIT_PORT | quote }}
+          valueFrom:
+            secretKeyRef:
+              name: fdk-harvest-scheduler-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_PORT
         - name: RABBIT_PASS
           valueFrom:
             secretKeyRef:
-              name: fdk-harvest-scheduler-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}-rabbitmq
+              name: fdk-harvest-scheduler-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: RABBIT_PASS
         - name: RABBIT_USER
           valueFrom:
             secretKeyRef:
-              name: fdk-harvest-scheduler-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}-rabbitmq
+              name: fdk-harvest-scheduler-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: RABBIT_USER
         name: fdk-harvest-scheduler
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
