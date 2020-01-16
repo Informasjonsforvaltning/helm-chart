@@ -1,0 +1,44 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    fdk.service: fdk-api-harvester
+  name: fdk-api-harvester
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        fdk.service: fdk-api-harvester
+    spec:
+      containers:
+        - env:
+            - name: FDK_ES_CLUSTERNODES
+              valueFrom:
+                secretKeyRef:
+                  name: elasticsearch-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                  key: FDK_ES_CLUSTERNODES
+            - name: FDK_ES_CLUSTERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: elasticsearch-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                  key: FDK_ES_CLUSTERNAME
+            - name: SPRING_PROFILES_ACTIVE
+              valueFrom:
+                secretKeyRef:
+                  name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                  key: SPRING_PROFILES_ACTIVE
+          image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+          imagePullPolicy: Always
+          name: fdk-api-harvester
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: {{ required "Missing value FDK_API_HARVESTER_MEMORY" .Values.FDK_API_HARVESTER_MEMORY | quote }}
+      restartPolicy: Always
+status: {}
