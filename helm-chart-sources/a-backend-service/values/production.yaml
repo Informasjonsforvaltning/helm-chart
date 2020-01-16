@@ -1,8 +1,0 @@
-#DValues for staging environment
-#todo: namespace bør ikke være hardkodet. Vil ha det inn i Jenkinsfile (kan settes med --set)
-NAMESPACE: prod
-
-#variabler som skal være her
-TEMPLATE_MONGO_USERNAME: mongouser
-TEMPLATE_MONGO_PASSWORD: mon3321pass4448wd
-TEMPLATE_MONGO_HOST: tmp-mongodb:27017
