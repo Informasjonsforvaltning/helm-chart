@@ -1,4 +1,0 @@
-#DValues for ut1 environment
-NAMESPACE: ut1
-DATASET_CATALOGUE_VOLUMENAME: fdk-dev-ut1-registration-api
-DATASET_CATALOGUE_STORAGESIZE: 9G

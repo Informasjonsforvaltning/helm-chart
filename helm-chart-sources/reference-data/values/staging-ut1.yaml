@@ -1,5 +1,0 @@
-#DValues for ut1 environment
-#todo: namespace bør ikke være hardkodet. Vil ha det inn i Jenkinsfile (kan settes med --set)
-NAMESPACE: ut1
-FDK_REFERENCE_DATA_VOLUMENAME: fdk-dev-ut1-reference-data
-FDK_REFERENCE_DATA_STORAGESIZE: 7G
