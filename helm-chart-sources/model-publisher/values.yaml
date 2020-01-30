@@ -1,0 +1,6 @@
+# Default values for model-harvester.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+#model-harvester
+MODEL_PUBLISHER_MEMORY: "100Mi"
