@@ -32,6 +32,11 @@ spec:
             secretKeyRef:
               name: elasticsearch-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_ES_CLUSTERNODES
+        - name: SEARCH_API_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_BASE_URI
         name: fdk-dataset-api
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
