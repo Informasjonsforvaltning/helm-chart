@@ -1,8 +1,6 @@
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    beta.cloud.google.com/backend-config: '{"ports":{"8080":"staging-cloud-armor-backend"}}'
   creationTimestamp: null
   labels:
     fdk.service: fdk-nginx-registration
