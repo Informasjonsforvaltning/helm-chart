@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    fdk.service: dataset-publisher
-  name: dataset-publisher
+    fdk.service: dataservice-publisher
+  name: dataservice-publisher
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
@@ -14,7 +14,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        fdk.service: dataset-publisher
+        fdk.service: dataservice-publisher
     spec:
       containers:
       - env:
@@ -22,19 +22,19 @@ spec:
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DATASET_PUBLISHER_URI
+              key: DATASERVICE_PUBLISHER_URI
         - name: PUBLISHER_URL
           valueFrom:
             secretKeyRef:
-              name: fdk-dataset-harvester-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-dataservice-harvester-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_HARVESTER_API_APPLICATION_OPENDATAENHET
-        name: dataset-publisher
+        name: dataservice-publisher
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
         resources:
           requests:
-            memory: {{ required "Missing value DATASET_PUBLISHER_MEMORY" .Values.DATASET_PUBLISHER_MEMORY | quote }}
+            memory: {{ required "Missing value DATASERVICE_PUBLISHER_MEMORY" .Values.DATASERVICE_PUBLISHER_MEMORY | quote }}
       restartPolicy: Always
 status: {}
