@@ -19,12 +19,12 @@ spec:
       containers:
       - env:
         - name: HOST_URL
-          value: {{ required "Missing value PUBLISHER_URL" .Values.PUBLISHER_URL }}
-        - name: PUBLISHER_URL
           valueFrom:
             secretKeyRef:
-              name: fdk-dataset-harvester-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_HARVESTER_API_APPLICATION_OPENDATAENHET
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: DATASERVICE_PUBLISHER_URI
+        - name: PUBLISHER_URL
+          value: {{ required "Missing value PUBLISHER_URL" .Values.PUBLISHER_URL }}
         name: dataservice-publisher
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
