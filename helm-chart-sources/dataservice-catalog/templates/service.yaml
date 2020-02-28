@@ -3,8 +3,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    fdk.service: api-catalogue
-  name: api-catalogue
+    fdk.service: dataservice-catalog
+  name: dataservice-catalog
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   type: NodePort
@@ -13,6 +13,6 @@ spec:
     port: 8080
     targetPort: 8080
   selector:
-    fdk.service: api-catalogue
+    fdk.service: dataservice-catalog
 status:
   loadBalancer: {}

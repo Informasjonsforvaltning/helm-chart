@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    fdk.service: api-catalogue
-  name: api-catalogue
+    fdk.service: dataservice-catalog
+  name: dataservice-catalog
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
@@ -13,7 +13,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        fdk.service: api-catalogue
+        fdk.service: dataservice-catalog
     spec:
       containers:
       - env:
@@ -42,13 +42,13 @@ spec:
             secretKeyRef:
               name: elasticsearch-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_ES_CLUSTERNAME
-        name: api-catalogue
+        name: dataservice-catalog
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
         resources:
           requests:
-            memory: {{ required "Missing value FDK_SERVICE_MEMORY" .Values.FDK_SERVICE_MEMORY | quote }}
+            memory: {{ required "Missing value DATASERVICE_CATALOG_MEMORY" .Values.DATASERVICE_CATALOG_MEMORY | quote }}
       restartPolicy: Always
 status: {}
