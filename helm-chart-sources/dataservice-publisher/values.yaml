@@ -3,3 +3,4 @@
 # Declare variables to be passed into your templates.
 
 DATASERVICE_PUBLISHER_MEMORY: "100Mi"
+PUBLISHER_URL: https://organization-catalogue.fellesdatakatalog.brreg.no/organizations

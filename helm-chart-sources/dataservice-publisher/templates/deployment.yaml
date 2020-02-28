@@ -19,10 +19,7 @@ spec:
       containers:
       - env:
         - name: HOST_URL
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DATASERVICE_PUBLISHER_URI
+          value: {{ required "Missing value PUBLISHER_URL" .Values.PUBLISHER_URL }}
         - name: PUBLISHER_URL
           valueFrom:
             secretKeyRef:
