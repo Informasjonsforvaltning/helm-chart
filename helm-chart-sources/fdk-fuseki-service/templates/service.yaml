@@ -3,8 +3,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    fdk.service: fuseki
-  name: fuseki
+    fdk.service: fdk-fuseki-service
+  name: fdk-fuseki-service
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   type: NodePort
@@ -13,6 +13,6 @@ spec:
     port: 8080
     targetPort: 8080
   selector:
-    fdk.service: fuseki
+    fdk.service: fdk-fuseki-service
 status:
   loadBalancer: {}
