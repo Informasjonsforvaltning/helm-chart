@@ -26,7 +26,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: FDK_DATASERVICE_HARVESTER_URI
+                key: FDK_DATASERVICE_HARVESTER_BASE_URI
           - name: RABBIT_USERNAME
             valueFrom:
               secretKeyRef:
