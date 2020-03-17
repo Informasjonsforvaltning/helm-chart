@@ -1,0 +1,3 @@
+# Default values for dataservice-catalog-gui
+
+DATASERVICE_CATALOG_GUI_MEMORY: "1000Mi"

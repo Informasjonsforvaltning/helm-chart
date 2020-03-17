@@ -1,0 +1,6 @@
+apiVersion: v1
+appVersion: "1.0"
+description: Dataservice catalog GUI
+name: dataservice-catalog-gui
+version: 0.1.0
+home: https://github.com/Informasjonsforvaltning/dataservice-catalog-gui
