@@ -196,6 +196,11 @@ spec:
             secretKeyRef:
               name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: DIFI_OIDC_ISSUER
+        - name: DIFI_USER_INFO_URL
+          valueFrom:
+            secretKeyRef:
+              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: DIFI_USER_INFO_URL
         name: sso
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
