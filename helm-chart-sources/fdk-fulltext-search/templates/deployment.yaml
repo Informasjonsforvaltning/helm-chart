@@ -9,7 +9,7 @@ metadata:
 spec:
   replicas: 1
   selector:
-    labels:
+    matchLabels:
       fdk.service: fdk-fulltext-search
   strategy:
     type: Recreate
