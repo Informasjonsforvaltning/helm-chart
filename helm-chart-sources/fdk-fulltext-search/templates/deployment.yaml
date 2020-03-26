@@ -26,6 +26,11 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: STANDARD_PORT
+        - name: ELASTIC_HOST
+          valueFrom:
+            secretKeyRef:
+              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_ES_HOST
         - name: ELASTIC_PORT
           valueFrom:
             secretKeyRef:
