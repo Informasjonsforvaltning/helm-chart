@@ -60,7 +60,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: SEARCH_FULLTEXT_HOST
+              key: FDK_FULLTEXT_SEARCH_BASE_URI
               optional: true
         name: fdk-portal
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
