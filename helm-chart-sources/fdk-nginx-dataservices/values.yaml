@@ -1,0 +1,5 @@
+# Default values for fdk-nginx-dataservices.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+FDK_NGINX_DATASERVICES_MEMORY: "5Mi"
