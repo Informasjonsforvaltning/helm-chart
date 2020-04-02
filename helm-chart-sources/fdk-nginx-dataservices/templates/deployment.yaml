@@ -27,6 +27,6 @@ spec:
             - containerPort: 8080
           resources:
             requests:
-              memory: {{ required "Missing value FDK_NGINX_RECORDS_MEMORY" .Values.FDK_NGINX_RECORDS_MEMORY | quote }}
+              memory: {{ required "Missing value FDK_NGINX_DATASERVICES_MEMORY" .Values.FDK_NGINX_DATASERVICES_MEMORY | quote }}
       restartPolicy: Always
 status: {}
