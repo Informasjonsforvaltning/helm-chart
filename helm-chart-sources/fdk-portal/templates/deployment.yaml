@@ -66,7 +66,6 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: CMS_API_BASE_URI
-              optional: true
         name: fdk-portal
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
