@@ -17,36 +17,36 @@ spec:
     spec:
       containers:
       - env:
-        - name: SPRING_PROFILES_ACTIVE
+        - name: MONGO_USERNAME
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: SPRING_PROFILES_ACTIVE
-        - name: registrationApi_harvesterPassword
+              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGO_USERNAME
+        - name: MONGO_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: fdk-registration-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_REGISTRATION_API_HARVESTERPASSWORD
-        - name: registrationApi_harvesterUsername
+              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGO_PASSWORD
+        - name: RABBIT_USERNAME
           valueFrom:
             secretKeyRef:
-              name: fdk-registration-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_REGISTRATION_API_HARVESTERUSERNAME
-        - name: FDK_ES_CLUSTERNODES
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_USER
+        - name: RABBIT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: elasticsearch-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_ES_CLUSTERNODES
-        - name: FDK_ES_CLUSTERNAME
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_PASS
+        - name: DATA_SERVICE_CATALOG_GUI_URL
           valueFrom:
             secretKeyRef:
-              name: elasticsearch-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_ES_CLUSTERNAME
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: DATASERVICE_CATALOG_BASE_URI
         - name: CATALOG_BASE_URI
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_REGISTRATION_BASE_URI
+              key: DATASERVICE_CATALOG_BASE_URI
         name: dataservice-catalog
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
