@@ -26,7 +26,7 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: OIDC_ISSUER
-        - name: DATASERVICE_CATALOG_URL
+        - name: DATA_SERVICE_CATALOG_URL
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
