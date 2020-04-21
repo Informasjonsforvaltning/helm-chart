@@ -201,6 +201,17 @@ spec:
             secretKeyRef:
               name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: DIFI_USER_INFO_URL
+        - name: DATASERVICE_CATALOG_GUI_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: DATASERVICE_CATALOG_BASE_URI
+        - name: DEV_DATASERVICE_CATALOG_GUI_HOST
+          valueFrom:
+            secretKeyRef:
+              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: DEV_DATASERVICE_CATALOG_GUI_HOST
+              optional: true
         name: sso
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
