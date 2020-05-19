@@ -1,0 +1,3 @@
+# Default values for organization-catalog-bff.
+
+ORGANIZATION_CATALOG_BFF_MEMORY: "500Mi"
