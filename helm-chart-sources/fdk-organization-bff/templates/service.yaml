@@ -3,8 +3,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    fdk.service: organization-catalog-bff
-  name: organization-catalog-bff
+    fdk.service: fdk-organization-bff
+  name: fdk-organization-bff
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   type: NodePort
@@ -13,6 +13,6 @@ spec:
     port: 8080
     targetPort: 8080
   selector:
-    fdk.service: organization-catalog-bff
+    fdk.service: fdk-organization-bff
 status:
   loadBalancer: {}
