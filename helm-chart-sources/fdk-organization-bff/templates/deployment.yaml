@@ -41,7 +41,7 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_DATASERVICE_HARVESTER_URI
-        - name: INFORMATION_MODEL_HARVESTER_URL
+        - name: INFORMATIONMODELS_HARVESTER_URL
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
