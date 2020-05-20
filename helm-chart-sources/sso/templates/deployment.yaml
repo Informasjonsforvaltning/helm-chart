@@ -212,6 +212,17 @@ spec:
               name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: DEV_DATASERVICE_CATALOG_GUI_HOST
               optional: true
+        - name: TERMS_AND_CONDITIONS_GUI_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_REGISTRATION_BASE_URI
+        - name: DEV_TERMS_AND_CONDITIONS_GUI_HOST
+          valueFrom:
+            secretKeyRef:
+              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: DEV_TERMS_AND_CONDITIONS_GUI_HOST
+              optional: true
         name: sso
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
