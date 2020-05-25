@@ -34,7 +34,7 @@ spec:
             - name: USER_API_KEY
               valueFrom:
                 secretKeyRef:
-                  name: user-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                  name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
                   key: USER_API_KEY
           image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
           imagePullPolicy: Always
