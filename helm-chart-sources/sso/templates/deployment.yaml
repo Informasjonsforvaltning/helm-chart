@@ -226,7 +226,7 @@ spec:
         - name: SSO_API_KEY
           valueFrom:
             secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: SSO_API_KEY
         name: sso
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
