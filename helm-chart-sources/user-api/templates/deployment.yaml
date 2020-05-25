@@ -37,6 +37,16 @@ spec:
             secretKeyRef:
               name: user-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: ADMIN_LIST
+        - name: SSO_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: user-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: SSO_API_KEY
+        - name: USER_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: user-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: USER_API_KEY
         name: user-api
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
