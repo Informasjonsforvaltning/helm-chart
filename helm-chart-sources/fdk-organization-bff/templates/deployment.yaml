@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+  apiVersion: apps/v1
 kind: Deployment
 metadata:
   creationTimestamp: null
@@ -26,26 +26,21 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: ORGANIZATION_CATALOGUE_ORG_URI
-        - name: CONCEPT_HARVESTER_URL
+        - name: ELASTIC_HOST
           valueFrom:
             secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_CONCEPT_HARVESTER_URI
-        - name: DATASET_HARVESTER_URL
+              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_ES_HOST
+        - name: ELASTIC_PORT
           valueFrom:
             secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_DATASET_HARVESTER_URI
-        - name: DATASERVICE_HARVESTER_URL
+              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_ES_PORT
+        - name: ELASTIC_TCP_PORT
           valueFrom:
             secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_DATASERVICE_HARVESTER_URI
-        - name: INFORMATIONMODELS_HARVESTER_URL
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_INFORMATION_MODEL_HARVESTER_URI
+              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_ES_TCP_PORT
         name: fdk-organization-bff
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
