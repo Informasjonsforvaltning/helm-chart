@@ -12,7 +12,7 @@ spec:
     matchLabels:
       fdk.service: dataservice-catalog-gui
   strategy:
-    type: Recreate
+    type: RollingUpdate
   template:
     metadata:
       creationTimestamp: null
