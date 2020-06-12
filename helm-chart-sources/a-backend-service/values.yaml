@@ -1,6 +1,7 @@
 # Default values for a-backend-service.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
+# Memory should be somewhat
 
 ##a-template-service (api)
-FDK_SERVICE_MEMORY: "1000Mi"
+FDK_SERVICE_MEMORY: "300Mi"
