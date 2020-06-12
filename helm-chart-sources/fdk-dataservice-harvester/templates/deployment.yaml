@@ -10,7 +10,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      fdk.service: fdk-concept-harvester
+      fdk.service: fdk-dataservice-harvester
   strategy:
     type: RollingUpdate
   template:
