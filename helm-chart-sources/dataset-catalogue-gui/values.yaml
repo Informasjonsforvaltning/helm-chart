@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##dataset-catalogue-gui
-DATASET_CATALOGUE_GUI_MEMORY: "1000Mi"
+DATASET_CATALOGUE_GUI_MEMORY: "10Mi"
