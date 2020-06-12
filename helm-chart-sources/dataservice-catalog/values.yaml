@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##dataservice-catalog
-DATASERVICE_CATALOG_MEMORY: "500Mi"
+DATASERVICE_CATALOG_MEMORY: "400Mi"
