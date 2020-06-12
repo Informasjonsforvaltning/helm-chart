@@ -1,4 +1,0 @@
-#DValues for staging environment
-NAMESPACE: prod
-DATASET_CATALOGUE_VOLUMENAME: fdk-prod-registration-api
-DATASET_CATALOGUE_STORAGESIZE: 9G

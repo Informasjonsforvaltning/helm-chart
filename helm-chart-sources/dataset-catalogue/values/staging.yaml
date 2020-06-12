@@ -1,4 +1,4 @@
 #DValues for staging environment
-NAMESPACE: it1
-DATASET_CATALOGUE_VOLUMENAME: fdk-dev-it1-registration-api
+NAMESPACE: staging
+DATASET_CATALOGUE_VOLUMENAME: fdk-dev-staging-registration-api
 DATASET_CATALOGUE_STORAGESIZE: 9G

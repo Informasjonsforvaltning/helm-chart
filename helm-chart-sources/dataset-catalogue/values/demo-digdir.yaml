@@ -1,4 +1,0 @@
-#DValues for digdir-demo environment
-NAMESPACE: demo
-DATASET_CATALOGUE_VOLUMENAME: fdk-dev-demo-registration-api
-DATASET_CATALOGUE_STORAGESIZE: 9G
