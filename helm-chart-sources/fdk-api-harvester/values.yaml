@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##fdk-api-harvester (api)
-FDK_API_HARVESTER_MEMORY: "1400Mi"
+FDK_API_HARVESTER_MEMORY: "750Mi"
