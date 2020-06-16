@@ -1,6 +1,6 @@
-# Default values for a-backend-service.
+# Default values for fdk-harvest-scheduler.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-##a-template-service (api)
-FDK_HARVEST_SCHEDULER_MEMORY: "1000Mi"
+##fdk-harvest-scheduler
+FDK_HARVEST_SCHEDULER_MEMORY: "10Mi"
