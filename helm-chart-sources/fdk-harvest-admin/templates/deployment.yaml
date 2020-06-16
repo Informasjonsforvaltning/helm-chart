@@ -10,7 +10,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      fdk.service: fdk-fulltext-search
+      fdk.service: fdk-harvest-admin
   strategy:
     type: RollingUpdate
   template:
