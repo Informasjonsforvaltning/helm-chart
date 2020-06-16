@@ -8,8 +8,11 @@ metadata:
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      fdk.service: fdk-dataset-harvester-gui
   strategy:
-    type: Recreate
+    type: RollingUpdate
   template:
     metadata:
       creationTimestamp: null
