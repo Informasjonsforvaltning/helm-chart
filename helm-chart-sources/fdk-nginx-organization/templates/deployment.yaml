@@ -11,7 +11,8 @@ spec:
   selector:
     matchLabels:
       fdk.service: fdk-nginx-organization
-  strategy: {}
+  strategy:
+    type: RollingUpdate
   template:
     metadata:
       creationTimestamp: null
