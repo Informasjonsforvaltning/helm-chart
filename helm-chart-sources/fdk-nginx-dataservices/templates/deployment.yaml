@@ -12,7 +12,7 @@ spec:
     matchLabels:
       fdk.service: fdk-nginx-dataservices
   strategy:
-    type: Recreate
+    type: RollingUpdate
   template:
     metadata:
       creationTimestamp: null
