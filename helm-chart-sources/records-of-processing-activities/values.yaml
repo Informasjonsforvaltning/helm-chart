@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##a-template-service (api)
-RECORD_OF_PROCESSING_ACTIVITIES_MEMORY: "1000Mi"
+RECORD_OF_PROCESSING_ACTIVITIES_MEMORY: "100Mi"
