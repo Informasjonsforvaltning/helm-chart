@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   creationTimestamp: null
@@ -8,7 +8,11 @@ metadata:
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
-  strategy: {}
+  selector:
+    matchLabels:
+      fdk.service: records-of-processing-activities-gui
+  strategy:
+    type: RollingUpdate
   template:
     metadata:
       creationTimestamp: null
@@ -42,6 +46,8 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-        resources: {}
+        resources:
+          requests:
+            memory: {{ required "Missing value RECORDS_OF_PROCESSING_ACTIVITIES_GUI_MEMORY" .Values.RECORDS_OF_PROCESSING_ACTIVITIES_GUI_MEMORY | quote }}
       restartPolicy: Always
 status: {}
