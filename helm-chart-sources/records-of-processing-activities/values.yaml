@@ -1,6 +1,6 @@
-# Default values for a-backend-service.
+# Default values for records of processing activities.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-##a-template-service (api)
+##records-of-processing-activities
 RECORD_OF_PROCESSING_ACTIVITIES_MEMORY: "100Mi"
