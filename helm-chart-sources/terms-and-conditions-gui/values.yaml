@@ -1,4 +1,4 @@
 # Default values for terms-and-conditions gui.
 
 ##terms-and-conditions-gui
-TERMS_AND_CONDITIONS_GUI_MEMORY: "100Mi"
+TERMS_AND_CONDITIONS_GUI_MEMORY: "10Mi"
