@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##terms-and-conditions
-TERMS_AND_CONDITIONS_MEMORY: "1000Mi"
+TERMS_AND_CONDITIONS_MEMORY: "500Mi"
