@@ -1,4 +1,4 @@
-#DValues for digdir-demo environment
+#DValues for demo environment
 NAMESPACE: demo
 FDK_FUSEKI_VOLUMENAME: fdk-dev-demo-fuseki-service
 FDK_FUSEKI_STORAGESIZE: 9G
