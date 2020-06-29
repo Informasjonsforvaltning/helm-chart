@@ -12,7 +12,7 @@ spec:
     matchLabels:
       fdk.service: terms-and-conditions
   strategy:
-    type: Recreate
+    type: RollingUpdate
   template:
     metadata:
       creationTimestamp: null
