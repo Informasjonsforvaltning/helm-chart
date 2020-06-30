@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - env:
-        - name: reports_CATALOG_URL
+        - name: ORGANIZATION_CATALOG_URL
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
@@ -46,21 +46,11 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_INFORMATION_MODEL_HARVESTER_URI
-        - name: ELASTIC_HOST
+        - name: REFERENCE_DATA_URL
           valueFrom:
             secretKeyRef:
-              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_ES_HOST
-        - name: ELASTIC_PORT
-          valueFrom:
-            secretKeyRef:
-              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_ES_PORT
-        - name: ELASTIC_TCP_PORT
-          valueFrom:
-            secretKeyRef:
-              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_ES_TCP_PORT
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_REFERENCE_DATA_BASE_URI
         name: fdk-reports-bff
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
