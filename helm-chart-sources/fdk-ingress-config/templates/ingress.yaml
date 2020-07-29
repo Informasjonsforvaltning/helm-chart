@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ required "Missing value FDK_INGRESSNAME" .Values.FDK_INGRESSNAME }}
