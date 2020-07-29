@@ -1,0 +1,172 @@
+apiVersion: apps/v1
+kind: Ingress
+metadata:
+  name: {{ required "Missing value FDK_INGRESSNAME" .Values.FDK_INGRESSNAME }}
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.global-static-ip-name: {{ required "Missing value FDK_INGRESS_IP_NAME" .Values.FDK_INGRESS_IP_NAME }}
+    ingress.gcp.kubernetes.io/pre-shared-cert: {{ required "Missing value FDK_ALL_CERT_NAMES" .Values.FDK_ALL_CERT_NAMES }}
+spec:
+  rules:
+    - host: {{ required "Missing value HOSTNAME_REGISTRATION" .Values.HOSTNAME_REGISTRATION }}
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: fdk-nginx-registration
+              servicePort: 8080
+    - host: {{ required "Missing HOSTNAME_WWW" .Values.HOSTNAME_WWW }}
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: fdk-nginx-search
+              servicePort: 8080
+    - host: {{ required "Missing value HOSTNAME_NAP" .Values.HOSTNAME_NAP }}
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: fdk-nginx-search
+              servicePort: 8080
+    - host: {{ required "Missing value HOSTNAME_CONCEPT_CATALOGUE_GUI" .Values.HOSTNAME_CONCEPT_CATALOGUE_GUI }}
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: concept-catalogue-gui
+              servicePort: 8080
+    - host: {{ required "Missing value HOSTNAME_CONCEPT_CATALOGUE" .Values.HOSTNAME_CONCEPT_CATALOGUE }}
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: concept-catalogue
+              servicePort: 8080
+    - host: {{ required "Missing value HOSTNAME_HARVESTER" .Values.HOSTNAME_HARVESTER }}
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: fdk-dataset-harvester-gui
+              servicePort: 8080
+    - host: {{ required "Missing value HOSTNAME_SSO" .Values.HOSTNAME_SSO }}
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: sso
+              servicePort: 8080
+    - host: {{ required "Missing value HOSTNAME_ADMIN" .Values.HOSTNAME_ADMIN }}
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: fdk-admin-gui
+              servicePort: 8080
+    - host: {{ required "Missing value HOSTNAME_ADMIN_API" .Values.HOSTNAME_ADMIN_API }}
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: fdk-harvest-admin
+              servicePort: 8080
+    - host: {{ required "Missing value HOSTNAME_BROKER_ADMIN" .Values.HOSTNAME_BROKER_ADMIN }}
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: rabbitmq
+              servicePort: 8080
+    - host: {{ required "Missing value HOSTNAME_PORTAL" .Values.HOSTNAME_PORTAL }}
+      http:
+        paths:
+          - backend:
+              serviceName: fdk-nginx-search
+              servicePort: 8080
+            path: /*
+    - host: {{ required "Missing value HOSTNAME_ORGANIZATION_CATALOGUE" .Values.HOSTNAME_ORGANIZATION_CATALOGUE }}
+      http:
+        paths:
+          - backend:
+              serviceName: organization-catalogue
+              servicePort: 8080
+            path: /*
+    - host: {{ required "Missing value HOSTNAME_PROTOCOL" .Values.HOSTNAME_PROTOCOL }}
+      http:
+        paths:
+          - backend:
+              serviceName: fdk-nginx-records
+              servicePort: 8080
+            path: /*
+    - host: {{ required "Missing value HOSTNAME_TRANSPORTPORTAL" .Values.HOSTNAME_TRANSPORTPORTAL }}
+      http:
+        paths:
+          - backend:
+              serviceName: fdk-nginx-search
+              servicePort: 8080
+            path: /*
+    - host: {{ required "Missing value HOSTNAME_MODEL_PUBLISHER" .Values.HOSTNAME_MODEL_PUBLISHER }}
+      http:
+        paths:
+          - backend:
+              serviceName: model-publisher
+              servicePort: 8080
+            path: /*
+    - host: {{ required "Missing value HOSTNAME_DATASERVICE_PUBLISHER" .Values.HOSTNAME_DATASERVICE_PUBLISHER }}
+      http:
+        paths:
+          - backend:
+              serviceName: dataservice-publisher
+              servicePort: 8080
+            path: /*
+    - host: {{ required "Missing value HOSTNAME_DATASERVICE_HARVESTER" .Values.HOSTNAME_DATASERVICE_HARVESTER }}
+      http:
+        paths:
+          - backend:
+              serviceName: fdk-dataservice-harvester
+              servicePort: 8080
+            path: /*
+    - host: {{ required "Missing value HOSTNAME_SEARCH" .Values.HOSTNAME_SEARCH }}
+      http:
+        paths:
+          - backend:
+              serviceName: fdk-fulltext-search
+              servicePort: 8080
+            path: /*
+    - host: {{ required "Missing value HOSTNAME_DATASET_HARVESTER" .Values.HOSTNAME_DATASET_HARVESTER }}
+      http:
+        paths:
+          - backend:
+              serviceName: new-dataset-harvester
+              servicePort: 8080
+            path: /*
+    - host: {{ required "Missing value HOSTNAME_TERMS_AND_CONDITIONS" .Values.HOSTNAME_TERMS_AND_CONDITIONS }}
+      http:
+        paths:
+          - backend:
+              serviceName: terms-and-conditions
+              servicePort: 8080
+            path: /*
+    - host: {{ required "Missing value HOSTNAME_DATASERVICE_CATALOG" .Values.HOSTNAME_DATASERVICE_CATALOG }}
+      http:
+        paths:
+          - backend:
+              serviceName: fdk-nginx-dataservices
+              servicePort: 8080
+            path: /*
+    - host: {{ required "Missing value HOSTNAME_ORGANIZATION_BFF" .Values.HOSTNAME_ORGANIZATION_BFF }}
+      http:
+        paths:
+          - backend:
+              serviceName: fdk-nginx-organization
+              servicePort: 8080
+            path: /*
+    - host: {{ required "Missing value HOSTNAME_REPORTS_BFF" .Values.HOSTNAME_REPORTS_BFF }}
+      http:
+        paths:
+          - backend:
+              serviceName: fdk-reports-bff
+              servicePort: 8080
+            path: /*
