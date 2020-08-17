@@ -21,21 +21,11 @@ spec:
     spec:
       containers:
       - env:
-        - name: ELASTIC_HOST
+        - name: FDK_FULLTEXT_SEARCH_BASE_URL
           valueFrom:
             secretKeyRef:
-              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_ES_HOST
-        - name: ELASTIC_PORT
-          valueFrom:
-            secretKeyRef:
-              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_ES_PORT
-        - name: ELASTIC_TCP_PORT
-          valueFrom:
-            secretKeyRef:
-              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_ES_TCP_PORT
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_FULLTEXT_SEARCH_BASE_URI
         - name: RABBIT_USERNAME
           valueFrom:
             secretKeyRef:
