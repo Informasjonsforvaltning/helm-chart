@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    fdk.service: fdk-fulltext-search-rabbit-consumer
+  name: fdk-fulltext-search-rabbit-consumer
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      fdk.service: fdk-fulltext-search-rabbit-consumer
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        fdk.service: fdk-fulltext-search-rabbit-consumer
+    spec:
+      containers:
+      - env:
+        - name: ELASTIC_HOST
+          valueFrom:
+            secretKeyRef:
+              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_ES_HOST
+        - name: ELASTIC_PORT
+          valueFrom:
+            secretKeyRef:
+              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_ES_PORT
+        - name: ELASTIC_TCP_PORT
+          valueFrom:
+            secretKeyRef:
+              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_ES_TCP_PORT
+        - name: RABBIT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBITMQ_USERNAME
+        - name: RABBIT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBITMQ_PASSWORD
+        - name: RABBIT_HOST
+          valueFrom:
+            secretKeyRef:
+              name: fdk-harvest-scheduler-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_HOST
+        name: fdk-fulltext-search-rabbit-consumer
+        image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: {{ required "Missing value FDK_FULLTEXT_SEARCH_RABBIT_CONSUMER_MEMORY" .Values.FDK_FULLTEXT_SEARCH_RABBIT_CONSUMER_MEMORY | quote }}
+      restartPolicy: Always
+status: {}
