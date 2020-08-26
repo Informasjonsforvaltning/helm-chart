@@ -44,13 +44,6 @@ spec:
             backend:
               serviceName: concept-catalogue
               servicePort: 8080
-    - host: {{ required "Missing value HOSTNAME_HARVESTER" .Values.HOSTNAME_HARVESTER }}
-      http:
-        paths:
-          - path: /*
-            backend:
-              serviceName: fdk-dataset-harvester-gui
-              servicePort: 8080
     - host: {{ required "Missing value HOSTNAME_SSO" .Values.HOSTNAME_SSO }}
       http:
         paths:
