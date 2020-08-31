@@ -51,6 +51,16 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_REFERENCE_DATA_BASE_URI
+        - name: ELASTIC_HOST
+          valueFrom:
+            secretKeyRef:
+              name: fdk-reports-store-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_REPORTS_STORE_HOST
+        - name: ELASTIC_PORT
+          valueFrom:
+            secretKeyRef:
+              name: fdk-reports-store-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_REPORTS_STORE_PORT
         name: fdk-reports-bff
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
