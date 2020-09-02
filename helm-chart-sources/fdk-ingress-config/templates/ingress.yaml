@@ -163,3 +163,10 @@ spec:
               serviceName: fdk-reports-bff
               servicePort: 8080
             path: /*
+    - host: {{ required "Missing value HOSTNAME_DATASET_CATALOG" .Values.HOSTNAME_DATASET_CATALOG }}
+      http:
+        paths:
+          - backend:
+              serviceName: dataset-catalogue
+              servicePort: 8080
+            path: /*
