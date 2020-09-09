@@ -51,6 +51,11 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_BASE_URI
+        - name: SEARCH_FULLTEXT_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_FULLTEXT_SEARCH_BASE_URI
         name: dataservice-catalog-gui
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
