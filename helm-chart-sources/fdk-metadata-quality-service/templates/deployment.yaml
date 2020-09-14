@@ -21,6 +21,46 @@ spec:
     spec:
       containers:
       - env:
+        - name: MONGO_HOST
+          valueFrom:
+            secretKeyRef:
+              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGO_HOST
+        - name: MONGO_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGO_USERNAME
+        - name: MONGO_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGO_PASSWORD
+        - name: RABBIT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: rabbit-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_USER
+        - name: RABBIT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: rabbit-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_PASS
+        - name: RABBIT_HOST
+          valueFrom:
+            secretKeyRef:
+              name: rabbit-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_HOST
+        - name: RABBIT_PORT
+          valueFrom:
+            secretKeyRef:
+              name: rabbit-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_PORT
+        - name: DATASET_CATALOGS_URL
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_DATASET_HARVESTER_CATALOGS_URI
         name: fdk-metadata-quality-service
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
