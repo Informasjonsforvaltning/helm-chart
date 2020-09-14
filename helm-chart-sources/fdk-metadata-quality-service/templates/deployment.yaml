@@ -56,11 +56,11 @@ spec:
             secretKeyRef:
               name: rabbit-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: RABBIT_PORT
-        - name: DATASET_CATALOGS_URL
+        - name: DATASET_HARVESTER_BASE_URI
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_DATASET_HARVESTER_CATALOGS_URI
+              key: FDK_DATASET_HARVESTER_BASE_URI
         name: fdk-metadata-quality-service
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
