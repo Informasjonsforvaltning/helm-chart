@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   creationTimestamp: null
@@ -8,8 +8,11 @@ metadata:
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      fdk.service: fdk-dataset-harvester
   strategy:
-    type: Recreate
+    type: RollingUpdate
   template:
     metadata:
       creationTimestamp: null
@@ -18,6 +21,16 @@ spec:
     spec:
       containers:
         - env:
+          - name: FDK_FUSEKI_SERVICE_URI
+            valueFrom:
+              secretKeyRef:
+                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: FDK_FUSEKI_SERVICE_URI
+          - name: FDK_DATASET_HARVESTER_URI
+            valueFrom:
+              secretKeyRef:
+                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: FDK_DATASET_HARVESTER_BASE_URI
           - name: RABBIT_USERNAME
             valueFrom:
               secretKeyRef:
@@ -28,56 +41,21 @@ spec:
               secretKeyRef:
                 name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
                 key: RABBITMQ_PASSWORD
-          - name: SPRING_PROFILES_ACTIVE
+          - name: HARVEST_ADMIN_ROOT_URL
             valueFrom:
               secretKeyRef:
-                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: SPRING_PROFILES_ACTIVE
-          - name: emailUsername
+                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: FDK_HARVEST_ADMIN_API_URI
+          - name: MONGO_USERNAME
             valueFrom:
               secretKeyRef:
-                name: fdk-dataset-harvester-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: FDK_HARVESTER_API_EMAILUSERNAME
-          - name: emailPassword
+                name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: MONGO_USERNAME
+          - name: MONGO_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: fdk-dataset-harvester-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: FDK_HARVESTER_API_EMAILPASSWORD
-          - name: emailSenderAddress
-            valueFrom:
-              secretKeyRef:
-                name: fdk-dataset-harvester-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: FDK_HARVESTER_API_EMAILSENDERADDRESS
-          - name: themesHttpUsername
-            valueFrom:
-              secretKeyRef:
-                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: THEMES_HTTP_USERNAME
-          - name: themesHttpPassword
-            valueFrom:
-              secretKeyRef:
-                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: THEMES_HTTP_PASSWORD
-          - name: FDK_ES_CLUSTERNODES
-            valueFrom:
-              secretKeyRef:
-                name: elasticsearch-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: FDK_ES_CLUSTERNODES
-          - name: FDK_ES_CLUSTERNAME
-            valueFrom:
-              secretKeyRef:
-                name: elasticsearch-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: FDK_ES_CLUSTERNAME
-          - name: application_openDataEnhet
-            valueFrom:
-              secretKeyRef:
-                name: fdk-dataset-harvester-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: FDK_HARVESTER_API_APPLICATION_OPENDATAENHET
-          - name: harvestRecordRetentionDays
-            valueFrom:
-              secretKeyRef:
-                name: fdk-dataset-harvester-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: FDK_HARVESTER_API_APPLICATION_HARVESTRETENTIONDAYS
+                name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: MONGO_PASSWORD
           image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
           imagePullPolicy: Always
           name: fdk-dataset-harvester
@@ -86,5 +64,21 @@ spec:
           resources:
             requests:
               memory: {{ required "Missing value FDK_DATASET_HARVESTER_MEMORY" .Values.FDK_DATASET_HARVESTER_MEMORY | quote }}
+          livenessProbe:
+            httpGet:
+              path: /ping
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 30
+            successThreshold: 1
+            failureThreshold: 5
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 30
+            successThreshold: 1
+            failureThreshold: 5
       restartPolicy: Always
 status: {}
