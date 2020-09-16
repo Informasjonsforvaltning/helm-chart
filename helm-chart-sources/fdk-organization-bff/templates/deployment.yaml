@@ -61,6 +61,16 @@ spec:
             secretKeyRef:
               name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_ES_TCP_PORT
+        - name: SEARCH_FULLTEXT_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_FULLTEXT_SEARCH_BASE_URI
+        - name: METADATA_QUALITY_ASSESSMENT_SERVICE_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_METADATA_QUALITY_SERVICE_BASE_URI
         name: fdk-organization-bff
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
