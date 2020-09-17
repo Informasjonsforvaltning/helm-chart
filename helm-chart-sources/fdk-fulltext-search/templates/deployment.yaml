@@ -80,7 +80,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_DATASERVICE_HARVESTER_BASE_URI
+              key: FDK_DATASERVICE_HARVESTER_URI
         name: fdk-fulltext-search
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
