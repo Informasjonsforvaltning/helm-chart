@@ -132,7 +132,7 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: new-dataset-harvester
+              serviceName: fdk-dataset-harvester
               servicePort: 8080
             path: /*
     - host: {{ required "Missing value HOSTNAME_TERMS_AND_CONDITIONS" .Values.HOSTNAME_TERMS_AND_CONDITIONS }}
