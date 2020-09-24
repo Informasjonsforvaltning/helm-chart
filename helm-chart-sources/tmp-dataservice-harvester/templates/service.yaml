@@ -3,16 +3,16 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    fdk.service: new-dataset-harvester
-  name: new-dataset-harvester
+    fdk.service: tmp-dataservice-harvester
+  name: tmp-dataservice-harvester
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   type: NodePort
   ports:
-  - name: "8080"
-    port: 8080
-    targetPort: 8080
+    - name: "8080"
+      port: 8080
+      targetPort: 8080
   selector:
-    fdk.service: new-dataset-harvester
+    fdk.service: tmp-dataservice-harvester
 status:
   loadBalancer: {}

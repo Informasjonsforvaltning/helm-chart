@@ -3,21 +3,21 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    fdk.service: new-dataset-harvester
-  name: new-dataset-harvester
+    fdk.service: tmp-dataservice-harvester
+  name: tmp-dataservice-harvester
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      fdk.service: new-dataset-harvester
+      fdk.service: tmp-dataservice-harvester
   strategy:
     type: RollingUpdate
   template:
     metadata:
       creationTimestamp: null
       labels:
-        fdk.service: new-dataset-harvester
+        fdk.service: tmp-dataservice-harvester
     spec:
       containers:
         - env:
@@ -26,11 +26,11 @@ spec:
               secretKeyRef:
                 name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
                 key: FDK_FUSEKI_SERVICE_URI
-          - name: FDK_DATASET_HARVESTER_URI
+          - name: FDK_DATASERVICE_HARVESTER_URI
             valueFrom:
               secretKeyRef:
                 name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: FDK_DATASET_HARVESTER_BASE_URI
+                key: FDK_DATASERVICE_HARVESTER_BASE_URI
           - name: RABBIT_USERNAME
             valueFrom:
               secretKeyRef:
@@ -46,29 +46,23 @@ spec:
               secretKeyRef:
                 name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
                 key: FDK_HARVEST_ADMIN_API_URI
+          - name: MONGO_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: MONGO_USERNAME
+          - name: MONGO_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: MONGO_PASSWORD
           image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
           imagePullPolicy: Always
-          name: new-dataset-harvester
+          name: tmp-dataservice-harvester
           ports:
             - containerPort: 8080
           resources:
             requests:
-              memory: {{ required "Missing value FDK_DATASET_HARVESTER_MEMORY" .Values.FDK_DATASET_HARVESTER_MEMORY | quote }}
-          livenessProbe:
-            httpGet:
-              path: /ping
-              port: 8080
-            initialDelaySeconds: 20
-            periodSeconds: 30
-            successThreshold: 1
-            failureThreshold: 5
-          readinessProbe:
-            httpGet:
-              path: /ready
-              port: 8080
-            initialDelaySeconds: 20
-            periodSeconds: 30
-            successThreshold: 1
-            failureThreshold: 5
+              memory: {{ required "Missing value FDK_DATASERVICE_HARVESTER_MEMORY" .Values.FDK_DATASERVICE_HARVESTER_MEMORY | quote }}
       restartPolicy: Always
 status: {}
