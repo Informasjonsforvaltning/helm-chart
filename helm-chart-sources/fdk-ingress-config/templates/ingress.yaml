@@ -170,3 +170,10 @@ spec:
               serviceName: dataset-catalogue
               servicePort: 8080
             path: /*
+    - host: {{ required "Missing value HOSTNAME_METADATA_QUALITY_SERVICE" .Values.HOSTNAME_METADATA_QUALITY_SERVICE }}
+      http:
+        paths:
+          - backend:
+              serviceName: fdk-metadata-quality-service
+              servicePort: 8080
+            path: /*
