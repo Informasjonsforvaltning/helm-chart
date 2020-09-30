@@ -1,0 +1,4 @@
+#DValues for production environment
+NAMESPACE: prod
+DATASERVICE_PUBLISHER_TRIPLESTORE_VOLUMENAME: fdk-prod-dataservice-publisher-triplestore
+DATASERVICE_PUBLISHER_TRIPLESTORE_STORAGESIZE: 9G
