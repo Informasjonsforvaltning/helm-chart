@@ -31,11 +31,11 @@ spec:
               secretKeyRef:
                 name: dataservice-publisher-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
                 key: ADMIN_PASSWORD
-          - name: FUSEKI_DATASET
+          - name: FUSEKI_DATASET_1
             valueFrom:
               secretKeyRef:
                 name: dataservice-publisher-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: FUSEKI_DATASET
+                key: FUSEKI_DATASET_1
           name: dataservice-publisher-triplestore
           image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
           imagePullPolicy: Always
