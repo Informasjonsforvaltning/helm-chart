@@ -20,11 +20,27 @@ spec:
         fdk.service: dataservice-publisher-triplestore
     spec:
       containers:
-      - image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
-        imagePullPolicy: Always
+        - env:
+          - name: TDB
+            valueFrom:
+              secretKeyRef:
+                name: dataservice-publisher-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: TDB
+          - name: ADMIN_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: dataservice-publisher-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: ADMIN_PASSWORD
+          - name: FUSEKI_DATASET
+            valueFrom:
+              secretKeyRef:
+                name: dataservice-publisher-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: FUSEKI_DATASET
         name: dataservice-publisher-triplestore
+        image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+        imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 3030
         resources:
           requests:
             memory: {{ required "Missing value DATASERVICE_PUBLISHER_TRIPLESTORE_MEMORY" .Values.DATASERVICE_PUBLISHER_TRIPLESTORE_MEMORY | quote }}
