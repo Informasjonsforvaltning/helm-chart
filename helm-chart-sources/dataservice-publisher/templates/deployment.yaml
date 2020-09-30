@@ -21,13 +21,31 @@ spec:
     spec:
       containers:
       - env:
-        - name: HOST_URL
+        - name: DATASERVICE_PUBLISHER_URL
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: DATASERVICE_PUBLISHER_URI
-        - name: PUBLISHER_URL
-          value: {{ required "Missing value PUBLISHER_URL" .Values.PUBLISHER_URL }}
+        - name: ADMIN_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: dataservice-publisher-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ADMIN_USERNAME
+        - name: ADMIN_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: dataservice-publisher-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ADMIN_PASSWORD
+        - name: FUSEKI_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: dataservice-publisher-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FUSEKI_PASSWORD
+        - name: SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: dataservice-publisher-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: SECRET_KEY
         name: dataservice-publisher
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
