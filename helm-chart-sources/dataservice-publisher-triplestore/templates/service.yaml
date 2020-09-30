@@ -11,7 +11,10 @@ spec:
   ports:
   - name: "8080"
     port: 8080
-    targetPort: 8080
+    targetPort: 3030
+  - name: "3030"
+    port: 3030
+    targetPort: 3030
   selector:
     fdk.service: dataservice-publisher-triplestore
 status:

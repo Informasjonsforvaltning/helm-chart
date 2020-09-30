@@ -46,6 +46,11 @@ spec:
             secretKeyRef:
               name: dataservice-publisher-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: SECRET_KEY
+        - name: FUSEKI_HOST_URL
+          valueFrom:
+            secretKeyRef:
+              name: dataservice-publisher-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: DATASERVICE_PUBLISHER_TRIPLESTORE_URI
         name: dataservice-publisher
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
