@@ -30,7 +30,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: dataservice-publisher-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: ADMIN_PASSWORD
+                key: FUSEKI_PASSWORD
           - name: FUSEKI_DATASET_1
             valueFrom:
               secretKeyRef:
