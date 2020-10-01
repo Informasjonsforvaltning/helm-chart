@@ -1,4 +1,4 @@
-#DValues for demo environment
+#DValues for digdir-demo environment
 NAMESPACE: demo
 FDK_REFERENCE_DATA_VOLUMENAME: fdk-dev-demo-reference-data
 FDK_REFERENCE_DATA_STORAGESIZE: 7G
