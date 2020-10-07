@@ -177,3 +177,10 @@ spec:
               serviceName: fdk-metadata-quality-service
               servicePort: 8080
             path: /*
+    - host: {{ required "Missing value HOSTNAME_INFORMATIONMODEL_HARVESTER" .Values.HOSTNAME_INFORMATIONMODEL_HARVESTER }}
+      http:
+        paths:
+          - backend:
+              serviceName: tmp-informationmodel-harvester
+              servicePort: 8080
+            path: /*
