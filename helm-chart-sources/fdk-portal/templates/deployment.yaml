@@ -89,7 +89,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: METADATA_QUALITY_ASSESSMENT_SERVICE_HOST
+              key: FDK_METADATA_QUALITY_SERVICE_BASE_URI
         name: fdk-portal
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
