@@ -3,7 +3,7 @@ entries:
   a-backend-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.807338768+02:00"
+    created: "2020-10-21T12:31:05.374349037+02:00"
     description: Template service for a backend service
     digest: 38e25c24ac97c30a293fb3175f97f26efa0e6675614e13ec67e36b911646a40b
     home: https://github.com/Informasjonsforvaltning/a-backend-service
@@ -14,7 +14,7 @@ entries:
   altinn-model-publisher:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.807561098+02:00"
+    created: "2020-10-21T12:31:05.376230339+02:00"
     description: Service that transforms Altinn 2.0 models (seres) to modelldcat-ap-no
       compliant models and expose the collection
     digest: 67c5ce45d0c91fe4b89cdebd27ef6c7a3f744db4315149519211b80596b3ea41
@@ -26,7 +26,7 @@ entries:
   api-catalogue:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.80776209+02:00"
+    created: "2020-10-21T12:31:05.377037943+02:00"
     description: Api catalogue
     digest: abe1b6bd97b3f33660cffac3b341b7f6504c3bb1db17bb3e4243f7c03a340e2f
     home: https://github.com/Informasjonsforvaltning/api-catalogue
@@ -37,7 +37,7 @@ entries:
   concept-catalogue:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.807943138+02:00"
+    created: "2020-10-21T12:31:05.377844273+02:00"
     description: Concept catalogue
     digest: bc5e07b02e0924e011819fe5631061c24e772ddc89deb7d723f46a788a45c963
     home: https://github.com/Informasjonsforvaltning/concept-catalogue
@@ -48,7 +48,7 @@ entries:
   concept-catalogue-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.808154266+02:00"
+    created: "2020-10-21T12:31:05.378655127+02:00"
     description: Concept Catalogue GUI
     digest: e4ea3746569494f344273cd28866938d4b66a1b67c26e4728665fa54ecb1f538
     home: https://github.com/Informasjonsforvaltning/concept-catalogue-gui
@@ -59,7 +59,7 @@ entries:
   dataservice-catalog:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.808333735+02:00"
+    created: "2020-10-21T12:31:05.379357448+02:00"
     description: Dataservice Catalog
     digest: ecf45b5e4e61f3c1a75600c2c2ba747643fbd92b0926868e43d82ee7a7e11ede
     home: https://github.com/Informasjonsforvaltning/dataservice-catalog
@@ -70,7 +70,7 @@ entries:
   dataservice-catalog-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.808513985+02:00"
+    created: "2020-10-21T12:31:05.381417922+02:00"
     description: Dataservice catalog GUI
     digest: 84ae24391ad932cd9a911cec797c8e9d32ded81ea2dd2288411d8da2848d8e56
     home: https://github.com/Informasjonsforvaltning/dataservice-catalog-gui
@@ -81,7 +81,7 @@ entries:
   dataservice-publisher:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.808697511+02:00"
+    created: "2020-10-21T12:31:05.382035327+02:00"
     description: Service that triggers harvests on a fixed schedule
     digest: b4cb740acdf4af7e4a1aca980f4706b3980df2d80b8d14a5b9d2406d163fa511
     home: https://github.com/Informasjonsforvaltning/dataservice-publisher
@@ -92,7 +92,7 @@ entries:
   dataservice-publisher-triplestore:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.808912914+02:00"
+    created: "2020-10-21T12:31:05.382572587+02:00"
     description: Dataservice-publisher triplestore
     digest: d5c3b3acab9e327ae128a76ae90fb54ba72fb945cfef4685d76e8a82d08132db
     home: https://github.com/Informasjonsforvaltning/dataservice-publisher-triplestore
@@ -103,7 +103,7 @@ entries:
   dataset-catalogue:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.809298809+02:00"
+    created: "2020-10-21T12:31:05.383088605+02:00"
     description: Api catalogue
     digest: 791af03a7809f9c7dc484b948131ec10e56f8c27ef5b388623c160fd6e0f9e4c
     home: https://github.com/Informasjonsforvaltning/dataset-catalogue
@@ -114,7 +114,7 @@ entries:
   dataset-catalogue-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.809902774+02:00"
+    created: "2020-10-21T12:31:05.384190724+02:00"
     description: Dataset Catalogue GUI
     digest: 32faffc2d0cbe9dee31f346b0c8121f7b706e69fd51841d6e1f5f377443d4cb5
     home: https://github.com/Informasjonsforvaltning/dataset-catalogue-gui
@@ -125,7 +125,7 @@ entries:
   dataset-publisher:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.81024417+02:00"
+    created: "2020-10-21T12:31:05.38470324+02:00"
     description: Service that triggers harvests on a fixed schedule
     digest: 16c9303365a49cadf6c159fb1411d87ce25b90c37bfef39bdea32c145c8935a7
     home: https://github.com/Informasjonsforvaltning/dataset-publisher
@@ -136,7 +136,7 @@ entries:
   fdk-admin-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.810441467+02:00"
+    created: "2020-10-21T12:31:05.385212368+02:00"
     description: FDK Admin GUI
     digest: 0ea84b25a3076a2c6e42095482ce9a762157f3969ca03c92b62d0d0d1c031bf3
     home: https://github.com/Informasjonsforvaltning/fdk-admin-gui
@@ -147,7 +147,7 @@ entries:
   fdk-api-harvester:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.810623836+02:00"
+    created: "2020-10-21T12:31:05.385724001+02:00"
     description: FDK Api Harvester
     digest: 21c63808cea9ab8b7f26001943361c1febc3814c42b732db37478368459853c2
     home: https://github.com/Informasjonsforvaltning/fdk-api-harvester
@@ -158,7 +158,7 @@ entries:
   fdk-concept-harvester:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.810815945+02:00"
+    created: "2020-10-21T12:31:05.386237353+02:00"
     description: FDK Concept Harvester
     digest: bf26ac84d0139419b17563d6d02b1a4615de19f980525f4394be9890ddd54f37
     home: https://github.com/Informasjonsforvaltning/fdk-concept-harvester
@@ -169,7 +169,7 @@ entries:
   fdk-dataservice-harvester:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.81099799+02:00"
+    created: "2020-10-21T12:31:05.386710175+02:00"
     description: FDK DataService Harvester
     digest: 4b5e3931415ef20b848b02c0fc8d810fc736c167aed83622dcd4420ab61c50f8
     home: https://github.com/Informasjonsforvaltning/fdk-dataservice-harvester
@@ -180,7 +180,7 @@ entries:
   fdk-dataset-api:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.811171261+02:00"
+    created: "2020-10-21T12:31:05.387200668+02:00"
     description: FDK Dataset API
     digest: 75ffaf91e1e94dbd9b65488f396eff77c4f7914935a06c9fd089f506dee84d41
     home: https://github.com/Informasjonsforvaltning/fdk-dataset-api
@@ -191,7 +191,7 @@ entries:
   fdk-dataset-harvester:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.81134772+02:00"
+    created: "2020-10-21T12:31:05.387664116+02:00"
     description: FDK Dataset Harvester
     digest: 4437beed4fad97fdc0d76bf881775d86ab0ab75674dfc625250e2cf9d95605e4
     home: https://github.com/Informasjonsforvaltning/fdk-dataset-harvester
@@ -202,7 +202,7 @@ entries:
   fdk-dataset-harvester-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.811523265+02:00"
+    created: "2020-10-21T12:31:05.388160764+02:00"
     description: FDK Dataset Harvester GUI
     digest: 7da9334e4b70d7a68e63745c5dd1a59607eba290b7c476524429f15da8231477
     home: https://github.com/Informasjonsforvaltning/fdk-dataset-harvester-gui
@@ -213,7 +213,7 @@ entries:
   fdk-fulltext-search:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.811701902+02:00"
+    created: "2020-10-21T12:31:05.388686709+02:00"
     description: FDK Fulltext Search
     digest: a24b3c9ecc394537b975e24ce8055ec6a093535db39121a79961baeb1360e73c
     home: https://github.com/Informasjonsforvaltning/fdk-fulltext-search
@@ -224,7 +224,7 @@ entries:
   fdk-fulltext-search-rabbit-consumer:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.811878219+02:00"
+    created: "2020-10-21T12:31:05.391177666+02:00"
     description: FDK Fulltext Search Rabbit Consumer
     digest: c8d412ee4deed26eff4d6da319f10f3b0c03ee58821c10c97ce6ac16879f4a5b
     home: https://github.com/Informasjonsforvaltning/fdk-fulltext-search-rabbit-consumer
@@ -235,7 +235,7 @@ entries:
   fdk-fuseki-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.812058458+02:00"
+    created: "2020-10-21T12:31:05.391675153+02:00"
     description: FDK Fuseki Service
     digest: 8bc657dc1394180bc2eb54e2a634cde99097a97f7df7638ce74b0c2bc2cfde23
     home: https://github.com/Informasjonsforvaltning/fdk-fuseki-service
@@ -246,7 +246,7 @@ entries:
   fdk-harvest-admin:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.81224692+02:00"
+    created: "2020-10-21T12:31:05.392103305+02:00"
     description: FDK Harvest Admin
     digest: a0cbce29bb595d44306c527b8dc7943d30f18211e483bb0bcce5f79a741ee4e7
     home: https://github.com/Informasjonsforvaltning/fdk-harvest-admin
@@ -257,7 +257,7 @@ entries:
   fdk-harvest-scheduler:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.81241948+02:00"
+    created: "2020-10-21T12:31:05.392521718+02:00"
     description: Service that triggers harvests on a fixed schedule
     digest: 93c7bf369dda07022c6374c88403433fbc7c46b395180c350427431b652eeb38
     home: https://github.com/Informasjonsforvaltning/fdk-harvest-scheduler
@@ -268,7 +268,7 @@ entries:
   fdk-harvester-bff:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.812617253+02:00"
+    created: "2020-10-21T12:31:05.39291922+02:00"
     description: FDK Harvester BFF
     digest: 6ce34c4a66610a2ff28f663dffabb25220c4c3f98a13fc021ca9693ae6488046
     home: https://github.com/Informasjonsforvaltning/fdk-harvester-bff
@@ -279,7 +279,7 @@ entries:
   fdk-informationmodel-harvester:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.812804283+02:00"
+    created: "2020-10-21T12:31:05.393302062+02:00"
     description: FDK Informationmodel Harvester
     digest: 404dafe4f0fe060146e980c73e87bdf5f4a101790bfc6b0b877188b0a8374ed4
     home: https://github.com/Informasjonsforvaltning/fdk-informationmodel-harvester
@@ -290,7 +290,7 @@ entries:
   fdk-metadata-quality-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.812996004+02:00"
+    created: "2020-10-21T12:31:05.39371819+02:00"
     description: FDK metadata quality service
     digest: 8424ebe45d580313226700c0fa283b92e638271ef2dc3ac7cc5a8ab976aec25a
     home: https://github.com/Informasjonsforvaltning/fdk-metadata-quality-service
@@ -301,7 +301,7 @@ entries:
   fdk-nginx-altinn-proxy:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.813184389+02:00"
+    created: "2020-10-21T12:31:05.394184967+02:00"
     description: FDK nginx altinn proxy
     digest: 0decff74f6e3d88ccbbefeba4ba224c7eb4770427c8d4c1a7932f2d12764d7d1
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-altinn-proxy
@@ -312,7 +312,7 @@ entries:
   fdk-nginx-altinn-proxy-mock:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.813353201+02:00"
+    created: "2020-10-21T12:31:05.394615808+02:00"
     description: FDK nginx altinn proxy mock
     digest: 569d316f61864b667c57c888bc9623a7d04c0e7b4d1985c6fe7c3f5354233d17
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-altinn-proxy-mock
@@ -323,7 +323,7 @@ entries:
   fdk-nginx-dataservices:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.813536032+02:00"
+    created: "2020-10-21T12:31:05.39505303+02:00"
     description: FDK nginx dataservices-catalog
     digest: c354869df0e2eb252a9616fb5660329422ffbfbc273d2d0135a68fbb3fda1042
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-dataservices
@@ -334,7 +334,7 @@ entries:
   fdk-nginx-datasets:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.813714389+02:00"
+    created: "2020-10-21T12:31:05.395510575+02:00"
     description: FDK nginx datasets
     digest: d55f33bf381fd97e6a57e7c7b81fdeb79b6ef30047b00bc1b451f8504c0b3cc4
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-datasets
@@ -345,7 +345,7 @@ entries:
   fdk-nginx-enhetsregisteret-proxy:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.813881284+02:00"
+    created: "2020-10-21T12:31:05.396676054+02:00"
     description: FDK nginx enhetsregisteret proxy
     digest: ebf04474ed9d46cc9e3bcefed550c4429b9bf30dc1b8c4b4f5645dc776d7d5c5
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-enhetsregisteret-proxy
@@ -356,7 +356,7 @@ entries:
   fdk-nginx-enhetsregisteret-proxy-mock:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.814061477+02:00"
+    created: "2020-10-21T12:31:05.397671793+02:00"
     description: FDK nginx enhetsregisteret proxy mock
     digest: 2a7c0a0bd73297ea92ee9fbe557470151b3b7d92c6985083e63fa1963ae1872d
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-enhetsregisteret-proxy-mock
@@ -367,7 +367,7 @@ entries:
   fdk-nginx-organization:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.814237094+02:00"
+    created: "2020-10-21T12:31:05.399218182+02:00"
     description: FDK nginx organization
     digest: 3a32f5530f4f35218c1879b422725bcd1afafca1e78446ea8b27ce71b27e0fed
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-organization
@@ -378,7 +378,7 @@ entries:
   fdk-nginx-records:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.814430256+02:00"
+    created: "2020-10-21T12:31:05.400952136+02:00"
     description: FDK nginx records-of-processing-activities
     digest: b5134027ed9d233990bcaae2700e0472f13608bf5193ea221ad0bca87381dc99
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-records
@@ -389,7 +389,7 @@ entries:
   fdk-nginx-registration:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.814610312+02:00"
+    created: "2020-10-21T12:31:05.401436126+02:00"
     description: FDK nginx registration
     digest: 84ca0a10735f95ac8f451b5b3d5ea2b370c65c8f62c5172bfd1d292b00bfd0fc
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-registration
@@ -400,7 +400,7 @@ entries:
   fdk-nginx-search:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.814992925+02:00"
+    created: "2020-10-21T12:31:05.401906909+02:00"
     description: FDK nginx search
     digest: 37732617733bad8f6f01dce40fef7d3df3dae3bc2d2e4b35ff515bdc0bb1730a
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-search
@@ -411,7 +411,7 @@ entries:
   fdk-organization-bff:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.815669389+02:00"
+    created: "2020-10-21T12:31:05.402394353+02:00"
     description: Aggregation service for organizations and their content
     digest: bb97b0b353c87c091af42033560a5b48358422799ceaeb4c5f30ab4f43af7c8f
     home: https://github.com/Informasjonsforvaltning/fdk-organization-bff
@@ -422,7 +422,7 @@ entries:
   fdk-portal:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.815901861+02:00"
+    created: "2020-10-21T12:31:05.402781803+02:00"
     description: FDK Portal
     digest: 6ee01b5d8e5666b67dd2c00fddf7cbc6a7ad7824ca85e664123fc1ea2c3fe77f
     home: https://github.com/Informasjonsforvaltning/fdk-portal
@@ -433,9 +433,9 @@ entries:
   fdk-reports-bff:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.816104145+02:00"
+    created: "2020-10-21T12:31:05.40295918+02:00"
     description: Report service for aggregating reports
-    digest: efac5a77720587f313901f41d327d2c5b2c9a9377b8c28ca091daae3c396de2f
+    digest: 501203a2726edb2a55c797a5f71b965d77603cb367014074b8bde13c35ebbadb
     home: https://github.com/Informasjonsforvaltning/fdk-reports-bff
     name: fdk-reports-bff
     urls:
@@ -444,7 +444,7 @@ entries:
   fuseki:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.816312746+02:00"
+    created: "2020-10-21T12:31:05.403457106+02:00"
     description: FDK Fuseki Service
     digest: 6ea03efc67bb5a02ffb2f6af2881bff28c09755c0b45214e2e42947fb1cb9a17
     home: https://github.com/Informasjonsforvaltning/fuseki
@@ -455,7 +455,7 @@ entries:
   helm-chart-test:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.816633451+02:00"
+    created: "2020-10-21T12:31:05.404058711+02:00"
     description: A Helm chart for Kubernetes
     digest: bf7da50e0c1ab6bff747aff88a80f0cf6dac982fa969568c4a029f087119206e
     name: helm-chart-test
@@ -465,7 +465,7 @@ entries:
   ingress:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.816833148+02:00"
+    created: "2020-10-21T12:31:05.404617275+02:00"
     description: Config for FDK ingress
     digest: 9d399840bcfa691853bdad1f70e321aa21168c30f8785f5da3de170b85c89136
     home: https://github.com/Informasjonsforvaltning/fdk-ingress-config
@@ -476,7 +476,7 @@ entries:
   model-publisher:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.816998252+02:00"
+    created: "2020-10-21T12:31:05.406852718+02:00"
     description: A service publishing a model catalogue in a standardized format
     digest: b941f10c853ca1c786ec310ca95dd4d52b87a9ca1b20d1188c7eff92e7ac774d
     home: https://github.com/Informasjonsforvaltning/model-publisher
@@ -487,7 +487,7 @@ entries:
   organization-catalog-bff:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.817182267+02:00"
+    created: "2020-10-21T12:31:05.407740403+02:00"
     description: Aggregation service for organizations and their content
     digest: 60e5112e1adeeb32616b712aef00b0ae9cfe478eaea5b47c17523b50e307210e
     home: https://github.com/Informasjonsforvaltning/organization-catalog-bff
@@ -498,7 +498,7 @@ entries:
   organization-catalogue:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.817357633+02:00"
+    created: "2020-10-21T12:31:05.408296972+02:00"
     description: Organization catalogue
     digest: 2dddf5c06da729996cfd8f9b6495941d8777d24f0388303163daaf3e8cea6762
     home: https://github.com/Informasjonsforvaltning/organization-catalogue
@@ -509,7 +509,7 @@ entries:
   postgresql-sqlproxy:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.817540609+02:00"
+    created: "2020-10-21T12:31:05.408860469+02:00"
     description: Config for PostgreSQL
     digest: 10b351282220b822f3ef587ab7a5b3b37f5a2f2c40bbac8cc207ce2f68de8fb6
     home: https://github.com/Informasjonsforvaltning/fdk-postgresql-config
@@ -520,7 +520,7 @@ entries:
   records-of-processing-activities:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.817719605+02:00"
+    created: "2020-10-21T12:31:05.409406556+02:00"
     description: Template service for a backend service
     digest: d5c759fb7e2d3e0a309d7e2a87fa324ddc5ce5e7d8fbc08e9d9eb299b3363a23
     home: https://github.com/Informasjonsforvaltning/records-of-processing-activities
@@ -531,7 +531,7 @@ entries:
   records-of-processing-activities-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.817909854+02:00"
+    created: "2020-10-21T12:31:05.409936163+02:00"
     description: Template service for records of processing activities gui.
     digest: 6811a50fc5559d1dc600ccd6b1edd4f712918477db07758886672e9981b15135
     home: https://github.com/Informasjonsforvaltning/records-of-processing-activities-gui
@@ -542,7 +542,7 @@ entries:
   reference-data:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.818100081+02:00"
+    created: "2020-10-21T12:31:05.410961079+02:00"
     description: FDK Reference Data
     digest: 21b9a4978c9158c7198f49283785c00fc4419eb1df163fb2db49784567cdd8fe
     home: https://github.com/Informasjonsforvaltning/fdk-reference-data
@@ -553,7 +553,7 @@ entries:
   sso:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.818291629+02:00"
+    created: "2020-10-21T12:31:05.411466343+02:00"
     description: A single sign on solution powered by keycloak
     digest: 905464c875464aee93d0c4062e39fa4dd9beb56349ada018428cc313b6a2f532
     home: https://github.com/Informasjonsforvaltning/sso
@@ -564,7 +564,7 @@ entries:
   terms-and-conditions:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.818478325+02:00"
+    created: "2020-10-21T12:31:05.411941013+02:00"
     description: FDK terms and conditions
     digest: 632c09e711b967474ce97cad727d7306c43332b3e54466f30f49e3ba196f70d5
     home: https://github.com/Informasjonsforvaltning/terms-and-conditions
@@ -575,7 +575,7 @@ entries:
   terms-and-conditions-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.81865934+02:00"
+    created: "2020-10-21T12:31:05.412410732+02:00"
     description: FDK terms and conditions gui
     digest: afc3be1ace0c01d41434bb57c53dd47d74421221e456a11d045427e9ad309365
     home: https://github.com/Informasjonsforvaltning/terms-and-conditions-gui
@@ -586,7 +586,7 @@ entries:
   tmp-informationmodel-harvester:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.818840379+02:00"
+    created: "2020-10-21T12:31:05.412899227+02:00"
     description: FDK Informationmodel Harvester
     digest: d46c66220f5a9849d797601dde0383bc6ce4c2f01aea5b0558e40249f8c89320
     home: https://github.com/Informasjonsforvaltning/fdk-informationmodel-harvester
@@ -597,7 +597,7 @@ entries:
   user-api:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-21T10:29:05.819024514+02:00"
+    created: "2020-10-21T12:31:05.413649328+02:00"
     description: User API
     digest: 906def29262f75b0e001e3ff5d8d64af7af7e5ff84d80b12490923a1f33b8aba
     home: https://github.com/Informasjonsforvaltning/user-api
@@ -605,4 +605,4 @@ entries:
     urls:
     - https://informasjonsforvaltning.github.io/helm-chart/user-api-0.1.0.tgz
     version: 0.1.0
-generated: "2020-10-21T10:29:05.806995234+02:00"
+generated: "2020-10-21T12:31:05.372926636+02:00"
