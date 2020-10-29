@@ -26,6 +26,11 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_DATASET_HARVESTER_URI
+        - name: INFORMATION_MODEL_HARVESTER_BASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_INFORMATIONMODEL_HARVESTER_BASE_URI
         name: fdk-harvester-bff
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
