@@ -184,3 +184,10 @@ spec:
               serviceName: tmp-informationmodel-harvester
               servicePort: 8080
             path: /*
+    - host: {{ required "Missing value HOSTNAME_ALTINN_MODEL_PUBLISHER" .Values.HOSTNAME_ALTINN_MODEL_PUBLISHER }}
+      http:
+        paths:
+          - backend:
+              serviceName: altinn-model-publisher
+              servicePort: 8080
+            path: /*
