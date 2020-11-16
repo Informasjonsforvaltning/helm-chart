@@ -198,3 +198,10 @@ spec:
               serviceName: altinn-model-publisher
               servicePort: 8080
             path: /*
+    - host: {{ required "Missing value HOSTNAME_DATASET_VALIDATOR" .Values.HOSTNAME_DATASET_VALIDATOR }}
+      http:
+        paths:
+          - backend:
+              serviceName: dcat-ap-no-validator-service
+              servicePort: 8080
+            path: /*
