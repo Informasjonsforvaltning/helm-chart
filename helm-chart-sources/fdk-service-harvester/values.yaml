@@ -1,6 +1,0 @@
-# Default values for fdk-service-harvester.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-##fdk-service-harvester
-FDK_SERVICE_HARVESTER_MEMORY: "750Mi"
