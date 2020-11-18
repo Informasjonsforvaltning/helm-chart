@@ -40,7 +40,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: MONGO_PASSWORD
+              key: FDK_BASE_URI
         name: dataset-catalog
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
