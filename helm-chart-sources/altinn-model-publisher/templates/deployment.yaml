@@ -21,11 +21,16 @@ spec:
     spec:
       containers:
       - env:
-        - name: DATASET_HARVESTER_BASE_URL
+        - name: SELF_URI
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_DATASET_HARVESTER_URI
+              key: ALTINN_MODEL_PUBLISHER_BASE_URI
+        - name: ORG_URI
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ORGANIZATION_CATALOGUE_HOST
         name: altinn-model-publisher
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
