@@ -3,21 +3,21 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    fdk.service: fdk-publicservice-harvester
-  name: fdk-publicservice-harvester
+    fdk.service: fdk-public-service-harvester
+  name: fdk-public-service-harvester
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      fdk.service: fdk-publicservice-harvester
+      fdk.service: fdk-public-service-harvester
   strategy:
     type: RollingUpdate
   template:
     metadata:
       creationTimestamp: null
       labels:
-        fdk.service: fdk-publicservice-harvester
+        fdk.service: fdk-public-service-harvester
     spec:
       containers:
         - env:
@@ -58,7 +58,7 @@ spec:
                 key: MONGO_PASSWORD
           image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
           imagePullPolicy: Always
-          name: fdk-publicservice-harvester
+          name: fdk-public-service-harvester
           ports:
             - containerPort: 8080
           resources:

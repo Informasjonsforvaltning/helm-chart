@@ -1,6 +1,6 @@
-# Default values for fdk-publicservice-harvester.
+# Default values for fdk-public-service-harvester.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-##fdk-publicservice-harvester
+##fdk-public-service-harvester
 FDK_PUBLIC_SERVICE_HARVESTER_MEMORY: "750Mi"
