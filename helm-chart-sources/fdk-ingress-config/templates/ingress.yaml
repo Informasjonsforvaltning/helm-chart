@@ -205,3 +205,10 @@ spec:
               serviceName: dcat-ap-no-validator-service
               servicePort: 8080
             path: /*
+    - host: {{ required "Missing value HOSTNAME_FDK_MODEL_PUBLISHER" .Values.HOSTNAME_FDK_MODEL_PUBLISHER }}
+      http:
+        paths:
+          - backend:
+              serviceName: fdk-model-publisher
+              servicePort: 8080
+            path: /*
