@@ -30,7 +30,7 @@ spec:
               memory: {{ required "Missing value FDK_NGINX_PUBLISHERS_MEMORY" .Values.FDK_NGINX_PUBLISHERS_MEMORY | quote }}
           livenessProbe:
             httpGet:
-              path: /health
+              path: /ping
               port: 8080
             initialDelaySeconds: 20
             periodSeconds: 30
@@ -38,7 +38,7 @@ spec:
             failureThreshold: 5
           readinessProbe:
             httpGet:
-              path: /health
+              path: /ready
               port: 8080
             initialDelaySeconds: 20
             periodSeconds: 30
