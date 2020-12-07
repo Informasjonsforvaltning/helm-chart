@@ -7,13 +7,13 @@ metadata:
   name: fdk-fuseki-service-claim0
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
-        storageClassName: ""
-        volumeName: {{ required "Missing value FDK_FUSEKI_VOLUMENAME" .Values.FDK_FUSEKI_VOLUMENAME }}
-        accessModes:
-          - ReadWriteOnce
-        resources:
-          requests:
-            storage: {{ required "Missing value FDK_FUSEKI_STORAGESIZE" .Values.FDK_FUSEKI_STORAGESIZE }}
+  storageClassName: ""
+  volumeName: {{ required "Missing value FDK_FUSEKI_VOLUMENAME" .Values.FDK_FUSEKI_VOLUMENAME }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ required "Missing value FDK_FUSEKI_STORAGESIZE" .Values.FDK_FUSEKI_STORAGESIZE }}
 status: {}
 ---
 kind: PersistentVolume
