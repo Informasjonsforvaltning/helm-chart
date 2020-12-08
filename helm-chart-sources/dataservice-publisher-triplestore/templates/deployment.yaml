@@ -45,7 +45,7 @@ spec:
             requests:
               memory: {{ required "Missing value DATASERVICE_PUBLISHER_TRIPLESTORE_MEMORY" .Values.DATASERVICE_PUBLISHER_TRIPLESTORE_MEMORY | quote }}
           volumeMounts:
-          - mountPath: /etc/fuseki/databases/
+          - mountPath: /fuseki/databases/
             name: dataservice-publisher-triplestore-claim0
       restartPolicy: Always
       volumes:
