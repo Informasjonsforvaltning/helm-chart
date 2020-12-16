@@ -41,6 +41,11 @@ spec:
             secretKeyRef:
               name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: MONGO_PASSWORD
+        - name: SSO_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: SSO_BASE_URI
         - name: ENHETSREGISTERET_PROXY_BASE_URL
           valueFrom:
             secretKeyRef:
