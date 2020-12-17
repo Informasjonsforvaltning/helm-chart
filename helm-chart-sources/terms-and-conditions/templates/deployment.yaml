@@ -36,6 +36,11 @@ spec:
                 secretKeyRef:
                   name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
                   key: USER_API_KEY
+            - name: SSO_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                  key: SSO_BASE_URI
           image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
           imagePullPolicy: Always
           name: terms-and-conditions
