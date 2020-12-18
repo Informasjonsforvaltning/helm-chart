@@ -167,7 +167,7 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: dataset-catalogue
+              serviceName: dataset-catalog
               servicePort: 8080
             path: /*
     - host: {{ required "Missing value HOSTNAME_METADATA_QUALITY_SERVICE" .Values.HOSTNAME_METADATA_QUALITY_SERVICE }}
