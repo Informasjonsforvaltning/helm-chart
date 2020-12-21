@@ -20,59 +20,54 @@ spec:
         fdk.service: fdk-informationmodel-harvester
     spec:
       containers:
-      - env:
-        - name: FDK_ES_CLUSTERNAME
-          valueFrom:
-            secretKeyRef:
-              name: elasticsearch-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_ES_CLUSTERNAME
-        - name: FDK_ES_CLUSTERNODES
-          valueFrom:
-            secretKeyRef:
-              name: elasticsearch-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_ES_CLUSTERNODES
-        - name: SPRING_PROFILES_ACTIVE
-          valueFrom:
-            secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: SPRING_PROFILES_ACTIVE
-        - name: FDK_ALTINN_MODELS_URL
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_ALTINN_MODELS_URL
-        - name: HARVEST_ADMIN_ROOT_URL
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_HARVEST_ADMIN_API_URI
-        - name: RABBIT_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBITMQ_USERNAME
-        - name: RABBIT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBITMQ_PASSWORD
-        - name: FDK_REFERENCE_DATA_URL
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_REFERENCE_DATA_BASE_URI
-        - name: FDK_ORGANIZATION_CATALOGUE_URL
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: ORGANIZATION_CATALOGUE_HOST
-        image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
-        imagePullPolicy: Always
-        name: fdk-informationmodel-harvester
-        ports:
-        - containerPort: 8080
-        resources:
-          requests:
-            memory: {{ required "Missing value FDK_INFORMATIONMODEL_HARVESTER_MEMORY" .Values.FDK_INFORMATIONMODEL_HARVESTER_MEMORY | quote }}
+        - env:
+          - name: FDK_FUSEKI_SERVICE_URI
+            valueFrom:
+              secretKeyRef:
+                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: FDK_FUSEKI_SERVICE_URI
+          - name: FDK_INFORMATIONMODEL_HARVESTER_URI
+            valueFrom:
+              secretKeyRef:
+                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: FDK_INFORMATIONMODEL_HARVESTER_BASE_URI
+          - name: RABBIT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: RABBITMQ_USERNAME
+          - name: RABBIT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: RABBITMQ_PASSWORD
+          - name: HARVEST_ADMIN_ROOT_URL
+            valueFrom:
+              secretKeyRef:
+                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: FDK_HARVEST_ADMIN_API_URI
+          - name: MONGO_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: MONGO_USERNAME
+          - name: MONGO_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: MONGO_PASSWORD
+          - name: FDK_INFORMATIONMODEL_HARVESTER_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: FDK_INFORMATIONMODEL_HARVESTER_API_KEY
+          image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+          imagePullPolicy: Always
+          name: fdk-informationmodel-harvester
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: {{ required "Missing value FDK_INFORMATIONMODEL_HARVESTER_MEMORY" .Values.FDK_INFORMATIONMODEL_HARVESTER_MEMORY | quote }}
       restartPolicy: Always
 status: {}
