@@ -181,7 +181,7 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: tmp-informationmodel-harvester
+              serviceName: fdk-informationmodel-harvester
               servicePort: 8080
             path: /*
     - host: {{ required "Missing value HOSTNAME_BASEREGISTRIES_PUBLISHER" .Values.HOSTNAME_BASEREGISTRIES_PUBLISHER }}
