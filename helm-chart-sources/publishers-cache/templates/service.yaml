@@ -16,6 +16,6 @@ spec:
     port: 6379
     targetPort: 6379
   selector:
-    service: publishers-cache
+    app: publishers-cache
 status:
   loadBalancer: {}
