@@ -3,7 +3,7 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    service: publishers-cache
+    app: publishers-cache
   name: publishers-cache
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
