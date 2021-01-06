@@ -1,0 +1,32 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  creationTimestamp: null
+  labels:
+    app: publishers-cache-claim0
+  name: publishers-cache-claim0
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+        storageClassName: ""
+        volumeName: {{ required "Missing value PUBLISHERS_CACHE_VOLUMENAME" .Values.PUBLISHERS_CACHE_VOLUMENAME }}
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: {{ required "Missing value PUBLISHERS_CACHE_STORAGESIZE" .Values.PUBLISHERS_CACHE_STORAGESIZE }}
+status: {}
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: {{ required "Missing value PUBLISHERS_CACHE_VOLUMENAME" .Values.PUBLISHERS_CACHE_VOLUMENAME }}
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  storageClassName: ""
+  capacity:
+    storage: {{ required "Missing value PUBLISHERS_CACHE_STORAGESIZE" .Values.PUBLISHERS_CACHE_STORAGESIZE }}
+  accessModes:
+    - ReadWriteOnce
+  gcePersistentDisk:
+    pdName: {{ required "Missing value PUBLISHERS_CACHE_VOLUMENAME" .Values.PUBLISHERS_CACHE_VOLUMENAME }}
+    fsType: ext4

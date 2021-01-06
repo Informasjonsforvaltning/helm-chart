@@ -1,0 +1,4 @@
+#DValues for staging environment
+NAMESPACE: staging
+DATASERVICE_PUBLISHER_TRIPLESTORE_VOLUMENAME: fdk-dev-staging-publishers-cache
+DATASERVICE_PUBLISHER_TRIPLESTORE_STORAGESIZE: 9G
