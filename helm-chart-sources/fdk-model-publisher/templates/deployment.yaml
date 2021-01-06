@@ -46,6 +46,11 @@ spec:
             secretKeyRef:
               name: fdk-harvest-scheduler-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: RABBIT_HOST
+        - name: CACHE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_PUBLISHERS_CACHE_PASSWORD
         name: fdk-model-publisher
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
