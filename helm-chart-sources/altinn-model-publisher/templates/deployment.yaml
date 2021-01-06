@@ -26,16 +26,16 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: NAMESPACE
-        - name: MONGO_USERNAME
+        - name: CACHE_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: MONGO_USERNAME
-        - name: MONGO_PASSWORD
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: PUBLISHERS_CACHE_PASSWORD
+        - name: CACHE_ENDPOINT
           valueFrom:
             secretKeyRef:
-              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: MONGO_PASSWORD
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: PUBLISHERS_CACHE_ENDPOINT
         - name: API_KEY
           valueFrom:
             secretKeyRef:

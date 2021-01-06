@@ -25,7 +25,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: REDIS_PASS
+                key: PUBLISHERS_CACHE_PASSWORD
           name: publishers-cache
           image: redis:6.0.9-alpine
           imagePullPolicy: Always
