@@ -1,0 +1,4 @@
+#DValues for staging environment
+NAMESPACE: staging
+FDK_PUBLISHERS_CACHE_VOLUMENAME: fdk-dev-staging-fdk-publishers-cache
+FDK_PUBLISHERS_CACHE_STORAGESIZE: 9G
