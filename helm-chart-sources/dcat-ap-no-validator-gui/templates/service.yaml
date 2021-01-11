@@ -3,8 +3,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: dcat-ap-no-validator
-  name: dcat-ap-no-validator
+    app: dcat-ap-no-validator-gui
+  name: dcat-ap-no-validator-gui
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   type: NodePort
@@ -13,6 +13,6 @@ spec:
       port: 8080
       targetPort: 8080
   selector:
-    app: dcat-ap-no-validator
+    app: dcat-ap-no-validator-gui
 status:
   loadBalancer: {}

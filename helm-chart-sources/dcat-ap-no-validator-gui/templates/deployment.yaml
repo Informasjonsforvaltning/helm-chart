@@ -3,21 +3,21 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: dcat-ap-no-validator
-  name: dcat-ap-no-validator
+    app: dcat-ap-no-validator-gui
+  name: dcat-ap-no-validator-gui
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: dcat-ap-no-validator
+      app: dcat-ap-no-validator-gui
   strategy:
     type: RollingUpdate
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: dcat-ap-no-validator
+        app: dcat-ap-no-validator-gui
     spec:
       containers:
       - env:
@@ -38,11 +38,11 @@ spec:
               key: ADMIN_GUI_BASE_URI
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
-        name: dcat-ap-no-validator
+        name: dcat-ap-no-validator-gui
         ports:
         - containerPort: 8080
         resources:
           requests:
-            memory: {{ required "Missing value DCAT_AP_NO_VALIDATOR_MEMORY" .Values.DCAT_AP_NO_VALIDATOR_MEMORY | quote }}
+            memory: {{ required "Missing value DCAT_AP_NO_VALIDATOR_GUI_MEMORY" .Values.DCAT_AP_NO_VALIDATOR_GUI_MEMORY | quote }}
       restartPolicy: Always
 status: {}
