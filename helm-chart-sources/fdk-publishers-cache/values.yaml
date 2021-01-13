@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 #fdk-publishers-cache
-FDK_PUBLISHERS_CACHE_MEMORY: "850Mi"
+FDK_PUBLISHERS_CACHE_MEMORY: "50Mi"
