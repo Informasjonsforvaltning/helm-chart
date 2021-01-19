@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##altinn-model-publisher
-ALTINN_MODEL_PUBLISHER_MEMORY: "500Mi"
+ALTINN_MODEL_PUBLISHER_MEMORY: "5000Mi"
