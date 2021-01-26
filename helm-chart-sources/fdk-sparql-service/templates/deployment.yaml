@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: fdk-sparql-service
+  name: fdk-sparql-service
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fdk-sparql-service
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: fdk-sparql-service
+    spec:
+      containers:
+        - env:
+          - name: DBA_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: FDK_SPARQL_SERVICE_PASSWORD
+          name: fdk-sparql-service
+          image: openlink/virtuoso-opensource-7
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 8890
+            name: virtuoso
+          - containerPort: 1111
+            name: isql
+          resources:
+            requests:
+              memory: {{ required "Missing value FDK_SPARQL_SERVICE_MEMORY" .Values.FDK_SPARQL_SERVICE_MEMORY | quote }}
+          volumeMounts:
+          - mountPath: /opt/virtuoso-opensource/database
+            name: fdk-sparql-service-claim0
+      restartPolicy: Always
+      volumes:
+      - name: fdk-sparql-service-claim0
+        persistentVolumeClaim:
+          claimName: fdk-sparql-service-claim0
+status: {}
