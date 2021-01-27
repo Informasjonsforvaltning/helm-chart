@@ -9,12 +9,9 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - name: "8000"
-    port: 8000
-    targetPort: 8000
   - name: "8080"
     port: 8080
-    targetPort: 8000
+    targetPort: 8080
   selector:
     fdk.service: fdk-admin-gui
 status:
