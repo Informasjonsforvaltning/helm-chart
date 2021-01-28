@@ -56,6 +56,11 @@ spec:
               secretKeyRef:
                 name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
                 key: MONGO_PASSWORD
+          - name: FDK_SPARQL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: FDK_SPARQL_SERVICE_PASSWORD
           image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
           imagePullPolicy: Always
           name: fdk-dataservice-harvester
