@@ -31,7 +31,7 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: ADMIN_API_BASE_URI
-        - name: ORGANISATION_CATALOGUE_HOST
+        - name: ORGANIZATION_CATALOGUE_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
