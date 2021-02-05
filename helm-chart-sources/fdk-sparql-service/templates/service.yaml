@@ -11,13 +11,7 @@ spec:
   ports:
   - name: "8080"
     port: 8080
-    targetPort: 8890
-  - name: "8890"
-    port: 8890
-    targetPort: 8890
-  - name: "1111"
-    port: 1111
-    targetPort: 1111
+    targetPort: 8080
   selector:
     app: fdk-sparql-service
 status:
