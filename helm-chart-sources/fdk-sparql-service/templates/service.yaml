@@ -3,7 +3,7 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: fdk-sparql-service
+    fdk.service: fdk-sparql-service
   name: fdk-sparql-service
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
@@ -13,6 +13,6 @@ spec:
     port: 8080
     targetPort: 8080
   selector:
-    app: fdk-sparql-service
+    fdk.service: fdk-sparql-service
 status:
   loadBalancer: {}
