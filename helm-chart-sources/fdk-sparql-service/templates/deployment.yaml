@@ -29,7 +29,7 @@ spec:
           requests:
             memory: {{ required "Missing value FDK_SPARQL_SERVICE_MEMORY" .Values.FDK_SPARQL_SERVICE_MEMORY | quote }}
         volumeMounts:
-        - mountPath: store
+        - mountPath: /app/store
           name: fdk-sparql-service-claim0
       restartPolicy: Always
       volumes:
