@@ -24,6 +24,17 @@ spec:
         runAsGroup: 1001
         fsGroup: 1001
       containers:
+        - env:
+          - name: RABBIT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: RABBITMQ_USERNAME
+          - name: RABBIT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: RABBITMQ_PASSWORD
       - image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         name: fdk-sparql-service
