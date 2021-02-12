@@ -31,13 +31,13 @@ spec:
               secretKeyRef:
                 name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
                 key: RABBITMQ_PASSWORD
-      - image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+        image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         name: fdk-sparql-service
-      securityContext:
-        runAsUser: 1001
-        runAsGroup: 1001
-        fsGroup: 1001
+        securityContext:
+          runAsUser: 1001
+          runAsGroup: 1001
+          fsGroup: 1001
         ports:
         - containerPort: 8080
         resources:
