@@ -36,13 +36,9 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-      securityContext:
-        runAsUser: 1001
-        runAsGroup: 1001
-        fsGroup: 1001
-      resources:
-        requests:
-          memory: {{ required "Missing value FDK_SPARQL_SERVICE_MEMORY" .Values.FDK_SPARQL_SERVICE_MEMORY | quote }}
+        resources:
+          requests:
+            memory: {{ required "Missing value FDK_SPARQL_SERVICE_MEMORY" .Values.FDK_SPARQL_SERVICE_MEMORY | quote }}
         volumeMounts:
         - mountPath: /app/store
           name: fdk-sparql-service-claim0
@@ -50,5 +46,9 @@ spec:
         - name: fdk-sparql-service-claim0
           persistentVolumeClaim:
             claimName: fdk-sparql-service-claim0
+      securityContext:
+        runAsUser: 1001
+        runAsGroup: 1001
+        fsGroup: 1001
       restartPolicy: Always
 status: {}
