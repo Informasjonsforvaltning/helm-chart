@@ -20,35 +20,35 @@ spec:
         fdk.service: fdk-sparql-service
     spec:
       containers:
-        - env:
-          - name: RABBIT_USERNAME
-            valueFrom:
-              secretKeyRef:
-                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: RABBITMQ_USERNAME
-          - name: RABBIT_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: RABBITMQ_PASSWORD
+      - env:
+        - name: RABBIT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBITMQ_USERNAME
+        - name: RABBIT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBITMQ_PASSWORD
+        name: fdk-sparql-service
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
-        name: fdk-sparql-service
+        ports:
+        - containerPort: 8080
         securityContext:
           runAsUser: 1001
           runAsGroup: 1001
           fsGroup: 1001
-        ports:
-        - containerPort: 8080
         resources:
           requests:
             memory: {{ required "Missing value FDK_SPARQL_SERVICE_MEMORY" .Values.FDK_SPARQL_SERVICE_MEMORY | quote }}
         volumeMounts:
         - mountPath: /app/store
           name: fdk-sparql-service-claim0
+        volumes:
+        - name: fdk-sparql-service-claim0
+          persistentVolumeClaim:
+            claimName: fdk-sparql-service-claim0
       restartPolicy: Always
-      volumes:
-      - name: fdk-sparql-service-claim0
-        persistentVolumeClaim:
-          claimName: fdk-sparql-service-claim0
 status: {}
