@@ -21,26 +21,31 @@ spec:
     spec:
       containers:
       - env:
-        - name: FDK_REGISTRATION_BASE_URI
+        - name: OIDC_ISSUER
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_REGISTRATION_BASE_URI
-        - name: ADMIN_GUI_BASE_URI
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: ADMIN_GUI_BASE_URI
-        - name: VALIDATOR_BASE_URI
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DCAT_AP_NO_VALIDATOR_SERVICE_BASE_URI
+              key: OIDC_ISSUER
         - name: FDK_BASE_URI
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_BASE_URI
+        - name: FDK_HARVEST_ADMIN_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ADMIN_API_BASE_URI
+        - name: FDK_REGISTRATION_BASE_URI
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_REGISTRATION_BASE_URI
+        - name: ORGANIZATION_CATALOGUE_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ORGANIZATION_CATALOGUE_HOST
         name: fdk-admin-gui
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
