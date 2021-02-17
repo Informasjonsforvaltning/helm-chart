@@ -1,5 +1,0 @@
-# Default values for fdk-dataset-api.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-FDK_DATASET_API_MEMORY: "750Mi"

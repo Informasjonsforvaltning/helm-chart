@@ -212,3 +212,10 @@ spec:
               serviceName: fdk-nginx-publishers
               servicePort: 8080
             path: /*
+    - host: {{ required "Missing value HOSTNAME_CONCEPT_HARVESTER" .Values.HOSTNAME_CONCEPT_HARVESTER }}
+      http:
+        paths:
+          - backend:
+              serviceName: new-concept-harvester
+              servicePort: 8080
+            path: /*
