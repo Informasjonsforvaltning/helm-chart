@@ -1,4 +1,0 @@
-#DValues for digdir-production environment
-NAMESPACE: prod
-DATASET_CATALOGUE_VOLUMENAME: fdk-prod-registration-api
-DATASET_CATALOGUE_STORAGESIZE: 9G
