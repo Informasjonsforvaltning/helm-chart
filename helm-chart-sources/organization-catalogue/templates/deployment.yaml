@@ -63,7 +63,7 @@ spec:
         - containerPort: 8080
         resources:
           requests:
-            memory: {{ required "Missing value OGRANIZATION_CATALOGUE_MEMORY" .Values.ORGANIZATION_CATALOGUE_MEMORY | quote }}
+            memory: {{ required "Missing value ORGANIZATION_CATALOGUE_MEMORY" .Values.ORGANIZATION_CATALOGUE_MEMORY | quote }}
         livenessProbe:
           httpGet:
             path: /ping
