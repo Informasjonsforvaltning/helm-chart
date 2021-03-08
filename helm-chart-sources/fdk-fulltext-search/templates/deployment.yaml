@@ -34,12 +34,12 @@ spec:
         - name: ELASTIC_PORT
           valueFrom:
             secretKeyRef:
-              name: elasticsearch-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_ES_PORT
         - name: ELASTIC_TCP_PORT
           valueFrom:
             secretKeyRef:
-              name: elasticsearch-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_ES_TCP_PORT
         - name: RABBIT_USERNAME
           valueFrom:
