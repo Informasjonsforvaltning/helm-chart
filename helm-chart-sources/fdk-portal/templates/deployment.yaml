@@ -105,11 +105,11 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_INFORMATIONMODEL_HARVESTER_BASE_URI
-        - name: FKD_LOGGING_FUNCTION_URI
+        - name: FDK_LOGGING_FUNCTION_URI
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FKD_LOGGING_FUNCTION_URI
+              key: FDK_LOGGING_FUNCTION_URI
         - name: NAMESPACE
           valueFrom:
             secretKeyRef:
