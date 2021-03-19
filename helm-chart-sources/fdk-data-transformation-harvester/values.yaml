@@ -1,6 +1,0 @@
-# Default values for fdk-data-transformation-harvester.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-##fdk-data-transformation-harvester
-FDK_DATA_TRANSFORMATION_HARVESTER_MEMORY: "1000Mi"
