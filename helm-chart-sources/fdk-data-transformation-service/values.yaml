@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##fdk-data-transformation-service
-FDK_DATA_TRANSFORMATION_SERVICE_MEMORY: "1000Mi"
+FDK_DATA_TRANSFORMATION_SERVICE_MEMORY: "2000Mi"
