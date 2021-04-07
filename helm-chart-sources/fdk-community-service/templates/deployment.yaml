@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    fdk.service: fdk-community-service
+  name: fdk-community-service
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      fdk.service: fdk-community-service
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        fdk.service: fdk-community-service
+    spec:
+      containers:
+      - env:
+        - name: NAMESPACE
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: NAMESPACE
+        image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+        imagePullPolicy: Always
+        name: fdk-community-service
+        ports:
+          - containerPort: 8080
+        resources:
+          requests:
+            memory: {{ required "Missing value FDK_COMMUNITY_SERVICE_MEMORY" .Values.FDK_COMMUNITY_SERVICE_MEMORY | quote }}
+        livenessProbe:
+          httpGet:
+            path: /ping
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 30
+          successThreshold: 1
+          failureThreshold: 5
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 150
+          periodSeconds: 30
+          successThreshold: 1
+          failureThreshold: 5
+      restartPolicy: Always
+status: {}

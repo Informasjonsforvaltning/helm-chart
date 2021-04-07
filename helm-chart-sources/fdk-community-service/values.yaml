@@ -1,0 +1,6 @@
+# Default values for fdk-community-service.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+##fdk-community-service
+FDK_COMMUNITY_SERVICE_MEMORY: "500Mi"
