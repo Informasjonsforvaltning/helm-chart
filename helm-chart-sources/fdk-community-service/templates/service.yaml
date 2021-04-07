@@ -9,9 +9,12 @@ metadata:
 spec:
   type: NodePort
   ports:
+    - name: "4567"
+      port: 4567
+      targetPort: 4567
     - name: "8080"
       port: 8080
-      targetPort: 8080
+      targetPort: 4567
   selector:
     fdk.service: fdk-community-service
 status:
