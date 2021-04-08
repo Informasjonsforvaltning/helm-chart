@@ -12,7 +12,7 @@ spec:
     matchLabels:
       fdk.service: fdk-community-service
   strategy:
-    type: RollingUpdate
+    type: Recreate
   template:
     metadata:
       creationTimestamp: null
@@ -26,6 +26,11 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: NAMESPACE
+        - name: config
+          valueFrom:
+            secretKeyRef:
+              name: fdk-community-service-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_COMMUNITY_STORE_CONFIG
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         name: fdk-community-service
@@ -35,8 +40,7 @@ spec:
           requests:
             memory: {{ required "Missing value FDK_COMMUNITY_SERVICE_MEMORY" .Values.FDK_COMMUNITY_SERVICE_MEMORY | quote }}
         volumeMounts:
-          - mountPath: /usr/src/app/config.json
-            subPath: config.json
+          - mountPath: /usr/src/app/config
             name: fdk-community-service-claim0
       volumes:
         - name: fdk-community-service-claim0
