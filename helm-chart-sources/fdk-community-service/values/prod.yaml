@@ -1,2 +1,4 @@
 #DValues for production environment
 NAMESPACE: prod
+FDK_COMMUNITY_SERVICE_VOLUMENAME: fdk-prod-community-service
+FDK_COMMUNITY_SERVICE_STORAGESIZE: 9G
