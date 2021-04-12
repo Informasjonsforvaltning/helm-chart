@@ -30,7 +30,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: fdk-community-store-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_COMMUNITY_STORE_CONFIG
+              key: FDK_COMMUNITY_SERVICE_CONFIG
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         name: fdk-community-service
