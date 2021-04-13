@@ -1,0 +1,32 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dcat-ap-no-validator-cache-claim0
+  name: dcat-ap-no-validator-cache-claim0
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+        storageClassName: ""
+        volumeName: {{ required "Missing value DCAT_AP_NO_VALIDATOR_CACHE_VOLUMENAME" .Values.DCAT_AP_NO_VALIDATOR_CACHE_VOLUMENAME }}
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: {{ required "Missing value DCAT_AP_NO_VALIDATOR_CACHE_STORAGESIZE" .Values.DCAT_AP_NO_VALIDATOR_CACHE_STORAGESIZE }}
+status: {}
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: {{ required "Missing value DCAT_AP_NO_VALIDATOR_CACHE_VOLUMENAME" .Values.DCAT_AP_NO_VALIDATOR_CACHE_VOLUMENAME }}
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  storageClassName: ""
+  capacity:
+    storage: {{ required "Missing value DCAT_AP_NO_VALIDATOR_CACHE_STORAGESIZE" .Values.DCAT_AP_NO_VALIDATOR_CACHE_STORAGESIZE }}
+  accessModes:
+    - ReadWriteOnce
+  gcePersistentDisk:
+    pdName: {{ required "Missing value DCAT_AP_NO_VALIDATOR_CACHE_VOLUMENAME" .Values.DCAT_AP_NO_VALIDATOR_CACHE_VOLUMENAME }}
+    fsType: ext4

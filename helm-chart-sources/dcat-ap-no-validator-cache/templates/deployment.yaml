@@ -3,21 +3,21 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: publishers-cache
-  name: publishers-cache
+    app: dcat-ap-no-validator-cache
+  name: dcat-ap-no-validator-cache
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: publishers-cache
+      app: dcat-ap-no-validator-cache
   strategy:
     type: Recreate
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: publishers-cache
+        app: dcat-ap-no-validator-cache
     spec:
       containers:
         - env:
@@ -25,9 +25,9 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: PUBLISHERS_CACHE_PASSWORD
-          name: publishers-cache
-          image: redis:6.0.9-alpine
+                key: DCAT_AP_NO_VALIDATOR_CACHE_PASSWORD
+          name: dcat-ap-no-validator-cache
+          image: redis:latest
           imagePullPolicy: Always
           args: [ "--requirepass", "$(REDIS_PASS)", "--appendonly", "yes", "--save", "900", "1", "--save", "30", "1"]
           ports:
@@ -35,13 +35,13 @@ spec:
             name: redis
           resources:
             requests:
-              memory: {{ required "Missing value PUBLISHERS_CACHE_MEMORY" .Values.PUBLISHERS_CACHE_MEMORY | quote }}
+              memory: {{ required "Missing value DCAT_AP_NO_VALIDATOR_CACHE_MEMORY" .Values.DCAT_AP_NO_VALIDATOR_CACHE_MEMORY | quote }}
           volumeMounts:
           - mountPath: /data
-            name: publishers-cache-claim0
+            name: dcat-ap-no-validator-cache-claim0
       restartPolicy: Always
       volumes:
-      - name: publishers-cache-claim0
+      - name: dcat-ap-no-validator-cache-claim0
         persistentVolumeClaim:
-          claimName: publishers-cache-claim0
+          claimName: dcat-ap-no-validator-cache-claim0
 status: {}

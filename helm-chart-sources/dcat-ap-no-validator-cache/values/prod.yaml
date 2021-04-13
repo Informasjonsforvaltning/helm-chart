@@ -1,0 +1,4 @@
+#DValues for production environment
+NAMESPACE: prod
+DCAT_AP_NO_VALIDATOR_CACHE_VOLUMENAME: fdk-prod-dcat-ap-no-validator-cache
+DCAT_AP_NO_VALIDATOR_CACHE_STORAGESIZE: 9G

@@ -1,6 +1,0 @@
-# Default values for publishers-cache.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-#publishers-cache
-PUBLISHERS_CACHE_MEMORY: "50Mi"

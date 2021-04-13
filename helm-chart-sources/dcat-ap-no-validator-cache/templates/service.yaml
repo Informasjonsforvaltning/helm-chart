@@ -3,8 +3,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: publishers-cache
-  name: publishers-cache
+    app: dcat-ap-no-validator-cache
+  name: dcat-ap-no-validator-cache
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   type: NodePort
@@ -16,6 +16,6 @@ spec:
     port: 6379
     targetPort: 6379
   selector:
-    app: publishers-cache
+    app: dcat-ap-no-validator-cache
 status:
   loadBalancer: {}

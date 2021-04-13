@@ -1,4 +1,0 @@
-#DValues for production environment
-NAMESPACE: prod
-PUBLISHERS_CACHE_VOLUMENAME: fdk-prod-publishers-cache
-PUBLISHERS_CACHE_STORAGESIZE: 9G
