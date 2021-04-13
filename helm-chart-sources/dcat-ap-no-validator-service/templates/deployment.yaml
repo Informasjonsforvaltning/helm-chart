@@ -21,6 +21,16 @@ spec:
     spec:
       containers:
       - env:
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: DCAT_AP_NO_VALIDATOR_CACHE_PASSWORD
+        - name: REDIS_HOST
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: DCAT_AP_NO_VALIDATOR_CACHE_ENDPOINT
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         name: dcat-ap-no-validator-service
