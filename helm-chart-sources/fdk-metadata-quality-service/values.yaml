@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##fdk-metadata-quality-service
-FDK_METADATA_QUALITY_SERVICE_MEMORY: "500Mi"
+FDK_METADATA_QUALITY_SERVICE_MEMORY: "1000Mi"
