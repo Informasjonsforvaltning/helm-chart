@@ -21,57 +21,17 @@ spec:
     spec:
       containers:
       - env:
-        - name: ORGANIZATION_CATALOG_URL
+        - name: ORGANIZATION_CATALOGUE_URI
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: ORGANIZATION_CATALOGUE_HOST
-        - name: CONCEPT_HARVESTER_URL
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_CONCEPT_HARVESTER_URI
-        - name: DATASET_HARVESTER_URL
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_DATASET_HARVESTER_URI
-        - name: DATASERVICE_HARVESTER_URL
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_DATASERVICE_HARVESTER_URI
-        - name: INFORMATIONMODELS_HARVESTER_URL
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_INFORMATION_MODEL_HARVESTER_URI
-        - name: ELASTIC_HOST
-          valueFrom:
-            secretKeyRef:
-              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_ES_HOST
-        - name: ELASTIC_PORT
-          valueFrom:
-            secretKeyRef:
-              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_ES_PORT
-        - name: ELASTIC_TCP_PORT
-          valueFrom:
-            secretKeyRef:
-              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_ES_TCP_PORT
-        - name: SEARCH_FULLTEXT_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_FULLTEXT_SEARCH_BASE_URI
-        - name: METADATA_QUALITY_ASSESSMENT_SERVICE_HOST
+        - name: FDK_METADATA_QUALITY_URI
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: METADATA_QUALITY_ASSESSMENT_SERVICE_HOST
-        - name: FDK_BASE
+        - name: FDK_PORTAL_URI
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
