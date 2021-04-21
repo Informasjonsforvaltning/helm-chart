@@ -235,12 +235,12 @@ spec:
         - name: FDK_COMMUNITY_SERVICE_HOST
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_COMMUNITY_SERVICE_BASE_URI
         - name: DEV_FDK_COMMUNITY_SERVICE_HOST
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: DEV_FDK_COMMUNITY_SERVICE_HOST
         name: sso
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
