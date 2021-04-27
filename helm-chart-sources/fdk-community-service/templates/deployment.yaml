@@ -40,7 +40,7 @@ spec:
           requests:
             memory: {{ required "Missing value FDK_COMMUNITY_SERVICE_MEMORY" .Values.FDK_COMMUNITY_SERVICE_MEMORY | quote }}
         volumeMounts:
-          - mountPath: /usr/src/app/config
+          - mountPath: /usr/src/app
             name: fdk-community-service-claim0
       volumes:
         - name: fdk-community-service-claim0
