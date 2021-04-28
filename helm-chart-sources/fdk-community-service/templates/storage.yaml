@@ -16,6 +16,25 @@ spec:
             storage: {{ required "Missing value FDK_COMMUNITY_SERVICE_STORAGESIZE" .Values.FDK_COMMUNITY_SERVICE_STORAGESIZE }}
 status: {}
 ---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  creationTimestamp: null
+  labels:
+    app: fdk-community-service-claim1
+  name: fdk-community-service-claim1
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  storageClassName: ""
+  volumeName: {{ required "Missing value FDK_COMMUNITY_SERVICE_VOLUMENAME" .Values.FDK_COMMUNITY_SERVICE_VOLUMENAME }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ required "Missing value FDK_COMMUNITY_SERVICE_STORAGESIZE" .Values.FDK_COMMUNITY_SERVICE_STORAGESIZE }}
+status: {}
+
+---
 kind: PersistentVolume
 apiVersion: v1
 metadata:

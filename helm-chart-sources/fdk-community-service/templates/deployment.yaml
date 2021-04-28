@@ -40,11 +40,16 @@ spec:
           requests:
             memory: {{ required "Missing value FDK_COMMUNITY_SERVICE_MEMORY" .Values.FDK_COMMUNITY_SERVICE_MEMORY | quote }}
         volumeMounts:
-          - mountPath: /usr/src/app
+          - mountPath: /usr/src/app/config
             name: fdk-community-service-claim0
+          - mountPath: /usr/src/app/uploads
+            name: fdk-community-service-claim1
       volumes:
         - name: fdk-community-service-claim0
           persistentVolumeClaim:
             claimName: fdk-community-service-claim0
+        - name: fdk-community-service-claim1
+          persistentVolumeClaim:
+            claimName: fdk-community-service-claim1
       restartPolicy: Always
 status: {}
