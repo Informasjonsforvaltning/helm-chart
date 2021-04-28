@@ -26,7 +26,7 @@ metadata:
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   storageClassName: ""
-  volumeName: {{ required "Missing value FDK_COMMUNITY_SERVICE_VOLUMENAME" .Values.FDK_COMMUNITY_SERVICE_VOLUMENAME }}
+  volumeName: {{ required "Missing value FDK_COMMUNITY_SERVICE_UPLOADS_VOLUMENAME" .Values.FDK_COMMUNITY_SERVICE_UPLOADS_VOLUMENAME }}
   accessModes:
     - ReadWriteOnce
   resources:
@@ -39,6 +39,21 @@ kind: PersistentVolume
 apiVersion: v1
 metadata:
   name: {{ required "Missing value FDK_COMMUNITY_SERVICE_VOLUMENAME" .Values.FDK_COMMUNITY_SERVICE_VOLUMENAME }}
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  storageClassName: ""
+  capacity:
+    storage: {{ required "Missing value FDK_COMMUNITY_SERVICE_STORAGESIZE" .Values.FDK_COMMUNITY_SERVICE_STORAGESIZE }}
+  accessModes:
+    - ReadWriteOnce
+  gcePersistentDisk:
+    pdName: {{ required "Missing value FDK_COMMUNITY_SERVICE_VOLUMENAME" .Values.FDK_COMMUNITY_SERVICE_VOLUMENAME }}
+    fsType: ext4
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: {{ required "Missing value FDK_COMMUNITY_SERVICE_UPLOADS_VOLUMENAME" .Values.FDK_COMMUNITY_SERVICE_UPLOADS_VOLUMENAME }}
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   storageClassName: ""

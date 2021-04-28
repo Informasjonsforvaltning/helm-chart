@@ -1,4 +1,5 @@
 #DValues for staging environment
 NAMESPACE: staging
 FDK_COMMUNITY_SERVICE_VOLUMENAME: fdk-dev-staging-community-service
+FDK_COMMUNITY_SERVICE_UPLOADS_VOLUMENAME: fdk-dev-staging-community-service-uploads
 FDK_COMMUNITY_SERVICE_STORAGESIZE: 9G
