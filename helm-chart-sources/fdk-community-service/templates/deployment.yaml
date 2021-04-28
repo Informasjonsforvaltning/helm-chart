@@ -42,8 +42,7 @@ spec:
         volumeMounts:
           - mountPath: /usr/src/app/config
             name: fdk-community-service-claim0
-          - mountPath: /usr/src/app/uploads
-            name: fdk-community-service-claim1
+            subPath: config
       volumes:
         - name: fdk-community-service-claim0
           persistentVolumeClaim:
