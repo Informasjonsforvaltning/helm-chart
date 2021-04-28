@@ -42,13 +42,9 @@ spec:
         volumeMounts:
           - mountPath: /usr/src/app/config
             name: fdk-community-service-claim0
-            subPath: config
       volumes:
         - name: fdk-community-service-claim0
           persistentVolumeClaim:
             claimName: fdk-community-service-claim0
-        - name: fdk-community-service-claim1
-          persistentVolumeClaim:
-            claimName: fdk-community-service-claim1
       restartPolicy: Always
 status: {}
