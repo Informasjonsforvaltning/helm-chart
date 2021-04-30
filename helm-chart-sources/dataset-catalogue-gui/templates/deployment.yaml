@@ -21,12 +21,12 @@ spec:
     spec:
       containers:
       - env:
-        - name: NODE_ENV
+        - name: NAMESPACE
           valueFrom:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: NODE_ENV
-        - name: SEARCH_HOST
+              key: NAMESPACE
+        - name: FDK_BASE_URI
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
@@ -36,12 +36,11 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: SSO_BASE_URI
-        - name: SEARCH_API_AUTHORIZATION
+        - name: FDK_REGISTRATION_BASE_URI
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_API_AUTHORIZATION_KEY
-              optional: true
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_REGISTRATION_BASE_URI
         - name: CONCEPT_REGISTRATION_API_HOST
           valueFrom:
             secretKeyRef:
@@ -57,27 +56,11 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: ORGANIZATION_CATALOGUE_HOST
-        - name: RECORDS_OF_PROCESSING_ACTIVITIES_GUI_BASE_URI
+        - name: RECORDS_OF_PROCESSING_ACTIVITIES_BASE_URI
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RECORDS_OF_PROCESSING_ACTIVITIES_GUI_BASE_URI
-        - name: RECORDS_OF_PROCESSING_ACTIVITIES_API_BASE_URI
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RECORDS_OF_PROCESSING_ACTIVITIES_API_BASE_URI
-        - name: USE_DEMO_LOGO
-          valueFrom:
-            secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: USE_DEMO_LOGO
-              optional: true
-        - name: NAMESPACE
-          valueFrom:
-            secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: NAMESPACE
+              key: RECORDS_OF_PROCESSING_ACTIVITIES_BASE_URI
         - name: DATASERVICE_CATALOG_BASE_URI
           valueFrom:
             secretKeyRef:

@@ -1,4 +1,0 @@
-#DValues for production environment
-NAMESPACE: prod
-FDK_FUSEKI_VOLUMENAME: fdk-prod-fuseki-service
-FDK_FUSEKI_STORAGESIZE: 29G

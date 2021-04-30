@@ -20,91 +20,74 @@ spec:
         fdk.service: dataset-catalog-gui
     spec:
       containers:
-      - env:
-        - name: NODE_ENV
-          valueFrom:
-            secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: NODE_ENV
-        - name: SEARCH_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_BASE_URI
-        - name: SSO_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: SSO_BASE_URI
-        - name: SEARCH_API_AUTHORIZATION
-          valueFrom:
-            secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_API_AUTHORIZATION_KEY
-              optional: true
-        - name: CONCEPT_REGISTRATION_API_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: CONCEPT_CATALOGUE_COLLECTION_BASE_URI
-        - name: CONCEPT_REGISTRATION_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: CONCEPT_CATALOGUE_GUI_BASE_URI
-        - name: ORGANIZATION_API_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: ORGANIZATION_CATALOGUE_HOST
-        - name: RECORDS_OF_PROCESSING_ACTIVITIES_GUI_BASE_URI
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RECORDS_OF_PROCESSING_ACTIVITIES_GUI_BASE_URI
-        - name: RECORDS_OF_PROCESSING_ACTIVITIES_API_BASE_URI
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RECORDS_OF_PROCESSING_ACTIVITIES_API_BASE_URI
-        - name: USE_DEMO_LOGO
-          valueFrom:
-            secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: USE_DEMO_LOGO
-              optional: true
-        - name: NAMESPACE
-          valueFrom:
-            secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: NAMESPACE
-        - name: DATASERVICE_CATALOG_BASE_URI
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DATASERVICE_CATALOG_BASE_URI
-        - name: SEARCH_FULLTEXT_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_FULLTEXT_SEARCH_BASE_URI
-        - name: SKE_THEME_PROFILE
-          valueFrom:
-            secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: SKE_THEME_PROFILE
-        - name: ADMIN_GUI_BASE_URI
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: ADMIN_GUI_BASE_URI
-        image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
-        imagePullPolicy: Always
-        name: dataset-catalog-gui
-        ports:
-        - containerPort: 8080
-        resources:
-          requests:
-            memory: {{ required "Missing value DATASET_CATALOG_GUI_MEMORY" .Values.DATASET_CATALOG_GUI_MEMORY | quote }}
+        - env:
+          - name: NAMESPACE
+            valueFrom:
+              secretKeyRef:
+                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: NAMESPACE
+          - name: FDK_BASE_URI
+            valueFrom:
+              secretKeyRef:
+                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: FDK_BASE_URI
+          - name: SSO_HOST
+            valueFrom:
+              secretKeyRef:
+                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: SSO_BASE_URI
+          - name: FDK_REGISTRATION_BASE_URI
+            valueFrom:
+              secretKeyRef:
+                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: FDK_REGISTRATION_BASE_URI
+          - name: CONCEPT_REGISTRATION_API_HOST
+            valueFrom:
+              secretKeyRef:
+                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: CONCEPT_CATALOGUE_COLLECTION_BASE_URI
+          - name: CONCEPT_REGISTRATION_HOST
+            valueFrom:
+              secretKeyRef:
+                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: CONCEPT_CATALOGUE_GUI_BASE_URI
+          - name: ORGANIZATION_API_HOST
+            valueFrom:
+              secretKeyRef:
+                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: ORGANIZATION_CATALOGUE_HOST
+          - name: RECORDS_OF_PROCESSING_ACTIVITIES_BASE_URI
+            valueFrom:
+              secretKeyRef:
+                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: RECORDS_OF_PROCESSING_ACTIVITIES_BASE_URI
+          - name: DATASERVICE_CATALOG_BASE_URI
+            valueFrom:
+              secretKeyRef:
+                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: DATASERVICE_CATALOG_BASE_URI
+          - name: SEARCH_FULLTEXT_HOST
+            valueFrom:
+              secretKeyRef:
+                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: FDK_FULLTEXT_SEARCH_BASE_URI
+          - name: SKE_THEME_PROFILE
+            valueFrom:
+              secretKeyRef:
+                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: SKE_THEME_PROFILE
+          - name: ADMIN_GUI_BASE_URI
+            valueFrom:
+              secretKeyRef:
+                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: ADMIN_GUI_BASE_URI
+          image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+          imagePullPolicy: Always
+          name: dataset-catalog-gui
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: {{ required "Missing value DATASET_CATALOG_GUI_MEMORY" .Values.DATASET_CATALOG_GUI_MEMORY | quote }}
       restartPolicy: Always
 status: {}
