@@ -21,11 +21,6 @@ spec:
     spec:
       containers:
         - env:
-          - name: FDK_SPARQL_SERVICE_URI
-            valueFrom:
-              secretKeyRef:
-                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: FDK_SPARQL_SERVICE_URI
           - name: FDK_CONCEPT_HARVESTER_URI
             valueFrom:
               secretKeyRef:
