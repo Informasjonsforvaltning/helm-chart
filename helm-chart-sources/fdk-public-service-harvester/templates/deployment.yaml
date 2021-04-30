@@ -21,11 +21,6 @@ spec:
     spec:
       containers:
         - env:
-          - name: FDK_FUSEKI_SERVICE_URI
-            valueFrom:
-              secretKeyRef:
-                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: FDK_FUSEKI_SERVICE_URI
           - name: FDK_BASE_URI
             valueFrom:
               secretKeyRef:
