@@ -28,11 +28,6 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: NODE_ENV
-        - name: DISQUS_SHORTNAME
-          valueFrom:
-            secretKeyRef:
-              name: disqus-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DISQUS_SHORTNAME
         - name: SEARCH_HOST
           valueFrom:
             secretKeyRef:
