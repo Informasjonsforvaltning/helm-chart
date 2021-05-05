@@ -19,12 +19,12 @@ spec:
     - host: {{ required "Missing HOSTNAME_WWW" .Values.HOSTNAME_WWW }}
       http:
         paths:
-          - backend:
-            path: /sparql
+          - path: /sparql
+            backend:
               serviceName: fdk-nginx-sparql
               servicePort: 8080
-          - backend:
-            path: /*
+          - path: /*
+            backend:
               serviceName: fdk-nginx-search
               servicePort: 8080
     - host: {{ required "Missing value HOSTNAME_NAP" .Values.HOSTNAME_NAP }}
@@ -79,12 +79,12 @@ spec:
     - host: {{ required "Missing value HOSTNAME_PORTAL" .Values.HOSTNAME_PORTAL }}
       http:
         paths:
-          - backend:
-            path: /sparql
+          - path: /sparql
+            backend:
               serviceName: fdk-nginx-sparql
               servicePort: 8080
-          - backend:
-            path: /*
+          - path: /*
+            backend:
               serviceName: fdk-nginx-search
               servicePort: 8080
     - host: {{ required "Missing value HOSTNAME_ORGANIZATION_CATALOGUE" .Values.HOSTNAME_ORGANIZATION_CATALOGUE }}
