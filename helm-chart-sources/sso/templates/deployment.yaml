@@ -236,7 +236,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_COMMUNITY_SERVICE_BASE_URI
+              key: FDK_COMMUNITY_BASE_URI
         - name: DEV_FDK_COMMUNITY_SERVICE_HOST
           valueFrom:
             secretKeyRef:
