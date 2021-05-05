@@ -220,3 +220,17 @@ spec:
               serviceName: new-concept-harvester
               servicePort: 8080
             path: /*
+    - host: {{ required "Missing value HOSTNAME_FDK_COMMUNITY" .Values.HOSTNAME_FDK_COMMUNITY }}
+      http:
+        paths:
+          - backend:
+              serviceName: fdk-community-service
+              servicePort: 8080
+            path: /*
+    - host: {{ required "Missing value HOSTNAME_SPARQL_SERVICE" .Values.HOSTNAME_SPARQL_SERVICE }}
+      http:
+        paths:
+          - backend:
+              serviceName: fdk-nginx-sparql
+              servicePort: 8080
+            path: /*
