@@ -234,3 +234,10 @@ spec:
               serviceName: fdk-nginx-sparql
               servicePort: 8080
             path: /*
+    - host: {{ required "Missing value HOSTNAME_CONCEPT_CATALOG" .Values.HOSTNAME_CONCEPT_CATALOG }}
+      http:
+        paths:
+          - backend:
+              serviceName: concept-catalogue
+              servicePort: 8080
+            path: /*
