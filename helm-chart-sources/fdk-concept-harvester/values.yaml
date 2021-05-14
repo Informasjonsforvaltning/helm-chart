@@ -2,5 +2,5 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-##fdk-concept-harvester (api)
-FDK_CONCEPT_HARVESTER_MEMORY: "800Mi"
+##fdk-concept-harvester
+FDK_CONCEPT_HARVESTER_MEMORY: "1000Mi"
