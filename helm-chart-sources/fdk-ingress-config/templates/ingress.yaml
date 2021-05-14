@@ -217,7 +217,7 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: new-concept-harvester
+              serviceName: fdk-concept-harvester
               servicePort: 8080
             path: /*
     - host: {{ required "Missing value HOSTNAME_FDK_COMMUNITY" .Values.HOSTNAME_FDK_COMMUNITY }}
