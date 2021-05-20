@@ -1,0 +1,4 @@
+#DValues for demo environment
+NAMESPACE: demo
+FDK_REFERENCE_DATA_CACHE_VOLUMENAME: fdk-dev-demo-reference-data-cache
+FDK_REFERENCE_DATA_CACHE_STORAGESIZE: 9G

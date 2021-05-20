@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: fdk-reference-data-cache
+  name: fdk-reference-data-cache
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fdk-reference-data-cache
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: fdk-reference-data-cache
+    spec:
+      containers:
+        - env:
+          - name: REDIS_PASS
+            valueFrom:
+              secretKeyRef:
+                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: FDK_REFERENCE_DATA_CACHE_PASSWORD
+          name: fdk-reference-data-cache
+          image: redis:6.0.9-alpine
+          imagePullPolicy: Always
+          args: [ "--requirepass", "$(REDIS_PASS)", "--appendonly", "yes", "--save", "900", "1", "--save", "30", "1"]
+          ports:
+          - containerPort: 6379
+            name: redis
+          resources:
+            requests:
+              memory: {{ required "Missing value FDK_REFERENCE_DATA_CACHE_MEMORY" .Values.FDK_REFERENCE_DATA_CACHE_MEMORY | quote }}
+          volumeMounts:
+          - mountPath: /data
+            name: fdk-reference-data-cache-claim0
+      restartPolicy: Always
+      volumes:
+      - name: fdk-reference-data-cache-claim0
+        persistentVolumeClaim:
+          claimName: fdk-reference-data-cache-claim0
+status: {}

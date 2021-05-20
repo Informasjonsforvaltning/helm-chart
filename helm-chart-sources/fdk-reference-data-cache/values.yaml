@@ -1,0 +1,6 @@
+# Default values for fdk-reference-data-cache.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+#fdk-reference-data-cache
+FDK_REFERENCE_DATA_CACHE_MEMORY: "50Mi"
