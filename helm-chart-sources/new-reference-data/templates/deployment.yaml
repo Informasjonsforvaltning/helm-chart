@@ -24,13 +24,18 @@ spec:
         - name: MONGODB_USERNAME
           valueFrom:
             secretKeyRef:
-              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: MONGO_USERNAME
+              name: reference-data-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGODB_USER
         - name: MONGODB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: MONGO_PASSWORD
+              name: reference-data-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGODB_PASSWORD
+        - name: MONGODB_DATABASE
+          valueFrom:
+            secretKeyRef:
+              name: reference-data-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGODB_DATABASE
         - name: MONGODB_HOST
           valueFrom:
             secretKeyRef:
