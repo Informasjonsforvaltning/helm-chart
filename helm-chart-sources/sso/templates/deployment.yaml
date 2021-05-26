@@ -242,6 +242,7 @@ spec:
             secretKeyRef:
               name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: DEV_FDK_COMMUNITY_SERVICE_HOST
+              optional: true
         name: sso
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
