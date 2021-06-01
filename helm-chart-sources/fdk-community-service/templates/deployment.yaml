@@ -12,7 +12,7 @@ spec:
     matchLabels:
       fdk.service: fdk-community-service
   strategy:
-    type: Recreate
+    type: RollingUpdate
   template:
     metadata:
       creationTimestamp: null
