@@ -66,6 +66,11 @@ spec:
             secretKeyRef:
               name: fdk-harvest-scheduler-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: RABBIT_HOST
+        - name: SEARCH_FULLTEXT_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_FULLTEXT_SEARCH_BASE_URI
         name: dataset-catalog
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
