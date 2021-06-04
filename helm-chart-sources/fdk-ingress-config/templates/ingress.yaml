@@ -46,7 +46,7 @@ spec:
         paths:
           - path: /*
             backend:
-              serviceName: concept-catalogue
+              serviceName: concept-catalog
               servicePort: 8080
     - host: {{ required "Missing value HOSTNAME_SSO" .Values.HOSTNAME_SSO }}
       http:
@@ -106,13 +106,6 @@ spec:
         paths:
           - backend:
               serviceName: fdk-nginx-search
-              servicePort: 8080
-            path: /*
-    - host: {{ required "Missing value HOSTNAME_MODEL_PUBLISHER" .Values.HOSTNAME_MODEL_PUBLISHER }}
-      http:
-        paths:
-          - backend:
-              serviceName: model-publisher
               servicePort: 8080
             path: /*
     - host: {{ required "Missing value HOSTNAME_DATASERVICE_PUBLISHER" .Values.HOSTNAME_DATASERVICE_PUBLISHER }}
@@ -192,13 +185,6 @@ spec:
               serviceName: fdk-informationmodel-harvester
               servicePort: 8080
             path: /*
-    - host: {{ required "Missing value HOSTNAME_BASEREGISTRIES_PUBLISHER" .Values.HOSTNAME_BASEREGISTRIES_PUBLISHER }}
-      http:
-        paths:
-          - backend:
-              serviceName: fdk-baseregistries-publisher
-              servicePort: 8080
-            path: /*
     - host: {{ required "Missing value HOSTNAME_DCAT_VALIDATOR" .Values.HOSTNAME_DCAT_VALIDATOR }}
       http:
         paths:
@@ -220,13 +206,6 @@ spec:
               serviceName: fdk-concept-harvester
               servicePort: 8080
             path: /*
-    - host: {{ required "Missing value HOSTNAME_FDK_COMMUNITY" .Values.HOSTNAME_FDK_COMMUNITY }}
-      http:
-        paths:
-          - backend:
-              serviceName: fdk-community-service
-              servicePort: 8080
-            path: /*
     - host: {{ required "Missing value HOSTNAME_SPARQL_SERVICE" .Values.HOSTNAME_SPARQL_SERVICE }}
       http:
         paths:
@@ -238,6 +217,27 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: concept-catalogue
+              serviceName: concept-catalog
+              servicePort: 8080
+            path: /*
+    - host: {{ required "Missing value HOSTNAME_FDK_COMMUNITY" .Values.HOSTNAME_FDK_COMMUNITY }}
+      http:
+        paths:
+          - backend:
+              serviceName: fdk-nginx-community
+              servicePort: 8080
+            path: /*
+    - host: {{ required "Missing value HOSTNAME_BASEREGISTRIES_PUBLISHER" .Values.HOSTNAME_BASEREGISTRIES_PUBLISHER }}
+      http:
+        paths:
+          - backend:
+              serviceName: fdk-baseregistries-publisher
+              servicePort: 8080
+            path: /*
+    - host: {{ required "Missing value HOSTNAME_MODEL_PUBLISHER" .Values.HOSTNAME_MODEL_PUBLISHER }}
+      http:
+        paths:
+          - backend:
+              serviceName: model-publisher
               servicePort: 8080
             path: /*
