@@ -36,6 +36,11 @@ spec:
             secretKeyRef:
               name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_COMMUNITY_SERVICE_API_TOKEN
+        - name: API_TOKEN_WRITE
+          valueFrom:
+            secretKeyRef:
+              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_COMMUNITY_SERVICE_API_TOKEN_WRITE
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         name: fdk-community-service
