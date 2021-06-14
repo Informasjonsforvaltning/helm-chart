@@ -41,6 +41,31 @@ spec:
             secretKeyRef:
               name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_COMMUNITY_SERVICE_API_TOKEN_WRITE
+        - name: SSMTP_SERVER
+          valueFrom:
+            secretKeyRef:
+              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_COMMUNITY_SERVICE_SSMTP_SERVER
+        - name: SSMTP_PORT
+          valueFrom:
+            secretKeyRef:
+              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_COMMUNITY_SERVICE_SSMTP_PORT
+        - name: SSMTP_TLS
+          valueFrom:
+            secretKeyRef:
+              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_COMMUNITY_SERVICE_SSMTP_TLS
+        - name: SSMTP_REWRITE_DOMAIN
+          valueFrom:
+            secretKeyRef:
+              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_COMMUNITY_SERVICE_SSMTP_REWRITE_DOMAIN
+        - name: SSMTP_HOSTNAME
+          valueFrom:
+            secretKeyRef:
+              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_COMMUNITY_SERVICE_SSMTP_HOSTNAME
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         name: fdk-community-service

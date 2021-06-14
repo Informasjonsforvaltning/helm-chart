@@ -1,4 +1,4 @@
 #DValues for staging environment
 NAMESPACE: staging
-DATASERVICE_PUBLISHER_TRIPLESTORE_VOLUMENAME: fdk-dev-staging-dataservice-publisher-triplestore
+DATASERVICE_PUBLISHER_SPARQL_SERVICE_VOLUMENAME: fdk-dev-staging-dataservice-publisher-triplestore
 DATASERVICE_PUBLISHER_TRIPLESTORE_STORAGESIZE: 9G
