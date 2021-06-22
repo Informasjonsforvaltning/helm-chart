@@ -41,6 +41,11 @@ spec:
             secretKeyRef:
               name: fdk-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: POSTGRES_DB_NAME
+        - name: ADMIN_JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: fdk-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ADMIN_JWT_SECRET
         - name: POSTGRES_USERNAME
           valueFrom:
             secretKeyRef:
