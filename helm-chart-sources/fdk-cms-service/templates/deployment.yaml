@@ -58,6 +58,6 @@ spec:
           - containerPort: 8080
         resources:
           requests:
-            memory: {{ required "Missing value FDK_COMMUNITY_SERVICE_MEMORY" .Values.FDK_COMMUNITY_SERVICE_MEMORY | quote }}
+            memory: {{ required "Missing value FDK_CMS_SERVICE_MEMORY" .Values.FDK_CMS_SERVICE_MEMORY | quote }}
       restartPolicy: Always
 status: {}
