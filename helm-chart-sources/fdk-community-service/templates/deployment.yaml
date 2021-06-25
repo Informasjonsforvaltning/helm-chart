@@ -66,6 +66,21 @@ spec:
             secretKeyRef:
               name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_COMMUNITY_SERVICE_SSMTP_HOSTNAME
+        - name: BASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_COMMUNITY_BASE_URI
+        - name: TEST_MODE
+          valueFrom:
+            secretKeyRef:
+              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: TEST_MODE
+        - name: TEST_EMAIL
+          valueFrom:
+            secretKeyRef:
+              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: TEST_EMAIL
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         name: fdk-community-service
