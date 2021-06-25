@@ -46,11 +46,16 @@ spec:
             secretKeyRef:
               name: fdk-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: ADMIN_JWT_SECRET
-        - name: COLLECTION
+        - name: CONNECTION
           valueFrom:
             secretKeyRef:
               name: fdk-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: COLLECTION
+              key: CONNECTION
+        - name: POSTGRES_SSL_SELF
+          valueFrom:
+            secretKeyRef:
+              name: fdk-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: POSTGRES_SSL_SELF
         - name: POSTGRES_USERNAME
           valueFrom:
             secretKeyRef:
