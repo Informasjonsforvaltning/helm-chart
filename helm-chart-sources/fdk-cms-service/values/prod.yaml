@@ -1,2 +1,4 @@
 #DValues for production environment
 NAMESPACE: prod
+FDK_CMS_SERVICE_VOLUMENAME: fdk-prod-cms-service
+FDK_CMS_SERVICE_STORAGESIZE: 50G

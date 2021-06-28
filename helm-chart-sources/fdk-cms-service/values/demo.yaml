@@ -1,2 +1,4 @@
 #DValues for demo environment
 NAMESPACE: demo
+FDK_CMS_SERVICE_VOLUMENAME: fdk-dev-demo-cms-service
+FDK_CMS_SERVICE_STORAGESIZE: 10G

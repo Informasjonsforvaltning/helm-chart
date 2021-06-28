@@ -74,5 +74,12 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value FDK_CMS_SERVICE_MEMORY" .Values.FDK_CMS_SERVICE_MEMORY | quote }}
+        volumeMounts:
+          - mountPath: /public/uploads
+            name: fdk-cms-service-claim0
+      volumes:
+        - name: fdk-cms-service-claim0
+          persistentVolumeClaim:
+            claimName: fdk-community-service-claim0
       restartPolicy: Always
 status: {}
