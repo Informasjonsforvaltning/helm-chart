@@ -80,6 +80,6 @@ spec:
       volumes:
         - name: fdk-cms-service-claim0
           persistentVolumeClaim:
-            claimName: fdk-community-service-claim0
+            claimName: fdk-cms-service-claim0
       restartPolicy: Always
 status: {}
