@@ -21,6 +21,8 @@ spec:
     spec:
       containers:
       - env:
+        - name: DISABLE_ADMIN
+          value: true
         - name: NAMESPACE
           valueFrom:
             secretKeyRef:
