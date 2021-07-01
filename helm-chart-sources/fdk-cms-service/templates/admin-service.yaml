@@ -5,8 +5,8 @@ metadata:
   annotations:
     cloud.google.com/backend-config: '{"default": "fdk-cms-backend"}'
   labels:
-    fdk.service: fdk-cms-service
-  name: fdk-cms-service
+    fdk.service: fdk-cms-service-admin
+  name: fdk-cms-service-admin
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   type: NodePort
