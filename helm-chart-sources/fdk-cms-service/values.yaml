@@ -4,3 +4,4 @@
 
 ##fdk-cms-service
 FDK_CMS_SERVICE_MEMORY: "500Mi"
+FDK_CMS_SERVICE_ENABLE_IAP: true
