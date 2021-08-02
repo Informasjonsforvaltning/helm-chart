@@ -3,30 +3,30 @@ apiVersion: v1
 metadata:
   creationTimestamp: null
   labels:
-    fdk.service: dataservice-publisher-triplestore-claim0
-  name: dataservice-publisher-triplestore-claim0
+    fdk.service: dataservice-publisher-sparql-service-claim0
+  name: dataservice-publisher-sparql-service-claim0
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
         storageClassName: ""
-        volumeName: {{ required "Missing value DATASERVICE_PUBLISHER_TRIPLESTORE_VOLUMENAME" .Values.DATASERVICE_PUBLISHER_TRIPLESTORE_VOLUMENAME }}
+        volumeName: {{ required "Missing value DATASERVICE_PUBLISHER_SPARQL_SERVICE_VOLUMENAME" .Values.DATASERVICE_PUBLISHER_SPARQL_SERVICE_VOLUMENAME }}
         accessModes:
           - ReadWriteOnce
         resources:
           requests:
-            storage: {{ required "Missing value DATASERVICE_PUBLISHER_TRIPLESTORE_STORAGESIZE" .Values.DATASERVICE_PUBLISHER_TRIPLESTORE_STORAGESIZE }}
+            storage: {{ required "Missing value DATASERVICE_PUBLISHER_SPARQL_SERVICE_STORAGESIZE" .Values.DATASERVICE_PUBLISHER_SPARQL_SERVICE_STORAGESIZE }}
 status: {}
 ---
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: {{ required "Missing value DATASERVICE_PUBLISHER_TRIPLESTORE_VOLUMENAME" .Values.DATASERVICE_PUBLISHER_TRIPLESTORE_VOLUMENAME }}
+  name: {{ required "Missing value DATASERVICE_PUBLISHER_SPARQL_SERVICE_VOLUMENAME" .Values.DATASERVICE_PUBLISHER_SPARQL_SERVICE_VOLUMENAME }}
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   storageClassName: ""
   capacity:
-    storage: {{ required "Missing value DATASERVICE_PUBLISHER_TRIPLESTORE_STORAGESIZE" .Values.DATASERVICE_PUBLISHER_TRIPLESTORE_STORAGESIZE }}
+    storage: {{ required "Missing value DATASERVICE_PUBLISHER_SPARQL_SERVICE_STORAGESIZE" .Values.DATASERVICE_PUBLISHER_SPARQL_SERVICE_STORAGESIZE }}
   accessModes:
     - ReadWriteOnce
   gcePersistentDisk:
-    pdName: {{ required "Missing value DATASERVICE_PUBLISHER_TRIPLESTORE_VOLUMENAME" .Values.DATASERVICE_PUBLISHER_TRIPLESTORE_VOLUMENAME }}
+    pdName: {{ required "Missing value DATASERVICE_PUBLISHER_SPARQL_SERVICE_VOLUMENAME" .Values.DATASERVICE_PUBLISHER_SPARQL_SERVICE_VOLUMENAME }}
     fsType: ext4

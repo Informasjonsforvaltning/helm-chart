@@ -3,8 +3,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    fdk.service: dataservice-publisher-triplestore
-  name: dataservice-publisher-triplestore
+    fdk.service: dataservice-publisher-sparql-service
+  name: dataservice-publisher-sparql-service
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   type: NodePort
@@ -16,6 +16,6 @@ spec:
     port: 3030
     targetPort: 3030
   selector:
-    fdk.service: dataservice-publisher-triplestore
+    fdk.service: dataservice-publisher-sparql-service
 status:
   loadBalancer: {}
