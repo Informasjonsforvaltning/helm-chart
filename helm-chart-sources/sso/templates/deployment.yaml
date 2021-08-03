@@ -140,31 +140,6 @@ spec:
             secretKeyRef:
               name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: DB_VENDOR
-        - name: DB_ADDR
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DB_ADDR
-        - name: DB_DATABASE
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DB_DATABASE
-        - name: DB_USER
-          valueFrom:
-            secretKeyRef:
-              name: postgres-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: USER
-        - name: DB_SCHEMA
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DB_SCHEMA
-        - name: DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: postgres-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: PASSWORD
         - name: DIFI_CLIENT_ID
           valueFrom:
             secretKeyRef:
