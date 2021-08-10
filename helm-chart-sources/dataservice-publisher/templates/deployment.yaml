@@ -50,7 +50,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: dataservice-publisher-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DATASERVICE_PUBLISHER_TRIPLESTORE_URI
+              key: DATASERVICE_PUBLISHER_SPARQL_SERVICE_URI
         name: dataservice-publisher
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
