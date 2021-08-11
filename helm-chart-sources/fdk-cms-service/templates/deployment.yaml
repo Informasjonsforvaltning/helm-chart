@@ -22,7 +22,10 @@ spec:
       containers:
       - env:
         - name: ENABLE_IAP
-          value: {{ required "Missing value FDK_CMS_SERVICE_ENABLE_IAP" .Values.FDK_CMS_SERVICE_ENABLE_IAP }}
+          valueFrom:
+            secretKeyRef:
+              name: fdk-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ENABLE_IAP
         - name: NAMESPACE
           valueFrom:
             secretKeyRef:
