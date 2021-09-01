@@ -36,6 +36,11 @@ spec:
             secretKeyRef:
               name: reference-data-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: MONGODB_DATABASE
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: reference-data-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: API_KEY
         - name: MONGODB_AUTH_DATABASE
           valueFrom:
             secretKeyRef:
