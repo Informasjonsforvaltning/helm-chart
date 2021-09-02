@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##dataservice-publisher-sparql-service
-DATASERVICE_PUBLISHER_SPARQL_SERVICE_MEMORY: "850Mi"
+DATASERVICE_PUBLISHER_SPARQL_SERVICE_MEMORY: "1650Mi"
