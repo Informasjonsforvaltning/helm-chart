@@ -63,7 +63,7 @@ spec:
           httpGet:
             path: /ping
             port: 8080
-          initialDelaySeconds: 20
+          initialDelaySeconds: 30
           periodSeconds: 90
           successThreshold: 1
           failureThreshold: 5
