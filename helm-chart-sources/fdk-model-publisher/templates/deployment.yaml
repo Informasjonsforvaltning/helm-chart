@@ -64,15 +64,15 @@ spec:
             path: /ping
             port: 8080
           initialDelaySeconds: 20
-          periodSeconds: 60
+          periodSeconds: 90
           successThreshold: 1
           failureThreshold: 5
         readinessProbe:
           httpGet:
             path: /ready
             port: 8080
-          initialDelaySeconds: 150
-          periodSeconds: 60
+          initialDelaySeconds: 180
+          periodSeconds: 90
           successThreshold: 1
           failureThreshold: 5
       restartPolicy: Always
