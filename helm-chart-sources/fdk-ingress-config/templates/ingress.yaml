@@ -219,13 +219,6 @@ spec:
               serviceName: fdk-nginx-community
               servicePort: 8080
             path: /*
-    - host: {{ required "Missing value HOSTNAME_BASEREGISTRIES_PUBLISHER" .Values.HOSTNAME_BASEREGISTRIES_PUBLISHER }}
-      http:
-        paths:
-          - backend:
-              serviceName: fdk-baseregistries-publisher
-              servicePort: 8080
-            path: /*
     - host: {{ required "Missing value HOSTNAME_MODEL_PUBLISHER" .Values.HOSTNAME_MODEL_PUBLISHER }}
       http:
         paths:
