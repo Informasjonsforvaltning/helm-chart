@@ -1,2 +1,2 @@
 # Default values for fdk-portal-monitoring.
-FDK_PORTAL_MONITORING_MEMORY: "1000Mi"
+FDK_PORTAL_MONITORING_MEMORY: "100Mi"
