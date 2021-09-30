@@ -218,6 +218,26 @@ spec:
               name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: DEV_FDK_COMMUNITY_SERVICE_HOST
               optional: true
+        - name: OK_CLIENT_ID
+          valueFrom:
+            secretKeyRef:
+              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: OK_CLIENT_ID
+        - name: OK_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: OK_CLIENT_SECRET
+        - name: OK_OIDC_TOKEN_URL
+          valueFrom:
+            secretKeyRef:
+              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: OK_OIDC_TOKEN_URL
+        - name: OK_OIDC_AUTHORIZATION_URL
+          valueFrom:
+            secretKeyRef:
+              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: OK_OIDC_AUTHORIZATION_URL
         name: sso
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
