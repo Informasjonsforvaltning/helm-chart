@@ -21,12 +21,12 @@ spec:
     spec:
       containers:
       - env:
-        - name: ADMIN_USER
+        - name: KEYCLOAK_USER
           valueFrom:
             secretKeyRef:
               name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: KEYCLOAK_USER
-        - name: ADMIN_PASSWORD
+        - name: KEYCLOAK_PASSWORD
           valueFrom:
             secretKeyRef:
               name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
