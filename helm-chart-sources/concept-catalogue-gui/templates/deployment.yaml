@@ -77,6 +77,11 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_PORTAL_BASE_URI
+        - name: FEATURE_TOGGLE_CONCEPT_REVISION
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FEATURE_TOGGLE_CONCEPT_REVISION
         name: concept-catalogue-gui
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
