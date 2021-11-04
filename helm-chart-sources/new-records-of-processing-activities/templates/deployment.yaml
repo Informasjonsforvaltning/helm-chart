@@ -21,11 +21,16 @@ spec:
     spec:
       containers:
       - env:
-        - name: SSO_HOST
+        - name: OIDC_ISSUER
           valueFrom:
             secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: SSO_BASE_URI
+              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: SSO_OIDC_ISSUER
+        - name: OIDC_JWKS
+          valueFrom:
+            secretKeyRef:
+              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: SSO_OIDC_JWKS
         - name: MONGO_USERNAME
           valueFrom:
             secretKeyRef:
