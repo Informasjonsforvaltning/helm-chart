@@ -82,6 +82,12 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: CATALOG_COMMENTS_SERVICE_BASE_URI
+        - name: USE_DEMO_LOGO
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: USE_DEMO_LOGO
+              optional: true
         name: concept-catalogue-gui
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always

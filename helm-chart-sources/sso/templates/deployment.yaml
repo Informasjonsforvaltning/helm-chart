@@ -238,6 +238,12 @@ spec:
             secretKeyRef:
               name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: OK_OIDC_AUTHORIZATION_URL
+        - name: USE_DEMO_LOGO
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: USE_DEMO_LOGO
+              optional: true
         name: sso
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
