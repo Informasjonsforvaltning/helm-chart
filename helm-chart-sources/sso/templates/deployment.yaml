@@ -244,6 +244,11 @@ spec:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: USE_DEMO_LOGO
               optional: true
+        - name: FDK_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_CLIENT_SECRET
         name: sso
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
