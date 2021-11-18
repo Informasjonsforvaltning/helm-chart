@@ -21,41 +21,17 @@ spec:
     spec:
       containers:
       - env:
-        - name: KEYCLOAK_USER
-          valueFrom:
-            secretKeyRef:
+        envFrom:
+          - secretRef:
               name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: KEYCLOAK_USER
-        - name: KEYCLOAK_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: KEYCLOAK_PASSWORD
-        - name: KEYCLOAK_LOGLEVEL
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: KEYCLOAK_LOGLEVEL
+          - secretRef:
+              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              optional: true
         - name: PROXY_ADDRESS_FORWARDING
           valueFrom:
             secretKeyRef:
               name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: KEYCLOAK_PROXY_ADDRESS_FORWARDING
-        - name: IDPORTEN_CLIENT_ID
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: IDPORTEN_CLIENT_ID
-        - name: IDPORTEN_CLIENT_SECRET
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: IDPORTEN_CLIENT_SECRET
-        - name: IDPORTEN_OIDC_ROOT
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: IDPORTEN_OIDC_ROOT
         - name: SSO_HOST
           valueFrom:
             secretKeyRef:
@@ -66,50 +42,21 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_REGISTRATION_BASE_URI
-        - name: DEV_REGISTRATION_HOST
-          valueFrom:
-            secretKeyRef:
-              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DEV_REGISTRATION_HOST
-              optional: true
         - name: CONCEPT_CATALOGUE_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: CONCEPT_CATALOGUE_GUI_BASE_URI
-        - name: DEV_CONCEPT_CATALOGUE_HOST
-          valueFrom:
-            secretKeyRef:
-              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DEV_CONCEPT_CATALOGUE_HOST
-              optional: true
         - name: FDK_ADMIN_GUI_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: ADMIN_GUI_BASE_URI
-        - name: DEV_FDK_ADMIN_GUI_HOST
-          valueFrom:
-            secretKeyRef:
-              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DEV_FDK_ADMIN_GUI_HOST
-              optional: true
         - name: RECORDS_OF_PROCESSING_ACTIVITIES_GUI_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: RECORDS_OF_PROCESSING_ACTIVITIES_GUI_BASE_URI
-        - name: DEV_RECORDS_OF_PROCESSING_ACTIVITIES_GUI_HOST
-          valueFrom:
-            secretKeyRef:
-              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DEV_RECORDS_OF_PROCESSING_ACTIVITIES_GUI_HOST
-              optional: true
-        - name: EMAIL_VERIFY
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: EMAIL_VERIFY
         - name: SMTP_FROM
           valueFrom:
             secretKeyRef:
@@ -135,73 +82,16 @@ spec:
             secretKeyRef:
               name: smtp-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: PASSWORD
-        - name: DB_VENDOR
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DB_VENDOR
-        - name: DIFI_CLIENT_ID
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DIFI_CLIENT_ID
-        - name: DIFI_CLIENT_SECRET
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DIFI_CLIENT_SECRET
-        - name: DIFI_OIDC_TOKEN_URL
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DIFI_OIDC_TOKEN_URL
-        - name: DIFI_OIDC_JWKS_URL
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DIFI_OIDC_JWKS_URL
-        - name: DIFI_OIDC_AUTHORIZATION_URL
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DIFI_OIDC_AUTHORIZATION_URL
-        - name: DIFI_OIDC_LOGOUT_URL
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DIFI_OIDC_LOGOUT_URL
-        - name: DIFI_OIDC_ISSUER
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DIFI_OIDC_ISSUER
-        - name: DIFI_USER_INFO_URL
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DIFI_USER_INFO_URL
         - name: DATASERVICE_CATALOG_GUI_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: DATASERVICE_CATALOG_BASE_URI
-        - name: DEV_DATASERVICE_CATALOG_GUI_HOST
-          valueFrom:
-            secretKeyRef:
-              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DEV_DATASERVICE_CATALOG_GUI_HOST
-              optional: true
         - name: TERMS_AND_CONDITIONS_GUI_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_REGISTRATION_BASE_URI
-        - name: DEV_TERMS_AND_CONDITIONS_GUI_HOST
-          valueFrom:
-            secretKeyRef:
-              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DEV_TERMS_AND_CONDITIONS_GUI_HOST
-              optional: true
         - name: SSO_API_KEY
           valueFrom:
             secretKeyRef:
@@ -212,43 +102,12 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_COMMUNITY_BASE_URI
-        - name: DEV_FDK_COMMUNITY_SERVICE_HOST
-          valueFrom:
-            secretKeyRef:
-              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DEV_FDK_COMMUNITY_SERVICE_HOST
-              optional: true
-        - name: OK_CLIENT_ID
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: OK_CLIENT_ID
-        - name: OK_CLIENT_SECRET
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: OK_CLIENT_SECRET
-        - name: OK_OIDC_TOKEN_URL
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: OK_OIDC_TOKEN_URL
-        - name: OK_OIDC_AUTHORIZATION_URL
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: OK_OIDC_AUTHORIZATION_URL
         - name: USE_DEMO_LOGO
           valueFrom:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: USE_DEMO_LOGO
               optional: true
-        - name: FDK_CLIENT_SECRET
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_CLIENT_SECRET
         name: sso
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
