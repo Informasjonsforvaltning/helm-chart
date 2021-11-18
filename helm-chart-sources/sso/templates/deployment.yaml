@@ -23,7 +23,7 @@ spec:
       - env:
         envFrom:
           - secretRef:
-            name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
         - name: PROXY_ADDRESS_FORWARDING
           valueFrom:
             secretKeyRef:
