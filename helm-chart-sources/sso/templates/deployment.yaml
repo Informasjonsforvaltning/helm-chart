@@ -23,8 +23,8 @@ spec:
       - name: sso
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         envFrom:
-        secretRef:
-          name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+        - secretRef:
+            name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
         env:
         - name: PROXY_ADDRESS_FORWARDING
           valueFrom:
