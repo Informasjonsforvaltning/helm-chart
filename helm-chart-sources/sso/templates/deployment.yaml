@@ -36,45 +36,21 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_REGISTRATION_BASE_URI
-        - name: DEV_REGISTRATION_HOST
-          valueFrom:
-            secretKeyRef:
-              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DEV_REGISTRATION_HOST
-              optional: true
         - name: CONCEPT_CATALOGUE_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: CONCEPT_CATALOGUE_GUI_BASE_URI
-        - name: DEV_CONCEPT_CATALOGUE_HOST
-          valueFrom:
-            secretKeyRef:
-              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DEV_CONCEPT_CATALOGUE_HOST
-              optional: true
         - name: FDK_ADMIN_GUI_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: ADMIN_GUI_BASE_URI
-        - name: DEV_FDK_ADMIN_GUI_HOST
-          valueFrom:
-            secretKeyRef:
-              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DEV_FDK_ADMIN_GUI_HOST
-              optional: true
         - name: RECORDS_OF_PROCESSING_ACTIVITIES_GUI_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: RECORDS_OF_PROCESSING_ACTIVITIES_GUI_BASE_URI
-        - name: DEV_RECORDS_OF_PROCESSING_ACTIVITIES_GUI_HOST
-          valueFrom:
-            secretKeyRef:
-              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DEV_RECORDS_OF_PROCESSING_ACTIVITIES_GUI_HOST
-              optional: true
         - name: SMTP_FROM
           valueFrom:
             secretKeyRef:
@@ -105,23 +81,11 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: DATASERVICE_CATALOG_BASE_URI
-        - name: DEV_DATASERVICE_CATALOG_GUI_HOST
-          valueFrom:
-            secretKeyRef:
-              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DEV_DATASERVICE_CATALOG_GUI_HOST
-              optional: true
         - name: TERMS_AND_CONDITIONS_GUI_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_REGISTRATION_BASE_URI
-        - name: DEV_TERMS_AND_CONDITIONS_GUI_HOST
-          valueFrom:
-            secretKeyRef:
-              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DEV_TERMS_AND_CONDITIONS_GUI_HOST
-              optional: true
         - name: SSO_API_KEY
           valueFrom:
             secretKeyRef:
@@ -132,12 +96,6 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_COMMUNITY_BASE_URI
-        - name: DEV_FDK_COMMUNITY_SERVICE_HOST
-          valueFrom:
-            secretKeyRef:
-              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DEV_FDK_COMMUNITY_SERVICE_HOST
-              optional: true
         - name: USE_DEMO_LOGO
           valueFrom:
             secretKeyRef:
@@ -147,6 +105,9 @@ spec:
         envFrom:
           - secretRef:
               name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+          - secretRef:
+              name: dev-commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              optional: true
         name: sso
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
