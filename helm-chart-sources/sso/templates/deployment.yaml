@@ -21,9 +21,6 @@ spec:
     spec:
       containers:
       - env:
-        envFrom:
-          - secretRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
         - name: PROXY_ADDRESS_FORWARDING
           valueFrom:
             secretKeyRef:
@@ -147,6 +144,9 @@ spec:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: USE_DEMO_LOGO
               optional: true
+        envFrom:
+          - secretRef:
+              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
         name: sso
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
