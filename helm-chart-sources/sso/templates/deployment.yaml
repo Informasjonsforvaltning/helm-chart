@@ -20,12 +20,10 @@ spec:
         fdk.service: sso
     spec:
       containers:
-      - name: sso
-        image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+      - env:
         envFrom:
-        - secretRef:
-            name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-        env:
+          - secretRef:
+              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
         - name: PROXY_ADDRESS_FORWARDING
           valueFrom:
             secretKeyRef:
@@ -149,6 +147,8 @@ spec:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: USE_DEMO_LOGO
               optional: true
+        name: sso
+        image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
