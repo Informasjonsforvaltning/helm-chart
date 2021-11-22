@@ -21,21 +21,11 @@ spec:
     spec:
       containers:
       - env:
-        - name: DATASET_HARVESTER_BASE_URL
+        - name: REASONING_SERVICE_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_DATASET_HARVESTER_URI
-        - name: INFORMATION_MODEL_HARVESTER_BASE_URL
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_INFORMATION_MODEL_HARVESTER_URI
-        - name: CONCEPT_HARVESTER_BASE_URL
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_CONCEPT_HARVESTER_URI
+              key: FDK_REASONING_SERVICE_URI
         - name: ORGANIZATION_CATALOGUE_BASE_URI
           valueFrom:
             secretKeyRef:
