@@ -18,6 +18,13 @@ spec:
       creationTimestamp: null
       labels:
         fdk.service: records-of-processing-activities-gui
+      annotations:
+        telegraf.influxdata.com/inputs: |+
+          [[inputs.nginx]]
+            urls = ["http://127.0.0.1:9090/nginx_status"]
+            response_timeout = "5s"
+            [inputs.nginx.tags]
+              application = "records-of-processing-activities-gui"
     spec:
       containers:
       - env:
