@@ -1,6 +1,0 @@
-# Default values for new records of processing activities.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-##new-records-of-processing-activities
-NEW_RECORD_OF_PROCESSING_ACTIVITIES_MEMORY: "100Mi"
