@@ -4,6 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     fdk.service: records-of-processing-activities-gui
+    controller: telegraf-operator
   name: records-of-processing-activities-gui
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
@@ -18,6 +19,7 @@ spec:
       creationTimestamp: null
       labels:
         fdk.service: records-of-processing-activities-gui
+        controller: telegraf-operator
       annotations:
         telegraf.influxdata.com/inputs: |+
           [[ inputs.nginx ]]
