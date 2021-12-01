@@ -26,6 +26,11 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: NAMESPACE
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_DATASET_PREVIEW_API_KEY
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         name: fdk-dataset-preview-service
