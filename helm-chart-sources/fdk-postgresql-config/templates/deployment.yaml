@@ -59,15 +59,12 @@ spec:
           command: ["/cloud_sql_proxy","-instances={{ required "Missing value FDK_SQL_PROXY_CLUSTER" .Values.FDK_SQL_PROXY_CLUSTER }}:europe-north1:{{ required "Missing value FDK_SQL" .Values.FDK_SQL }}-{{ required "Missing value FDK_SQL_PROXY_SQL_ENVIRONMENT" .Values.FDK_SQL_PROXY_SQL_ENVIRONMENT }}=tcp:0.0.0.0:5432"]
           imagePullPolicy: Always
           livenessProbe:
-            exec:
-              command:
-                - /bin/sh
-                - -c
-                - netstat -tlnp | grep -i cloud_sql_proxy
-            failureThreshold: 3
-            periodSeconds: 10
+            tcpSocket:
+              port: 5432
+            initialDelaySeconds: 20
+            periodSeconds: 30
             successThreshold: 1
-            timeoutSeconds: 1
+            failureThreshold: 5
           name: postgresql-sqlproxy
           ports:
             - containerPort: 5432
