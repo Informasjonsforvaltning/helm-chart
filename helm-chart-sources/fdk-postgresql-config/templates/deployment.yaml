@@ -62,9 +62,10 @@ spec:
             tcpSocket:
               port: 5432
             initialDelaySeconds: 20
-            periodSeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 1
             successThreshold: 1
-            failureThreshold: 5
+            failureThreshold: 3
           name: postgresql-sqlproxy
           ports:
             - containerPort: 5432
