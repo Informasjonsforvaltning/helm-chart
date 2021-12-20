@@ -41,11 +41,11 @@ spec:
             secretKeyRef:
               name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_COMMUNITY_SERVICE_API_TOKEN_WRITE
-        - name: SSMTP_SERVER
+        - name: SMTP_SERVER
           valueFrom:
             secretKeyRef:
               name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_COMMUNITY_SERVICE_SSMTP_SERVER
+              key: FDK_COMMUNITY_SERVICE_SMTP_SERVER
         - name: SMTP_PORT
           valueFrom:
             secretKeyRef:
