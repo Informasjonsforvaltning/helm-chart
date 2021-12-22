@@ -83,8 +83,6 @@ spec:
           - mountPath: /usr/src/app/files
             name: fdk-community-service-claim0
       securityContext:
-        runAsUser: 1000
-        runAsGroup: 1000
         fsGroup: 1000
       volumes:
         - name: fdk-community-service-claim0
