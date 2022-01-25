@@ -1,0 +1,6 @@
+# Default values for static-rdf-server.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+##static-rdf-server
+STATIC_RDF_SERVER_MEMORY: "1000Mi"
