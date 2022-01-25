@@ -1,0 +1,6 @@
+# Default values for registration-portal.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+##registration-portal
+REGISTRATION_PORTAL_MEMORY: "10Mi"
