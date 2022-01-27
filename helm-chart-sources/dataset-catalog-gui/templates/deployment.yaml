@@ -76,6 +76,11 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: SKE_THEME_PROFILE
+        - name: FDK_COMMUNITY_BASE_URI
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_COMMUNITY_BASE_URI
         - name: ADMIN_GUI_BASE_URI
           valueFrom:
             secretKeyRef:
