@@ -41,11 +41,16 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_REGISTRATION_BASE_URI
-        - name: CONCEPT_REGISTRATION_API_HOST
+        - name: CONCEPT_CATALOG_BASE_URI
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: CONCEPT_CATALOGUE_COLLECTION_BASE_URI
+              key: CONCEPT_CATALOG_BASE_URI
+        - name: DATASET_CATALOG_BASE_URI
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: DATASET_CATALOG_BASE_URI
         - name: CONCEPT_REGISTRATION_HOST
           valueFrom:
             secretKeyRef:
