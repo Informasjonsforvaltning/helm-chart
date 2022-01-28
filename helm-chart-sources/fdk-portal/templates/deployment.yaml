@@ -130,6 +130,11 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_DATASET_PREVIEW_API_KEY
+        - name: FDK_USER_FEEDBACK_SERVICE_BASE_URI
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_USER_FEEDBACK_SERVICE_BASE_URI
         name: fdk-portal
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
