@@ -140,11 +140,6 @@ spec:
             secretKeyRef:
               name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: SSO_OIDC_ISSUER
-        - name: OIDC_SECRET
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_CLIENT_SECRET
         name: fdk-portal
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
