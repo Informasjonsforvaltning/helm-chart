@@ -26,6 +26,11 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: NAMESPACE
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: STATIC_RDF_SERVER_API_KEY
         name: static-rdf-server
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
