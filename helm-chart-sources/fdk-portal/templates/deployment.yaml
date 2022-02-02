@@ -32,12 +32,12 @@ spec:
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_BASE_URI
+              key: FDK_PORTAL_BASE_URI
         - name: SEARCH_API_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_BASE_URI
+              key: FDK_PORTAL_BASE_URI
         - name: NAP_HOST
           valueFrom:
             secretKeyRef:
