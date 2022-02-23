@@ -1,6 +1,0 @@
-# Default values for organization-catalogue.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-##organization-catalogue
-ORGANIZATION_CATALOGUE_MEMORY: "750Mi"
