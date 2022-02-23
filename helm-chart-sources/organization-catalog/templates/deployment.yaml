@@ -55,7 +55,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: ORGANIZATION_CATALOG_HOST
+              key: ORGANIZATION_CATALOG_BASE_URI
         name: organization-catalog
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
