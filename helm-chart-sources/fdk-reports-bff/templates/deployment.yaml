@@ -21,11 +21,6 @@ spec:
     spec:
       containers:
       - env:
-        - name: ORGANIZATION_CATALOG_URL
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: ORGANIZATION_CATALOG_BASE_URI
         - name: CONCEPT_HARVESTER_URL
           valueFrom:
             secretKeyRef:
