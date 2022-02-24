@@ -21,11 +21,11 @@ spec:
     spec:
       containers:
       - env:
-        - name: ORGANIZATION_CATALOG_URI
+        - name: ORGANIZATION_CATALOG_HOST
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: ORGANIZATION_CATALOG_HOST
+              key: ORGANIZATION_CATALOG_BASE_URI
         - name: FDK_METADATA_QUALITY_URI
           valueFrom:
             secretKeyRef:
