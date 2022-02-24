@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - env:
-        - name: ORGANIZATION_CATALOG_HOST
+        - name: ORGANIZATION_CATALOG_URI
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
