@@ -1,0 +1,5 @@
+#DValues for staging environment
+NAMESPACE: staging
+FDK_SQL_PROXY_CLUSTER: digdir-fdk-dev
+FDK_SQL_PROXY_SQL_ENVIRONMENT: dev
+FDK_RABBITMQ_STORAGESIZE: "7G"

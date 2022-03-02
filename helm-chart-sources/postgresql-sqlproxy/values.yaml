@@ -3,4 +3,5 @@
 # Declare variables to be passed into your templates.
 
 FDK_POSTGRESQL_MEMORY: "10Mi"
-FDK_POSTGRESQL_IMAGE: gcr.io/cloudsql-docker/gce-proxy:1.27.1
+FDK_POSTGRESQL_IMAGE: gcr.io/cloudsql-docker/gce-proxy:1.29.0
+FDK_SQL: digdir-fdk

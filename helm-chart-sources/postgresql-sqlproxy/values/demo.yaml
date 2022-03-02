@@ -1,0 +1,4 @@
+#DValues for demo environment
+NAMESPACE: demo
+FDK_SQL_PROXY_CLUSTER: digdir-fdk-dev
+FDK_SQL_PROXY_SQL_ENVIRONMENT: dev
