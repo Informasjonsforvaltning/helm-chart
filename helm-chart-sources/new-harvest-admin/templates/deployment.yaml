@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    fdk.service: fdk-harvest-admin
+  name: fdk-harvest-admin
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      fdk.service: fdk-harvest-admin
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        fdk.service: fdk-harvest-admin
+    spec:
+      containers:
+        - env:
+            - name: KEYCLOAK_AUTH_URL
+              valueFrom:
+                secretKeyRef:
+                  name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                  key: SSO_AUTH_URI
+            - name: RABBIT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                  key: RABBITMQ_USERNAME
+            - name: RABBIT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                  key: RABBITMQ_PASSWORD
+            - name: MONGO_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                  key: MONGO_USERNAME
+            - name: MONGO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                  key: MONGO_PASSWORD
+            - name: MONGO_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                  key: MONGO_HOST
+          image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+          imagePullPolicy: Always
+          name: fdk-harvest-admin
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: {{  required "Missing value FDK_HARVEST_ADMIN_MEMORY" .Values.FDK_HARVEST_ADMIN_MEMORY | quote }}
+          livenessProbe:
+            httpGet:
+              path: /api/datasources
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 30
+            successThreshold: 1
+            failureThreshold: 5
+          readinessProbe:
+            httpGet:
+              path: /api/datasources
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 30
+            successThreshold: 1
+            failureThreshold: 5
+      restartPolicy: Always
+status: {}
