@@ -1,6 +1,6 @@
-# Default values for fdk-harvest-admin.
+# Default values for new-harvest-admin.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-##fdk-harvest-admin
+##new-harvest-admin
 FDK_HARVEST_ADMIN_MEMORY: "100Mi"
