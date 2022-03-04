@@ -1,4 +1,0 @@
-#DValues for staging environment
-NAMESPACE: staging
-FDK_REFERENCE_DATA_CACHE_VOLUMENAME: fdk-dev-staging-fdk-reference-data-cache
-FDK_REFERENCE_DATA_CACHE_STORAGESIZE: 9G

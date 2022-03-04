@@ -1,4 +1,0 @@
-#DValues for production environment
-NAMESPACE: prod
-FDK_REFERENCE_DATA_CACHE_VOLUMENAME: fdk-prod-reference-data-cache
-FDK_REFERENCE_DATA_CACHE_STORAGESIZE: 9G

@@ -1,6 +1,0 @@
-apiVersion: v1
-appVersion: "1.0"
-description: FDK reference data cache
-name: fdk-reference-data-cache
-version: 0.1.0
-home: https://github.com/Informasjonsforvaltning/fdk-reference-data-cache
