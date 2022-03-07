@@ -1,0 +1,33 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  creationTimestamp: null
+  labels:
+    fdk.service: fdk-community-store-claim0
+  name: fdk-community-store-claim0
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  storageClassName: ""
+  volumeName: {{ required "Missing value FDK_COMMUNITY_STORE_VOLUMENAME" .Values.FDK_COMMUNITY_STORE_VOLUMENAME }}
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ required "Missing value FDK_COMMUNITY_STORE_STORAGESIZE" .Values.FDK_COMMUNITY_STORE_STORAGESIZE }}
+status: {}
+
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: {{ required "Missing value FDK_COMMUNITY_STORE_VOLUMENAME" .Values.FDK_COMMUNITY_STORE_VOLUMENAME }}
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  storageClassName: ""
+  capacity:
+    storage: {{ required "Missing value FDK_COMMUNITY_STORE_STORAGESIZE" .Values.FDK_COMMUNITY_STORE_STORAGESIZE }}
+  accessModes:
+    - ReadWriteOnce
+  gcePersistentDisk:
+    pdName: {{ required "Missing value FDK_COMMUNITY_STORE_VOLUMENAME" .Values.FDK_COMMUNITY_STORE_VOLUMENAME }}
+    fsType: ext4

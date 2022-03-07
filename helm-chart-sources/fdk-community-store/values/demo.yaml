@@ -1,0 +1,4 @@
+#DValues for demo environment
+NAMESPACE: demo
+FDK_COMMUNITY_STORE_VOLUMENAME: fdk-dev-demo-community-store
+FDK_COMMUNITY_STORE_STORAGESIZE: "9G"

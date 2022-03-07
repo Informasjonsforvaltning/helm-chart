@@ -1,0 +1,4 @@
+#DValues for production environment
+NAMESPACE: prod
+FDK_COMMUNITY_STORE_VOLUMENAME: fdk-prod-community-store
+FDK_COMMUNITY_STORE_STORAGESIZE: "9G"

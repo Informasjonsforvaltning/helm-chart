@@ -1,0 +1,7 @@
+# Default values for fdk-community-store.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+##fdk-community-store
+FDK_COMMUNITY_STORE_MEMORY: "500Mi"
+FDK_COMMUNITY_STORE_IMAGE: "mongo:4.4.12"
