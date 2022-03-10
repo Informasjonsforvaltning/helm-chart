@@ -21,11 +21,11 @@ spec:
     spec:
       containers:
         - env:
-            - name: KEYCLOAK_AUTH_URL
+            - name: KEYCLOAK_HOST
               valueFrom:
                 secretKeyRef:
                   name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                  key: SSO_AUTH_URI
+                  key: SSO_BASE_URI
             - name: RABBIT_USERNAME
               valueFrom:
                 secretKeyRef:
