@@ -1,0 +1,5 @@
+# Default values for static-rdf-nginx.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+STATIC_RDF_NGINX_MEMORY: "10Mi"
