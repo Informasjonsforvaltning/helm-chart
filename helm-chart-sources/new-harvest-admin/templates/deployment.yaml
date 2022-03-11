@@ -21,36 +21,41 @@ spec:
     spec:
       containers:
         - env:
-            - name: KEYCLOAK_HOST
-              valueFrom:
-                secretKeyRef:
-                  name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                  key: SSO_BASE_URI
-            - name: RABBIT_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                  key: RABBITMQ_USERNAME
-            - name: RABBIT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                  key: RABBITMQ_PASSWORD
-            - name: MONGO_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                  key: MONGO_USERNAME
-            - name: MONGO_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                  key: MONGO_PASSWORD
-            - name: MONGO_HOST
-              valueFrom:
-                secretKeyRef:
-                  name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                  key: MONGO_HOST
+          - name: KEYCLOAK_HOST
+            valueFrom:
+              secretKeyRef:
+                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: SSO_BASE_URI
+          - name: RABBIT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: RABBITMQ_USERNAME
+          - name: RABBIT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: RABBITMQ_PASSWORD
+          - name: MONGO_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: MONGO_USERNAME
+          - name: MONGO_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: MONGO_PASSWORD
+          - name: MONGO_HOST
+            valueFrom:
+              secretKeyRef:
+                name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: MONGO_HOST
+          - name: PROJECT_ID_GCP
+            valueFrom:
+              secretKeyRef:
+                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: PROJECT_ID
           image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
           imagePullPolicy: Always
           name: new-harvest-admin
