@@ -36,6 +36,7 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+        - containerPort: 5000
         resources:
           requests:
             memory: {{ required "Missing value STATIC_RDF_SERVER_MEMORY" .Values.STATIC_RDF_SERVER_MEMORY | quote }}
