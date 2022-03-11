@@ -46,7 +46,7 @@ spec:
         livenessProbe:
           httpGet:
             path: /ping
-            port: 8080
+            port: 5000
           initialDelaySeconds: 60
           periodSeconds: 120
           successThreshold: 1
@@ -54,7 +54,7 @@ spec:
         readinessProbe:
           httpGet:
             path: /ready
-            port: 8080
+            port: 5000
           initialDelaySeconds: 270
           periodSeconds: 90
           successThreshold: 1
