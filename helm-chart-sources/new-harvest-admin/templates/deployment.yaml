@@ -21,6 +21,8 @@ spec:
     spec:
       containers:
         - env:
+          - name: GOOGLE_APPLICATION_CREDENTIALS
+            value: /var/secrets/google/error-reporting-sa-key.json
           - name: KEYCLOAK_HOST
             valueFrom:
               secretKeyRef:
@@ -80,5 +82,12 @@ spec:
             periodSeconds: 30
             successThreshold: 1
             failureThreshold: 5
+        volumeMounts:
+          - name: error-reporting-sa
+            mountPath: /var/secrets/google
       restartPolicy: Always
+      volumes:
+        - name: error-reporting-sa
+          secret:
+            secretName: error-reporting-sa-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 status: {}
