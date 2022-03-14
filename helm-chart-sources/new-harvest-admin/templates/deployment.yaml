@@ -20,74 +20,74 @@ spec:
         fdk.service: new-harvest-admin
     spec:
       containers:
-        - env:
-          - name: GOOGLE_APPLICATION_CREDENTIALS
-            value: /var/secrets/google/error-reporting-sa-key.json
-          - name: KEYCLOAK_HOST
-            valueFrom:
-              secretKeyRef:
-                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: SSO_BASE_URI
-          - name: RABBIT_USERNAME
-            valueFrom:
-              secretKeyRef:
-                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: RABBITMQ_USERNAME
-          - name: RABBIT_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: RABBITMQ_PASSWORD
-          - name: MONGO_USERNAME
-            valueFrom:
-              secretKeyRef:
-                name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: MONGO_USERNAME
-          - name: MONGO_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: MONGO_PASSWORD
-          - name: MONGO_HOST
-            valueFrom:
-              secretKeyRef:
-                name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: MONGO_HOST
-          - name: PROJECT_ID_GCP
-            valueFrom:
-              secretKeyRef:
-                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: PROJECT_ID
-          image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
-          imagePullPolicy: Always
-          name: new-harvest-admin
-          ports:
-            - containerPort: 8080
-          resources:
-            requests:
-              memory: {{  required "Missing value FDK_HARVEST_ADMIN_MEMORY" .Values.FDK_HARVEST_ADMIN_MEMORY | quote }}
-          livenessProbe:
-            httpGet:
-              path: /ping
-              port: 8080
-            initialDelaySeconds: 20
-            periodSeconds: 30
-            successThreshold: 1
-            failureThreshold: 5
-          readinessProbe:
-            httpGet:
-              path: /ready
-              port: 8080
-            initialDelaySeconds: 20
-            periodSeconds: 30
-            successThreshold: 1
-            failureThreshold: 5
+      - env:
+        - name: GOOGLE_APPLICATION_CREDENTIALS
+          value: /var/secrets/google/error-reporting-sa-key.json
+        - name: KEYCLOAK_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: SSO_BASE_URI
+        - name: RABBIT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBITMQ_USERNAME
+        - name: RABBIT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBITMQ_PASSWORD
+        - name: MONGO_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGO_USERNAME
+        - name: MONGO_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGO_PASSWORD
+        - name: MONGO_HOST
+          valueFrom:
+            secretKeyRef:
+              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGO_HOST
+        - name: PROJECT_ID_GCP
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: PROJECT_ID
+        image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+        imagePullPolicy: Always
+        name: new-harvest-admin
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: {{  required "Missing value FDK_HARVEST_ADMIN_MEMORY" .Values.FDK_HARVEST_ADMIN_MEMORY | quote }}
+        livenessProbe:
+          httpGet:
+            path: /ping
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 30
+          successThreshold: 1
+          failureThreshold: 5
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 30
+          successThreshold: 1
+          failureThreshold: 5
         volumeMounts:
-          - name: error-reporting-sa
-            mountPath: /var/secrets/google
+        - mountPath: /var/secrets/google
+          name: error-reporting-sa
       restartPolicy: Always
       volumes:
-        - name: error-reporting-sa
-          secret:
-            secretName: error-reporting-sa-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+      - name: error-reporting-sa
+        secret:
+          secretName: error-reporting-sa-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 status: {}
