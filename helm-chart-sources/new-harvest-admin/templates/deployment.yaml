@@ -38,6 +38,16 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: RABBITMQ_PASSWORD
+        - name: RABBIT_HOST
+          valueFrom:
+            secretKeyRef:
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_HOST
+        - name: RABBIT_PORT
+          valueFrom:
+            secretKeyRef:
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_PORT
         - name: MONGO_USERNAME
           valueFrom:
             secretKeyRef:
