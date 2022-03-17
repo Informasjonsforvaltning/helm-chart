@@ -1,9 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
-  labels:
-    fdk.service: static-rdf-nginx
   name: static-rdf-nginx
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
@@ -15,7 +12,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: static-rdf
     spec:
@@ -30,33 +26,33 @@ spec:
                 - static-rdf
             topologyKey: "kubernetes.io/hostname"
       containers:
-        - image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
-          imagePullPolicy: Always
-          name: static-rdf-nginx
-          ports:
-            - containerPort: 8080
-          resources:
-            requests:
-              memory: {{ required "Missing value STATIC_RDF_NGINX_MEMORY" .Values.STATIC_RDF_NGINX_MEMORY | quote }}
-          volumeMounts:
-            - mountPath: /srv/www/static-rdf-server
-              name: static-rdf-server-claim0
-          livenessProbe:
-            httpGet:
-              path: /ping
-              port: 8080
-            initialDelaySeconds: 20
-            periodSeconds: 30
-            successThreshold: 1
-            failureThreshold: 5
-          readinessProbe:
-            httpGet:
-              path: /ready
-              port: 8080
-            initialDelaySeconds: 20
-            periodSeconds: 30
-            successThreshold: 1
-            failureThreshold: 5
+      - image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+        imagePullPolicy: Always
+        name: static-rdf-nginx
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: {{ required "Missing value STATIC_RDF_NGINX_MEMORY" .Values.STATIC_RDF_NGINX_MEMORY | quote }}
+        volumeMounts:
+          - mountPath: /srv/www/static-rdf-server
+            name: static-rdf-server-claim0
+        livenessProbe:
+          httpGet:
+            path: /ping
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 30
+          successThreshold: 1
+          failureThreshold: 5
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 30
+          successThreshold: 1
+          failureThreshold: 5
       volumes:
         - name: static-rdf-server-claim0
           persistentVolumeClaim:

@@ -1,9 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
-  labels:
-    fdk.service: static-rdf-server
   name: static-rdf-server
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
@@ -15,7 +12,6 @@ spec:
     type: Recreate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: static-rdf
     spec:
