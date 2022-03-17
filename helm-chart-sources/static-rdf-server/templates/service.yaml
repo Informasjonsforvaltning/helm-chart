@@ -3,7 +3,7 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    fdk.service: static-rdf-server
+    app: static-rdf
   name: static-rdf-server
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
@@ -16,6 +16,6 @@ spec:
     port: 5000
     targetPort: 5000
   selector:
-    fdk.service: static-rdf-server
+    app: static-rdf
 status:
   loadBalancer: {}
