@@ -3,7 +3,7 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: static-rdf
+    fdk.service: static-rdf-server
   name: static-rdf-server
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:

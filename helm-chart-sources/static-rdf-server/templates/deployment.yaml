@@ -2,18 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: static-rdf-server
+  labels:
+    app: static-rdf
+    fdk.service: static-rdf-server
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: static-rdf
+      fdk.service: static-rdf-server
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
         app: static-rdf
+        fdk.service: static-rdf-server
     spec:
       affinity:
         podAffinity:
