@@ -28,6 +28,7 @@ spec:
               operator: In
               values:
               - static-rdf
+            topologyKey: topology.kubernetes.io/zone
       containers:
       - env:
         - name: NAMESPACE
