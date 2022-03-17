@@ -16,6 +16,6 @@ spec:
     port: 5000
     targetPort: 5000
   selector:
-    app: static-rdf
+    fdk.service: static-rdf-server
 status:
   loadBalancer: {}

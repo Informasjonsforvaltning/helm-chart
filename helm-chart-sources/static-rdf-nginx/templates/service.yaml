@@ -13,6 +13,6 @@ spec:
     port: 8080
     targetPort: 8080
   selector:
-    app: static-rdf
+    fdk.service: static-rdf-nginx
 status:
   loadBalancer: {}
