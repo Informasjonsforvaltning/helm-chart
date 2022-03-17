@@ -10,7 +10,6 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      fdk.service: static-rdf-server
       app: static-rdf
   strategy:
     type: Recreate
@@ -18,7 +17,6 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        fdk.service: static-rdf-server
         app: static-rdf
     spec:
       affinity:
