@@ -23,11 +23,11 @@ spec:
         podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
-            matchExpressions:
-            - key: app
-              operator: In
-              values:
-              - static-rdf
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - static-rdf
             topologyKey: topology.kubernetes.io/zone
       containers:
         - image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
