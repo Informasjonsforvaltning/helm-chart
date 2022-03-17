@@ -1,24 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: static-rdf-nginx
+  creationTimestamp: null
   labels:
+    fdk.service: static-rdf-nginx
     app: static-rdf
-    fdk.service: static-rdf-server
+  name: static-rdf-nginx
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: static-rdf
-      fdk.service: static-rdf-server
+      fdk.service: static-rdf-nginx
   strategy:
     type: RollingUpdate
   template:
     metadata:
       labels:
         app: static-rdf
-        fdk.service: static-rdf-server
+        fdk.service: static-rdf-nginx
     spec:
       affinity:
         podAffinity:

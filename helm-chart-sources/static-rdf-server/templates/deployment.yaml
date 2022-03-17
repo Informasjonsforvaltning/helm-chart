@@ -1,10 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: static-rdf-server
+  creationTimestamp: null
   labels:
-    app: static-rdf
     fdk.service: static-rdf-server
+    app: static-rdf
+  name: static-rdf-server
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
