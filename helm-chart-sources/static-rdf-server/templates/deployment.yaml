@@ -19,6 +19,15 @@ spec:
       labels:
         fdk.service: static-rdf-server
     spec:
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+            matchExpressions:
+            - key: app
+              operator: In
+              values:
+              - static-rdf
       containers:
       - env:
         - name: NAMESPACE

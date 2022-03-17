@@ -19,6 +19,15 @@ spec:
       labels:
         fdk.service: static-rdf-nginx
     spec:
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+            matchExpressions:
+            - key: app
+              operator: In
+              values:
+              - static-rdf
       containers:
         - image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
           imagePullPolicy: Always
@@ -28,6 +37,9 @@ spec:
           resources:
             requests:
               memory: {{ required "Missing value STATIC_RDF_NGINX_MEMORY" .Values.STATIC_RDF_NGINX_MEMORY | quote }}
+          volumeMounts:
+            - mountPath: /srv/www/static-rdf-server
+              name: static-rdf-server-claim0
           livenessProbe:
             httpGet:
               path: /ping
@@ -44,5 +56,9 @@ spec:
             periodSeconds: 30
             successThreshold: 1
             failureThreshold: 5
+      volumes:
+        - name: static-rdf-server-claim0
+          persistentVolumeClaim:
+            claimName: static-rdf-server-claim0
       restartPolicy: Always
 status: {}
