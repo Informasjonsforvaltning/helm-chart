@@ -35,7 +35,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: ADMIN_API_BASE_URI
+              key: NEW_HARVEST_ADMIN_URI_TEMP
         - name: FDK_REGISTRATION_BASE_URI
           valueFrom:
             secretKeyRef:
