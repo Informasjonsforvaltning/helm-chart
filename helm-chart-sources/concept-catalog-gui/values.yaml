@@ -1,0 +1,6 @@
+# Default values for concept-catalog-gui.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+##concept-catalog-gui
+CONCEPT_CATALOG_GUI_MEMORY: "10Mi"

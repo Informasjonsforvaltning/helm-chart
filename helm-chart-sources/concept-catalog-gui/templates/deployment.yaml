@@ -3,21 +3,21 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    fdk.service: concept-catalogue-gui
-  name: concept-catalogue-gui
+    fdk.service: concept-catalog-gui
+  name: concept-catalog-gui
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      fdk.service: concept-catalogue-gui
+      fdk.service: concept-catalog-gui
   strategy:
     type: RollingUpdate
   template:
     metadata:
       creationTimestamp: null
       labels:
-        fdk.service: concept-catalogue-gui
+        fdk.service: concept-catalog-gui
     spec:
       containers:
       - env:
@@ -30,7 +30,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: CONCEPT_CATALOGUE_COLLECTION_BASE_URI
+              key: CONCEPT_CATALOG_BASE_URI
         - name: REGISTRATION_HOST
           valueFrom:
             secretKeyRef:
@@ -45,7 +45,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: ORGANIZATION_CATALOGUE_HOST
+              key: ORGANIZATION_CATALOG_BASE_URI
         - name: PUBLISHER_DATA_AUTHORIZATION
           valueFrom:
             secretKeyRef:
@@ -88,13 +88,13 @@ spec:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: USE_DEMO_LOGO
               optional: true
-        name: concept-catalogue-gui
+        name: concept-catalog-gui
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
         resources:
           requests:
-            memory: {{ required "Missing value FDK_SERVICE_MEMORY" .Values.FDK_SERVICE_MEMORY | quote }}
+            memory: {{ required "Missing value CONCEPT_CATALOG_GUI_MEMORY" .Values.CONCEPT_CATALOG_GUI_MEMORY | quote }}
       restartPolicy: Always
 status: {}
