@@ -23,7 +23,7 @@ spec:
     spec:
       affinity:
         podAffinity:
-          preferedDuringSchedulingIgnoredDuringExecution:
+          preferredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
               matchExpressions:
               - key: app
