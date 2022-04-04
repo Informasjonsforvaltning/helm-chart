@@ -41,21 +41,26 @@ spec:
             secretKeyRef:
               name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_ES_TCP_PORT
-        - name: RABBIT_USERNAME
+        - name: RABBIT_USER
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBITMQ_USERNAME
-        - name: RABBIT_PASSWORD
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_USER
+        - name: RABBIT_PASS
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBITMQ_PASSWORD
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_PASS
         - name: RABBIT_HOST
           valueFrom:
             secretKeyRef:
-              name: fdk-harvest-scheduler-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: RABBIT_HOST
+        - name: RABBIT_PORT
+          valueFrom:
+            secretKeyRef:
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_PORT
         - name: API_URL
           valueFrom:
             secretKeyRef:
