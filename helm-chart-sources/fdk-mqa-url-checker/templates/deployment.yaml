@@ -30,12 +30,12 @@ spec:
           valueFrom:
             secretKeyRef:
               name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: NAMESPACE
+              key: SCHEMA_REGISTRY
         - name: BROKERS
           valueFrom:
             secretKeyRef:
               name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: NAMESPACE
+              key: BROKERS
         name: fdk-mqa-url-checker
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
