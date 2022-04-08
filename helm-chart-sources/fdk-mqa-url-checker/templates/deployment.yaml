@@ -45,20 +45,24 @@ spec:
           requests:
             memory: {{ required "Missing value FDK_MQA_URL_CHECKER_MEMORY" .Values.FDK_MQA_URL_CHECKER_MEMORY | quote }}
         livenessProbe:
-          httpGet:
-            path: /ping
-            port: 8080
-          initialDelaySeconds: 20
-          periodSeconds: 30
+          exec:
+            command:
+              - cat
+              - /tmp/healthy
+          initialDelaySeconds: 5
+          periodSeconds: 5
           successThreshold: 1
           failureThreshold: 5
+          timeoutSeconds: 1
         readinessProbe:
-          httpGet:
-            path: /ready
-            port: 8080
-          initialDelaySeconds: 60
-          periodSeconds: 30
+          exec:
+            command:
+              - cat
+              - /tmp/healthy
+          initialDelaySeconds: 5
+          periodSeconds: 5
           successThreshold: 1
           failureThreshold: 5
+          timeoutSeconds: 1
       restartPolicy: Always
 status: {}
