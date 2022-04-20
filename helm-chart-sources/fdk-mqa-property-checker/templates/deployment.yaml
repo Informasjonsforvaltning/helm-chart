@@ -31,6 +31,16 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_REFERENCE_DATA_BASE_URL
+        - name: SCHEMA_REGISTRY
+          valueFrom:
+            secretKeyRef:
+              name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: SCHEMA_REGISTRY
+        - name: BROKERS
+          valueFrom:
+            secretKeyRef:
+              name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: BROKERS
         name: fdk-mqa-property-checker
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
