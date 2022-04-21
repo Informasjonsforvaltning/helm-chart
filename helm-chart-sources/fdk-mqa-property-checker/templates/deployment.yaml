@@ -30,7 +30,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_REFERENCE_DATA_BASE_URL
+              key: FDK_REFERENCE_DATA_BASE_URI
         - name: SCHEMA_REGISTRY
           valueFrom:
             secretKeyRef:
