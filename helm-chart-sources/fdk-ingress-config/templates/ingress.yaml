@@ -93,7 +93,7 @@ spec:
               serviceName: organization-catalog
               servicePort: 8080
             path: /*
-    - host: {{ required "Missing value HOSTNAME_ORGANIZATION_CATALOG" .Values.HOSTNAME_ORGANIZATION_CATALOGUE }}
+    - host: {{ required "Missing value HOSTNAME_ORGANIZATION_CATALOG" .Values.HOSTNAME_ORGANIZATION_CATALOG }}
       http:
         paths:
           - backend:
