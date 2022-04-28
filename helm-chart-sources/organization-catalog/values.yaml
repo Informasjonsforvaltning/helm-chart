@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##organization-catalog
-ORGANIZATION_CATALOG_MEMORY: "750Mi"
+ORGANIZATION_CATALOG_MEMORY: "350Mi"

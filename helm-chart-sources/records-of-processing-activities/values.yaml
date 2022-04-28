@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##records-of-processing-activities
-RECORDS_OF_PROCESSING_ACTIVITIES_MEMORY: "100Mi"
+RECORDS_OF_PROCESSING_ACTIVITIES_MEMORY: "300Mi"

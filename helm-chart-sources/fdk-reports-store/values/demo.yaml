@@ -1,4 +1,4 @@
 #DValues for demo environment
 NAMESPACE: demo
-FDK_ES_VOLUMENAME: fdk-dev-demo-reports-store
-FDK_ES_STORAGESIZE: "7G"
+FDK_REPORTS_STORE_VOLUMENAME: fdk-dev-demo-reports-store
+FDK_REPORTS_STORE_STORAGESIZE: "7G"

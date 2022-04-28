@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 #dcat-ap-no-validator-cache
-DCAT_AP_NO_VALIDATOR_CACHE_MEMORY: "50Mi"
+DCAT_AP_NO_VALIDATOR_CACHE_MEMORY: "350Mi"

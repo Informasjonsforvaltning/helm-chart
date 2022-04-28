@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##fdk-api-endpoints
-FDK_API_ENDPOINTS_MEMORY: "500Mi"
+FDK_API_ENDPOINTS_MEMORY: "250Mi"

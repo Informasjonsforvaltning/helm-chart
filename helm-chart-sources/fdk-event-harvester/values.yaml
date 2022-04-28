@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##fdk-event-harvester
-FDK_EVENT_HARVESTER_MEMORY: "750Mi"
+FDK_EVENT_HARVESTER_MEMORY: "450Mi"

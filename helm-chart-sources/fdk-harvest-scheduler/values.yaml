@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##fdk-harvest-scheduler
-FDK_HARVEST_SCHEDULER_MEMORY: "10Mi"
+FDK_HARVEST_SCHEDULER_MEMORY: "50Mi"

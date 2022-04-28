@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##fdk-public-service-harvester
-FDK_PUBLIC_SERVICE_HARVESTER_MEMORY: "750Mi"
+FDK_PUBLIC_SERVICE_HARVESTER_MEMORY: "400Mi"
