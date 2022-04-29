@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##fdk-informationmodel-harvester
-FDK_INFORMATIONMODEL_HARVESTER_MEMORY: "750Mi"
+FDK_INFORMATIONMODEL_HARVESTER_MEMORY: "3000Mi"
