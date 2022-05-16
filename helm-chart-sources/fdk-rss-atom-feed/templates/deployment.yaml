@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    fdk.service: fdk-rss-atom-feed
+  name: fdk-rss-atom-feed
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      fdk.service: fdk-rss-atom-feed
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        fdk.service: fdk-rss-atom-feed
+    spec:
+      containers:
+      - env:
+        - name: ELASTIC_HOST
+          valueFrom:
+            secretKeyRef:
+              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_ES_HOST
+        - name: ELASTIC_PORT
+          valueFrom:
+            secretKeyRef:
+              name: elasticsearch7-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_ES_PORT
+        - name: FDK_BASE_URI
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_BASE_URI
+        name: fdk-rss-atom-feed
+        image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: 50Mi
+        livenessProbe:
+          httpGet:
+            path: /livez
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 30
+          successThreshold: 1
+          failureThreshold: 5
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 30
+          successThreshold: 1
+          failureThreshold: 5
+      restartPolicy: Always
