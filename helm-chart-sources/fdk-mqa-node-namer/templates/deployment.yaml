@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    fdk.service: fdk-mqa-node-namer
+  name: fdk-mqa-node-namer
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      fdk.service: fdk-mqa-node-namer
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        fdk.service: fdk-mqa-node-namer
+    spec:
+      containers:
+      - env:
+        - name: NAMESPACE
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: NAMESPACE
+        - name: SCHEMA_REGISTRY
+          valueFrom:
+            secretKeyRef:
+              name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: SCHEMA_REGISTRY
+        - name: BROKERS
+          valueFrom:
+            secretKeyRef:
+              name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: BROKERS
+        name: fdk-mqa-node-namer
+        image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: {{ required "Missing value FDK_MQA_NODE_NAMER_MEMORY" .Values.FDK_MQA_NODE_NAMER_MEMORY | quote }}
+        livenessProbe:
+          exec:
+            command:
+              - "true"
+        readinessProbe:
+          exec:
+            command:
+              - "true"
+      restartPolicy: Always
