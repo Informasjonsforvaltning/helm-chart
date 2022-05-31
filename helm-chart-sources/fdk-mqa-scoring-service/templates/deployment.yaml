@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: fdk-mqa-scoring-service
   name: fdk-mqa-scoring-service
@@ -15,7 +14,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: fdk-mqa-scoring-service
     spec:
@@ -64,26 +62,15 @@ spec:
         name: fdk-mqa-scoring-service
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
-        ports:
-        - containerPort: 8080
         resources:
           requests:
             memory: {{ required "Missing value FDK_MQA_SCORING_SERVICE_MEMORY" .Values.FDK_MQA_SCORING_SERVICE_MEMORY | quote }}
         livenessProbe:
-          httpGet:
-            path: /ping
-            port: 8080
-          initialDelaySeconds: 20
-          periodSeconds: 60
-          successThreshold: 1
-          failureThreshold: 10
+          exec:
+            command:
+              - "true"
         readinessProbe:
-          httpGet:
-            path: /ready
-            port: 8080
-          initialDelaySeconds: 20
-          periodSeconds: 60
-          successThreshold: 1
-          failureThreshold: 10
+          exec:
+            command:
+              - "true"
       restartPolicy: Always
-status: {}
