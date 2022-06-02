@@ -1,10 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: null
   labels:
-    fdk.service: fdk-metadata-quality-bff
-  name: fdk-metadata-quality-bff
+    fdk.service: fdk-metadata-scoring-bff
+  name: fdk-metadata-scoring-bff
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   type: NodePort
@@ -13,6 +12,4 @@ spec:
     port: 8080
     targetPort: 8080
   selector:
-    fdk.service: fdk-metadata-quality-bff
-status:
-  loadBalancer: {}
+    fdk.service: fdk-metadata-scoring-bff

@@ -1,3 +1,0 @@
-# Default values for fdk-metadata-quality-bff.
-
-FDK_METADATA_QUALITY_BFF_MEMORY: "500Mi"
