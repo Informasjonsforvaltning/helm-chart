@@ -1,23 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
-    fdk.service: fdk-metadata-quality-bff
-  name: fdk-metadata-quality-bff
+    fdk.service: fdk-metadata-scoring-bff
+  name: fdk-metadata-scoring-bff
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      fdk.service: fdk-metadata-quality-bff
+      fdk.service: fdk-metadata-scoring-bff
   strategy:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        fdk.service: fdk-metadata-quality-bff
+        fdk.service: fdk-metadata-scoring-bff
     spec:
       containers:
       - env:
@@ -26,14 +24,14 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: NAMESPACE
-        name: fdk-metadata-quality-bff
+        name: fdk-metadata-scoring-bff
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
         resources:
           requests:
-            memory: {{ required "Missing value FDK_METADATA_QUALITY_BFF_MEMORY" .Values.FDK_METADATA_QUALITY_BFF_MEMORY | quote }}
+            memory: {{ required "Missing value FDK_METADATA_SCORING_BFF_MEMORY" .Values.FDK_METADATA_SCORING_BFF_MEMORY | quote }}
         livenessProbe:
           httpGet:
             path: /ping
@@ -51,4 +49,3 @@ spec:
           successThreshold: 1
           failureThreshold: 5
       restartPolicy: Always
-status: {}
