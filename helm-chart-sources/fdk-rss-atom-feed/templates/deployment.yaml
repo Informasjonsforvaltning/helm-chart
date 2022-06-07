@@ -47,7 +47,7 @@ spec:
             path: /livez
             port: 8080
           initialDelaySeconds: 5
-          periodSeconds: 30
+          periodSeconds: 180
           successThreshold: 1
           failureThreshold: 5
         readinessProbe:
@@ -55,7 +55,7 @@ spec:
             path: /readyz
             port: 8080
           initialDelaySeconds: 5
-          periodSeconds: 30
+          periodSeconds: 180
           successThreshold: 1
           failureThreshold: 5
       restartPolicy: Always
