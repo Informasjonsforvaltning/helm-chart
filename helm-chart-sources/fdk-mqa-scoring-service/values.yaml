@@ -1,3 +1,4 @@
 # Default values for fdk-mqa-scoring-service.
 
 FDK_MQA_SCORING_SERVICE_MEMORY: "500Mi"
+SCORING_API_URL: http://fdk-mqa-scoring-api:8080
