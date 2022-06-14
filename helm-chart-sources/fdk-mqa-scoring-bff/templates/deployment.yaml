@@ -49,6 +49,11 @@ spec:
             secretKeyRef:
               name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: POSTGRES_PASSWORD
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: API_KEY
         name: fdk-mqa-scoring-bff
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
