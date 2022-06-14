@@ -2,20 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    fdk.service: fdk-mqa-scoring-bff
-  name: fdk-mqa-scoring-bff
+    fdk.service: fdk-mqa-scoring-api
+  name: fdk-mqa-scoring-api
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      fdk.service: fdk-mqa-scoring-bff
+      fdk.service: fdk-mqa-scoring-api
   strategy:
     type: RollingUpdate
   template:
     metadata:
       labels:
-        fdk.service: fdk-mqa-scoring-bff
+        fdk.service: fdk-mqa-scoring-api
     spec:
       containers:
       - env:
@@ -49,14 +49,14 @@ spec:
             secretKeyRef:
               name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: POSTGRES_PASSWORD
-        name: fdk-mqa-scoring-bff
+        name: fdk-mqa-scoring-api
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
         resources:
           requests:
-            memory: {{ required "Missing value FDK_METADATA_SCORING_BFF_MEMORY" .Values.FDK_METADATA_SCORING_BFF_MEMORY | quote }}
+            memory: {{ required "Missing value FDK_METADATA_SCORING_API_MEMORY" .Values.FDK_METADATA_SCORING_API_MEMORY | quote }}
         livenessProbe:
           httpGet:
             path: /ping

@@ -1,0 +1,3 @@
+# Default values for fdk-mqa-scoring-api.
+
+FDK_METADATA_SCORING_BFF_MEMORY: "500Mi"
