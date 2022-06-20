@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    fdk.service: fdk-dataset-event-publisher
+  name: fdk-dataset-event-publisher
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      fdk.service: fdk-dataset-event-publisher
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        fdk.service: fdk-dataset-event-publisher
+    spec:
+      containers:
+      - env:
+        - name: NAMESPACE
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: NAMESPACE
+        - name: SCHEMA_REGISTRY
+          valueFrom:
+            secretKeyRef:
+              name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: SCHEMA_REGISTRY
+        - name: BROKERS
+          valueFrom:
+            secretKeyRef:
+              name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: BROKERS
+        - name: RABBIT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBITMQ_USERNAME
+        - name: RABBIT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBITMQ_PASSWORD
+        - name: RABBIT_HOST
+          value: {{ required "Missing value RABBIT_HOST" .Values.RABBIT_HOST }}
+        - name: HARVESTER_API_URL
+          value: {{ required "Missing value HARVESTER_API_URL" .Values.HARVESTER_API_URL }}
+        name: fdk-dataset-event-publisher
+        image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: {{ required "Missing value FDK_DATASET_EVENT_PUBLISHER_MEMORY" .Values.FDK_DATASET_EVENT_PUBLISHER_MEMORY | quote }}
+        livenessProbe:
+          exec:
+            command:
+              - "true"
+        readinessProbe:
+          exec:
+            command:
+              - "true"
+      restartPolicy: Always
