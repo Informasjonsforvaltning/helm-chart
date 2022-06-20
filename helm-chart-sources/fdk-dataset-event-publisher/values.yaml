@@ -1,5 +1,3 @@
 # Default values for fdk-dataset-event-publisher.
 
 FDK_DATASET_EVENT_PUBLISHER_MEMORY: "500Mi"
-HARVESTER_API_URL: http://fdk-dataset-harvester:8080
-RABBIT_URL: rabbitmq
