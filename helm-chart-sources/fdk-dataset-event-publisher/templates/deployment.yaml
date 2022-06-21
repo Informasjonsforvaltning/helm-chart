@@ -34,20 +34,31 @@ spec:
             secretKeyRef:
               name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: BROKERS
-        - name: RABBIT_USERNAME
+        - name: RABBIT_USER
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBITMQ_USERNAME
-        - name: RABBIT_PASSWORD
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_USER
+        - name: RABBIT_PASS
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBITMQ_PASSWORD
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_PASS
         - name: RABBIT_HOST
-          value: {{ required "Missing value RABBIT_HOST" .Values.RABBIT_HOST }}
+          valueFrom:
+            secretKeyRef:
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_HOST
+        - name: RABBIT_PORT
+          valueFrom:
+            secretKeyRef:
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBIT_PORT
         - name: HARVESTER_API_URL
-          value: {{ required "Missing value HARVESTER_API_URL" .Values.HARVESTER_API_URL }}
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_DATASET_HARVESTER_URI
         name: fdk-dataset-event-publisher
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
