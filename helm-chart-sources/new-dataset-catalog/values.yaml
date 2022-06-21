@@ -1,0 +1,5 @@
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+REQUESTED_MEMORY: "550Mi"
+APP_NAME: new-dataset-catalog
