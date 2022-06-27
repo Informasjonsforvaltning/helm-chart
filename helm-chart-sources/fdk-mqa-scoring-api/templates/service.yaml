@@ -8,8 +8,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - name: "8080"
-    port: 8080
-    targetPort: 8080
+  - name: "8082"
+    port: 8082
+    targetPort: 8082
   selector:
     fdk.service: fdk-mqa-scoring-api
