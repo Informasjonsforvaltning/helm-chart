@@ -58,16 +58,16 @@ spec:
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 8082
         resources:
           requests:
             memory: {{ required "Missing value FDK_METADATA_SCORING_API_MEMORY" .Values.FDK_METADATA_SCORING_API_MEMORY | quote }}
         livenessProbe:
           httpGet:
             path: /ping
-            port: 8080
+            port: 8082
         readinessProbe:
           httpGet:
             path: /ready
-            port: 8080
+            port: 8082
       restartPolicy: Always
