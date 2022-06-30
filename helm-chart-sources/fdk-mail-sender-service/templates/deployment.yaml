@@ -65,6 +65,12 @@ spec:
               name: fdk-smtp-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: TLS_CERT
               optional: true
+        - name: ALLOWED_SENDERS
+          valueFrom:
+            secretKeyRef:
+              name: fdk-smtp-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ALLOWED_SENDERS
+              optional: true
         name: fdk-mail-sender-service
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
