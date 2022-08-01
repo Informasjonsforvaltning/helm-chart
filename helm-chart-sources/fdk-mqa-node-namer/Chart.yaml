@@ -1,6 +1,0 @@
-apiVersion: v1
-appVersion: "1.0"
-description: This service listens to dataset harvested events and ensures that all nodes in the graph are named, before publishing the event to another mqa topic.
-name: fdk-mqa-node-namer
-version: 0.1.0
-home: https://github.com/Informasjonsforvaltning/fdk-mqa-node-namer
