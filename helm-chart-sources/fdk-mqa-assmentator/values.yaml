@@ -1,0 +1,3 @@
+# Default values for fdk-mqa-assmentator.
+
+FDK_MQA_ASSMENTATOR_MEMORY: "500Mi"
