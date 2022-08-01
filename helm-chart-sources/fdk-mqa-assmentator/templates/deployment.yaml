@@ -39,7 +39,7 @@ spec:
           imagePullPolicy: Always
           resources:
             requests:
-              memory: '{{ required "Missing value FDK_MQA_ASSMENTATOR_MEMORY" .Values.FDK_MQA_ASSMENTATOR_MEMORY | quote }}'
+              memory: '{{ required "Missing value FDK_MQA_ASSMENTATOR_MEMORY" .Values.FDK_MQA_ASSMENTATOR_MEMORY }}'
           livenessProbe:
             exec:
               command:
