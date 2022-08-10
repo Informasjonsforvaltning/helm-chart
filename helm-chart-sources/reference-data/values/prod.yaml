@@ -1,4 +1,2 @@
-#DValues for digdir-production environment
+#DValues for production environment
 NAMESPACE: prod
-FDK_REFERENCE_DATA_VOLUMENAME: fdk-prod-reference-data
-FDK_REFERENCE_DATA_STORAGESIZE: 9G

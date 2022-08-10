@@ -21,21 +21,41 @@ spec:
     spec:
       containers:
       - env:
-        - name: SPRING_PROFILES_ACTIVE
+        - name: MONGODB_USERNAME
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: SPRING_PROFILES_ACTIVE
-        - name: themesHttpUsername
+              name: reference-data-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGODB_USER
+        - name: MONGODB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: THEMES_HTTP_USERNAME
-        - name: themesHttpPassword
+              name: reference-data-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGODB_PASSWORD
+        - name: MONGODB_DATABASE
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: THEMES_HTTP_PASSWORD
+              name: reference-data-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGODB_DATABASE
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: reference-data-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: API_KEY
+        - name: MONGODB_AUTH_DATABASE
+          valueFrom:
+            secretKeyRef:
+              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGO_AUTH_DB
+        - name: MONGODB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGODB_HOST
+        - name: MONGODB_PORT
+          valueFrom:
+            secretKeyRef:
+              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGO_PORT
         name: reference-data
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
@@ -44,12 +64,4 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value FDK_REFERENCE_DATA_MEMORY" .Values.FDK_REFERENCE_DATA_MEMORY | quote }}
-        volumeMounts:
-        - mountPath: /tdb
-          name: reference-data-claim0
       restartPolicy: Always
-      volumes:
-      - name: reference-data-claim0
-        persistentVolumeClaim:
-          claimName: reference-data-claim0
-status: {}
