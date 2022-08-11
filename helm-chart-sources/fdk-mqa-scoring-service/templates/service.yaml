@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    fdk.service: fdk-mqa-scoring-service
+  name: fdk-mqa-scoring-service
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  type: NodePort
+  ports:
+    - name: metrics
+      port: 8000
+      targetPort: 8000
+  selector:
+    fdk.service: fdk-mqa-scoring-service

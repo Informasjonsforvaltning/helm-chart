@@ -44,6 +44,8 @@ spec:
         name: fdk-mqa-scoring-service
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
+        ports:
+          - containerPort: 8000
         resources:
           requests:
             memory: {{ required "Missing value FDK_MQA_SCORING_SERVICE_MEMORY" .Values.FDK_MQA_SCORING_SERVICE_MEMORY | quote }}
