@@ -18,6 +18,9 @@ spec:
       creationTimestamp: null
       labels:
         fdk.service: rabbitmq
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "15692"
     spec:
       containers:
         - image: {{ required "Missing value FDK_RABBITMQ_IMAGE" .Values.FDK_RABBITMQ_IMAGE }}
