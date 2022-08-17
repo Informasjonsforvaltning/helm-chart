@@ -40,7 +40,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: ORGANIZATION_CATALOG_HOST
+              key: ORGANIZATION_CATALOG_BASE_URI
         - name: FDK_BASE_HOST
           valueFrom:
             secretKeyRef:
