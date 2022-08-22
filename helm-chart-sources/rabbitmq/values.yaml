@@ -5,4 +5,4 @@
 ##rabbitmq
 FDK_RABBITMQ_MEMORY: "150Mi"
 FDK_RABBITMQ_IMAGE: "rabbitmq:3.9.22-management"
-FDK_RABBITMQ_NODENAME: "rabbitmq-node"
+RABBITMQ_CLUSTER_NAME: "rabbitmq-node"
