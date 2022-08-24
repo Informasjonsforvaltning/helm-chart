@@ -27,8 +27,8 @@ spec:
           imagePullPolicy: Always
           name: rabbitmq
           env:
-            - name: RABBITMQ_CLUSTER_NAME
-              value: {{ required "Missing value RABBITMQ_CLUSTER_NAME" .Values.RABBITMQ_CLUSTER_NAME }}
+            - name: NODENAME
+              value: {{ required "Missing value FDK_RABBITMQ_NODENAME" .Values.FDK_RABBITMQ_NODENAME }}
             - name: RABBITMQ_DEFAULT_USER
               valueFrom:
                 secretKeyRef:
