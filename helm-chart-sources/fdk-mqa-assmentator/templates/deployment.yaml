@@ -16,6 +16,8 @@ spec:
     metadata:
       labels:
         fdk.service: fdk-mqa-assmentator
+      annotations:
+        prometheus.io/scrape: 'true'
     spec:
       containers:
         - env:
@@ -37,6 +39,8 @@ spec:
           name: fdk-mqa-assmentator
           image: '{{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}'
           imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
           resources:
             requests:
               memory: '{{ required "Missing value FDK_MQA_ASSMENTATOR_MEMORY" .Values.FDK_MQA_ASSMENTATOR_MEMORY }}'
