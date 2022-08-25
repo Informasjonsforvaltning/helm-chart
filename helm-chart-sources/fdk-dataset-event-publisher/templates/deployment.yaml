@@ -16,6 +16,8 @@ spec:
     metadata:
       labels:
         fdk.service: fdk-dataset-event-publisher
+      annotations:
+        prometheus.io/scrape: 'true'
     spec:
       containers:
       - env:
@@ -62,6 +64,8 @@ spec:
         name: fdk-dataset-event-publisher
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
+        ports:
+          - containerPort: 8080
         resources:
           requests:
             memory: {{ required "Missing value FDK_DATASET_EVENT_PUBLISHER_MEMORY" .Values.FDK_DATASET_EVENT_PUBLISHER_MEMORY | quote }}
