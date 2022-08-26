@@ -26,6 +26,11 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: DATASERVICE_PUBLISHER_URI
+        - name: DATASERVICE_PUBLISHER_PORT
+          valueFrom:
+            secretKeyRef:
+              name: dataservice-publisher-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: DATASERVICE_PUBLISHER_PORT
         - name: ADMIN_USERNAME
           valueFrom:
             secretKeyRef:
