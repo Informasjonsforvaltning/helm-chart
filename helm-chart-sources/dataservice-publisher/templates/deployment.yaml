@@ -50,7 +50,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: dataservice-publisher-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DATASERVICE_PUBLISHER_SPARQL_SERVICE
+              key: FUSEKI_HOST
         - name: FUSEKI_PORT
           valueFrom:
             secretKeyRef:
