@@ -56,6 +56,11 @@ spec:
               secretKeyRef:
                 name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
                 key: ORGANIZATION_CATALOGUE_HOST
+          - name: ORGANIZATION_CATALOG_URI
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ORGANIZATION_CATALOG_BASE_URI
           - name: SSO_HOST
             valueFrom:
               secretKeyRef:
