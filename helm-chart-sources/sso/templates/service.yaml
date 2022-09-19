@@ -3,8 +3,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    fdk.service: sso
-  name: sso
+    fdk.service: new-sso
+  name: new-sso
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   type: NodePort
@@ -12,10 +12,7 @@ spec:
     - name: "8080"
       port: 8080
       targetPort: 8080
-    - name: "9990"
-      port: 9990
-      targetPort: 9990
   selector:
-    fdk.service: sso
+    fdk.service: new-sso
 status:
   loadBalancer: {}

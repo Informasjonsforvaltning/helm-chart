@@ -3,21 +3,21 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    fdk.service: sso
-  name: sso
+    fdk.service: new-sso
+  name: new-sso
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      fdk.service: sso
+      fdk.service: new-sso
   strategy:
     type: Recreate
   template:
     metadata:
       creationTimestamp: null
       labels:
-        fdk.service: sso
+        fdk.service: new-sso
     spec:
       containers:
       - env:
@@ -26,47 +26,32 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: NAMESPACE
-        - name: KEYCLOAK_USER
+        - name: KEYCLOAK_ADMIN
           valueFrom:
             secretKeyRef:
               name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: KEYCLOAK_USER
-        - name: KEYCLOAK_PASSWORD
+        - name: KEYCLOAK_ADMIN_PASSWORD
           valueFrom:
             secretKeyRef:
               name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: KEYCLOAK_PASSWORD
-        - name: PROXY_ADDRESS_FORWARDING
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: KEYCLOAK_PROXY_ADDRESS_FORWARDING
-        - name: DB_VENDOR
+        - name: KC_DB
           valueFrom:
             secretKeyRef:
               name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: DB_VENDOR
-        - name: DB_ADDR
+        - name: KC_DB_URL
           valueFrom:
             secretKeyRef:
               name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DB_ADDR
-        - name: DB_DATABASE
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DB_DATABASE
-        - name: DB_SCHEMA
-          valueFrom:
-            secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: DB_SCHEMA
-        - name: DB_USER
+              key: NEW_DB_URL
+        - name: KC_DB_USERNAME
           valueFrom:
             secretKeyRef:
               name: postgres-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: USER
-        - name: DB_PASSWORD
+        - name: KC_DB_PASSWORD
           valueFrom:
             secretKeyRef:
               name: postgres-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
@@ -81,7 +66,7 @@ spec:
             secretKeyRef:
               name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_CLIENT_SECRET
-        name: sso
+        name: new-sso
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         ports:
