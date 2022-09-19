@@ -1,23 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
-    fdk.service: new-sso
-  name: new-sso
+    fdk.service: sso
+  name: sso
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      fdk.service: new-sso
+      fdk.service: sso
   strategy:
     type: Recreate
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        fdk.service: new-sso
+        fdk.service: sso
     spec:
       containers:
       - env:
@@ -66,7 +64,7 @@ spec:
             secretKeyRef:
               name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_CLIENT_SECRET
-        name: new-sso
+        name: sso
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         ports:
