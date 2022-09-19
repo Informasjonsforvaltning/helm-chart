@@ -21,11 +21,21 @@ spec:
     spec:
       containers:
         - env:
-            - name: NAMESPACE
-              valueFrom:
-                secretKeyRef:
-                  name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                  key: NAMESPACE
+          - name: NAMESPACE
+            valueFrom:
+              secretKeyRef:
+                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: NAMESPACE
+          - name: RABBIT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: RABBITMQ_USERNAME
+          - name: RABBIT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                key: RABBITMQ_PASSWORD
           name: dataservice-publisher-sparql-service
           image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
           imagePullPolicy: Always
