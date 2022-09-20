@@ -70,11 +70,6 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_ORGANIZATION_BFF_BASE_URI
-        - name: ORGANIZATION_CATALOGUE_HOST
-          valueFrom:
-            secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: ORGANIZATION_CATALOGUE_HOST
         - name: ORGANIZATION_CATALOG_URI
           valueFrom:
             secretKeyRef:
