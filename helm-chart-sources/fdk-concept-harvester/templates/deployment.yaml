@@ -51,11 +51,6 @@ spec:
               secretKeyRef:
                 name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
                 key: MONGO_PASSWORD
-          - name: ORGANIZATION_CATALOGUE_URI
-            valueFrom:
-              secretKeyRef:
-                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-                key: ORGANIZATION_CATALOGUE_HOST
           - name: ORGANIZATION_CATALOG_URI
             valueFrom:
               secretKeyRef:
