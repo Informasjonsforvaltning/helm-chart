@@ -18,31 +18,31 @@ spec:
         fdk.service: fdk-rdf-diff-store
     spec:
       containers:
-        name: fdk-rdf-diff-store
-        image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
-        imagePullPolicy: Always
-        ports:
-          - containerPort: 8080
-        env:
-          - name: API_KEY
-            valueFrom:
-              secretKeyRef:
-                name: fdk-rdf-diff-store
-                key: API_KEY
-        volumeMounts:
-          - name: repo
-            mountPath: /repo
-        resources:
-          requests:
-            memory: {{ required "Missing value FDK_RDF_DIFF_STORE_MEMORY" .Values.FDK_RDF_DIFF_STORE_MEMORY | quote }}
-        livenessProbe:
-          httpGet:
-            path: /livez
-            port: 8080
-        readinessProbe:
-          httpGet:
-            path: /readyz
-            port: 8080
+        - name: fdk-rdf-diff-store
+          image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+            - name: API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: fdk-rdf-diff-store
+                  key: API_KEY
+          volumeMounts:
+            - name: repo
+              mountPath: /repo
+          resources:
+            requests:
+              memory: {{ required "Missing value FDK_RDF_DIFF_STORE_MEMORY" .Values.FDK_RDF_DIFF_STORE_MEMORY | quote }}
+          livenessProbe:
+            httpGet:
+              path: /livez
+              port: 8080
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: 8080
       volumes:
         - name: repo
           persistentVolumeClaim:
