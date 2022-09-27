@@ -15,4 +15,4 @@ spec:
     targetPort: 80
   selector:
     fdk.service: fdk-{{ .kind }}-diff-store
-{{ - end }}
+{{- end }}
