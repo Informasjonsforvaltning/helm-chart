@@ -29,13 +29,9 @@ spec:
               secretKeyRef:
                 name: fdk-rdf-diff-store
                 key: API_KEY
-        volumes:
-          - name: repo
-            persistentVolumeClaim:
-              claimName: fdk-rdf-diff-store
         volumeMounts:
-          - mountPath: /repo
-            name: repo
+          - name: repo
+            mountPath: /repo
         resources:
           requests:
             memory: {{ required "Missing value FDK_RDF_DIFF_STORE_MEMORY" .Values.FDK_RDF_DIFF_STORE_MEMORY | quote }}
@@ -47,4 +43,8 @@ spec:
           httpGet:
             path: /readyz
             port: 8080
+      volumes:
+        - name: repo
+          persistentVolumeClaim:
+            claimName: fdk-rdf-diff-store
       restartPolicy: Always
