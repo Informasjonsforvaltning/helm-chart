@@ -1,11 +1,13 @@
+{{- range .Values.kinds }}
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: fdk-rdf-diff-store-tmp
+  name: fdk-{{ .kind }}-diff-store
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 4Gi
+{{- end }}

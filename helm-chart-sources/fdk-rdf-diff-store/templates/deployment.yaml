@@ -1,24 +1,26 @@
+{{- range .Values.kinds }}
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    fdk.service: fdk-rdf-diff-store
-  name: fdk-rdf-diff-store
+    fdk.service: fdk-{{ .kind }}-diff-store
+  name: fdk-{{ .kind }}-diff-store
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      fdk.service: fdk-rdf-diff-store
+      fdk.service: fdk-{{ .kind }}-diff-store
   strategy:
     type: RollingUpdate
   template:
     metadata:
       labels:
-        fdk.service: fdk-rdf-diff-store
+        fdk.service: fdk-{{ .kind }}-diff-store
     spec:
       containers:
-        - name: fdk-rdf-diff-store
+        - name: fdk-{{ .kind }}-diff-store
           image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
           imagePullPolicy: Always
           ports:
@@ -46,5 +48,6 @@ spec:
       volumes:
         - name: repo
           persistentVolumeClaim:
-            claimName: fdk-rdf-diff-store
+            claimName: fdk-{{ .kind }}-diff-store
       restartPolicy: Always
+{{- end }}
