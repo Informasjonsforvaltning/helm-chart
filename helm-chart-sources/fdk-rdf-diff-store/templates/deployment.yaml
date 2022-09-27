@@ -6,7 +6,7 @@ metadata:
   labels:
     fdk.service: fdk-{{ .kind }}-diff-store
   name: fdk-{{ .kind }}-diff-store
-  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+  namespace: {{ required "Missing value NAMESPACE" $.Values.NAMESPACE }}
 spec:
   replicas: 1
   selector:
@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: fdk-{{ .kind }}-diff-store
-          image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+          image: {{ required "Missing value DOCKER_IMAGE_NAME" $.Values.DOCKER_IMAGE_NAME }}
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -36,7 +36,7 @@ spec:
               mountPath: /repo
           resources:
             requests:
-              memory: {{ required "Missing value FDK_RDF_DIFF_STORE_MEMORY" .Values.FDK_RDF_DIFF_STORE_MEMORY | quote }}
+              memory: {{ required "Missing value FDK_RDF_DIFF_STORE_MEMORY" $.Values.FDK_RDF_DIFF_STORE_MEMORY | quote }}
           livenessProbe:
             httpGet:
               path: /livez
