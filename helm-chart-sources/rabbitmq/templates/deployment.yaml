@@ -32,12 +32,12 @@ spec:
             - name: RABBITMQ_DEFAULT_USER
               valueFrom:
                 secretKeyRef:
-                  name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                  name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
                   key: RABBITMQ_USERNAME
             - name: RABBITMQ_DEFAULT_PASS
               valueFrom:
                 secretKeyRef:
-                  name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                  name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
                   key: RABBITMQ_PASSWORD
           ports:
             - containerPort: 5672

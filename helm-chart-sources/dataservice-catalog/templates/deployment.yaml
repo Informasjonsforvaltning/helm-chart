@@ -34,12 +34,12 @@ spec:
         - name: RABBIT_USERNAME
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: RABBITMQ_USERNAME
         - name: RABBIT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: RABBITMQ_PASSWORD
         - name: DATA_SERVICE_CATALOG_GUI_URL
           valueFrom:

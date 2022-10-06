@@ -40,22 +40,22 @@ spec:
           valueFrom:
             secretKeyRef:
               name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBIT_USER
+              key: RABBITMQ_USER
         - name: RABBIT_PASSWORD
           valueFrom:
             secretKeyRef:
               name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBIT_PASS
+              key: RABBITMQ_PASSWORD
         - name: RABBIT_HOST
           valueFrom:
             secretKeyRef:
               name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBIT_HOST
+              key: RABBITMQ_HOST
         - name: RABBIT_PORT
           valueFrom:
             secretKeyRef:
               name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBIT_PORT
+              key: RABBITMQ_PORT
         - name: DATASET_HARVESTER_BASE_URI
           valueFrom:
             secretKeyRef:

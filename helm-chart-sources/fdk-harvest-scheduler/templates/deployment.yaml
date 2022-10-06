@@ -24,23 +24,23 @@ spec:
         - name: RABBIT_HOST
           valueFrom:
             secretKeyRef:
-              name: fdk-harvest-scheduler-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBIT_HOST
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBITMQ_HOST
         - name: RABBIT_PORT
           valueFrom:
             secretKeyRef:
-              name: fdk-harvest-scheduler-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBIT_PORT
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBITMQ_PORT
         - name: RABBIT_PASS
           valueFrom:
             secretKeyRef:
-              name: fdk-harvest-scheduler-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBIT_PASS
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBITMQ_PASSWORD
         - name: RABBIT_USER
           valueFrom:
             secretKeyRef:
-              name: fdk-harvest-scheduler-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBIT_USER
+              name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: RABBITMQ_USER
         name: fdk-harvest-scheduler
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
