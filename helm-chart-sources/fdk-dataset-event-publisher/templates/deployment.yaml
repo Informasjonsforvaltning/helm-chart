@@ -36,16 +36,16 @@ spec:
             secretKeyRef:
               name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: BROKERS
-        - name: RABBIT_USER
+        - name: RABBIT_USERNAME
           valueFrom:
             secretKeyRef:
               name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBIT_USER
-        - name: RABBIT_PASS
+              key: RABBIT_USERNAME
+        - name: RABBIT_PASSWORD
           valueFrom:
             secretKeyRef:
               name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBIT_PASS
+              key: RABBIT_PASSWORD
         - name: RABBIT_HOST
           valueFrom:
             secretKeyRef:
