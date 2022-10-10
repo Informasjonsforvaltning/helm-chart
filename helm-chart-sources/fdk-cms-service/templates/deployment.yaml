@@ -22,7 +22,10 @@ spec:
       containers:
       - env:
         - name: NODE_ENV
-          value: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}    
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: NODE_ENV   
         - name: APP_KEYS
           valueFrom:
             secretKeyRef:
