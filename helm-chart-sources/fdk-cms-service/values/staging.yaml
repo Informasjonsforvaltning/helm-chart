@@ -1,5 +1,4 @@
 #DValues for staging environment
 NAMESPACE: staging
-FDK_CMS_SERVICE_VOLUMENAME: fdk-dev-staging-cms-service
+FDK_CMS_SERVICE_VOLUMENAME: fdk-dev-staging-strapi
 FDK_CMS_SERVICE_STORAGESIZE: 10G
-FDK_CMS_SERVICE_IAP_SECRETNAME: fdk-cms-auth

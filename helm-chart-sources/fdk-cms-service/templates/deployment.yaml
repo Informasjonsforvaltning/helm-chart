@@ -21,16 +21,33 @@ spec:
     spec:
       containers:
       - env:
-        - name: ENABLE_IAP
+        - name: NODE_ENV
+          value: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}    
+        - name: APP_KEYS
           valueFrom:
             secretKeyRef:
               name: fdk-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: ENABLE_IAP
-        - name: NAMESPACE
+              key: APP_KEYS   
+        - name: API_TOKEN_SALT
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: NAMESPACE
+              name: fdk-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: API_TOKEN_SALT
+        - name: CORS_ORIGIN
+          valueFrom:
+            secretKeyRef:
+              name: fdk-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: CORS_ORIGIN
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: fdk-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: JWT_SECRET
+        - name: ADMIN_JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: fdk-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ADMIN_JWT_SECRET
         - name: POSTGRES_HOST
           valueFrom:
             secretKeyRef:
@@ -46,16 +63,6 @@ spec:
             secretKeyRef:
               name: fdk-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: POSTGRES_DB_NAME
-        - name: ADMIN_JWT_SECRET
-          valueFrom:
-            secretKeyRef:
-              name: fdk-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: ADMIN_JWT_SECRET
-        - name: CONNECTION
-          valueFrom:
-            secretKeyRef:
-              name: fdk-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: CONNECTION
         - name: POSTGRES_SSL_SELF
           valueFrom:
             secretKeyRef:
@@ -71,16 +78,6 @@ spec:
             secretKeyRef:
               name: postgres-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: PASSWORD
-        - name: BACKEND_SERVICE_ID
-          valueFrom:
-            secretKeyRef:
-              name: fdk-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: BACKEND_SERVICE_ID
-        - name: PROJECT_NUMBER
-          valueFrom:
-            secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: PROJECT_NUMBER
         - name: SMTP_SERVER
           valueFrom:
             secretKeyRef:
