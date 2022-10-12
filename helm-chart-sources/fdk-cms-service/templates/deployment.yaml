@@ -26,11 +26,6 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: NODE_ENV   
-        - name: HOST
-          valueFrom:
-            secretKeyRef:
-              name: fdk-cms-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: HOST      
         - name: SERVER_URL
           valueFrom:
             secretKeyRef:
