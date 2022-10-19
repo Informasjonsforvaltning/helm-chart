@@ -2,18 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   creationTimestamp: null
-  annotations:
-    cloud.google.com/backend-config: '{"default": "fdk-cms-backend"}'
   labels:
-    fdk.service: fdk-cms-service-admin
-  name: fdk-cms-service-admin
+    fdk.service: fdk-cms-service
+  name: fdk-cms-service
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   type: NodePort
   ports:
-    - name: "1337"
-      port: 1337
-      targetPort: 1337
     - name: "8080"
       port: 8080
       targetPort: 1337
