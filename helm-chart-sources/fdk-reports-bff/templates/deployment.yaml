@@ -66,6 +66,10 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_SPARQL_API_BASE_URI
+        - name: DATASET_DIFF_STORE_URL
+          value: http://fdk-dataset-diff-store:80
+        - name: DATASET_QUERY_CACHE_URL
+          value: http://fdk-dataset-query-cache:8080
         name: fdk-reports-bff
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
