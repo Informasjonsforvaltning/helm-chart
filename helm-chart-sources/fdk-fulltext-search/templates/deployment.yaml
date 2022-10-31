@@ -60,7 +60,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBIT_PORT
+              key: RABBITMQ_PORT
         - name: API_URL
           valueFrom:
             secretKeyRef:
