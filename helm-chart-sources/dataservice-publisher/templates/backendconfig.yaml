@@ -4,4 +4,4 @@ metadata:
   name: timeout-backend-config
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
-  timeoutSec: 90
+  timeoutSec: 180
