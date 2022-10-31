@@ -45,7 +45,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: RABBITMQ_USER
+              key: RABBITMQ_USERNAME
         - name: RABBIT_PASS
           valueFrom:
             secretKeyRef:
