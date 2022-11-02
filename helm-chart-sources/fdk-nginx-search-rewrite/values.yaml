@@ -1,5 +1,0 @@
-# Default values for fdk-nginx-search-rewrite.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-FDK_NGINX_SEARCH_MEMORY: "10Mi"
