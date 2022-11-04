@@ -41,11 +41,16 @@ spec:
             secretKeyRef:
               name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: MONGO_PASSWORD
-        - name: ORGANIZATION_CATALOG_HOST
+        - name: ORGANIZATION_CATALOG_INTERNAL
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: ORGANIZATION_CATALOG_HOST
+        - name: ORGANIZATION_CATALOG_EXTERNAL
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: ORGANIZATION_CATALOG_BASE_URI
         - name: REASONING_HOST
           valueFrom:
             secretKeyRef:
