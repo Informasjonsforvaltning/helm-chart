@@ -57,7 +57,7 @@ spec:
             - name: google-cloud-key
               mountPath: /var/secrets/google
           command: ["/cloud_sql_proxy",
-                    "-instances={{ required "Missing value FDK_SQL_PROXY_CLUSTER" .Values.FDK_SQL_PROXY_CLUSTER }}:europe-north1:{{ required "Missing value FDK_SQL" .Values.FDK_SQL }}-{{ required "Missing value FDK_SQL_PROXY_SQL_ENVIRONMENT" .Values.FDK_SQL_PROXY_SQL_ENVIRONMENT }}",
+                    "-instances={{ required "Missing value FDK_SQL_PROXY_CLUSTER" .Values.FDK_SQL_PROXY_CLUSTER }}:europe-north1:{{ required "Missing value FDK_SQL" .Values.FDK_SQL }}-{{ required "Missing value FDK_SQL_PROXY_SQL_ENVIRONMENT" .Values.FDK_SQL_PROXY_SQL_ENVIRONMENT }}=tcp:0.0.0.0:5432",
                     "-structured_logs"]
           imagePullPolicy: Always
           livenessProbe:
