@@ -19,6 +19,8 @@ metadata:
     fdk.service: postgresql-sqlproxy
   name: postgresql-sqlproxy
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+  annotations:
+    cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
 spec:
   replicas: 1
   selector:
