@@ -21,7 +21,7 @@ spec:
     spec:
       initContainers:
         - name: increase-the-vm-max-map-count
-          image: {{ required "Missing value ES5_BUSY_IMAGE" .Values.ES5_BUSY_IMAGE }}
+          image: {{ required "Missing value ES_BUSY_IMAGE" .Values.ES_BUSY_IMAGE }}
           command:
             - sysctl
             - -w
@@ -29,7 +29,7 @@ spec:
           securityContext:
             privileged: true
         - name: fix-rights
-          image: {{ required "Missing value ES5_BUSY_IMAGE" .Values.ES5_BUSY_IMAGE }}
+          image: {{ required "Missing value ES_BUSY_IMAGE" .Values.ES_BUSY_IMAGE }}
           command:
             - /bin/chmod
             - "777"
@@ -50,7 +50,7 @@ spec:
             fieldRef:
               apiVersion: v1
               fieldPath: metadata.name
-        image: {{ required "Missing value ES7_IMAGE" .Values.ES_IMAGE }}
+        image: {{ required "Missing value ES_IMAGE" .Values.ES_IMAGE }}
         imagePullPolicy: Always
         name: elasticsearch
         ports:
@@ -58,7 +58,11 @@ spec:
         - containerPort: 9300
         resources:
           requests:
-            memory: {{ required "Missing value FDK_ES_MEMORY" .Values.FDK_ES_MEMORY | quote }}
+            memory: {{ required "Missing value FDK_ES_MEMORY_REQ" .Values.FDK_ES_MEMORY_REQ | quote }}
+            cpu: {{ required "Missing value FDK_ES_CPU_REQ" .Values.FDK_ES_CPU_REQ | quote }}
+          limits:
+            memory: {{ required "Missing value FDK_ES_MEMORY_LIMIT" .Values.FDK_ES_MEMORY_REQ | quote }}
+            cpu: {{ required "Missing value FDK_ES_CPU_LIMIT" .Values.FDK_ES_CPU_REQ | quote }}
         volumeMounts:
         - mountPath: /usr/share/elasticsearch/data
           name: elasticsearch-claim0
