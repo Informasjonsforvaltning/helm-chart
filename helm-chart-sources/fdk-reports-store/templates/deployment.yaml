@@ -58,7 +58,11 @@ spec:
         - containerPort: 9300
         resources:
           requests:
-            memory: {{ required "Missing value FDK_REPORTS_STORE_MEMORY" .Values.FDK_REPORTS_STORE_MEMORY | quote }}
+            memory: {{ required "Missing value FDK_REPORTS_STORE_MEMORY_REQ" .Values.FDK_REPORTS_STORE_MEMORY_REQ | quote }}
+            cpu: {{ required "Missing value FDK_REPORTS_STORE_CPU_REQ" .Values.FDK_REPORTS_STORE_CPU_REQ | quote }}
+          limits:
+            memory: {{ required "Missing value FDK_REPORTS_STORE_MEMORY_LIMIT" .Values.FDK_REPORTS_STORE_MEMORY_LIMIT | quote }}
+            cpu: {{ required "Missing value FDK_REPORTS_STORE_CPU_LIMIT" .Values.FDK_REPORTS_STORE_CPU_LIMIT | quote }}
         volumeMounts:
         - mountPath: /usr/share/elasticsearch/data
           name: fdk-reports-store-claim0

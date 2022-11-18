@@ -1,4 +1,0 @@
-#DValues for demo environment
-NAMESPACE: demo
-FDK_ES_VOLUMENAME: fdk-dev-demo-elasticsearch7
-FDK_ES_STORAGESIZE: "7G"
