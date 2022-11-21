@@ -31,6 +31,11 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: FDK_DATASET_PREVIEW_API_KEY
+        - name: ALLOWED_ORIGINS
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_DATASET_PREVIEW_ALLOWED_ORIGINS
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         name: fdk-dataset-preview-service
