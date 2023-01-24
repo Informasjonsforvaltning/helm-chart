@@ -65,7 +65,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_SPARQL_API_BASE_URI
+              key: FDK_SPARQL_SERVICE_QUERY_URI
         - name: DATASET_QUERY_CACHE_URL
           valueFrom:
             secretKeyRef:
