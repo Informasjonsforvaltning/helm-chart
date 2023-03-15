@@ -18,6 +18,9 @@ spec:
       creationTimestamp: null
       labels:
         fdk.service: concept-catalog
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/actuator/prometheus"
     spec:
       containers:
       - env:
