@@ -76,6 +76,11 @@ spec:
             secretKeyRef:
               name: fdk-concept-rdf-diff-store
               key: QUERY_CACHE_URL
+        - name: DATASERVICE_QUERY_CACHE_URL
+          valueFrom:
+            secretKeyRef:
+              name: fdk-data-service-rdf-diff-store
+              key: QUERY_CACHE_URL
         name: fdk-reports-bff
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
