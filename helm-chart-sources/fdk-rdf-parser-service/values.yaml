@@ -1,0 +1,3 @@
+# Default values for fdk-rdf-parser-service.
+
+FDK_RDF_PARSER_SERVICE_MEMORY: "500Mi"
