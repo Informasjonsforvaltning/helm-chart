@@ -51,6 +51,11 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: USER_API_KEY
+        - name: WRITE_GROUP_BRREG
+          valueFrom:
+            secretKeyRef:
+              name: user-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: BRREG_OIDC_WRITE_GROUP
         - name: ADMIN_GROUP_BRREG
           valueFrom:
             secretKeyRef:
