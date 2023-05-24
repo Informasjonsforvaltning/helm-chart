@@ -61,6 +61,21 @@ spec:
             secretKeyRef:
               name: user-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: BRREG_OIDC_ADMIN_GROUP
+        - name: ADMIN_GROUP_SKATT
+          valueFrom:
+            secretKeyRef:
+              name: user-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: SKATT_OIDC_ADMIN_GROUP
+        - name: WRITE_GROUP_SKATT
+          valueFrom:
+            secretKeyRef:
+              name: user-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: SKATT_OIDC_WRITE_GROUP
+        - name: READ_GROUP_SKATT
+          valueFrom:
+            secretKeyRef:
+              name: user-api-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: SKATT_OIDC_READ_GROUP
         - name: TERMS_AND_CONDITIONS_HOST
           valueFrom:
             secretKeyRef:
