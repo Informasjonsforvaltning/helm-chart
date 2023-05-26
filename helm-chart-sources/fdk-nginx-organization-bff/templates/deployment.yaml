@@ -25,7 +25,7 @@ spec:
             - containerPort: 8080
           resources:
             requests:
-              memory: {{ required "Missing value FDK_NGINX_organization_BFF_MEMORY" .Values.FDK_NGINX_organization_BFF_MEMORY | quote }}
+              memory: {{ required "Missing value FDK_NGINX_ORGANIZATION_BFF_MEMORY" .Values.FDK_NGINX_ORGANIZATION_BFF_MEMORY | quote }}
           livenessProbe:
             httpGet:
               path: /ping
