@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    fdk.service: fdk-nginx-organization-bff
+  name: fdk-nginx-organization-bff
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      fdk.service: fdk-nginx-organization-bff
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        fdk.service: fdk-nginx-organization-bff
+    spec:
+      containers:
+        - image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+          imagePullPolicy: Always
+          name: fdk-nginx-organization-bff
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: {{ required "Missing value FDK_NGINX_organization_BFF_MEMORY" .Values.FDK_NGINX_organization_BFF_MEMORY | quote }}
+          livenessProbe:
+            httpGet:
+              path: /ping
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 30
+            successThreshold: 1
+            failureThreshold: 5
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 30
+            successThreshold: 1
+            failureThreshold: 5
+      restartPolicy: Always
