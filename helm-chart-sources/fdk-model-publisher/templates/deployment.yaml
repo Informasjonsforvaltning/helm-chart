@@ -64,7 +64,7 @@ spec:
             path: /ping
             port: 8080
           initialDelaySeconds: 60
-          periodSeconds: 120
+          periodSeconds: 150
           successThreshold: 1
           failureThreshold: 5
         readinessProbe:
