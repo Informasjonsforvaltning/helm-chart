@@ -21,6 +21,21 @@ spec:
     spec:
       containers:
       - env:
+        - name: MONGO_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGO_USERNAME
+        - name: MONGO_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: MONGO_PASSWORD
+        - name: SSO_HOST
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: SSO_BASE_URI
         - name: GOOGLE_APPLICATION_CREDENTIALS
           value: /var/secrets/google/error-reporting-sa-key.json
         - name: PROJECT_ID_GCP
@@ -35,7 +50,7 @@ spec:
         - containerPort: 8080
         resources:
           requests:
-            memory: {{  required "Missing value CATALOG_ADMIN_SERVICE_MEMORY" .Values.CATALOG_ADMIN_SERVICE_MEMORY | quote }}
+            memory: {{ required "Missing value CATALOG_ADMIN_SERVICE_MEMORY" .Values.CATALOG_ADMIN_SERVICE_MEMORY | quote }}
         livenessProbe:
           httpGet:
             path: /ping
