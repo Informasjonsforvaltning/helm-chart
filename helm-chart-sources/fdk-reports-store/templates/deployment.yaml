@@ -44,7 +44,7 @@ spec:
         - name: cluster.name
           value: {{ required "Missing value FDK_REPORTS_STORE_CLUSTERNAME" .Values.FDK_REPORTS_STORE_CLUSTERNAME }}
         - name: xpack.security.enabled
-          value: {{ required "Missing value FDK_REPORTS_STORE_SECURITY"  .Values.FDK_ES_SECURITY | quote}}
+          value: {{ required "Missing value FDK_REPORTS_STORE_SECURITY"  .Values.FDK_REPORTS_STORE_SECURITY | quote}}
         - name: cluster.initial_master_nodes
           valueFrom:
             fieldRef:
