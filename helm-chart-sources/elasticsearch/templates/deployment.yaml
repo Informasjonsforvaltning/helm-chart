@@ -62,7 +62,7 @@ spec:
             cpu: {{ required "Missing value FDK_ES_CPU_REQ" .Values.FDK_ES_CPU_REQ | quote }}
           limits:
             memory: {{ required "Missing value FDK_ES_MEMORY_LIMIT" .Values.FDK_ES_MEMORY_REQ | quote }}
-            cpu: {{ required "Missing value FDK_ES_CPU_LIMIT" .Values.FDK_ES_CPU_REQ | quote }}
+            cpu: {{ required "Missing value FDK_ES_CPU_LIMIT" .Values.FDK_ES_CPU_LIMIT | quote }}
         volumeMounts:
         - mountPath: /usr/share/elasticsearch/data
           name: elasticsearch-claim0
