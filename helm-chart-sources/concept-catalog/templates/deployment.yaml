@@ -24,6 +24,11 @@ spec:
     spec:
       containers:
       - env:
+        - name: NAMESPACE
+          valueFrom:
+            secretKeyRef:
+              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: NAMESPACE
         - name: MONGO_USERNAME
           valueFrom:
             secretKeyRef:
