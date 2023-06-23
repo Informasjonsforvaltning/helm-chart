@@ -59,6 +59,11 @@ spec:
             secretKeyRef:
               name: rabbitmq-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: RABBITMQ_PASSWORD
+        - name: CATALOG_HISTORY_SERVICE_URI
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: CATALOG_HISTORY_SERVICE_HOST
         name: concept-catalog
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
