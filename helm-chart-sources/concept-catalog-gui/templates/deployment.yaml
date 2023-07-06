@@ -82,6 +82,11 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: CATALOG_COMMENTS_SERVICE_BASE_URI
+        - name: CONCEPT_CATALOG_FRONTEND_BASE_URI
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: CONCEPT_CATALOG_FRONTEND      
         - name: USE_DEMO_LOGO
           valueFrom:
             secretKeyRef:
