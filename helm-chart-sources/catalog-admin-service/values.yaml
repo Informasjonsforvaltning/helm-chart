@@ -1,6 +1,0 @@
-# Default values for catalog-admin-service.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-##catalog-admin-service
-CATALOG_ADMIN_SERVICE_MEMORY: '100Mi'
