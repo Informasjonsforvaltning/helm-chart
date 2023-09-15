@@ -92,6 +92,11 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: CATALOG_ADMIN_SERVICE_BASE_URI
+        - name: FDK_PORTAL_BASE_URI
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_PORTAL_BASE_URI
         - name: USE_DEMO_LOGO
           valueFrom:
             secretKeyRef:
