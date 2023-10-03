@@ -48,11 +48,15 @@ spec:
             fieldRef:
               apiVersion: v1
               fieldPath: metadata.name
+        - name: discovery.type
+          value: single-node
         - name: ELASTIC_PASSWORD
           valueFrom:
             secretKeyRef:
               name: catalog-store
               key: ELASTIC_PASSWORD
+        - name: ES_JAVA_OPTS
+          value: {{ required "Missing value CATALOG_STORE_JAVA_OPTS"  .Values.CATALOG_STORE_JAVA_OPTS | quote}}
         image: {{ required "Missing value CATALOG_STORE_IMAGE" .Values.CATALOG_STORE_IMAGE }}
         imagePullPolicy: Always
         name: catalog-store
