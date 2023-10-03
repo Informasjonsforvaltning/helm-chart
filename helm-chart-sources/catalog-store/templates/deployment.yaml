@@ -48,6 +48,11 @@ spec:
             fieldRef:
               apiVersion: v1
               fieldPath: metadata.name
+        - name: ELASTIC_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: catalog-store
+              key: ELASTIC_PASSWORD
         image: {{ required "Missing value CATALOG_STORE_IMAGE" .Values.CATALOG_STORE_IMAGE }}
         imagePullPolicy: Always
         name: catalog-store
