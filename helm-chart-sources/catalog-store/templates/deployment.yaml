@@ -43,11 +43,6 @@ spec:
           value: {{ required "Missing value CATALOG_STORE_CLUSTERNAME" .Values.CATALOG_STORE_CLUSTERNAME }}
         - name: xpack.security.enabled
           value: {{ required "Missing value CATALOG_STORE_SECURITY"  .Values.CATALOG_STORE_SECURITY | quote}}
-        - name: cluster.initial_master_nodes
-          valueFrom:
-            fieldRef:
-              apiVersion: v1
-              fieldPath: metadata.name
         - name: discovery.type
           value: single-node
         - name: ELASTIC_PASSWORD
