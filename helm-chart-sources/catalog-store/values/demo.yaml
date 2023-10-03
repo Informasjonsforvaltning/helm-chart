@@ -1,0 +1,4 @@
+#DValues for demo environment
+NAMESPACE: demo
+CATALOG_STORE_VOLUMENAME: fdk-dev-demo-catalog-store
+CATALOG_STORE_STORAGESIZE: "9G"

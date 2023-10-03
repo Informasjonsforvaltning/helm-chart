@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    fdk.service: catalog-store
+  name: catalog-store
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      fdk.service: catalog-store
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        fdk.service: catalog-store
+    spec:
+      initContainers:
+        - name: increase-the-vm-max-map-count
+          image: {{ required "Missing value CATALOG_STORE_BUSY_IMAGE" .Values.CATALOG_STORE_BUSY_IMAGE }}
+          command:
+            - sysctl
+            - -w
+            - vm.max_map_count=262144
+          securityContext:
+            privileged: true
+        - name: fix-rights
+          image: {{ required "Missing value CATALOG_STORE_BUSY_IMAGE" .Values.CATALOG_STORE_BUSY_IMAGE }}
+          command:
+            - /bin/chmod
+            - "777"
+            - /usr/share/elasticsearch/data
+          volumeMounts:
+          - name: catalog-store-claim0
+            mountPath: "/usr/share/elasticsearch/data"
+          securityContext:
+            privileged: true
+      containers:
+      - env:
+        - name: cluster.name
+          value: {{ required "Missing value CATALOG_STORE_CLUSTERNAME" .Values.CATALOG_STORE_CLUSTERNAME }}
+        - name: xpack.security.enabled
+          value: {{ required "Missing value CATALOG_STORE_SECURITY"  .Values.CATALOG_STORE_SECURITY | quote}}
+        - name: cluster.initial_master_nodes
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.name
+        image: {{ required "Missing value CATALOG_STORE_IMAGE" .Values.CATALOG_STORE_IMAGE }}
+        imagePullPolicy: Always
+        name: catalog-store
+        ports:
+        - containerPort: 9200
+        - containerPort: 9300
+        resources:
+          requests:
+            memory: {{ required "Missing value CATALOG_STORE_MEMORY_REQ" .Values.CATALOG_STORE_MEMORY_REQ | quote }}
+            cpu: {{ required "Missing value CATALOG_STORE_CPU_REQ" .Values.CATALOG_STORE_CPU_REQ | quote }}
+          limits:
+            memory: {{ required "Missing value CATALOG_STORE_MEMORY_LIMIT" .Values.CATALOG_STORE_MEMORY_LIMIT | quote }}
+            cpu: {{ required "Missing value CATALOG_STORE_CPU_LIMIT" .Values.CATALOG_STORE_CPU_LIMIT | quote }}
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: catalog-store-claim0
+      restartPolicy: Always
+      volumes:
+      - name: catalog-store-claim0
+        persistentVolumeClaim:
+          claimName: catalog-store-claim0
+status: {}
