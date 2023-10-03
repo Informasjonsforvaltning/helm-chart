@@ -69,6 +69,11 @@ spec:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: CATALOG_ADMIN_SERVICE_BASE_URI
+        - name: CATALOG_STORE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: catalog-store
+              key: ELASTIC_PASSWORD
         name: concept-catalog
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
