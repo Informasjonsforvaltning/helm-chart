@@ -1,10 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: records-of-processing-activities-gui
-    controller: telegraf-operator
   name: records-of-processing-activities-gui
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
@@ -16,18 +14,8 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: records-of-processing-activities-gui
-        controller: telegraf-operator
-      annotations:
-        telegraf.influxdata.com/inputs: |+
-          [[ inputs.nginx ]]
-            urls = ["http://127.0.0.1:9090/nginx_status"]
-            response_timeout = "5s"
-            [ inputs.nginx.tags ]
-              application = "records-of-processing-activities-gui"
-        telegraf.influxdata.com/class: fdk.service
     spec:
       containers:
       - env:
