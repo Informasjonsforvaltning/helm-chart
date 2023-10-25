@@ -43,7 +43,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: NEW_DB_URL
+              key: DB_URL
         - name: KC_DB_USERNAME
           valueFrom:
             secretKeyRef:
