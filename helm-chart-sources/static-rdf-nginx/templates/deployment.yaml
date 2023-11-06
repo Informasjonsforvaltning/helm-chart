@@ -30,6 +30,7 @@ spec:
                     operator: In
                     values:
                       - static-rdf
+      priorityClassName: static-rdf-priority
       containers:
       - image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always

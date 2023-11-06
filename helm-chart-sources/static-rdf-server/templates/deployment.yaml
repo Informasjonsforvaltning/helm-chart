@@ -30,6 +30,7 @@ spec:
                     operator: In
                     values:
                       - static-rdf
+      priorityClassName: static-rdf-priority
       containers:
       - env:
         - name: NAMESPACE
