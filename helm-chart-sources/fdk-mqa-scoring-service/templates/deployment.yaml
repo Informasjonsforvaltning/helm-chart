@@ -43,6 +43,8 @@ spec:
               key: API_KEY
         - name: SCORING_API_URL
           value: {{ required "Missing value SCORING_API_URL" .Values.SCORING_API_URL }}
+        - name: RUST_LOG
+          value: {{ required "Missing value RUST_LOG" .Values.RUST_LOG }}          
         name: fdk-mqa-scoring-service
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
