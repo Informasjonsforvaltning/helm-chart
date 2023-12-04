@@ -3,4 +3,4 @@
 # Declare variables to be passed into your templates.
 
 ##fdk-cms-service
-FDK_CMS_SERVICE_MEMORY: "150Mi"
+FDK_CMS_SERVICE_MEMORY: "200Mi"
