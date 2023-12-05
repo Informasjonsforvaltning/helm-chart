@@ -72,7 +72,6 @@ spec:
             cpu: {{ required "Missing value FDK_REASONING_SERVICE_CPU_REQ" .Values.FDK_REASONING_SERVICE_CPU_REQ | quote }}
           limits:
             memory: {{ required "Missing value FDK_REASONING_SERVICE_MEMORY_LIMIT" .Values.FDK_REASONING_SERVICE_MEMORY_LIMIT | quote }}
-            cpu: {{ required "Missing value FDK_REASONING_SERVICE_CPU_LIMIT" .Values.FDK_REASONING_SERVICE_CPU_LIMIT | quote }}
         livenessProbe:
           httpGet:
             path: /ping
