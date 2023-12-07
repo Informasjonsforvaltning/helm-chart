@@ -64,7 +64,7 @@ spec:
           resources:
             requests:
               memory: {{ required "Missing value FDK_DATASET_HARVESTER_MEMORY" .Values.FDK_DATASET_HARVESTER_MEMORY | quote }}
-              cpu: {{ required "Missing value FDK_DATASET_HARVESTER_CPU" .Values.FDK_DATASET_HARVESTER_CPU | quote }}
+              cpu: {{ required "Missing value FDK_DATASET_HARVESTER_CPU_REQ" .Values.FDK_DATASET_HARVESTER_CPU_REQ | quote }}
             limits:
               memory: {{ required "Missing value FDK_DATASET_HARVESTER_MEMORY" .Values.FDK_DATASET_HARVESTER_MEMORY | quote }}
           livenessProbe:
