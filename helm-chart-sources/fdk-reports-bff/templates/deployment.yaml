@@ -81,6 +81,11 @@ spec:
             secretKeyRef:
               name: fdk-data-service-rdf-diff-store
               key: QUERY_CACHE_URL
+        - name: API_KEY
+          valueFrom:
+           secretKeyRef:
+             name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+             key: FDK_REPORTS_BFF_API_KEY
         name: fdk-reports-bff
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
