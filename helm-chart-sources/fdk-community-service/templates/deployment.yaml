@@ -76,6 +76,8 @@ spec:
             secretKeyRef:
               name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: TOKEN_UID
+        - name: SMTP_CA
+          value: /usr/src/app/certs/ca.crt
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         name: fdk-community-service
@@ -85,13 +87,18 @@ spec:
           requests:
             memory: {{ required "Missing value FDK_COMMUNITY_SERVICE_MEMORY" .Values.FDK_COMMUNITY_SERVICE_MEMORY | quote }}
         volumeMounts:
-          - mountPath: /usr/src/app/files
-            name: fdk-community-service-claim0
+          - name: fdk-community-service-claim0
+            mountPath: /usr/src/app/files
+          - name: smtp-certs
+            mountPath: /usr/src/app/certs
       securityContext:
         fsGroup: 1000
       volumes:
         - name: fdk-community-service-claim0
           persistentVolumeClaim:
             claimName: fdk-community-service-claim0
+        - name: smtp-certs
+          secret:
+            secretName: smtp-certs
       restartPolicy: Always
 status: {}
