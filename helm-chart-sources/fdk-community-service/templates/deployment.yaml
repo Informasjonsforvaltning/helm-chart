@@ -76,8 +76,18 @@ spec:
             secretKeyRef:
               name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: TOKEN_UID
-        - name: SMTP_CA
+        - name: TOKEN_UID
+          valueFrom:
+            secretKeyRef:
+              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: TOKEN_UID
+        - name: SMTP_TLS_CA
           value: /usr/src/app/certs/ca.crt
+        - name: SMTP_TLS_HOSTNAME
+          valueFrom:
+            secretKeyRef:
+              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: FDK_COMMUNITY_SERVICE_SMTP_TLS_HOSTNAME  
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         name: fdk-community-service
