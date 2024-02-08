@@ -76,11 +76,6 @@ spec:
             secretKeyRef:
               name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: TOKEN_UID
-        - name: TOKEN_UID
-          valueFrom:
-            secretKeyRef:
-              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: TOKEN_UID
         - name: SMTP_TLS_CA
           value: /usr/src/app/certs/ca.crt
         - name: SMTP_TLS_HOSTNAME
