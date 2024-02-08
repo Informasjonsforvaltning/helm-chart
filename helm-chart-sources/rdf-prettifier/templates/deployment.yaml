@@ -30,7 +30,10 @@ spec:
                   key: API_KEY
           resources:
             requests:
+              cpu: {{ required "Missing value RDF_PRETTIFIER_CPU" $.Values.RDF_PRETTIFIER_CPU | quote }}
               memory: {{ required "Missing value RDF_PRETTIFIER_MEMORY" $.Values.RDF_PRETTIFIER_MEMORY | quote }}
+            limits:
+                memory: {{ required "Missing value RDF_PRETTIFIER_MEMORY" $.Values.RDF_PRETTIFIER_MEMORY | quote }}
           livenessProbe:
             httpGet:
               path: /livez

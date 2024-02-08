@@ -1,3 +1,4 @@
 # Default values for fdk-rdf-prettifier
 
 RDF_PRETTIFIER_MEMORY: "500Mi"
+RDF_PRETTIFIER_CPU: "150m"
