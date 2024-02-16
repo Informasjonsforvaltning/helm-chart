@@ -18,6 +18,9 @@ spec:
       creationTimestamp: null
       labels:
         fdk.service: fdk-informationmodel-harvester
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/prometheus"  
     spec:
       containers:
         - env:
