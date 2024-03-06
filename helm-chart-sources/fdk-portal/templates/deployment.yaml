@@ -59,7 +59,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_FULLTEXT_SEARCH_BASE_URI
+              key: FDK_SEARCH_SERVICE_BASE_URI
         - name: CMS_API_HOST
           valueFrom:
             secretKeyRef:
