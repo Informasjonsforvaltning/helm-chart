@@ -71,6 +71,9 @@ spec:
             - containerPort: 8080
           resources:
             requests:
-              memory: {{ required "Missing value FDK_CONCEPT_HARVESTER_MEMORY" .Values.FDK_CONCEPT_HARVESTER_MEMORY | quote }}
+              memory: {{ required "Missing value FDK_CONCEPT_HARVESTER_MEMORY_REQ" .Values.FDK_CONCEPT_HARVESTER_MEMORY_REQ | quote }}
+              cpu: {{ required "Missing value FDK_CONCEPT_HARVESTER_CPU_REQ" .Values.FDK_CONCEPT_HARVESTER_CPU_REQ | quote }}
+            limits:
+              memory: {{ required "Missing value FDK_CONCEPT_HARVESTER_MEMORY_REQ" .Values.FDK_CONCEPT_HARVESTER_MEMORY_REQ | quote }}
       restartPolicy: Always
 status: {}

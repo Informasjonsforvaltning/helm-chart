@@ -3,4 +3,5 @@
 # Declare variables to be passed into your templates.
 
 ##fdk-concept-harvester
-FDK_CONCEPT_HARVESTER_MEMORY: "3000Mi"
+FDK_CONCEPT_HARVESTER_MEMORY_REQ: "4Gi"
+FDK_CONCEPT_HARVESTER_CPU_REQ: "1"
