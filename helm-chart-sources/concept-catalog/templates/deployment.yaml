@@ -92,5 +92,8 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value CONCEPT_CATALOG_MEMORY" .Values.CONCEPT_CATALOG_MEMORY | quote }}
+            cpu: {{ required "Missing value CONCEPT_CATALOG_CPU" .Values.CONCEPT_CATALOG_CPU | quote }}
+          limits:
+            memory: {{ required "Missing value CONCEPT_CATALOG_MEMORY" .Values.CONCEPT_CATALOG_MEMORY | quote }}
       restartPolicy: Always
 status: {}

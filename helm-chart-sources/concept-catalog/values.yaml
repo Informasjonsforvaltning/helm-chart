@@ -2,5 +2,6 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-##concept-catalog (api)
-CONCEPT_CATALOG_MEMORY: "500Mi"
+##concept-catalog
+CONCEPT_CATALOG_MEMORY: "2Gi"
+CONCEPT_CATALOG_CPU: "200m"
