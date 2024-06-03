@@ -68,6 +68,11 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: PROJECT_ID
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: fdk-harvest-admin
+              key: API_KEY
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         name: fdk-harvest-admin
