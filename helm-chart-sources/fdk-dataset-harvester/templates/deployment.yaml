@@ -59,6 +59,11 @@ spec:
               secretKeyRef:
                 name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
                 key: SSO_BASE_URI
+          - name: ADMIN_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: fdk-harvest-admin
+                key: API_KEY
           image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
           imagePullPolicy: Always
           name: fdk-dataset-harvester
