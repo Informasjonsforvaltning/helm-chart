@@ -3,5 +3,5 @@
 # Declare variables to be passed into your templates.
 
 ##concept-catalog
-CONCEPT_CATALOG_MEMORY: "2Gi"
+CONCEPT_CATALOG_MEMORY: "2200Mi"
 CONCEPT_CATALOG_CPU: "200m"
