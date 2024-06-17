@@ -1,6 +1,0 @@
-# Default values for dataservice-catalog.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-##dataservice-catalog
-DATASERVICE_CATALOG_MEMORY: "400Mi"

@@ -1,6 +1,0 @@
-# Default values for fdk-event-harvester.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-##fdk-event-harvester
-FDK_EVENT_HARVESTER_MEMORY: "450Mi"
