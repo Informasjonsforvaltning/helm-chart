@@ -93,6 +93,8 @@ spec:
             memory: {{ required "Missing value FDK_COMMUNITY_SERVICE_MEMORY" .Values.FDK_COMMUNITY_SERVICE_MEMORY | quote }}
         volumeMounts:
           - name: fdk-community-service-claim0
+            mountPath: /opt/config
+          - name: fdk-community-service-claim0
             mountPath: /usr/src/app/files
           - name: smtp-certs
             mountPath: /usr/src/app/certs
