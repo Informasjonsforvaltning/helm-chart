@@ -107,6 +107,11 @@ spec:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: USE_DEMO_LOGO
               optional: true
+        - name: CATALOG_PORTAL_BASE_URI
+          valueFrom:
+            secretKeyRef:
+              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              key: CATALOG_PORTAL_BASE_URI
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         name: dataset-catalog-gui
