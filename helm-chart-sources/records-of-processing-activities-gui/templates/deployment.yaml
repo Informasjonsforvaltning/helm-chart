@@ -38,7 +38,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
-              key: FDK_REGISTRATION_BASE_URI
+              key: CATALOG_PORTAL_BASE_URI
         - name: DATASET_CATALOG_API
           valueFrom:
             secretKeyRef:
