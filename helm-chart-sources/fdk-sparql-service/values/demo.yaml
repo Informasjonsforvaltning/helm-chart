@@ -1,4 +1,0 @@
-#DValues for demo environment
-NAMESPACE: demo
-FDK_SPARQL_SERVICE_VOLUMENAME: fdk-dev-demo-fdk-sparql-service
-FDK_SPARQL_SERVICE_STORAGESIZE: 9G

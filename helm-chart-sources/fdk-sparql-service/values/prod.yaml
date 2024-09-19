@@ -1,4 +1,0 @@
-#DValues for production environment
-NAMESPACE: prod
-FDK_SPARQL_SERVICE_VOLUMENAME: fdk-prod-fdk-sparql-service
-FDK_SPARQL_SERVICE_STORAGESIZE: 9G

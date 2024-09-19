@@ -1,4 +1,0 @@
-#DValues for staging environment
-NAMESPACE: staging
-FDK_SPARQL_SERVICE_VOLUMENAME: fdk-dev-staging-fdk-sparql-service
-FDK_SPARQL_SERVICE_STORAGESIZE: 19G

@@ -1,7 +1,0 @@
-# Default values for fdk-rdf-diff-store
-
-FDK_RDF_DIFF_STORE_MEMORY: "500Mi"
-
-kinds:
-  - kind: dataset
-  - kind: dataservice

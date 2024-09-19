@@ -1,3 +1,0 @@
-# Default values for fdk-reports-bff.
-
-FDK_REPORTS_BFF_MEMORY: "750Mi"

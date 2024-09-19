@@ -1,6 +1,0 @@
-# Default values for dataservice-publisher-sparql-service.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-##dataservice-publisher-sparql-service
-DATASERVICE_PUBLISHER_SPARQL_SERVICE_MEMORY: "1650Mi"

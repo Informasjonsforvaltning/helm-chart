@@ -1,5 +1,0 @@
-# Default values for dataservice-publisher.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-DATASERVICE_PUBLISHER_MEMORY: "200Mi"

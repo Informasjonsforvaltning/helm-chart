@@ -1,6 +1,0 @@
-apiVersion: v1
-appVersion: "1.0"
-description: Service that triggers harvests on a fixed schedule
-name: dataservice-publisher
-version: 0.1.0
-home: https://github.com/Informasjonsforvaltning/dataservice-publisher

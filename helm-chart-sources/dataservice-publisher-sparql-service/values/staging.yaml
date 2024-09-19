@@ -1,4 +1,0 @@
-#DValues for staging environment
-NAMESPACE: staging
-DATASERVICE_PUBLISHER_SPARQL_SERVICE_VOLUMENAME: fdk-dev-staging-dataservice-publisher-sparql-service
-DATASERVICE_PUBLISHER_SPARQL_SERVICE_STORAGESIZE: 9G

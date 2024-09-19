@@ -1,3 +1,0 @@
-# Default values for fdk-dataset-event-publisher.
-
-FDK_DATASET_EVENT_PUBLISHER_MEMORY: "500Mi"

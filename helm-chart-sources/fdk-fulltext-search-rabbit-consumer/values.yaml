@@ -1,3 +1,0 @@
-# Default values for fdk-fulltext-search-rabbit-consumer.
-
-FDK_FULLTEXT_SEARCH_RABBIT_CONSUMER_MEMORY: "50Mi"

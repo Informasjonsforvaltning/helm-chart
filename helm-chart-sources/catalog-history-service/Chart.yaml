@@ -1,6 +1,0 @@
-apiVersion: v1
-appVersion: "1.0"
-description: Catalog History Service
-name: catalog-history-service
-version: 0.1.0
-home: https://github.com/Informasjonsforvaltning/catalog-history-service

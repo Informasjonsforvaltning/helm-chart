@@ -1,4 +1,0 @@
-#DValues for demo environment
-NAMESPACE: demo
-DATASERVICE_PUBLISHER_SPARQL_SERVICE_VOLUMENAME: fdk-dev-demo-dataservice-publisher-sparql-service
-DATASERVICE_PUBLISHER_SPARQL_SERVICE_STORAGESIZE: 9G

@@ -1,4 +1,0 @@
-#DValues for production environment
-NAMESPACE: prod
-DATASERVICE_PUBLISHER_SPARQL_SERVICE_VOLUMENAME: fdk-prod-dataservice-publisher-sparql-service
-DATASERVICE_PUBLISHER_SPARQL_SERVICE_STORAGESIZE: 9G

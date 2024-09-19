@@ -1,3 +1,0 @@
-# Default values for fdk-fulltext-search.
-
-FDK_HARVESTER_BFF_MEMORY: "500Mi"
