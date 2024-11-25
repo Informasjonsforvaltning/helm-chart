@@ -1,5 +1,6 @@
 # Default values for fdk-mqa-scoring-service.
 
-FDK_MQA_SCORING_SERVICE_MEMORY: "500Mi"
+FDK_MQA_SCORING_SERVICE_MEMORY: "1Gi"
+FDK_MQA_SCORING_SERVICE_CPU: "100m"
 SCORING_API_URL: http://fdk-mqa-scoring-api:8082
 RUST_LOG: none,fdk_mqa_scoring_service=debug

@@ -1,7 +1,6 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: fdk-reports-store-claim0
   name: fdk-reports-store-claim0
@@ -14,8 +13,6 @@ spec:
   resources:
     requests:
       storage: {{ required "Missing value FDK_REPORTS_STORE_STORAGESIZE" .Values.FDK_REPORTS_STORE_STORAGESIZE }}
-status: {}
-
 ---
 kind: PersistentVolume
 apiVersion: v1

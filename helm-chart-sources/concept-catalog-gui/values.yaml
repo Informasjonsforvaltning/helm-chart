@@ -4,3 +4,4 @@
 
 ##concept-catalog-gui
 CONCEPT_CATALOG_GUI_MEMORY: "10Mi"
+CONCEPT_CATALOG_GUI_CPU: "1m"

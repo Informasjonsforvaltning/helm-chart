@@ -3,3 +3,4 @@
 # Declare variables to be passed into your templates.
 
 USER_API_MEMORY: "500Mi"
+USER_API_CPU: "10m"

@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: fdk-nginx-records
   name: fdk-nginx-records
@@ -15,7 +14,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: fdk-nginx-records
     spec:
@@ -28,5 +26,7 @@ spec:
           resources:
             requests:
               memory: {{ required "Missing value FDK_NGINX_RECORDS_MEMORY" .Values.FDK_NGINX_RECORDS_MEMORY | quote }}
+              cpu: {{ required "Missing value FDK_NGINX_RECORDS_CPU" .Values.FDK_NGINX_RECORDS_CPU | quote }}
+            limits:
+                memory: {{ required "Missing value FDK_NGINX_RECORDS_MEMORY" .Values.FDK_NGINX_RECORDS_MEMORY | quote }}
       restartPolicy: Always
-status: {}

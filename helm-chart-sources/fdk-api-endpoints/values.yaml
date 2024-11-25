@@ -1,6 +1,0 @@
-# Default values for fdk-api-endpoints.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-##fdk-api-endpoints
-FDK_API_ENDPOINTS_MEMORY: "250Mi"

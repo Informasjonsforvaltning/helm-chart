@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: new-dataset-catalog-gui
   name: new-dataset-catalog-gui
@@ -15,7 +14,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: new-dataset-catalog-gui
     spec:
@@ -115,5 +113,7 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value DATASET_CATALOG_GUI_MEMORY" .Values.DATASET_CATALOG_GUI_MEMORY | quote }}
+            cpu: {{ required "Missing value DATASET_CATALOG_GUI_CPU" .Values.DATASET_CATALOG_GUI_CPU | quote }}
+          limits:
+            memory: {{ required "Missing value DATASET_CATALOG_GUI_MEMORY" .Values.DATASET_CATALOG_GUI_MEMORY | quote }}
       restartPolicy: Always
-status: {}

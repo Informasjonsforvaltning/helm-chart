@@ -1,3 +1,4 @@
 # Default values for dataservice-catalog-gui
 
 DATASERVICE_CATALOG_GUI_MEMORY: "10Mi"
+DATASERVICE_CATALOG_GUI_CPU: "1m"

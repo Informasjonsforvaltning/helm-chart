@@ -4,3 +4,4 @@
 
 ##fdk-harvest-scheduler
 FDK_HARVEST_SCHEDULER_MEMORY: "50Mi"
+FDK_HARVEST_SCHEDULER_CPU: "100m"

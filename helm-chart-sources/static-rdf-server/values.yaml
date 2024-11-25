@@ -4,3 +4,4 @@
 
 ##static-rdf-server
 STATIC_RDF_SERVER_MEMORY: "200Mi"
+STATIC_RDF_SERVER_CPU: "10m"

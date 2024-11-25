@@ -1,7 +1,6 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: rabbitmq-claim1
   name: rabbitmq-claim1
@@ -14,8 +13,6 @@ spec:
   resources:
     requests:
       storage: {{ required "Missing value FDK_RABBITMQ_STORAGESIZE" .Values.FDK_RABBITMQ_STORAGESIZE }}
-status: {}
-
 ---
 kind: PersistentVolume
 apiVersion: v1

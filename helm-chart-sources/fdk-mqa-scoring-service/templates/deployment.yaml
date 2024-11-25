@@ -53,6 +53,9 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value FDK_MQA_SCORING_SERVICE_MEMORY" .Values.FDK_MQA_SCORING_SERVICE_MEMORY | quote }}
+            cpu: {{ required "Missing value FDK_MQA_SCORING_SERVICE_CPU" .Values.FDK_MQA_SCORING_SERVICE_CPU | quote }}
+          limits:
+            memory: {{ required "Missing value FDK_MQA_SCORING_SERVICE_MEMORY" .Values.FDK_MQA_SCORING_SERVICE_MEMORY | quote }}
         livenessProbe:
           exec:
             command:

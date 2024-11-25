@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: fdk-nginx-altinn-proxy-mock
   name: fdk-nginx-altinn-proxy-mock
@@ -15,7 +14,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: fdk-nginx-altinn-proxy-mock
     spec:
@@ -28,5 +26,7 @@ spec:
           resources:
             requests:
               memory: {{ required "Missing value FDK_NGINX_ALTINN_PROXY_MOCK_MEMORY" .Values.FDK_NGINX_ALTINN_PROXY_MOCK_MEMORY | quote }}
+              cpu: {{ required "Missing value FDK_NGINX_ALTINN_PROXY_MOCK_CPU" .Values.FDK_NGINX_ALTINN_PROXY_MOCK_CPU | quote }}
+            limits:
+              memory: {{ required "Missing value FDK_NGINX_ALTINN_PROXY_MOCK_MEMORY" .Values.FDK_NGINX_ALTINN_PROXY_MOCK_MEMORY | quote }}
       restartPolicy: Always
-status: {}

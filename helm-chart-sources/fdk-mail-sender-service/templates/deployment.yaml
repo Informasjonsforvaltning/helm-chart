@@ -81,6 +81,9 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value FDK_MAIL_SENDER_SERVICE_MEMORY" .Values.FDK_MAIL_SENDER_SERVICE_MEMORY | quote }}
+            cpu: {{ required "Missing value FDK_MAIL_SENDER_SERVICE_CPU" .Values.FDK_MAIL_SENDER_SERVICE_CPU | quote }}
+          limits:
+            memory: {{ required "Missing value FDK_MAIL_SENDER_SERVICE_MEMORY" .Values.FDK_MAIL_SENDER_SERVICE_MEMORY | quote }}
         livenessProbe:
           httpGet:
             path: /livez

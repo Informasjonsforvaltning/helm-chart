@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: rabbitmq
   name: rabbitmq
@@ -15,7 +14,6 @@ spec:
     type: Recreate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: rabbitmq
       annotations:
@@ -45,6 +43,9 @@ spec:
           resources:
             requests:
               memory: {{ required "Missing value FDK_RABBITMQ_MEMORY" .Values.FDK_RABBITMQ_MEMORY | quote }}
+              cpu: {{ required "Missing value FDK_RABBITMQ_CPU" .Values.FDK_RABBITMQ_CPU | quote }}
+            limits:
+              memory: {{ required "Missing value FDK_RABBITMQ_MEMORY" .Values.FDK_RABBITMQ_MEMORY | quote }}
           volumeMounts:
             - mountPath: /var/lib/rabbitmq
               name: rabbitmq-claim1
@@ -53,4 +54,3 @@ spec:
         - name: rabbitmq-claim1
           persistentVolumeClaim:
             claimName: rabbitmq-claim1
-status: {}

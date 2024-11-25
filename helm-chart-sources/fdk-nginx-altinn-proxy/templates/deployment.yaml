@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: fdk-nginx-altinn-proxy
   name: fdk-nginx-altinn-proxy
@@ -15,7 +14,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: fdk-nginx-altinn-proxy
     spec:
@@ -38,5 +36,7 @@ spec:
           resources:
             requests:
               memory: {{ required "Missing value FDK_NGINX_ALTINN_PROXY_MEMORY" .Values.FDK_NGINX_ALTINN_PROXY_MEMORY | quote }}
+              cpu: {{ required "Missing value FDK_NGINX_ALTINN_PROXY_CPU" .Values.FDK_NGINX_ALTINN_PROXY_CPU | quote }}
+            limits:
+              memory: {{ required "Missing value FDK_NGINX_ALTINN_PROXY_MEMORY" .Values.FDK_NGINX_ALTINN_PROXY_MEMORY | quote }}
       restartPolicy: Always
-status: {}

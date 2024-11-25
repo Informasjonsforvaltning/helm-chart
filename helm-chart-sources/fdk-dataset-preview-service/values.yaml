@@ -4,3 +4,4 @@
 
 ##fdk-dataset-preview-service
 FDK_DATASET_PREVIEW_SERVICE_MEMORY: "750Mi"
+FDK_DATASET_PREVIEW_SERVICE_CPU: "10m"

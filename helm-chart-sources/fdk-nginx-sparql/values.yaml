@@ -3,3 +3,4 @@
 # Declare variables to be passed into your templates.
 
 FDK_NGINX_SPARQL_MEMORY: "10Mi"
+FDK_NGINX_SPARQL_CPU: "1m"

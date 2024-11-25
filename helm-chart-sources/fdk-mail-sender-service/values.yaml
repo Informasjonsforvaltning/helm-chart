@@ -1,3 +1,4 @@
 # Default values for fdk-mail-sender-service.
 
-FDK_MAIL_SENDER_SERVICE_MEMORY: "500Mi"
+FDK_MAIL_SENDER_SERVICE_MEMORY: "50Mi"
+FDK_MAIL_SENDER_SERVICE_CPU: "10m"

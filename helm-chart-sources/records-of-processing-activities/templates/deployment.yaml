@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: records-of-processing-activities
   name: records-of-processing-activities
@@ -15,7 +14,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: records-of-processing-activities
     spec:
@@ -54,6 +52,9 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value RECORDS_OF_PROCESSING_ACTIVITIES_MEMORY" .Values.RECORDS_OF_PROCESSING_ACTIVITIES_MEMORY | quote }}
+            cpu: {{ required "Missing value RECORDS_OF_PROCESSING_ACTIVITIES_CPU" .Values.RECORDS_OF_PROCESSING_ACTIVITIES_CPU | quote }}
+          limits:
+            memory: {{ required "Missing value RECORDS_OF_PROCESSING_ACTIVITIES_MEMORY" .Values.RECORDS_OF_PROCESSING_ACTIVITIES_MEMORY | quote }}
         livenessProbe: 
           httpGet:
             path: /ping
@@ -71,4 +72,3 @@ spec:
           successThreshold: 1
           failureThreshold: 5
       restartPolicy: Always
-status: {}

@@ -6,9 +6,7 @@
 FDK_ES_CLUSTERNAME: elasticsearch
 FDK_ES_CLUSTERNODES: elasticsearch:9300
 FDK_ES_SECURITY: "false"
-FDK_ES_MEMORY_REQ: "5000Mi"
-FDK_ES_CPU_REQ: "500m"
-FDK_ES_MEMORY_LIMIT: "6000Mi"
-FDK_ES_CPU_LIMIT: "1"
-ES_IMAGE: docker.elastic.co/elasticsearch/elasticsearch:7.17.10
+FDK_ES_MEMORY_REQ: "5Gi"
+FDK_ES_CPU_REQ: "100m"
+ES_IMAGE: docker.elastic.co/elasticsearch/elasticsearch:7.17.25
 ES_BUSY_IMAGE: busybox:1.36.1

@@ -1,7 +1,6 @@
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: fdk-nginx-community
   name: fdk-nginx-community
@@ -14,5 +13,3 @@ spec:
       targetPort: 8080
   selector:
     fdk.service: fdk-nginx-community
-status:
-  loadBalancer: {}

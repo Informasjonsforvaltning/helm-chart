@@ -62,6 +62,9 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value FDK_METADATA_SCORING_API_MEMORY" .Values.FDK_METADATA_SCORING_API_MEMORY | quote }}
+            cpu: {{ required "Missing value FDK_METADATA_SCORING_API_CPU" .Values.FDK_METADATA_SCORING_API_CPU | quote }}
+          limits:
+            memory: {{ required "Missing value FDK_METADATA_SCORING_API_MEMORY" .Values.FDK_METADATA_SCORING_API_MEMORY | quote }}
         livenessProbe:
           httpGet:
             path: /ping

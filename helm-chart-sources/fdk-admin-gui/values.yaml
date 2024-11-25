@@ -4,3 +4,4 @@
 
 ##fdk-admin-gui
 FDK_ADMIN_GUI_MEMORY: "10Mi"
+FDK_ADMIN_GUI_CPU: "1m"

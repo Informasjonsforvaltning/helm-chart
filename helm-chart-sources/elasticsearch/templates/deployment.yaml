@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: elasticsearch
   name: elasticsearch
@@ -15,7 +14,6 @@ spec:
     type: Recreate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: elasticsearch
     spec:
@@ -61,7 +59,7 @@ spec:
             memory: {{ required "Missing value FDK_ES_MEMORY_REQ" .Values.FDK_ES_MEMORY_REQ | quote }}
             cpu: {{ required "Missing value FDK_ES_CPU_REQ" .Values.FDK_ES_CPU_REQ | quote }}
           limits:
-            memory: {{ required "Missing value FDK_ES_MEMORY_LIMIT" .Values.FDK_ES_MEMORY_LIMIT | quote }}
+            memory: {{ required "Missing value FDK_ES_MEMORY_REQ" .Values.FDK_ES_MEMORY_LIMIT | quote }}
             cpu: {{ required "Missing value FDK_ES_CPU_LIMIT" .Values.FDK_ES_CPU_LIMIT | quote }}
         volumeMounts:
         - mountPath: /usr/share/elasticsearch/data
@@ -71,4 +69,3 @@ spec:
       - name: elasticsearch-claim0
         persistentVolumeClaim:
           claimName: elasticsearch-claim0
-status: {}

@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: dcat-ap-no-validator-cache
   name: dcat-ap-no-validator-cache
@@ -15,7 +14,6 @@ spec:
     type: Recreate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: dcat-ap-no-validator-cache
     spec:
@@ -36,6 +34,9 @@ spec:
           resources:
             requests:
               memory: {{ required "Missing value DCAT_AP_NO_VALIDATOR_CACHE_MEMORY" .Values.DCAT_AP_NO_VALIDATOR_CACHE_MEMORY | quote }}
+              cpu: {{ required "Missing value DCAT_AP_NO_VALIDATOR_CACHE_CPU" .Values.DCAT_AP_NO_VALIDATOR_CACHE_CPU | quote }}
+            limits:
+                memory: {{ required "Missing value DCAT_AP_NO_VALIDATOR_CACHE_MEMORY" .Values.DCAT_AP_NO_VALIDATOR_CACHE_MEMORY | quote }}
           volumeMounts:
           - mountPath: /data
             name: dcat-ap-no-validator-cache-claim0

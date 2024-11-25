@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: dataservice-catalog-gui
   name: dataservice-catalog-gui
@@ -15,7 +14,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: dataservice-catalog-gui
     spec:
@@ -85,6 +83,9 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value DATASERVICE_CATALOG_GUI_MEMORY" .Values.DATASERVICE_CATALOG_GUI_MEMORY | quote }}
+            cpu: {{ required "Missing value DATASERVICE_CATALOG_GUI_CPU" .Values.DATASERVICE_CATALOG_GUI_CPU | quote }}
+          limits:
+            memory: {{ required "Missing value DATASERVICE_CATALOG_GUI_MEMORY" .Values.DATASERVICE_CATALOG_GUI_MEMORY | quote }}
         livenessProbe:
           httpGet:
             path: /ping
@@ -102,4 +103,3 @@ spec:
           successThreshold: 1
           failureThreshold: 5
       restartPolicy: Always
-status: {}

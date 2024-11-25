@@ -4,3 +4,4 @@
 
 #dcat-ap-no-validator-gui
 DCAT_AP_NO_VALIDATOR_GUI_MEMORY: "10Mi"
+DCAT_AP_NO_VALIDATOR_GUI_CPU: "1m"

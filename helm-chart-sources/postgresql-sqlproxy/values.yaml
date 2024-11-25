@@ -2,6 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-FDK_POSTGRESQL_MEMORY: "10Mi"
-FDK_POSTGRESQL_IMAGE: gcr.io/cloudsql-docker/gce-proxy:1.33.0
+FDK_POSTGRESQL_MEMORY: "20Mi"
+FDK_POSTGRESQL_CPU: "2m"
+FDK_POSTGRESQL_IMAGE: gcr.io/cloudsql-docker/gce-proxy:1.37.0
 FDK_SQL: digdir-fdk

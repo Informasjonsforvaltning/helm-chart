@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: fdk-harvest-scheduler
   name: fdk-harvest-scheduler
@@ -15,7 +14,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: fdk-harvest-scheduler
     spec:
@@ -49,5 +47,7 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value FDK_HARVEST_SCHEDULER_MEMORY" .Values.FDK_HARVEST_SCHEDULER_MEMORY | quote }}
+            cpu: {{ required "Missing value FDK_HARVEST_SCHEDULER_CPU" .Values.FDK_HARVEST_SCHEDULER_CPU | quote }}
+          limits:
+            memory: {{ required "Missing value FDK_HARVEST_SCHEDULER_MEMORY" .Values.FDK_HARVEST_SCHEDULER_MEMORY | quote }}
       restartPolicy: Always
-status: {}

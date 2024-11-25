@@ -3,5 +3,6 @@
 # Declare variables to be passed into your templates.
 
 ##fdk-community-store
-FDK_COMMUNITY_STORE_MEMORY: "500Mi"
+FDK_COMMUNITY_STORE_MEMORY: "750Mi"
+FDK_COMMUNITY_STORE_CPU: "50m"
 FDK_COMMUNITY_STORE_IMAGE: "mongo:4.4.17"

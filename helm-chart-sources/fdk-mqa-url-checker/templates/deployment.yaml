@@ -44,6 +44,9 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value FDK_MQA_URL_CHECKER_MEMORY" .Values.FDK_MQA_URL_CHECKER_MEMORY | quote }}
+            cpu: {{ required "Missing value FDK_MQA_URL_CHECKER_CPU" .Values.FDK_MQA_URL_CHECKER_CPU | quote }}
+          limits:
+            memory: {{ required "Missing value FDK_MQA_URL_CHECKER_MEMORY" .Values.FDK_MQA_URL_CHECKER_MEMORY | quote }}
         livenessProbe:
           exec:
             command:

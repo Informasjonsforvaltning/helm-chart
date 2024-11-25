@@ -3,4 +3,5 @@
 # Declare variables to be passed into your templates.
 
 ##records-of-processing-activities-gui
-RECORDS_OF_PROCESSING_ACTIVITIES_GUI_MEMORY: "10Mi"
+RECORDS_OF_PROCESSING_ACTIVITIES_GUI_MEMORY: "15Mi"
+RECORDS_OF_PROCESSING_ACTIVITIES_GUI_CPU: "1m"

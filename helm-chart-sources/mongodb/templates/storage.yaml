@@ -1,7 +1,6 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: mongodb-claim0
   name: mongodb-claim0
@@ -14,8 +13,6 @@ spec:
   resources:
     requests:
       storage: {{ required "Missing value FDK_MONGODB_STORAGESIZE_DB" .Values.FDK_MONGODB_STORAGESIZE_DB }}
-status: {}
-
 ---
 kind: PersistentVolume
 apiVersion: v1

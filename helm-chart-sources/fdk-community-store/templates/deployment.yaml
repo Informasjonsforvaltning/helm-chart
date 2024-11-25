@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: fdk-community-store
   name: fdk-community-store
@@ -15,7 +14,6 @@ spec:
     type: Recreate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: fdk-community-store
     spec:
@@ -39,6 +37,9 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value FDK_COMMUNITY_STORE_MEMORY" .Values.FDK_COMMUNITY_STORE_MEMORY | quote }}
+            cpu: {{ required "Missing value FDK_COMMUNITY_STORE_CPU" .Values.FDK_COMMUNITY_STORE_CPU | quote }}
+          limits:
+            memory: {{ required "Missing value FDK_COMMUNITY_STORE_MEMORY" .Values.FDK_COMMUNITY_STORE_MEMORY | quote }}
         volumeMounts:
         - mountPath: /data/db/
           name: fdk-community-store-claim0
@@ -47,4 +48,3 @@ spec:
       - name: fdk-community-store-claim0
         persistentVolumeClaim:
           claimName: fdk-community-store-claim0
-status: {}

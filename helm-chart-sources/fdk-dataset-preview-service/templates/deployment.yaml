@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: fdk-dataset-preview-service
   name: fdk-dataset-preview-service
@@ -15,7 +14,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: fdk-dataset-preview-service
     spec:
@@ -44,6 +42,9 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value FDK_DATASET_PREVIEW_SERVICE_MEMORY" .Values.FDK_DATASET_PREVIEW_SERVICE_MEMORY | quote }}
+            cpu: {{ required "Missing value FDK_DATASET_PREVIEW_SERVICE_CPU" .Values.FDK_DATASET_PREVIEW_SERVICE_CPU | quote }}
+          limits:
+            memory: {{ required "Missing value FDK_DATASET_PREVIEW_SERVICE_MEMORY" .Values.FDK_DATASET_PREVIEW_SERVICE_MEMORY | quote }}
         livenessProbe:
           httpGet:
             path: /ping
@@ -61,4 +62,3 @@ spec:
           successThreshold: 1
           failureThreshold: 5
       restartPolicy: Always
-status: {}

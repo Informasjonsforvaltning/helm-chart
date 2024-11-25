@@ -1,3 +1,4 @@
 # Default values for fdk-mqa-url-checker.
 
-FDK_MQA_URL_CHECKER_MEMORY: "500Mi"
+FDK_MQA_URL_CHECKER_MEMORY: "1Gi"
+FDK_MQA_URL_CHECKER_CPU: "300m"

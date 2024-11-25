@@ -3,3 +3,4 @@
 # Declare variables to be passed into your templates.
 
 FDK_NGINX_ORGANIZATION_BFF_MEMORY: "10Mi"
+FDK_NGINX_ORGANIZATION_BFF_CPU: "1m"

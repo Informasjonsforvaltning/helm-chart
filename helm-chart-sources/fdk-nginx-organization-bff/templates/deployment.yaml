@@ -26,6 +26,9 @@ spec:
           resources:
             requests:
               memory: {{ required "Missing value FDK_NGINX_ORGANIZATION_BFF_MEMORY" .Values.FDK_NGINX_ORGANIZATION_BFF_MEMORY | quote }}
+              cpu: {{ required "Missing value FDK_NGINX_ORGANIZATION_BFF_CPU" .Values.FDK_NGINX_ORGANIZATION_BFF_CPU | quote }}
+            limits:
+                memory: {{ required "Missing value FDK_NGINX_ORGANIZATION_BFF_MEMORY" .Values.FDK_NGINX_ORGANIZATION_BFF_MEMORY | quote }}
           livenessProbe:
             httpGet:
               path: /ping

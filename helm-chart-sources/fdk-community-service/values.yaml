@@ -4,3 +4,4 @@
 
 ##fdk-community-service
 FDK_COMMUNITY_SERVICE_MEMORY: "500Mi"
+FDK_COMMUNITY_SERVICE_CPU: "100m"

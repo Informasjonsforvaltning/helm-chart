@@ -1,20 +1,18 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  creationTimestamp: null
   labels:
     app: fdk-cms-service-claim0
   name: fdk-cms-service-claim0
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
-        storageClassName: ""
-        volumeName: {{ required "Missing value FDK_CMS_SERVICE_VOLUMENAME" .Values.FDK_CMS_SERVICE_VOLUMENAME }}
-        accessModes:
-          - ReadWriteOnce
-        resources:
-          requests:
-            storage: {{ required "Missing value FDK_CMS_SERVICE_STORAGESIZE" .Values.FDK_CMS_SERVICE_STORAGESIZE }}
-status: {}
+  storageClassName: ""
+  volumeName: {{ required "Missing value FDK_CMS_SERVICE_VOLUMENAME" .Values.FDK_CMS_SERVICE_VOLUMENAME }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ required "Missing value FDK_CMS_SERVICE_STORAGESIZE" .Values.FDK_CMS_SERVICE_STORAGESIZE }}
 ---
 kind: PersistentVolume
 apiVersion: v1

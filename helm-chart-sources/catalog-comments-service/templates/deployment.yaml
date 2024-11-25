@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: catalog-comments-service
   name: catalog-comments-service
@@ -15,7 +14,6 @@ spec:
     type: Recreate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: catalog-comments-service
     spec:
@@ -49,5 +47,7 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value CATALOG_COMMENTS_SERVICE_MEMORY" .Values.CATALOG_COMMENTS_SERVICE_MEMORY | quote }}
+            cpu: {{ required "Missing value CATALOG_COMMENTS_SERVICE_CPU" .Values.CATALOG_COMMENTS_SERVICE_CPU | quote }}
+          limits:
+            memory: {{ required "Missing value CATALOG_COMMENTS_SERVICE_MEMORY" .Values.CATALOG_COMMENTS_SERVICE_MEMORY | quote }}
       restartPolicy: Always
-status: {}

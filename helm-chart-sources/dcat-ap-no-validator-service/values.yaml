@@ -4,3 +4,4 @@
 
 ##dcat-ap-no-validator-service
 DCAT_AP_NO_VALIDATOR_SERVICE_MEMORY: "300Mi"
+DCAT_AP_NO_VALIDATOR_SERVICE_CPU: "100m"

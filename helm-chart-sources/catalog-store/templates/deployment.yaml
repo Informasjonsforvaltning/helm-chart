@@ -63,8 +63,7 @@ spec:
             memory: {{ required "Missing value CATALOG_STORE_MEMORY_REQ" .Values.CATALOG_STORE_MEMORY_REQ | quote }}
             cpu: {{ required "Missing value CATALOG_STORE_CPU_REQ" .Values.CATALOG_STORE_CPU_REQ | quote }}
           limits:
-            memory: {{ required "Missing value CATALOG_STORE_MEMORY_LIMIT" .Values.CATALOG_STORE_MEMORY_LIMIT | quote }}
-            cpu: {{ required "Missing value CATALOG_STORE_CPU_LIMIT" .Values.CATALOG_STORE_CPU_LIMIT | quote }}
+            memory: {{ required "Missing value CATALOG_STORE_MEMORY_REQ" .Values.CATALOG_STORE_MEMORY_REQ | quote }}
         volumeMounts:
         - mountPath: /usr/share/elasticsearch/data
           name: catalog-store-claim0
@@ -73,4 +72,3 @@ spec:
       - name: catalog-store-claim0
         persistentVolumeClaim:
           claimName: catalog-store-claim0
-status: {}

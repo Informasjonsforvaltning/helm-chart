@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: static-rdf-server
     app: static-rdf
@@ -52,6 +51,9 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value STATIC_RDF_SERVER_MEMORY" .Values.STATIC_RDF_SERVER_MEMORY | quote }}
+            cpu: {{ required "Missing value STATIC_RDF_SERVER_CPU" .Values.STATIC_RDF_SERVER_CPU | quote }}
+          limits:
+            memory: {{ required "Missing value STATIC_RDF_SERVER_MEMORY" .Values.STATIC_RDF_SERVER_MEMORY | quote }}
         volumeMounts:
           - mountPath: /srv/www/static-rdf-server
             name: static-rdf-server-claim0
@@ -76,4 +78,3 @@ spec:
           persistentVolumeClaim:
             claimName: static-rdf-server-claim0
       restartPolicy: Always
-status: {}

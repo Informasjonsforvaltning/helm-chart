@@ -73,5 +73,7 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value RECORDS_OF_PROCESSING_ACTIVITIES_GUI_MEMORY" .Values.RECORDS_OF_PROCESSING_ACTIVITIES_GUI_MEMORY | quote }}
+            cpu: {{ required "Missing value RECORDS_OF_PROCESSING_ACTIVITIES_GUI_CPU" .Values.RECORDS_OF_PROCESSING_ACTIVITIES_GUI_CPU | quote }}
+          limits:
+            memory: {{ required "Missing value RECORDS_OF_PROCESSING_ACTIVITIES_GUI_MEMORY" .Values.RECORDS_OF_PROCESSING_ACTIVITIES_GUI_MEMORY | quote }}
       restartPolicy: Always
-status: {}

@@ -1,3 +1,4 @@
 # Default values for fdk-organization-bff.
 
 FDK_ORGANIZATION_BFF_MEMORY: "150Mi"
+FDK_ORGANIZATION_BFF_CPU: "10m"

@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: fdk-nginx-community
   name: fdk-nginx-community
@@ -15,7 +14,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: fdk-nginx-community
     spec:
@@ -27,6 +25,9 @@ spec:
             - containerPort: 8080
           resources:
             requests:
+              memory: {{ required "Missing value FDK_NGINX_COMMUNITY_MEMORY" .Values.FDK_NGINX_COMMUNITY_MEMORY | quote }}
+              cpu: {{ required "Missing value FDK_NGINX_COMMUNITY_CPU" .Values.FDK_NGINX_COMMUNITY_CPU | quote }}
+            limits:
               memory: {{ required "Missing value FDK_NGINX_COMMUNITY_MEMORY" .Values.FDK_NGINX_COMMUNITY_MEMORY | quote }}
           livenessProbe:
             httpGet:
@@ -45,4 +46,3 @@ spec:
             successThreshold: 1
             failureThreshold: 5
       restartPolicy: Always
-status: {}

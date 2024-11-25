@@ -2,4 +2,5 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-STATIC_RDF_NGINX_MEMORY: "10Mi"
+STATIC_RDF_NGINX_MEMORY: "100Mi"
+STATIC_RDF_NGINX_CPU: "1m"

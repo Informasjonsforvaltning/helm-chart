@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: fdk-cms-service
   name: fdk-cms-service
@@ -15,7 +14,6 @@ spec:
     type: Recreate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: fdk-cms-service
     spec:
@@ -109,6 +107,9 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value FDK_CMS_SERVICE_MEMORY" .Values.FDK_CMS_SERVICE_MEMORY | quote }}
+            cpu: {{ required "Missing value FDK_CMS_SERVICE_CPU" .Values.FDK_CMS_SERVICE_CPU | quote }}
+          limits:
+            memory: {{ required "Missing value FDK_CMS_SERVICE_MEMORY" .Values.FDK_CMS_SERVICE_MEMORY | quote }}
         volumeMounts:
           - mountPath: /app/public/uploads
             name: fdk-cms-service-claim0
@@ -117,4 +118,3 @@ spec:
           persistentVolumeClaim:
             claimName: fdk-cms-service-claim0
       restartPolicy: Always
-status: {}

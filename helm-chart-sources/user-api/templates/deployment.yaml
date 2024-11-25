@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: user-api
   name: user-api
@@ -15,7 +14,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: user-api
     spec:
@@ -89,5 +87,7 @@ spec:
         resources:
           requests:
             memory: {{ required "Missing value USER_API_MEMORY" .Values.USER_API_MEMORY | quote }}
+            cpu: {{ required "Missing value USER_API_CPU" .Values.USER_API_CPU | quote }}
+          limits:
+            memory: {{ required "Missing value USER_API_MEMORY" .Values.USER_API_MEMORY | quote }}
       restartPolicy: Always
-status: {}

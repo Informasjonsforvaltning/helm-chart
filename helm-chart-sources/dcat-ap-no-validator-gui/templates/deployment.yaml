@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: dcat-ap-no-validator-gui
   name: dcat-ap-no-validator-gui
@@ -15,7 +14,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: dcat-ap-no-validator-gui
     spec:
@@ -55,4 +53,3 @@ spec:
           requests:
             memory: {{ required "Missing value DCAT_AP_NO_VALIDATOR_GUI_MEMORY" .Values.DCAT_AP_NO_VALIDATOR_GUI_MEMORY | quote }}
       restartPolicy: Always
-status: {}

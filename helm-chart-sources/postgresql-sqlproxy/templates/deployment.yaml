@@ -33,7 +33,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         fdk.service: postgresql-sqlproxy
     spec:
@@ -53,6 +52,9 @@ spec:
           resources:
             requests:
               memory: {{ required "Missing value FDK_POSTGRESQL_MEMORY" .Values.FDK_POSTGRESQL_MEMORY | quote }}
+              cpu: {{ required "Missing value FDK_POSTGRESQL_CPU" .Values.FDK_POSTGRESQL_CPU | quote }}
+            limits:
+                memory: {{ required "Missing value FDK_POSTGRESQL_MEMORY" .Values.FDK_POSTGRESQL_MEMORY | quote }}
           volumeMounts:
             - name: ssl-certs
               mountPath: /etc/ssl/certs

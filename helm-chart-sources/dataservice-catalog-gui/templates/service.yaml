@@ -1,7 +1,6 @@
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: null
   labels:
     fdk.service: dataservice-catalog-gui
   name: dataservice-catalog-gui
@@ -14,5 +13,3 @@ spec:
     targetPort: 8080
   selector:
     fdk.service: dataservice-catalog-gui
-status:
-  loadBalancer: {}
