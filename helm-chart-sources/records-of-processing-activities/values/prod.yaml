@@ -1,2 +1,3 @@
 #DValues for production environment
 NAMESPACE: prod
+CORS_ORIGIN_PATTERNS: https://*.fellesdatakatalog.digdir.no

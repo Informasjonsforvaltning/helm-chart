@@ -44,6 +44,8 @@ spec:
             secretKeyRef:
               name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: MONGODB_HOST
+        - name: CORS_ORIGIN_PATTERNS
+          value: {{ required "Missing value CORS_ORIGIN_PATTERNS" .Values.CORS_ORIGIN_PATTERNS }}
         name: records-of-processing-activities
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
