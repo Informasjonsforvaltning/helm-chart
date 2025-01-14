@@ -25,6 +25,11 @@ spec:
                 name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
                 key: ALTINN_URI
                 optional: true
+          - name: API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: fdk-altinn-proxy
+                key: API_KEY
           envFrom:
           - secretRef:
               name: fdk-altinnproxy-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}-digdir-altinn-key

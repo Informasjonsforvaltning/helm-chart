@@ -18,7 +18,13 @@ spec:
         fdk.service: fdk-nginx-altinn-proxy-mock
     spec:
       containers:
-        - image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
+        - env:
+          - name: API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: fdk-altinn-proxy-mock
+                key: API_KEY
+          image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
           imagePullPolicy: Always
           name: fdk-nginx-altinn-proxy-mock
           ports:
