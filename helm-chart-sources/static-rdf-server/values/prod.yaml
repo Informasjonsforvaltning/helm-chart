@@ -2,3 +2,4 @@
 NAMESPACE: prod
 STATIC_RDF_SERVER_VOLUMENAME: fdk-prod-static-rdf-server
 STATIC_RDF_SERVER_STORAGESIZE: 9G
+CORS_ORIGIN_PATTERNS: https://fellesdatakatalog.digdir.no,https://*.fellesdatakatalog.digdir.no,https://data.norge.no,https://data.transportportal.no,https://transportportal.no

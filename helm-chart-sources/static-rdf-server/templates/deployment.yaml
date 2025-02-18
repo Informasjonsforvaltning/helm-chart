@@ -42,6 +42,8 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: STATIC_RDF_SERVER_API_KEY
+        - name: CORS_ORIGIN_PATTERNS
+          value: {{ required "Missing value CORS_ORIGIN_PATTERNS" .Values.CORS_ORIGIN_PATTERNS }}
         name: static-rdf-server
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
