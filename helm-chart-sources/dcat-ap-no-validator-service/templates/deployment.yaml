@@ -29,6 +29,8 @@ spec:
             secretKeyRef:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: DCAT_AP_NO_VALIDATOR_CACHE_ENDPOINT
+        - name: CORS_ORIGIN_PATTERNS
+          value: {{ required "Missing value CORS_ORIGIN_PATTERNS" .Values.CORS_ORIGIN_PATTERNS }}
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
         name: dcat-ap-no-validator-service
