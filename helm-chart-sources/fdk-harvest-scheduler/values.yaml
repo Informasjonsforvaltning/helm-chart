@@ -1,7 +1,0 @@
-# Default values for fdk-harvest-scheduler.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-##fdk-harvest-scheduler
-FDK_HARVEST_SCHEDULER_MEMORY: "50Mi"
-FDK_HARVEST_SCHEDULER_CPU: "100m"
