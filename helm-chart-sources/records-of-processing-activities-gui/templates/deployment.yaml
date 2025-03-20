@@ -70,6 +70,11 @@ spec:
               name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
               key: USE_DEMO_LOGO
               optional: true
+        - name: ALLOW_LIST
+          valueFrom:
+            secretKeyRef:
+              name: behandlingsoversikt
+              key: ALLOW_LIST
         name: records-of-processing-activities-gui
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always
