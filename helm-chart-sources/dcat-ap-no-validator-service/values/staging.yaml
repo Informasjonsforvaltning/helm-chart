@@ -1,3 +1,0 @@
-#DValues for staging environment
-NAMESPACE: staging
-CORS_ORIGIN_PATTERNS: https://staging.fellesdatakatalog.digdir.no,https://*.staging.fellesdatakatalog.digdir.no,http://localhost:*

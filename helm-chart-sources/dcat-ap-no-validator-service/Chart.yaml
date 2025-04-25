@@ -1,6 +1,0 @@
-apiVersion: v1
-appVersion: "1.0"
-description: DCAT-AP-NO validator service
-name: dcat-ap-no-validator-service
-version: 0.1.0
-home: https://github.com/Informasjonsforvaltning/dcat-ap-no-validator-service

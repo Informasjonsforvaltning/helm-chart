@@ -1,4 +1,0 @@
-#DValues for production environment
-NAMESPACE: prod
-FDK_ES_VOLUMENAME: fdk-prod-elasticsearch
-FDK_ES_STORAGESIZE: "9G"

@@ -1,6 +1,0 @@
-apiVersion: v1
-appVersion: "1.0"
-description: Config for Elasticsearch
-name: elasticsearch
-version: 0.1.0
-home: https://github.com/Informasjonsforvaltning/fdk-elasticsearch-config

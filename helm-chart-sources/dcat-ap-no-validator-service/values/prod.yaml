@@ -1,3 +1,0 @@
-#DValues for digdir-production environment
-NAMESPACE: prod
-CORS_ORIGIN_PATTERNS: https://fellesdatakatalog.digdir.no,https://*.fellesdatakatalog.digdir.no,https://data.norge.no,https://data.transportportal.no,https://transportportal.no

@@ -1,3 +1,0 @@
-#DValues for demo environment
-NAMESPACE: demo
-CORS_ORIGIN_PATTERNS: https://demo.fellesdatakatalog.digdir.no,https://*.demo.fellesdatakatalog.digdir.no

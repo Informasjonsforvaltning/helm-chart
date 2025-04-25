@@ -1,4 +1,0 @@
-#DValues for production environment
-NAMESPACE: prod
-CATALOG_STORE_VOLUMENAME: fdk-prod-catalog-store
-CATALOG_STORE_STORAGESIZE: "9G"

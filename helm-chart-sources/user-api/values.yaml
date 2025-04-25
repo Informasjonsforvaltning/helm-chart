@@ -1,6 +1,0 @@
-# Default values for user-api.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-USER_API_MEMORY: "500Mi"
-USER_API_CPU: "10m"

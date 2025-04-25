@@ -1,4 +1,0 @@
-#DValues for staging environment
-NAMESPACE: staging
-CATALOG_STORE_VOLUMENAME: fdk-dev-staging-catalog-store
-CATALOG_STORE_STORAGESIZE: "9G"
