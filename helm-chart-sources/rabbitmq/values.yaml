@@ -5,5 +5,5 @@
 ##rabbitmq
 FDK_RABBITMQ_MEMORY: "200Mi"
 FDK_RABBITMQ_CPU: "20m"
-FDK_RABBITMQ_IMAGE: "rabbitmq:3.13-management"
+FDK_RABBITMQ_IMAGE: "rabbitmq:3.11.18-management"
 FDK_RABBITMQ_NODENAME: "rabbitmq@localhost"
