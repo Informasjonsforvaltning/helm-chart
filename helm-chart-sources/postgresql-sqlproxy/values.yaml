@@ -4,5 +4,5 @@
 
 FDK_POSTGRESQL_MEMORY: "20Mi"
 FDK_POSTGRESQL_CPU: "2m"
-FDK_POSTGRESQL_IMAGE: gcr.io/cloudsql-docker/gce-proxy:1.37.7
+FDK_POSTGRESQL_IMAGE: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.17.1
 FDK_SQL: digdir-fdk

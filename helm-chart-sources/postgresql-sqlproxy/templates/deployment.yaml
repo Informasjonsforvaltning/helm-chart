@@ -42,10 +42,6 @@ spec:
           operator: "Equal"
           value: "only"
           effect: "NoSchedule"
-      volumes:
-        - name: ssl-certs
-          hostPath:
-            path: /etc/ssl/certs
       containers:
         - name: postgresql-sqlproxy
           image: {{ required "Missing value FDK_POSTGRESQL_IMAGE" .Values.FDK_POSTGRESQL_IMAGE }}
@@ -54,13 +50,15 @@ spec:
               memory: {{ required "Missing value FDK_POSTGRESQL_MEMORY" .Values.FDK_POSTGRESQL_MEMORY | quote }}
               cpu: {{ required "Missing value FDK_POSTGRESQL_CPU" .Values.FDK_POSTGRESQL_CPU | quote }}
             limits:
-                memory: {{ required "Missing value FDK_POSTGRESQL_MEMORY" .Values.FDK_POSTGRESQL_MEMORY | quote }}
+              memory: {{ required "Missing value FDK_POSTGRESQL_MEMORY" .Values.FDK_POSTGRESQL_MEMORY | quote }}
           volumeMounts:
             - name: ssl-certs
               mountPath: /etc/ssl/certs
-          command: ["/cloud_sql_proxy",
-                    "-instances={{ required "Missing value FDK_SQL_PROXY_CLUSTER" .Values.FDK_SQL_PROXY_CLUSTER }}:europe-north1:{{ required "Missing value FDK_SQL" .Values.FDK_SQL }}-{{ required "Missing value FDK_SQL_PROXY_SQL_ENVIRONMENT" .Values.FDK_SQL_PROXY_SQL_ENVIRONMENT }}=tcp:0.0.0.0:5432",
-                    "-structured_logs"]
+          command: ["/cloud-sql-proxy",
+                    "--structured-logs",
+                    "--address 0.0.0.0",
+                    "--port 5432",
+                    "{{ required "Missing value FDK_SQL_PROXY_CLUSTER" .Values.FDK_SQL_PROXY_CLUSTER }}:europe-north1:{{ required "Missing value FDK_SQL" .Values.FDK_SQL }}-{{ required "Missing value FDK_SQL_PROXY_SQL_ENVIRONMENT" .Values.FDK_SQL_PROXY_SQL_ENVIRONMENT }}"]
           imagePullPolicy: Always
           livenessProbe:
             tcpSocket:
@@ -78,3 +76,7 @@ spec:
       restartPolicy: Always
       securityContext: {}
       terminationGracePeriodSeconds: 30
+      volumes:
+        - name: ssl-certs
+          hostPath:
+            path: /etc/ssl/certs
