@@ -36,47 +36,44 @@ spec:
       labels:
         fdk.service: postgresql-sqlproxy
     spec:
+      serviceAccountName: cloud-sql-sa
+      tolerations:
+        - key: "workload-identity"
+          operator: "Equal"
+          value: "only"
+          effect: "NoSchedule"
       volumes:
-        - name: google-cloud-key
-          secret:
-            defaultMode: 420
-            secretName: postgres-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}-key
         - name: ssl-certs
           hostPath:
             path: /etc/ssl/certs
       containers:
-        - env:
-          - name: GOOGLE_APPLICATION_CREDENTIALS
-            value: /var/secrets/google/key.json
-          image: {{ required "Missing value FDK_POSTGRESQL_IMAGE" .Values.FDK_POSTGRESQL_IMAGE }}
-          resources:
-            requests:
+        image: {{ required "Missing value FDK_POSTGRESQL_IMAGE" .Values.FDK_POSTGRESQL_IMAGE }}
+        resources:
+          requests:
+            memory: {{ required "Missing value FDK_POSTGRESQL_MEMORY" .Values.FDK_POSTGRESQL_MEMORY | quote }}
+            cpu: {{ required "Missing value FDK_POSTGRESQL_CPU" .Values.FDK_POSTGRESQL_CPU | quote }}
+          limits:
               memory: {{ required "Missing value FDK_POSTGRESQL_MEMORY" .Values.FDK_POSTGRESQL_MEMORY | quote }}
-              cpu: {{ required "Missing value FDK_POSTGRESQL_CPU" .Values.FDK_POSTGRESQL_CPU | quote }}
-            limits:
-                memory: {{ required "Missing value FDK_POSTGRESQL_MEMORY" .Values.FDK_POSTGRESQL_MEMORY | quote }}
-          volumeMounts:
-            - name: ssl-certs
-              mountPath: /etc/ssl/certs
-            - name: google-cloud-key
-              mountPath: /var/secrets/google
-          command: ["/cloud_sql_proxy",
-                    "-instances={{ required "Missing value FDK_SQL_PROXY_CLUSTER" .Values.FDK_SQL_PROXY_CLUSTER }}:europe-north1:{{ required "Missing value FDK_SQL" .Values.FDK_SQL }}-{{ required "Missing value FDK_SQL_PROXY_SQL_ENVIRONMENT" .Values.FDK_SQL_PROXY_SQL_ENVIRONMENT }}=tcp:0.0.0.0:5432",
-                    "-structured_logs"]
-          imagePullPolicy: Always
-          livenessProbe:
-            tcpSocket:
-              port: 5432
-            initialDelaySeconds: 20
-            periodSeconds: 10
-            timeoutSeconds: 1
-            successThreshold: 1
-            failureThreshold: 3
-          name: postgresql-sqlproxy
-          ports:
-            - containerPort: 5432
-              protocol: TCP
-          terminationMessagePath: /dev/termination-log
+        volumeMounts:
+          - name: ssl-certs
+            mountPath: /etc/ssl/certs
+        command: ["/cloud_sql_proxy",
+                  "-instances={{ required "Missing value FDK_SQL_PROXY_CLUSTER" .Values.FDK_SQL_PROXY_CLUSTER }}:europe-north1:{{ required "Missing value FDK_SQL" .Values.FDK_SQL }}-{{ required "Missing value FDK_SQL_PROXY_SQL_ENVIRONMENT" .Values.FDK_SQL_PROXY_SQL_ENVIRONMENT }}=tcp:0.0.0.0:5432",
+                  "-structured_logs"]
+        imagePullPolicy: Always
+        livenessProbe:
+          tcpSocket:
+            port: 5432
+          initialDelaySeconds: 20
+          periodSeconds: 10
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        name: postgresql-sqlproxy
+        ports:
+          - containerPort: 5432
+            protocol: TCP
+        terminationMessagePath: /dev/termination-log
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       securityContext: {}
