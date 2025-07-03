@@ -47,33 +47,33 @@ spec:
           hostPath:
             path: /etc/ssl/certs
       containers:
-        image: {{ required "Missing value FDK_POSTGRESQL_IMAGE" .Values.FDK_POSTGRESQL_IMAGE }}
-        resources:
-          requests:
-            memory: {{ required "Missing value FDK_POSTGRESQL_MEMORY" .Values.FDK_POSTGRESQL_MEMORY | quote }}
-            cpu: {{ required "Missing value FDK_POSTGRESQL_CPU" .Values.FDK_POSTGRESQL_CPU | quote }}
-          limits:
+        - name: postgresql-sqlproxy
+          image: {{ required "Missing value FDK_POSTGRESQL_IMAGE" .Values.FDK_POSTGRESQL_IMAGE }}
+          resources:
+            requests:
               memory: {{ required "Missing value FDK_POSTGRESQL_MEMORY" .Values.FDK_POSTGRESQL_MEMORY | quote }}
-        volumeMounts:
-          - name: ssl-certs
-            mountPath: /etc/ssl/certs
-        command: ["/cloud_sql_proxy",
-                  "-instances={{ required "Missing value FDK_SQL_PROXY_CLUSTER" .Values.FDK_SQL_PROXY_CLUSTER }}:europe-north1:{{ required "Missing value FDK_SQL" .Values.FDK_SQL }}-{{ required "Missing value FDK_SQL_PROXY_SQL_ENVIRONMENT" .Values.FDK_SQL_PROXY_SQL_ENVIRONMENT }}=tcp:0.0.0.0:5432",
-                  "-structured_logs"]
-        imagePullPolicy: Always
-        livenessProbe:
-          tcpSocket:
-            port: 5432
-          initialDelaySeconds: 20
-          periodSeconds: 10
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 3
-        name: postgresql-sqlproxy
-        ports:
-          - containerPort: 5432
-            protocol: TCP
-        terminationMessagePath: /dev/termination-log
+              cpu: {{ required "Missing value FDK_POSTGRESQL_CPU" .Values.FDK_POSTGRESQL_CPU | quote }}
+            limits:
+                memory: {{ required "Missing value FDK_POSTGRESQL_MEMORY" .Values.FDK_POSTGRESQL_MEMORY | quote }}
+          volumeMounts:
+            - name: ssl-certs
+              mountPath: /etc/ssl/certs
+          command: ["/cloud_sql_proxy",
+                    "-instances={{ required "Missing value FDK_SQL_PROXY_CLUSTER" .Values.FDK_SQL_PROXY_CLUSTER }}:europe-north1:{{ required "Missing value FDK_SQL" .Values.FDK_SQL }}-{{ required "Missing value FDK_SQL_PROXY_SQL_ENVIRONMENT" .Values.FDK_SQL_PROXY_SQL_ENVIRONMENT }}=tcp:0.0.0.0:5432",
+                    "-structured_logs"]
+          imagePullPolicy: Always
+          livenessProbe:
+            tcpSocket:
+              port: 5432
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            timeoutSeconds: 1
+            successThreshold: 1
+            failureThreshold: 3
+          ports:
+            - containerPort: 5432
+              protocol: TCP
+          terminationMessagePath: /dev/termination-log
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       securityContext: {}
