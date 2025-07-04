@@ -37,6 +37,8 @@ spec:
         fdk.service: postgresql-sqlproxy
     spec:
       serviceAccountName: cloud-sql-sa
+      nodeSelector:
+        workload-identity: enabled
       tolerations:
         - key: "workload-identity"
           operator: "Equal"
