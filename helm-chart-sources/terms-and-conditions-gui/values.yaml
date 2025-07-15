@@ -1,5 +1,0 @@
-# Default values for terms-and-conditions gui.
-
-##terms-and-conditions-gui
-TERMS_AND_CONDITIONS_GUI_MEMORY: "10Mi"
-TERMS_AND_CONDITIONS_GUI_CPU: "1m"
