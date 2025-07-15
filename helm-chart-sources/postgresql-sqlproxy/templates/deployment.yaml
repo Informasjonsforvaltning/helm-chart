@@ -37,13 +37,6 @@ spec:
         fdk.service: postgresql-sqlproxy
     spec:
       serviceAccountName: cloud-sql-sa
-      nodeSelector:
-        workload-identity: enabled
-      tolerations:
-        - key: "workload-identity"
-          operator: "Equal"
-          value: "only"
-          effect: "NoSchedule"
       containers:
         - name: postgresql-sqlproxy
           image: {{ required "Missing value FDK_POSTGRESQL_IMAGE" .Values.FDK_POSTGRESQL_IMAGE }}
