@@ -22,12 +22,12 @@ spec:
         - name: MONGO_INITDB_ROOT_USERNAME
           valueFrom:
             secretKeyRef:
-              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: mongo
               key: MONGO_USERNAME
         - name: MONGO_INITDB_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: mongo
               key: MONGO_PASSWORD
         image: {{ required "Missing value MONGODB_IMAGE" .Values.MONGODB_IMAGE }}
         imagePullPolicy: Always
