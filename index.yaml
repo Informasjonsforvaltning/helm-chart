@@ -3,7 +3,7 @@ entries:
   catalog-comments-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.186433+02:00"
+    created: "2025-09-11T08:37:24.621788+02:00"
     description: Catalog comments service
     digest: b5c2fd2d0a79458119c93a92c9620b424142adab7bd53dadef7f19e1d1d24aca
     home: https://github.com/Informasjonsforvaltning/catalog-comments-service
@@ -14,7 +14,7 @@ entries:
   dataservice-catalog-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.186844+02:00"
+    created: "2025-09-11T08:37:24.622388+02:00"
     description: Dataservice catalog GUI
     digest: b951db7d7f1973666187addd45f94a5387ea7783af493662e25a011145ccefde
     home: https://github.com/Informasjonsforvaltning/dataservice-catalog-gui
@@ -25,7 +25,7 @@ entries:
   fdk-admin-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.18711+02:00"
+    created: "2025-09-11T08:37:24.622766+02:00"
     description: FDK Admin GUI
     digest: 0e9eb6d3069ba57da45eb4511f06b9b1aafa4b5ed6a7fcbdfd27349a6c7ab17d
     home: https://github.com/Informasjonsforvaltning/fdk-admin-gui
@@ -36,7 +36,7 @@ entries:
   fdk-cms-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.187372+02:00"
+    created: "2025-09-11T08:37:24.623114+02:00"
     description: FDK CMS service
     digest: add0c6f3f86d513ff7e3143efe416b02a460d5cbc145af60f78580ff2ce9ac69
     home: https://github.com/Informasjonsforvaltning/fdk-cms-service
@@ -47,7 +47,7 @@ entries:
   fdk-community-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.188113+02:00"
+    created: "2025-09-11T08:37:24.623459+02:00"
     description: FDK Community service
     digest: 338da18f9e561cca4f9637a22519984c3ca493aad02f030074e6c019e0db8491
     home: https://github.com/Informasjonsforvaltning/fdk-community-service
@@ -58,7 +58,7 @@ entries:
   fdk-community-store:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.188536+02:00"
+    created: "2025-09-11T08:37:24.623775+02:00"
     description: Config for FDK community store
     digest: 8a10903d39572b5f0f2d696038e4dc2e5a5d2b94c0d2511174079aba38bb72f5
     home: https://github.com/Informasjonsforvaltning/fdk-community-store
@@ -69,7 +69,7 @@ entries:
   fdk-dataset-preview-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.188823+02:00"
+    created: "2025-09-11T08:37:24.628072+02:00"
     description: A service that provides a small preview of harvested datasets
     digest: c3b9fc4357c6bcc6a868f017c09a0ec6ac08e109df736f91f3503d9efacf3dff
     home: https://github.com/Informasjonsforvaltning/fdk-dataset-preview-service
@@ -80,7 +80,7 @@ entries:
   fdk-mail-sender-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.189341+02:00"
+    created: "2025-09-11T08:37:24.633056+02:00"
     description: API for sending mail
     digest: 76201d2c38935dcb5af4cd20284c3778c8b964f0cdaf57962a233201060f5d53
     home: https://github.com/Informasjonsforvaltning/fdk-mail-sender-service
@@ -91,7 +91,7 @@ entries:
   fdk-mqa-assmentator:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.189537+02:00"
+    created: "2025-09-11T08:37:24.636353+02:00"
     description: This service listens to dataset harvested events and adds hasAssessment
       entries in graph.
     digest: 95449390be97b4cf60ebf2d23c90f6e0888313437e1b80a1711b2adf9822bba3
@@ -103,7 +103,7 @@ entries:
   fdk-mqa-property-checker:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.189749+02:00"
+    created: "2025-09-11T08:37:24.641094+02:00"
     description: This service listens to dataset harvested events (Kafka) and checks
       if the dataset has defined/set specific properties.
     digest: 1335f5c00dd4869f63e2a21fc271a2af5b66c19d19fccb36aa29a25e038fefe0
@@ -115,7 +115,7 @@ entries:
   fdk-mqa-scoring-api:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.190249+02:00"
+    created: "2025-09-11T08:37:24.645384+02:00"
     description: API for metadata quality
     digest: d4ff7ed9eb8ceda808bc6b8a72b3c9f51b4ed3803a219883dfa52a7df6b846d0
     home: https://github.com/Informasjonsforvaltning/fdk-mqa-scoring-api
@@ -126,7 +126,7 @@ entries:
   fdk-mqa-scoring-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.191163+02:00"
+    created: "2025-09-11T08:37:24.648517+02:00"
     description: This service listens to mqa events (Kafka) and calculates a metadata
       quality score based on several mqa metrics.
     digest: 745d308f809650e2171294804fa6017e8b012a2c484d16fc806f7f6a6b1bc033
@@ -138,7 +138,7 @@ entries:
   fdk-mqa-url-checker:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.19133+02:00"
+    created: "2025-09-11T08:37:24.652841+02:00"
     description: This service listens to dataset harvested events and checks every
       accessUrl and downloadUrl for all distributions in a dataset.
     digest: 4c61c1e6227525ed07d700d0fce5123fa713c78eedfc560910a6d3a9a3b80bad
@@ -150,7 +150,7 @@ entries:
   fdk-nginx-altinn-proxy:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.191584+02:00"
+    created: "2025-09-11T08:37:24.657405+02:00"
     description: FDK nginx altinn proxy
     digest: 9d914bf86ef1eb0982f3f5253bd33999c8b97fd1a4f0b255b97659c58641e3ea
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-altinn-proxy
@@ -161,7 +161,7 @@ entries:
   fdk-nginx-altinn-proxy-mock:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.191813+02:00"
+    created: "2025-09-11T08:37:24.661458+02:00"
     description: FDK nginx altinn proxy mock
     digest: 762861acb4ace1bf97336b8910bce117c578bf91281340cec6092e64a651fbe8
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-altinn-proxy-mock
@@ -172,7 +172,7 @@ entries:
   fdk-nginx-community:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.191952+02:00"
+    created: "2025-09-11T08:37:24.666286+02:00"
     description: FDK nginx community
     digest: 3119a4f7c4d7eec406d4dc077bd416ee074f27ac80e919ac777b664c36928217
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-community
@@ -183,7 +183,7 @@ entries:
   fdk-nginx-dataservices:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.192214+02:00"
+    created: "2025-09-11T08:37:24.670229+02:00"
     description: FDK nginx dataservices-catalog
     digest: c87075e62a82b49b75d0a24d239c3c2f1055d534f679c03ca7832c7c87d0fc0d
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-dataservices
@@ -194,7 +194,7 @@ entries:
   fdk-nginx-enhetsregisteret-proxy:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.192344+02:00"
+    created: "2025-09-11T08:37:24.674789+02:00"
     description: FDK nginx enhetsregisteret proxy
     digest: 704b11a5abad9573ae73e8c53b5ed16a0345371223881538e11e812d21c99f8c
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-enhetsregisteret-proxy
@@ -205,7 +205,7 @@ entries:
   fdk-nginx-enhetsregisteret-proxy-mock:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.192476+02:00"
+    created: "2025-09-11T08:37:24.678391+02:00"
     description: FDK nginx enhetsregisteret proxy mock
     digest: 768eec898b0800c1cb7bf667fb7478a5c0e634a439062c5456abd6922a201df5
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-enhetsregisteret-proxy-mock
@@ -216,7 +216,7 @@ entries:
   fdk-nginx-organization-bff:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.192773+02:00"
+    created: "2025-09-11T08:37:24.683019+02:00"
     description: FDK nginx organization-bff
     digest: 1495e75206f6670e859ddcc098ac89479295a8974557c382f6a4375d9a6eaed1
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-organization-bff
@@ -227,7 +227,7 @@ entries:
   fdk-nginx-records:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.192901+02:00"
+    created: "2025-09-11T08:37:24.686393+02:00"
     description: FDK nginx records-of-processing-activities
     digest: d4817bc9bef447492131b004813c9bcccaa4d157bc2b269b3bd217f4b49cbcea
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-records
@@ -238,7 +238,7 @@ entries:
   fdk-nginx-registration:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.193043+02:00"
+    created: "2025-09-11T08:37:24.691259+02:00"
     description: FDK nginx registration
     digest: e7b3f01bb7e8b6c6e1982d1644da9b17aba48f158532972d2eead0bea83aac3b
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-registration
@@ -249,7 +249,7 @@ entries:
   fdk-nginx-search:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.19317+02:00"
+    created: "2025-09-11T08:37:24.695091+02:00"
     description: FDK nginx search
     digest: c6036ee2310de212e3ab94446bcccb27c5bde8eca010bee67bce5adf96524bcf
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-search
@@ -260,7 +260,7 @@ entries:
   fdk-nginx-sparql:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.193297+02:00"
+    created: "2025-09-11T08:37:24.69974+02:00"
     description: FDK nginx sparql
     digest: 74e78df1de58c3733935e845f819e3caa0dadf9b72dd65bafc173090927d6b16
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-sparql
@@ -271,7 +271,7 @@ entries:
   fdk-organization-bff:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.193432+02:00"
+    created: "2025-09-11T08:37:24.706277+02:00"
     description: Aggregation service for organizations and their content
     digest: 4c4c403c3abce82fc1f1d3c8de651d2b5b7f5063d8594f39ff8bb9fc915c34d1
     home: https://github.com/Informasjonsforvaltning/fdk-organization-bff
@@ -282,7 +282,7 @@ entries:
   fdk-reports-store:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.193574+02:00"
+    created: "2025-09-11T08:37:24.712405+02:00"
     description: Config for FDK Reports store
     digest: 9b494251b85352fc75069bd0b0d4ba31d5918df09db018b99366c45cae738297
     home: https://github.com/Informasjonsforvaltning/fdk-reports-store
@@ -293,7 +293,7 @@ entries:
   fdk-sparql-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.193712+02:00"
+    created: "2025-09-11T08:37:24.71649+02:00"
     description: FDK SPARQL GUI
     digest: 66c8ab4102626d12901390a17a547bbb2575b7143321315e045470bfadb270ea
     home: https://github.com/Informasjonsforvaltning/fdk-sparql-gui
@@ -304,7 +304,7 @@ entries:
   mongodb:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.193959+02:00"
+    created: "2025-09-11T08:37:24.717078+02:00"
     description: Config for MongoDB
     digest: 8aa76b70e6708c94187df7a11600801edaf2d9c34d29976b86292b299f42360c
     home: https://github.com/Informasjonsforvaltning/fdk-mongodb-config
@@ -315,7 +315,7 @@ entries:
   postgresql-sqlproxy:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.194199+02:00"
+    created: "2025-09-11T08:37:24.717722+02:00"
     description: Config for PostgreSQL
     digest: 000f96979ead40eb42131c4b0984bf2309edd1146eac07d4de04307a36bf5831
     home: https://github.com/Informasjonsforvaltning/fdk-postgresql-config
@@ -326,7 +326,7 @@ entries:
   rabbitmq:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.194438+02:00"
+    created: "2025-09-11T08:37:24.71829+02:00"
     description: Config for RabbitMQ
     digest: cbf2c23bb888019c8ea4b643e7185b0e609c9d6838c62abd8398be2cd96e44c7
     home: https://github.com/Informasjonsforvaltning/fdk-message-broker
@@ -337,7 +337,7 @@ entries:
   records-of-processing-activities:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.194681+02:00"
+    created: "2025-09-11T08:37:24.72328+02:00"
     description: Template service for a backend service
     digest: 24d1005e3db8dcbe5e73ce6696fe3f1a6abbd8b6282a927d359ef24bc9b66ca9
     home: https://github.com/Informasjonsforvaltning/records-of-processing-activities
@@ -348,7 +348,7 @@ entries:
   records-of-processing-activities-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.194897+02:00"
+    created: "2025-09-11T08:37:24.728419+02:00"
     description: Template service for records of processing activities gui.
     digest: 4f4977cc01538e5975e2b8d4199bc45d3823db96578a7144844cf8519de8b10e
     home: https://github.com/Informasjonsforvaltning/records-of-processing-activities-gui
@@ -359,7 +359,7 @@ entries:
   reference-data:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.195032+02:00"
+    created: "2025-09-11T08:37:24.733703+02:00"
     description: FDK Reference Data
     digest: 59083896fb9c2daab5d96102afe395f6fc5a790375af64874d9d5f26ce5ff704
     home: https://github.com/Informasjonsforvaltning/fdk-reference-data
@@ -370,7 +370,7 @@ entries:
   static-rdf-nginx:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.195174+02:00"
+    created: "2025-09-11T08:37:24.738926+02:00"
     description: Static RDF nginx
     digest: 1b917ae0db91f6aa941adcb36521fc4063cacaff6bc7165285210725fb03152b
     home: https://github.com/Informasjonsforvaltning/static-rdf-server/nginx
@@ -381,12 +381,12 @@ entries:
   static-rdf-server:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-09-11T03:48:37.195529+02:00"
+    created: "2025-09-11T08:37:24.739617+02:00"
     description: A static web server for data.norge.no
-    digest: b6e70b35c60e45c7401680627f17182c3afa921bac257a4e71e542c8aa5ea68d
+    digest: 578586c2b923002cd3eb55f9e899bd4f62eac08d8e609205839965cbc028f7bf
     home: https://github.com/Informasjonsforvaltning/static-rdf-server
     name: static-rdf-server
     urls:
     - https://informasjonsforvaltning.github.io/helm-chart/static-rdf-server-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-11T03:48:37.185585+02:00"
+generated: "2025-09-11T08:37:24.62071+02:00"
