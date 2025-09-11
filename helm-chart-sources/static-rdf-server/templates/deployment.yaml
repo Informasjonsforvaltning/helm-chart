@@ -35,12 +35,12 @@ spec:
         - name: NAMESPACE
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: common
               key: NAMESPACE
         - name: API_KEY
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: common
               key: STATIC_RDF_SERVER_API_KEY
         - name: CORS_ORIGIN_PATTERNS
           value: {{ required "Missing value CORS_ORIGIN_PATTERNS" .Values.CORS_ORIGIN_PATTERNS }}
