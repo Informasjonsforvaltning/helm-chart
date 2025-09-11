@@ -22,7 +22,7 @@ spec:
           - name: ALTINN_HOST
             valueFrom:
               secretKeyRef:
-                name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                name: commonurl
                 key: ALTINN_URI
                 optional: true
           - name: API_KEY

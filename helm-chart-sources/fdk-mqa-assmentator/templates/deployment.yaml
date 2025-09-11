@@ -24,17 +24,17 @@ spec:
             - name: NAMESPACE
               valueFrom:
                 secretKeyRef:
-                  name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                  name: common
                   key: NAMESPACE
             - name: SCHEMA_REGISTRY
               valueFrom:
                 secretKeyRef:
-                  name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                  name: fdk-metadata-quality
                   key: SCHEMA_REGISTRY
             - name: BROKERS
               valueFrom:
                 secretKeyRef:
-                  name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+                  name: fdk-metadata-quality
                   key: BROKERS
           name: fdk-mqa-assmentator
           image: '{{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}'

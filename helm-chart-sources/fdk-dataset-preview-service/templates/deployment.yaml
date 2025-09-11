@@ -22,17 +22,17 @@ spec:
         - name: NAMESPACE
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: common
               key: NAMESPACE
         - name: API_KEY
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: common
               key: FDK_DATASET_PREVIEW_API_KEY
         - name: ALLOWED_ORIGINS
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: common
               key: FDK_DATASET_PREVIEW_ALLOWED_ORIGINS
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always

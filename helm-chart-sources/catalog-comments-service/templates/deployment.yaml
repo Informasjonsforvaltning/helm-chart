@@ -22,22 +22,22 @@ spec:
         - name: MONGO_USERNAME
           valueFrom:
             secretKeyRef:
-              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: mongo
               key: MONGO_USERNAME
         - name: MONGO_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: mongo
               key: MONGO_PASSWORD
         - name: OIDC_JWKS
           valueFrom:
             secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: sso
               key: SSO_OIDC_JWKS
         - name: OIDC_ISSUER
           valueFrom:
             secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: sso
               key: SSO_OIDC_ISSUER
         name: catalog-comments-service
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}

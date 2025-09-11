@@ -24,53 +24,53 @@ spec:
         - name: API_KEY
           valueFrom:
             secretKeyRef:
-              name: fdk-smtp-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-smtp
               key: API_KEY
         - name: SMTP_HOST
           valueFrom:
             secretKeyRef:
-              name: fdk-smtp-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-smtp
               key: SMTP_HOST
         - name: SMTP_PORT
           valueFrom:
             secretKeyRef:
-              name: fdk-smtp-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-smtp
               key: SMTP_PORT
               optional: true
         - name: SMTP_USER
           valueFrom:
             secretKeyRef:
-              name: fdk-smtp-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-smtp
               key: SMTP_USER
               optional: true
         - name: SMTP_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: fdk-smtp-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-smtp
               key: SMTP_PASSWORD
               optional: true
         - name: SMTP_EHLO_DOMAIN
           valueFrom:
             secretKeyRef:
-              name: fdk-smtp-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-smtp
               key: SMTP_EHLO_DOMAIN
               optional: true
         - name: TLS_DOMAIN
           valueFrom:
             secretKeyRef:
-              name: fdk-smtp-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-smtp
               key: TLS_DOMAIN
               optional: true
         - name: TLS_CERT
           valueFrom:
             secretKeyRef:
-              name: fdk-smtp-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-smtp
               key: TLS_CERT
               optional: true
         - name: ALLOWED_SENDERS
           valueFrom:
             secretKeyRef:
-              name: fdk-smtp-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-smtp
               key: ALLOWED_SENDERS
               optional: true
         name: fdk-mail-sender-service

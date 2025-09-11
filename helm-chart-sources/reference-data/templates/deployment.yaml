@@ -25,42 +25,42 @@ spec:
         - name: MONGODB_USERNAME
           valueFrom:
             secretKeyRef:
-              name: reference-data-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: reference-data
               key: MONGODB_USER
         - name: MONGODB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: reference-data-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: reference-data
               key: MONGODB_PASSWORD
         - name: MONGODB_DATABASE
           valueFrom:
             secretKeyRef:
-              name: reference-data-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: reference-data
               key: MONGODB_DATABASE
         - name: API_KEY
           valueFrom:
             secretKeyRef:
-              name: reference-data-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: reference-data
               key: API_KEY
         - name: MONGODB_AUTH_DATABASE
           valueFrom:
             secretKeyRef:
-              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: mongo
               key: MONGO_AUTH_DB
         - name: MONGODB_HOST
           valueFrom:
             secretKeyRef:
-              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: mongo
               key: MONGODB_HOST
         - name: MONGODB_PORT
           valueFrom:
             secretKeyRef:
-              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: mongo
               key: MONGO_PORT
         - name: CATALOG_ADMIN_SERVICE_URI
           valueFrom:
             secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: commonurl
               key: CATALOG_ADMIN_SERVICE_HOST
         name: reference-data
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}

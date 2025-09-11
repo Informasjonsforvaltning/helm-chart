@@ -22,27 +22,27 @@ spec:
         - name: OIDC_ISSUER
           valueFrom:
             secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: sso
               key: SSO_OIDC_ISSUER
         - name: OIDC_JWKS
           valueFrom:
             secretKeyRef:
-              name: sso-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: sso
               key: SSO_OIDC_JWKS
         - name: MONGO_USERNAME
           valueFrom:
             secretKeyRef:
-              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: mongo
               key: MONGO_USERNAME
         - name: MONGO_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: mongo
               key: MONGO_PASSWORD
         - name: MONGO_HOST
           valueFrom:
             secretKeyRef:
-              name: mongo-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: mongo
               key: MONGODB_HOST
         - name: ALLOW_LIST
           valueFrom:

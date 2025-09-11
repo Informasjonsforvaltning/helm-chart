@@ -24,18 +24,18 @@ spec:
         - name: SPARQL_API_HOST
           valueFrom:
             secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: commonurl
               key: FDK_SPARQL_API_BASE_URI
         - name: USE_DEMO_LOGO
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: common
               key: USE_DEMO_LOGO
               optional: true
         - name: FDK_COMMUNITY_BASE_URI
           valueFrom:
             secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: commonurl
               key: FDK_COMMUNITY_BASE_URI
         name: fdk-sparql-gui
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}

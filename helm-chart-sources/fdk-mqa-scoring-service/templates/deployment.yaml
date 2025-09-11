@@ -24,22 +24,22 @@ spec:
         - name: NAMESPACE
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: common
               key: NAMESPACE
         - name: SCHEMA_REGISTRY
           valueFrom:
             secretKeyRef:
-              name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-metadata-quality
               key: SCHEMA_REGISTRY
         - name: BROKERS
           valueFrom:
             secretKeyRef:
-              name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-metadata-quality
               key: BROKERS
         - name: API_KEY
           valueFrom:
             secretKeyRef:
-              name: fdk-metadata-quality-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-metadata-quality
               key: API_KEY
         - name: SCORING_API_URL
           value: {{ required "Missing value SCORING_API_URL" .Values.SCORING_API_URL }}
