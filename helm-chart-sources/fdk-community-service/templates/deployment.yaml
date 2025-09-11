@@ -31,64 +31,64 @@ spec:
         - name: NAMESPACE
           valueFrom:
             secretKeyRef:
-              name: common-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: common
               key: NAMESPACE
         - name: config
           valueFrom:
             secretKeyRef:
-              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-community
               key: FDK_COMMUNITY_SERVICE_CONFIG
         - name: API_TOKEN
           valueFrom:
             secretKeyRef:
-              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-community
               key: FDK_COMMUNITY_SERVICE_API_TOKEN
         - name: API_TOKEN_WRITE
           valueFrom:
             secretKeyRef:
-              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-community
               key: FDK_COMMUNITY_SERVICE_API_TOKEN_WRITE
         - name: SMTP_SERVER
           valueFrom:
             secretKeyRef:
-              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-community
               key: FDK_COMMUNITY_SERVICE_SMTP_SERVER
         - name: SMTP_PORT
           valueFrom:
             secretKeyRef:
-              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-community
               key: FDK_COMMUNITY_SERVICE_SMTP_PORT
         - name: SMTP_HOSTNAME
           valueFrom:
             secretKeyRef:
-              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-community
               key: FDK_COMMUNITY_SERVICE_SMTP_HOSTNAME
         - name: BASE_URL
           valueFrom:
             secretKeyRef:
-              name: commonurl-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: commonurl
               key: FDK_COMMUNITY_BASE_URI
         - name: TEST_MODE
           valueFrom:
             secretKeyRef:
-              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-community
               key: TEST_MODE
         - name: TEST_EMAIL
           valueFrom:
             secretKeyRef:
-              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-community
               key: TEST_EMAIL
         - name: TOKEN_UID
           valueFrom:
             secretKeyRef:
-              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-community
               key: TOKEN_UID
         - name: SMTP_TLS_CA
           value: /usr/src/app/certs/ca.crt
         - name: SMTP_TLS_HOSTNAME
           valueFrom:
             secretKeyRef:
-              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-community
               key: FDK_COMMUNITY_SERVICE_SMTP_TLS_HOSTNAME  
         image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}
         imagePullPolicy: Always

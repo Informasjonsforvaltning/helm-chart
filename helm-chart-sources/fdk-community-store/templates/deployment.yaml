@@ -22,12 +22,12 @@ spec:
         - name: MONGO_INITDB_ROOT_USERNAME
           valueFrom:
             secretKeyRef:
-              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-community
               key: FDK_COMMUNITY_STORE_USERNAME
         - name: MONGO_INITDB_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: fdk-community-{{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+              name: fdk-community
               key: FDK_COMMUNITY_STORE_PASSWORD
         image: {{ required "Missing value FDK_COMMUNITY_STORE_IMAGE" .Values.FDK_COMMUNITY_STORE_IMAGE }}
         imagePullPolicy: Always
