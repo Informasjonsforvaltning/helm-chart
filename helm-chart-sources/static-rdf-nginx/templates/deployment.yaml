@@ -29,6 +29,15 @@ spec:
                     operator: In
                     values:
                       - static-rdf
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: fdk.service
+                    operator: In
+                    values:
+                      - static-rdf-server
+              topologyKey: kubernetes.io/hostname
       priorityClassName: static-rdf-priority
       containers:
       - image: {{ required "Missing value DOCKER_IMAGE_NAME" .Values.DOCKER_IMAGE_NAME }}

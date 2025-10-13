@@ -30,6 +30,14 @@ spec:
                     values:
                       - static-rdf
       priorityClassName: static-rdf-priority
+      # Add a topologySpreadConstraint to ensure only static-rdf pods on this node
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: static-rdf
       containers:
       - env:
         - name: NAMESPACE
