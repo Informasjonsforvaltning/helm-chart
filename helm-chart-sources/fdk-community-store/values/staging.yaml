@@ -1,4 +1,0 @@
-#DValues for staging environment
-NAMESPACE: staging
-FDK_COMMUNITY_STORE_VOLUMENAME: fdk-dev-staging-community-store
-FDK_COMMUNITY_STORE_STORAGESIZE: "9G"
