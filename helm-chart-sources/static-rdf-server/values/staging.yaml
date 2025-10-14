@@ -2,4 +2,5 @@
 NAMESPACE: staging
 STATIC_RDF_SERVER_VOLUMENAME: fdk-dev-staging-static-rdf-server
 STATIC_RDF_SERVER_STORAGESIZE: 9G
+GCE_ZONE: europe-north1-a
 CORS_ORIGIN_PATTERNS: https://staging.fellesdatakatalog.digdir.no,https://*.staging.fellesdatakatalog.digdir.no,http://localhost:*

@@ -25,6 +25,14 @@ spec:
     storage: {{ required "Missing value STATIC_RDF_SERVER_STORAGESIZE" .Values.STATIC_RDF_SERVER_STORAGESIZE }}
   accessModes:
     - ReadWriteOnce
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: topology.kubernetes.io/zone
+          operator: In
+          values:
+          - {{ required "Missing value GCE_ZONE" .Values.GCE_ZONE }}
   gcePersistentDisk:
     pdName: {{ required "Missing value STATIC_RDF_SERVER_VOLUMENAME" .Values.STATIC_RDF_SERVER_VOLUMENAME }}
     fsType: ext4
