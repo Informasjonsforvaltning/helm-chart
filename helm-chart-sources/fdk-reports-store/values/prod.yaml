@@ -1,4 +1,0 @@
-#DValues for production environment
-NAMESPACE: prod
-FDK_REPORTS_STORE_VOLUMENAME: fdk-prod-reports-store
-FDK_REPORTS_STORE_STORAGESIZE: "9G"

@@ -1,4 +1,0 @@
-#DValues for staging environment
-NAMESPACE: staging
-FDK_REPORTS_STORE_VOLUMENAME: fdk-dev-staging-reports-store
-FDK_REPORTS_STORE_STORAGESIZE: "9G"
