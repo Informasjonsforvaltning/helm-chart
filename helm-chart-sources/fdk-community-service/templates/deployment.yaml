@@ -20,13 +20,12 @@ spec:
       initContainers:
         - name: copy-config
           image: busybox
-          command: ['sh', '-c', 'cp /etc/secrets/config/config.json /usr/src/app/files/config.json && chmod 644 /usr/src/app/files/config.json']
+          command: ['sh', '-c', 'cp -R /etc/secrets/config/..data/config.json /opt/config', 'chmod -R 644 /opt/config/*']
           volumeMounts:
             - mountPath: /etc/secrets/config
               name: config-secret-volume
-              readOnly: true
-            - mountPath: /usr/src/app/files
-              name: fdk-community-service-claim0
+            - mountPath: /opt/config
+              name: config-volume
       containers:
       - env:
         - name: NAMESPACE
@@ -103,6 +102,8 @@ spec:
           limits:
             memory: {{ required "Missing value FDK_COMMUNITY_SERVICE_MEMORY" .Values.FDK_COMMUNITY_SERVICE_MEMORY | quote }}
         volumeMounts:
+          - name: config-volume
+            mountPath: /opt/config
           - name: fdk-community-service-claim0
             mountPath: /usr/src/app/files
           - name: smtp-certs
@@ -119,4 +120,7 @@ spec:
         - name: config-secret-volume
           secret:
             secretName: fdk-community-config
+        - name: config-volume
+          emptyDir:
+            sizeLimit: 1Gi
       restartPolicy: Always
