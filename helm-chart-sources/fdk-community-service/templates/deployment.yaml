@@ -34,7 +34,7 @@ spec:
             secretKeyRef:
               name: common
               key: NAMESPACE
-        - name: config
+        - name: CONFIG
           valueFrom:
             secretKeyRef:
               name: fdk-community
