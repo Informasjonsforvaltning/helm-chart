@@ -22,8 +22,8 @@ spec:
         - name: OIDC_ISSUER
           valueFrom:
             secretKeyRef:
-              name: commonurl
-              key: OIDC_ISSUER
+              name: keycloak
+              key: KEYCLOAK_OIDC_ISSUER
         - name: DATA_SERVICE_CATALOG_URL
           valueFrom:
             secretKeyRef:
