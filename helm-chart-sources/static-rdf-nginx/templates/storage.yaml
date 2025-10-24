@@ -4,6 +4,8 @@ metadata:
   labels:
     fdk.service: static-rdf-server-claim0
   name: static-rdf-server-claim0
+  annotations:
+    helm.sh/resource-policy: keep
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
         storageClassName: ""
@@ -18,6 +20,8 @@ kind: PersistentVolume
 apiVersion: v1
 metadata:
   name: {{ required "Missing value STATIC_RDF_SERVER_VOLUMENAME" .Values.STATIC_RDF_SERVER_VOLUMENAME }}
+  annotations:
+    helm.sh/resource-policy: keep
   namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   storageClassName: ""
