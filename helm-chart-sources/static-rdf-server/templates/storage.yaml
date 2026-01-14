@@ -22,7 +22,6 @@ metadata:
   name: {{ required "Missing value STATIC_RDF_SERVER_VOLUMENAME" .Values.STATIC_RDF_SERVER_VOLUMENAME }}
   annotations:
     helm.sh/resource-policy: keep
-  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
 spec:
   storageClassName: ""
   capacity:
