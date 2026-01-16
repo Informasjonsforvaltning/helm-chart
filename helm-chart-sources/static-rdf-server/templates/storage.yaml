@@ -15,3 +15,28 @@ spec:
   resources:
     requests:
       storage: {{ required "Missing value STATIC_RDF_SERVER_STORAGESIZE" .Values.STATIC_RDF_SERVER_STORAGESIZE }}
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: {{ required "Missing value STATIC_RDF_SERVER_VOLUMENAME" .Values.STATIC_RDF_SERVER_VOLUMENAME }}
+  annotations:
+    helm.sh/resource-policy: keep
+  namespace: {{ required "Missing value NAMESPACE" .Values.NAMESPACE }}
+spec:
+  storageClassName: ""
+  capacity:
+    storage: {{ required "Missing value STATIC_RDF_SERVER_STORAGESIZE" .Values.STATIC_RDF_SERVER_STORAGESIZE }}
+  accessModes:
+    - ReadWriteOnce
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: topology.kubernetes.io/zone
+          operator: In
+          values:
+          - {{ required "Missing value GCE_ZONE" .Values.GCE_ZONE }}
+  gcePersistentDisk:
+    pdName: {{ required "Missing value STATIC_RDF_SERVER_VOLUMENAME" .Values.STATIC_RDF_SERVER_VOLUMENAME }}
+    fsType: ext4
