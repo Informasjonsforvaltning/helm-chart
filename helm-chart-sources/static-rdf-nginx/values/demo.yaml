@@ -1,5 +1,0 @@
-#DValues for demo environment
-NAMESPACE: demo
-STATIC_RDF_SERVER_VOLUMENAME: fdk-dev-demo-static-rdf-server
-STATIC_RDF_SERVER_STORAGESIZE: 9G
-GCE_ZONE: europe-north1-a

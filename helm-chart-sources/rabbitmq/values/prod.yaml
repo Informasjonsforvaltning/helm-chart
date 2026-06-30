@@ -1,4 +1,0 @@
-#DValues for production environment
-NAMESPACE: prod
-FDK_RABBITMQ_VOLUMENAME: fdk-prod-rabbitmq
-FDK_RABBITMQ_STORAGESIZE: "7G"

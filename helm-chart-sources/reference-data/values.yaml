@@ -1,7 +1,0 @@
-# Default values for reference-data.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-##reference-data (api)
-FDK_REFERENCE_DATA_MEMORY: "1Gi"
-FDK_REFERENCE_DATA_CPU: "25m"

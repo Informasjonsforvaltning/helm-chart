@@ -1,4 +1,0 @@
-#DValues for production environment
-NAMESPACE: prod
-FDK_SQL_PROXY_CLUSTER: digdir-fdk-prod
-FDK_SQL_PROXY_SQL_ENVIRONMENT: prod
