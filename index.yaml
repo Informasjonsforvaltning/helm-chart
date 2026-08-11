@@ -3,7 +3,7 @@ entries:
   dataservice-catalog-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-08-11T20:46:32.248724+02:00"
+    created: "2026-08-11T21:05:33.858149+02:00"
     description: Dataservice catalog GUI
     digest: afb9c961e501dc1a329b5babb72b8e515b95bb5a7a70ab3e5f7da42d4d742e21
     home: https://github.com/Informasjonsforvaltning/dataservice-catalog-gui
@@ -14,9 +14,9 @@ entries:
   fdk-admin-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-08-11T20:46:32.253352+02:00"
+    created: "2026-08-11T21:05:33.858813+02:00"
     description: FDK Admin GUI
-    digest: 598b326d308c6512f9986dcd71fa5be5d41e336d747e9fda666d2061b27c208f
+    digest: 0d2a91332c57c258b298176f20edc31e887c65145ff7d808bc7ab33616ab6f33
     home: https://github.com/Informasjonsforvaltning/fdk-admin-gui
     name: fdk-admin-gui
     urls:
@@ -25,7 +25,7 @@ entries:
   fdk-cms-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-08-11T20:46:32.257154+02:00"
+    created: "2026-08-11T21:05:33.859123+02:00"
     description: FDK CMS service
     digest: add0c6f3f86d513ff7e3143efe416b02a460d5cbc145af60f78580ff2ce9ac69
     home: https://github.com/Informasjonsforvaltning/fdk-cms-service
@@ -36,7 +36,7 @@ entries:
   fdk-community-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-08-11T20:46:32.261214+02:00"
+    created: "2026-08-11T21:05:33.859562+02:00"
     description: FDK Community service
     digest: af02aa68285169c46b76910da10368a09d0e14ee9e2ac59872bdfaa09bdd2e19
     home: https://github.com/Informasjonsforvaltning/fdk-community-service
@@ -47,7 +47,7 @@ entries:
   fdk-mail-sender-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-08-11T20:46:32.264091+02:00"
+    created: "2026-08-11T21:05:33.859826+02:00"
     description: API for sending mail
     digest: 6b34b43b7a67ddbe238f4283f97f28661518de659b927709301e3f238ddac395
     home: https://github.com/Informasjonsforvaltning/fdk-mail-sender-service
@@ -58,7 +58,7 @@ entries:
   fdk-nginx-altinn-proxy:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-08-11T20:46:32.267823+02:00"
+    created: "2026-08-11T21:05:33.860425+02:00"
     description: FDK nginx altinn proxy
     digest: 57e94af29c5a0e7e4aafce66bb64fe0c3a0a3371e929a50daa02a015ba6bacfe
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-altinn-proxy
@@ -69,7 +69,7 @@ entries:
   fdk-nginx-altinn-proxy-mock:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-08-11T20:46:32.271626+02:00"
+    created: "2026-08-11T21:05:33.860801+02:00"
     description: FDK nginx altinn proxy mock
     digest: 3356b184a96a468ebf95c1adde3410726aef61e4e960401cdc58adf0f6304168
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-altinn-proxy-mock
@@ -80,9 +80,9 @@ entries:
   fdk-nginx-community:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-08-11T20:46:32.275171+02:00"
+    created: "2026-08-11T21:05:33.861255+02:00"
     description: FDK nginx community
-    digest: 3119a4f7c4d7eec406d4dc077bd416ee074f27ac80e919ac777b664c36928217
+    digest: 0b5ae0ea9209bb64e7dcab23c70947c99d235c04b6c0e4060ce15ef728f2fa42
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-community
     name: fdk-nginx-community
     urls:
@@ -91,7 +91,7 @@ entries:
   fdk-nginx-dataservices:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-08-11T20:46:32.27551+02:00"
+    created: "2026-08-11T21:05:33.861499+02:00"
     description: FDK nginx dataservices-catalog
     digest: 85fbb34b4ead99ab7e101007587b3da92d2366d5e6c18f112b0d87e64bf0af05
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-dataservices
@@ -102,7 +102,7 @@ entries:
   fdk-nginx-enhetsregisteret-proxy:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-08-11T20:46:32.275811+02:00"
+    created: "2026-08-11T21:05:33.861734+02:00"
     description: FDK nginx enhetsregisteret proxy
     digest: 438270a2bfe6ee3ecd36e65f4d97569b45f9646df7529da3873ce53e9df10785
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-enhetsregisteret-proxy
@@ -113,7 +113,7 @@ entries:
   fdk-nginx-enhetsregisteret-proxy-mock:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-08-11T20:46:32.279087+02:00"
+    created: "2026-08-11T21:05:33.861955+02:00"
     description: FDK nginx enhetsregisteret proxy mock
     digest: 08c2c77cc96347d16ffc9d671d72fec41f2f29e8ae66e5a4570b5deac9f20c2c
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-enhetsregisteret-proxy-mock
@@ -124,7 +124,7 @@ entries:
   fdk-nginx-organization-bff:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-08-11T20:46:32.282386+02:00"
+    created: "2026-08-11T21:05:33.86218+02:00"
     description: FDK nginx organization-bff
     digest: 1e75626de385b1fac2355774f8aa9f5c4182ac43cf304c8ddab8a5a6b7520290
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-organization-bff
@@ -135,7 +135,7 @@ entries:
   fdk-nginx-records:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-08-11T20:46:32.28536+02:00"
+    created: "2026-08-11T21:05:33.862401+02:00"
     description: FDK nginx records-of-processing-activities
     digest: d4817bc9bef447492131b004813c9bcccaa4d157bc2b269b3bd217f4b49cbcea
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-records
@@ -146,7 +146,7 @@ entries:
   fdk-nginx-registration:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-08-11T20:46:32.288602+02:00"
+    created: "2026-08-11T21:05:33.86259+02:00"
     description: FDK nginx registration
     digest: e7b3f01bb7e8b6c6e1982d1644da9b17aba48f158532972d2eead0bea83aac3b
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-registration
@@ -157,7 +157,7 @@ entries:
   fdk-nginx-search:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-08-11T20:46:32.291529+02:00"
+    created: "2026-08-11T21:05:33.862806+02:00"
     description: FDK nginx search
     digest: c6036ee2310de212e3ab94446bcccb27c5bde8eca010bee67bce5adf96524bcf
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-search
@@ -168,7 +168,7 @@ entries:
   fdk-nginx-sparql:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-08-11T20:46:32.29481+02:00"
+    created: "2026-08-11T21:05:33.863035+02:00"
     description: FDK nginx sparql
     digest: ad53f5c996ad40a03fc404ffc56b95c02f5c05126cbf5e43481e7cddef55d259
     home: https://github.com/Informasjonsforvaltning/fdk-nginx-sparql
@@ -179,7 +179,7 @@ entries:
   fdk-sparql-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-08-11T20:46:32.29796+02:00"
+    created: "2026-08-11T21:05:33.86323+02:00"
     description: FDK SPARQL GUI
     digest: 540e7b29e697948e95407f8d8f8f48a9651b2ddfee93b92cafad8bc7dd1f5453
     home: https://github.com/Informasjonsforvaltning/fdk-sparql-gui
@@ -187,4 +187,4 @@ entries:
     urls:
     - https://informasjonsforvaltning.github.io/helm-chart/fdk-sparql-gui-0.1.0.tgz
     version: 0.1.0
-generated: "2026-08-11T20:46:32.244014+02:00"
+generated: "2026-08-11T21:05:33.85779+02:00"
