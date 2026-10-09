@@ -1,6 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
+  annotations:
+    cloud.google.com/backend-config: '{"default": "cloud-armor-admin"}'
   labels:
     fdk.service: fdk-cms-service
   name: fdk-cms-service
