@@ -3,7 +3,7 @@ entries:
   dataservice-catalog-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-10-09T10:50:37.963169+02:00"
+    created: "2026-11-27T11:39:43.486626+01:00"
     description: Dataservice catalog GUI
     digest: afb9c961e501dc1a329b5babb72b8e515b95bb5a7a70ab3e5f7da42d4d742e21
     home: https://github.com/Informasjonsforvaltning/dataservice-catalog-gui
@@ -14,7 +14,7 @@ entries:
   fdk-admin-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-10-09T10:50:37.963727+02:00"
+    created: "2026-11-27T11:39:43.486826+01:00"
     description: FDK Admin GUI
     digest: f16a8ad5625005695e4414c2d428e25f9ee64cda8012e8ae0cf9cd91712ed77b
     home: https://github.com/Informasjonsforvaltning/fdk-admin-gui
@@ -25,9 +25,9 @@ entries:
   fdk-cms-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-10-09T10:50:37.964144+02:00"
+    created: "2026-11-27T11:39:43.487564+01:00"
     description: FDK CMS service
-    digest: 6f22c9d4ec3cb2d04eeae8ab0f8d4fcf84ccd0c6077e00aeb943aa0445605382
+    digest: 80e7ae0981c5fe2c155ff510e2db3f3586291dccc1e0ea5d0a199e9db3d192ad
     home: https://github.com/Informasjonsforvaltning/fdk-cms-service
     name: fdk-cms-service
     urls:
@@ -36,7 +36,7 @@ entries:
   fdk-community-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-10-09T10:50:37.964247+02:00"
+    created: "2026-11-27T11:39:43.487836+01:00"
     description: FDK Community service
     digest: af02aa68285169c46b76910da10368a09d0e14ee9e2ac59872bdfaa09bdd2e19
     home: https://github.com/Informasjonsforvaltning/fdk-community-service
@@ -47,7 +47,7 @@ entries:
   fdk-mail-sender-service:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-10-09T10:50:37.964347+02:00"
+    created: "2026-11-27T11:39:43.488062+01:00"
     description: API for sending mail
     digest: 6b34b43b7a67ddbe238f4283f97f28661518de659b927709301e3f238ddac395
     home: https://github.com/Informasjonsforvaltning/fdk-mail-sender-service
@@ -58,7 +58,7 @@ entries:
   fdk-sparql-gui:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2026-10-09T10:50:37.968332+02:00"
+    created: "2026-11-27T11:39:43.4886+01:00"
     description: FDK SPARQL GUI
     digest: 540e7b29e697948e95407f8d8f8f48a9651b2ddfee93b92cafad8bc7dd1f5453
     home: https://github.com/Informasjonsforvaltning/fdk-sparql-gui
@@ -66,4 +66,4 @@ entries:
     urls:
     - https://informasjonsforvaltning.github.io/helm-chart/fdk-sparql-gui-0.1.0.tgz
     version: 0.1.0
-generated: "2026-10-09T10:50:37.962997+02:00"
+generated: "2026-11-27T11:39:43.486015+01:00"
