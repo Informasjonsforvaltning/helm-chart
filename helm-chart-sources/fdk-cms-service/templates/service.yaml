@@ -1,8 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
+  {{- /* Only where a GCE Ingress serves the Service. The GKE Gateway
+  rejects a backend with a BackendConfig and attaches Cloud Armor through a
+  GCPBackendPolicy instead. */}}
+  {{- with .Values.FDK_CMS_SERVICE_BACKEND_CONFIG }}
   annotations:
-    cloud.google.com/backend-config: '{"default": "cloud-armor-admin"}'
+    cloud.google.com/backend-config: '{"default": "{{ . }}"}'
+  {{- end }}
   labels:
     fdk.service: fdk-cms-service
   name: fdk-cms-service
